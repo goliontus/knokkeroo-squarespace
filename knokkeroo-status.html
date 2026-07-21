@@ -1,0 +1,916 @@
+<section class="knokkeroo-status-page" aria-labelledby="kroo-status-title">
+  <style>
+    .knokkeroo-status-page {
+      --kroo-brown: #583b1f;
+      --kroo-ink: #2f2418;
+      --kroo-muted: rgba(47, 36, 24, 0.72);
+      --kroo-line: rgba(88, 59, 31, 0.18);
+      --kroo-panel: rgba(88, 59, 31, 0.055);
+      --kroo-panel-strong: rgba(88, 59, 31, 0.09);
+      --kroo-green: #2f7d4f;
+      --kroo-amber: #b7791f;
+      --kroo-red: #b7412e;
+      --kroo-soft-gold: #f6ead2;
+      --kroo-soft-gold-line: rgba(183, 121, 31, 0.28);
+      --kroo-radius: 22px;
+      --kroo-shadow: 0 18px 45px rgba(47, 36, 24, 0.08);
+      color: var(--kroo-ink);
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(24px, 4vw, 56px) clamp(18px, 3vw, 34px);
+      font-family: inherit;
+      line-height: 1.62;
+    }
+
+    .knokkeroo-status-page * { box-sizing: border-box; }
+
+    .kroo-hero {
+      border: 1px solid var(--kroo-line);
+      border-radius: calc(var(--kroo-radius) + 8px);
+      background:
+        radial-gradient(circle at top right, rgba(88, 59, 31, 0.10), transparent 34%),
+        linear-gradient(135deg, rgba(88, 59, 31, 0.075), rgba(255, 255, 255, 0));
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: var(--kroo-shadow);
+      margin-bottom: clamp(20px, 3vw, 30px);
+    }
+
+    .kroo-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      background: rgba(88, 59, 31, 0.09);
+      border: 1px solid var(--kroo-line);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    .kroo-hero h1 {
+      color: var(--kroo-brown);
+      font-size: clamp(1.9rem, 4.6vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0 0 16px;
+    }
+
+    .kroo-hero .kroo-subtitle {
+      color: var(--kroo-muted);
+      font-size: clamp(1.02rem, 2vw, 1.28rem);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .kroo-platform-jump {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(12px, 2vw, 18px);
+      margin: 0 0 clamp(16px, 3vw, 22px);
+    }
+
+    .kroo-cloud-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 108px;
+      padding: clamp(18px, 3vw, 24px);
+      border: 1px solid var(--kroo-line);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.9), transparent 42%),
+        linear-gradient(135deg, rgba(88, 59, 31, 0.09), rgba(88, 59, 31, 0.035));
+      color: var(--kroo-ink) !important;
+      text-decoration: none !important;
+      box-shadow: 0 16px 42px rgba(47, 36, 24, 0.075);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .kroo-cloud-button:hover, .kroo-cloud-button:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 52px rgba(47, 36, 24, 0.11);
+      border-color: rgba(88, 59, 31, 0.32);
+    }
+
+    .kroo-cloud-title {
+      display: block;
+      color: var(--kroo-brown);
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .kroo-cloud-copy {
+      display: block;
+      color: var(--kroo-muted);
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .kroo-cloud-arrow {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid !important;
+      place-items: center;
+      background: var(--kroo-brown);
+      color: white;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .kroo-fullindex {
+      border: 1px solid var(--kroo-line);
+      border-radius: var(--kroo-radius);
+      background: rgba(255, 255, 255, 0.6);
+      padding: clamp(18px, 3vw, 26px);
+      margin: 0 0 clamp(28px, 4vw, 44px);
+    }
+
+    .kroo-fullindex p.kroo-index-label {
+      margin: 0 0 12px;
+      font-weight: 800;
+      color: var(--kroo-brown);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .kroo-index-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .kroo-index-col strong {
+      display: block;
+      color: var(--kroo-ink);
+      margin-bottom: 6px;
+    }
+
+    .kroo-index-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .kroo-index-col li { margin-bottom: 6px; }
+
+    .kroo-index-col a {
+      color: var(--kroo-brown);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      font-size: 0.95rem;
+    }
+
+    #android, #ios, #huawei, #garmin, #amazon, #google,
+    #android-v3, #android-v4, #ios-v3, #ios-v4, #huawei-v3, #huawei-v4,
+    #downloads, #roadmap {
+      scroll-margin-top: 100px;
+    }
+
+    .kroo-section { margin: clamp(26px, 5vw, 54px) 0; }
+
+    .kroo-section h2 {
+      color: var(--kroo-brown);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.12;
+      margin: 0 0 10px;
+      letter-spacing: -0.025em;
+    }
+
+    .kroo-platform-tagline {
+      color: var(--kroo-muted);
+      margin: 0 0 18px;
+    }
+
+    .kroo-subjump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 22px;
+    }
+
+    .kroo-subjump a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--kroo-line);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--kroo-brown) !important;
+      text-decoration: none !important;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .kroo-version-card {
+      border: 1px solid var(--kroo-line);
+      border-radius: calc(var(--kroo-radius) + 2px);
+      background: white;
+      padding: clamp(20px, 3vw, 30px);
+      box-shadow: 0 12px 34px rgba(47, 36, 24, 0.06);
+      margin-bottom: 22px;
+    }
+
+    .kroo-version-card h3 {
+      color: var(--kroo-brown);
+      font-size: 1.3rem;
+      margin: 0 0 4px;
+    }
+
+    .kroo-version-card .kroo-version-sub {
+      color: var(--kroo-muted);
+      font-size: 0.92rem;
+      margin: 0 0 16px;
+    }
+
+    .kroo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      margin: 0 0 14px;
+    }
+
+    .kroo-pill.live { background: rgba(47, 125, 79, 0.14); color: var(--kroo-green); }
+    .kroo-pill.review { background: rgba(183, 121, 31, 0.16); color: var(--kroo-amber); }
+    .kroo-pill.deferred { background: rgba(183, 65, 46, 0.14); color: var(--kroo-red); }
+    .kroo-pill.dev { background: rgba(88, 59, 31, 0.12); color: var(--kroo-brown); }
+
+    .kroo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .kroo-dot.live { background: var(--kroo-green); }
+    .kroo-dot.review { background: var(--kroo-amber); }
+    .kroo-dot.deferred { background: var(--kroo-red); }
+    .kroo-dot.dev { background: var(--kroo-brown); }
+
+    .kroo-nextstep {
+      margin: 16px 0;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--kroo-soft-gold-line);
+      background:
+        radial-gradient(circle at top right, rgba(183, 121, 31, 0.10), transparent 30%),
+        rgba(246, 234, 210, 0.72);
+      color: var(--kroo-ink);
+    }
+
+    .kroo-nextstep p { margin: 0; }
+    .kroo-nextstep strong { color: var(--kroo-brown); }
+    .kroo-nextstep .kroo-say {
+      display: block;
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      font-family: Consolas, Menlo, monospace;
+      font-size: 0.88rem;
+      color: var(--kroo-ink);
+    }
+
+    .kroo-note {
+      border-left: 4px solid var(--kroo-brown);
+      background: var(--kroo-panel);
+      border-radius: 0 var(--kroo-radius) var(--kroo-radius) 0;
+      padding: 16px 18px;
+      margin: 16px 0;
+      color: var(--kroo-muted);
+    }
+    .kroo-note p { margin: 0 0 8px; }
+    .kroo-note p:last-child { margin-bottom: 0; }
+    .kroo-note strong { color: var(--kroo-ink); }
+
+    .kroo-mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      font-weight: 900;
+      margin: 18px 0 10px;
+      font-size: 1rem;
+    }
+
+    .kroo-devicelist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .kroo-devicelist li {
+      border: 1px solid var(--kroo-line);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .kroo-devicelist li.blocked { opacity: 0.62; }
+    .kroo-devicelist li b { color: var(--kroo-brown); }
+
+    .kroo-device {
+      border: 1px solid var(--kroo-line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.55);
+      padding: clamp(16px, 2.4vw, 22px);
+      margin: 14px 0 0;
+    }
+
+    .kroo-device-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 0 10px;
+    }
+
+    .kroo-device-head h4 {
+      margin: 0;
+      color: var(--kroo-ink);
+      font-size: 1.05rem;
+    }
+
+    .kroo-device p { margin: 0 0 8px; }
+    .kroo-device p:last-child { margin-bottom: 0; }
+    .kroo-device strong { color: var(--kroo-brown); }
+
+    .kroo-steps {
+      counter-reset: kroo-step;
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    .kroo-steps li {
+      counter-increment: kroo-step;
+      position: relative;
+      padding: 0 0 16px 44px;
+      margin: 0;
+    }
+
+    .kroo-steps li::before {
+      content: counter(kroo-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--kroo-brown);
+      color: white;
+      font-weight: 800;
+      font-size: 0.86rem;
+    }
+
+    .kroo-steps li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 34px;
+      bottom: 2px;
+      width: 1px;
+      background: var(--kroo-line);
+    }
+
+    .kroo-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 0;
+    }
+
+    .kroo-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none !important;
+      border-radius: 999px;
+      padding: 11px 17px;
+      border: 1px solid var(--kroo-brown);
+      background: var(--kroo-brown);
+      color: white !important;
+      font-weight: 800;
+      font-size: 0.92rem;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .kroo-button.secondary { background: transparent; color: var(--kroo-brown) !important; }
+    .kroo-button.download { background: var(--kroo-amber); border-color: var(--kroo-amber); color: white !important; }
+
+    .kroo-link { color: var(--kroo-brown); font-weight: 700; overflow-wrap: anywhere; }
+    .kroo-small { color: var(--kroo-muted); font-size: 0.9rem; }
+
+    .kroo-downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .kroo-download-card {
+      border: 1px solid var(--kroo-line);
+      border-radius: var(--kroo-radius);
+      background: white;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(47, 36, 24, 0.06);
+    }
+
+    .kroo-download-card h3 { margin: 0 0 8px; color: var(--kroo-brown); }
+    .kroo-download-card p { margin: 0 0 14px; color: var(--kroo-muted); font-size: 0.94rem; }
+
+    .kroo-roadmap-list { padding-left: 1.15rem; margin: 14px 0 0; }
+    .kroo-roadmap-list li { margin-bottom: 10px; }
+
+    .kroo-footer {
+      margin-top: clamp(30px, 5vw, 56px);
+      padding-top: 22px;
+      border-top: 1px solid var(--kroo-line);
+      color: var(--kroo-muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 780px) {
+      .kroo-platform-jump, .kroo-index-grid, .kroo-devicelist, .kroo-downloads-grid {
+        grid-template-columns: 1fr;
+      }
+      .kroo-hero { padding: 24px 18px; }
+      .kroo-cloud-button { border-radius: 28px; min-height: 96px; }
+      .kroo-button { width: 100%; }
+    }
+  </style>
+
+  <div class="kroo-hero">
+    <p class="kroo-kicker">Live status &amp; QA hub</p>
+    <h1 id="kroo-status-title">Status as of 21 July 2026</h1>
+    <p class="kroo-subtitle">
+      What's live, what's in review, and what's still in development for knokkeroo on Android, iOS and Huawei —
+      plus the newer companion integrations (Garmin watch, Amazon Alexa, Google Home) — with plain download/install
+      steps wherever something is actually testable today, and a full ISO-format QA test plan you can download,
+      print or open in Word for every stream.
+    </p>
+  </div>
+
+  <nav class="kroo-platform-jump" aria-label="Choose your platform">
+    <a class="kroo-cloud-button" href="#android">
+      <span><span class="kroo-cloud-title">🤖 Android</span><span class="kroo-cloud-copy">Google Play — v3.5.15 in production review</span></span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="kroo-cloud-button" href="#ios">
+      <span><span class="kroo-cloud-title">🍎 iOS</span><span class="kroo-cloud-copy">App Store / TestFlight — deferred</span></span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="kroo-cloud-button" href="#huawei">
+      <span><span class="kroo-cloud-title">🟥 Huawei</span><span class="kroo-cloud-copy">AppGallery — LIVE</span></span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+  </nav>
+
+  <nav class="kroo-fullindex" aria-label="Full page index">
+    <p class="kroo-index-label">Full index — jump straight to any section</p>
+    <div class="kroo-index-grid">
+      <div class="kroo-index-col">
+        <strong>🤖 Android</strong>
+        <ul>
+          <li><a href="#android-v3">v3.x — in Play review</a></li>
+          <li><a href="#android-v4">v4.x — in development</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>🍎 iOS</strong>
+        <ul>
+          <li><a href="#ios-v3">v3.x — deferred</a></li>
+          <li><a href="#ios-v4">v4.x — in development</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>🟥 Huawei</strong>
+        <ul>
+          <li><a href="#huawei-v3">v3.x — LIVE</a></li>
+          <li><a href="#huawei-v4">v4.x — in development</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>⌚ Garmin</strong>
+        <ul>
+          <li><a href="#garmin">Watch companion — submitted for review</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>🔊 Amazon Alexa</strong>
+        <ul>
+          <li><a href="#amazon">Voice skill — not started</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>🎙️ Google Home</strong>
+        <ul>
+          <li><a href="#google">Feasibility research only</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>📄 Downloads</strong>
+        <ul>
+          <li><a href="#downloads">Full ISO QA test plans (Word)</a></li>
+        </ul>
+      </div>
+      <div class="kroo-index-col">
+        <strong>🗺️ Roadmap</strong>
+        <ul>
+          <li><a href="#roadmap">What's next, overall</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================= ANDROID ============================= -->
+  <section class="kroo-section" id="android" aria-labelledby="android-title">
+    <h2 id="android-title">🤖 Android</h2>
+    <p class="kroo-platform-tagline">Package: <code>com.goliontus.knokker</code> · Google Play Store</p>
+    <div class="kroo-subjump">
+      <a href="#android-v3">v3.x status</a>
+      <a href="#android-v4">v4.x status</a>
+      <a href="#downloads">QA test plans</a>
+    </div>
+
+    <div class="kroo-version-card" id="android-v3">
+      <span class="kroo-pill review"><span class="kroo-dot review"></span>IN GOOGLE PLAY REVIEW</span>
+      <h3>v3.x — version 3.5.15 (versionCode 21)</h3>
+      <p class="kroo-version-sub">Submitted to Google Play Production 13 Jul 2026 · full rollout, 176 countries · managed publishing OFF (auto-publishes the moment Google approves it).</p>
+      <p>This is the current, real-money-free "beta = free forever" release. It carries the invite plans/limits system, the paywall UI (purchases not live yet — shows "coming soon"), and no push notifications.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> none — this is sitting in Google's review queue. Nothing to do but wait.
+        <span class="kroo-say">Once Play shows the release as live, tell Claude Code: "Android v3.5.15 is approved on Play, publish the prod landing and get-app pages."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 1</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 Android phone (Android 8+) — also covers Huawei phones WITH Google Play</h4>
+          <span class="kroo-pill live"><span class="kroo-dot live"></span>ONLINE — TESTABLE NOW</span>
+        </div>
+        <p><strong>Version:</strong> 3.5.15 (versionCode 21) — the latest version, in Google Play review.</p>
+        <p><strong>Automated tested:</strong> No — there is no automated test pipeline for any release yet. Tested manually against the QA test plan below.</p>
+        <p class="kroo-mini-label">✅ Register, download and install (works right now, before Play approval)</p>
+        <ol class="kroo-steps">
+          <li><strong>Check your Play Store account.</strong> Open <strong>Play Store</strong> → tap your profile picture (top right) → note the Gmail address shown. Use that exact same account for both steps below.</li>
+          <li><strong>Step 1 — join the tester group.</strong> Open <a class="kroo-link" href="https://groups.google.com/g/knokkeroo-testers">groups.google.com/g/knokkeroo-testers</a> and tap <strong>Ask to join</strong> (or accept if already invited).</li>
+          <li><strong>Step 2 — accept the Play test invite.</strong> Open <a class="kroo-link" href="https://play.google.com/apps/testing/com.goliontus.knokker">play.google.com/apps/testing/com.goliontus.knokker</a> and tap <strong>Become a tester</strong>.</li>
+          <li><strong>Install.</strong> On the same page tap <strong>Download it on Google Play</strong>, or open <a class="kroo-link" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">play.google.com/store/apps/details?id=com.goliontus.knokker</a> and tap <strong>Install</strong>.</li>
+          <li><strong>If it says "not available" or "you're not a tester".</strong> Steps 1 and 2 must use the same Google account, and Google can take an hour or two to propagate access — check the account, wait, and retry.</li>
+          <li><strong>After Play approval (no action above needed anymore).</strong> Anyone will be able to just search "knokkeroo" in Play Store, or open the store link above, and tap Install — no tester group required.</li>
+        </ol>
+        <div class="kroo-button-row">
+          <a class="kroo-button" href="https://groups.google.com/g/knokkeroo-testers">1. Join the tester group</a>
+          <a class="kroo-button" href="https://play.google.com/apps/testing/com.goliontus.knokker">2. Accept the Play test invite</a>
+          <a class="kroo-button secondary" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Open in Play Store</a>
+          <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v3-qa-docx" download>📄 Full test scenarios (Word)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="kroo-version-card" id="android-v4">
+      <span class="kroo-pill dev"><span class="kroo-dot dev"></span>IN DEVELOPMENT — NOT TESTABLE YET</span>
+      <h3>v4.x — notifications, Quick Access widget &amp; Wear OS companion</h3>
+      <p class="kroo-version-sub">Code lives on the main branch only. Database migrations and edge functions are now live on the backend (confirmed 20 Jul 2026) — the remaining gap is entirely client-side: no Play build has been produced from this code yet.</p>
+      <p>What's built: calm push notifications (≤1 unsolicited/day, quiet hours respected), a free-for-everyone home-screen/lock-screen Knok widget, favourite-contact status dot + own-interval greyscale nudge, a Wear OS watch companion (Kotlin) that has been verified to <em>compile and assemble</em> alongside the phone app — but has never been run on a watch or emulator, and its Play Store distribution path (a separate signed AAB via Play Console's Wear OS release flow) isn't configured yet — and client version tracking with a dismissible "please update" nag (soft only, never blocks the app).</p>
+      <p><strong>Device press-time recording + offline-safe check-ins (new, 21 Jul 2026):</strong> every check-in surface now records the actual moment you pressed the button, not the moment the server happened to receive it — important because a phone can sit disconnected for a while before it reconnects and the knok finally goes through. If a device is offline when you press Knok, the check-in is saved on-device immediately and sent automatically the next time it reconnects, with a single-pending-slot design that prevents bulk-resending or spamming the server when connectivity comes back after being flaky (built with South Africa/Nigeria's patchier mobile reception specifically in mind). While a check-in is waiting to send, your own status shows a distinct blue colour plus an asterisk (not colour alone, for accessibility) so you can tell "saved, not yet confirmed" apart from a normal confirmed knok. The Terms &amp; Conditions were updated (v2.4) to cover this, including what happens if a device's clock is wrong: if a check-in arrives with a future timestamp, the server records the actual receipt time instead.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> decide when you want this tested, then tell Claude Code:
+        <span class="kroo-say">"Apply the v4 database migrations, deploy the updated edge functions, and build a v4 Android test release."</span>
+        For the Wear OS watch app specifically, you can test it sooner and separately by telling Claude Code:
+        <span class="kroo-say">"Build a debug Wear OS APK I can sideload to a watch or emulator."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 2</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 Android phone</h4>
+          <span class="kroo-pill review"><span class="kroo-dot review"></span>NOT ONLINE — AUTOMATION PLANNED</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased (no build produced from this version yet).</p>
+        <p><strong>Automated tested:</strong> Not yet — no v4 build has been produced at all yet, so there's nothing to run an automated test against.</p>
+        <p><strong>Why not:</strong> a real build bug was found and fixed (20-21 Jul 2026) — a Metro bundler issue that broke release JS bundling wherever the app imports <code>expo-quick-actions</code> (its package.json ships no legacy entry point Metro can resolve). Fixed on both Android and, since, iOS too (confirmed via a real EAS build, see the iOS v4.x section). One separate issue is still open: the Wear OS companion's release packaging step fails outright ("main and micro app package names don't match"), which blocks a release-type Android build from completing at all — this is Android-specific and doesn't affect iOS.</p>
+        <p><strong>The plan once unblocked:</strong> Maestro Cloud, wired into an EAS Workflow, running automatically against every build (Android + iOS, on emulator/simulator) — no human tester needed for the core knok/contacts/invites/paywall regression flows.</p>
+        <p><strong>Next step:</strong> tell Claude Code: <span class="kroo-say">"Fix the Wear OS release-packaging bug and build a v4 Android test release."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 2 of 2</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>⌚ Wear OS watch / emulator</h4>
+          <span class="kroo-pill review"><span class="kroo-dot review"></span>NOT ONLINE — AUTOMATION PLANNED</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased (verified to compile and assemble alongside the phone app; never installed or run anywhere).</p>
+        <p><strong>Automated tested:</strong> No — never yet run at all, on a real watch, an emulator, or in any automated test.</p>
+        <p><strong>Why not:</strong> blocked on the same Android release-build bug above, plus no automated test has been written yet — that's a small new test file, not written.</p>
+        <p><strong>The plan once unblocked:</strong> Firebase Test Lab supports standalone Wear apps on real, physical Pixel Watches for free (Spark tier). A small instrumentation test (launch the Tile, confirm it renders, tap it, confirm the app opens and auto-knoks) can run there completely unattended.</p>
+        <p><strong>Next step:</strong> tell Claude Code: <span class="kroo-say">"Build a debug Wear OS APK I can sideload to a watch or emulator"</span> to test by hand sooner, or <span class="kroo-say">"Write the Wear OS Firebase Test Lab instrumentation test"</span> to get the automated version going.</p>
+      </div>
+      <div class="kroo-button-row">
+        <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v4-qa-docx" download>📄 Full test scenarios (Word, draft)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= iOS ============================= -->
+  <section class="kroo-section" id="ios" aria-labelledby="ios-title">
+    <h2 id="ios-title">🍎 iOS</h2>
+    <p class="kroo-platform-tagline">App Store ID: <code>6776208791</code> · Apple team R37HDK2D6S</p>
+    <div class="kroo-subjump">
+      <a href="#ios-v3">v3.x status</a>
+      <a href="#ios-v4">v4.x status</a>
+      <a href="#downloads">QA test plans</a>
+    </div>
+
+    <div class="kroo-version-card" id="ios-v3">
+      <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>DEFERRED — "COMING SOON"</span>
+      <h3>v3.x — last built ~v3.4.x (build ~20)</h3>
+      <p class="kroo-version-sub">iOS is currently paused, held pending an Apple <strong>individual → organization</strong> Apple Developer account migration (Apple case 102928467751). There is no current v3.5.15 build submitted for iOS, so there is nothing to install today.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> this one is on you, not Claude — complete the Apple Developer account
+        individual→organization migration for case 102928467751 (Apple-side process).
+        <span class="kroo-say">Once Apple confirms the migration is done, tell Claude Code: "the Apple org migration is done, build and submit iOS v3.5.15 to TestFlight."</span>
+        That single instruction adds the iOS RevenueCat key and gets a fresh build into TestFlight.</p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 1</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 iPhone</h4>
+          <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>NOT ONLINE — BLOCKED UPSTREAM</span>
+        </div>
+        <p><strong>Version:</strong> ~3.4.x (build ~20) — the latest iOS build that exists; there is no 3.5.15 build for iOS.</p>
+        <p><strong>Automated tested:</strong> No.</p>
+        <p><strong>Why not:</strong> not a testing-infrastructure gap — there is no build to test against at all. iOS is paused behind an Apple Developer account migration (individual → organization, case 102928467751) that only Charles can complete on Apple's side; nothing can be submitted until that clears.</p>
+        <p><strong>Next step:</strong> this one is on Charles, not Claude — complete the Apple account migration. Once done: <span class="kroo-say">"the Apple org migration is done, build and submit iOS v3.5.15 to TestFlight."</span></p>
+        <p class="kroo-small">There is deliberately no app download link here — publishing one before a real build exists would send testers to a dead end. The QA test plan is still available to read ahead of time:</p>
+        <div class="kroo-button-row">
+          <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v3-qa-docx" download>📄 Full test scenarios (Word)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="kroo-version-card" id="ios-v4">
+      <span class="kroo-pill dev"><span class="kroo-dot dev"></span>IN DEVELOPMENT — NOT TESTABLE YET</span>
+      <h3>v4.x — Home Screen quick action, WidgetKit widget, Apple Watch &amp; Apple TV</h3>
+      <p class="kroo-version-sub">Code lives on the main branch only, and iOS is additionally blocked behind the v3.x deferral above for actual TestFlight distribution — but the Swift side has now cleared its own separate milestone (see below), independent of that blocker.</p>
+      <p>What's built: an iOS Home Screen quick action (plain JavaScript, no native risk), a hand-written Swift WidgetKit widget and Apple Watch companion app, an Apple TV companion with one-time device-code pairing for accessibility (a relative just points the remote at one big "I'M OKAY" button), device press-time recording + offline-safe check-in queuing (see the Android v4.x section above for what this means — identical behaviour on iOS, including the phone app, widget, Watch and Apple TV), and client version tracking with a dismissible "please update" nag (soft only, never blocks the app — this part is plain JS/SQL, no native-compile risk).</p>
+      <p><strong>Real compile verification, 21 Jul 2026:</strong> a genuine EAS iOS build (Apple's own cloud macOS/Xcode infrastructure, using the no-signing-needed simulator profile) confirmed <code>** BUILD SUCCEEDED **</code>, with the WidgetKit widget and Apple Watch app's actual Swift files compiling and linking cleanly — this had never been attempted before. Two real, previously-invisible bugs were found and fixed to get a clean build: a lockfile sync issue that broke dependency installation on EAS's Linux build servers, and the same Metro bundler issue noted in the Android v4.x section above (this build is what actually surfaced it on iOS). This build only proves the app compiles and links — it hasn't run on a simulator screen, TestFlight, or a physical device yet. The Apple TV app is still source-only and <strong>not yet wired into the Xcode project at all</strong> — the tooling this project uses for Watch/widgets (<code>@bacons/apple-targets</code>) has no tvOS target type, so a custom config plugin still needs to be written before any build can even attempt to include it.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> the Swift side now compiles, so the only remaining blocker for a real installable build is the iOS v3.x deferral above (Apple org migration). Once that's done, tell Claude Code:
+        <span class="kroo-say">"Apply the v4 database migrations, deploy the updated edge functions, and build a v4 iOS TestFlight release."</span>
+        For Apple TV specifically, one extra development step comes first — tell Claude Code:
+        <span class="kroo-say">"Write the Apple TV Xcode config plugin so the tvOS target gets included in the build."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 3</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 iPhone</h4>
+          <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>NOT ONLINE — COMPILES CLEAN, BLOCKED UPSTREAM</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased. Compile-verified via a real EAS iOS simulator build 21 Jul 2026; no TestFlight build exists yet.</p>
+        <p><strong>Automated tested:</strong> No.</p>
+        <p><strong>Why not:</strong> a real build now genuinely compiles and links (see above), but a TestFlight-distributable build is still blocked behind the same Apple account migration as v3.x above.</p>
+        <p><strong>The plan once unblocked:</strong> same as Android — Maestro Cloud via EAS Workflows, running the core regression flows against an iOS Simulator build automatically, no human tester needed for that layer.</p>
+        <p><strong>Next step:</strong> clear the Apple account migration first (Charles), then: <span class="kroo-say">"Apply the v4 database migrations, deploy the updated edge functions, and build a v4 iOS TestFlight release."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 2 of 3</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>⌚ Apple Watch (paired to iPhone)</h4>
+          <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>NOT ONLINE — COMPILES CLEAN, NO DEVICE FARM</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased. Hand-written Swift, compile-verified via the same EAS build as the iPhone row above; never installed on an actual Watch.</p>
+        <p><strong>Automated tested:</strong> No, and this one won't become automated even once it's unblocked.</p>
+        <p><strong>Why not:</strong> the Swift Watch app compiles now, but the same Apple account migration above still blocks getting it into TestFlight. Even once that clears, there is no affordable Firebase-Test-Lab-style device farm for Apple Watch — the paired phone↔watch behaviour (Bluetooth reconnection, notifications while locked, haptics) fundamentally needs a real Watch on a real wrist. This one stays a real-tester task permanently, not a "not yet automated" gap.</p>
+        <p><strong>Next step:</strong> clear the Apple account migration, get a real build into TestFlight, then recruit 2-3 real Apple Watch owners from the tester panel.</p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 3 of 3</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📺 Apple TV</h4>
+          <span class="kroo-pill review"><span class="kroo-dot review"></span>NOT ONLINE — AUTOMATION PLANNED</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased (source only, not wired into any Xcode project yet).</p>
+        <p><strong>Automated tested:</strong> No — the code isn't even wired into an Xcode project yet, so there's nothing to test.</p>
+        <p><strong>Why not:</strong> the tooling this project uses for Watch/widgets (<code>@bacons/apple-targets</code>) has no tvOS target type at all, so a custom config plugin needs to be written first, on top of the two blockers above.</p>
+        <p><strong>The plan once unblocked — better than it looks:</strong> unlike the Watch, Apple TV navigation can largely be tested with <strong>zero physical hardware</strong>. XCUITest supports the tvOS Simulator directly, so remote/focus navigation, sign-in, and the big "I'm okay" button can all be automated on a Mac CI runner. Only overscan/HDMI-CEC/real-remote quirks would still need a physical Apple TV.</p>
+        <p><strong>Next step:</strong> <span class="kroo-say">"Write the Apple TV Xcode config plugin so the tvOS target gets included in the build."</span></p>
+      </div>
+      <div class="kroo-button-row">
+        <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v4-qa-docx" download>📄 Full test scenarios (Word, draft)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= HUAWEI ============================= -->
+  <section class="kroo-section" id="huawei" aria-labelledby="huawei-title">
+    <h2 id="huawei-title">🟥 Huawei</h2>
+    <p class="kroo-platform-tagline">Package: <code>com.goliontus.knokker</code> · Huawei AppGallery</p>
+    <div class="kroo-subjump">
+      <a href="#huawei-v3">v3.x status</a>
+      <a href="#huawei-v4">v4.x status</a>
+      <a href="#downloads">QA test plans</a>
+    </div>
+
+    <div class="kroo-version-card" id="huawei-v3">
+      <span class="kroo-pill live"><span class="kroo-dot live"></span>LIVE IN PRODUCTION</span>
+      <h3>v3.x — version 3.5.9</h3>
+      <p class="kroo-version-sub">Live on AppGallery since 13 Jul 2026. Ships completely free and ungated on Huawei — no billing, no subscription cap, unlimited contacts for everyone.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> none — it's already live and working. Optional housekeeping only:
+        <span class="kroo-say">tell Claude Code: "rebuild and resubmit the Huawei AppGallery build" if you want it to catch up on small since-shipped fixes (this is not urgent).</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 1</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 Huawei / HarmonyOS phone</h4>
+          <span class="kroo-pill live"><span class="kroo-dot live"></span>ONLINE — TESTABLE NOW</span>
+        </div>
+        <p><strong>Version:</strong> 3.5.9 — the latest version, live in production on AppGallery.</p>
+        <p><strong>Automated tested:</strong> No — there is no automated test pipeline for any release yet. Tested manually against the QA test plan below.</p>
+        <p class="kroo-mini-label">✅ Register, download and install</p>
+        <ol class="kroo-steps">
+          <li><strong>Check your AppGallery region.</strong> Open <strong>AppGallery</strong> → <strong>Me</strong> → <strong>Settings</strong> → <strong>Country/Region</strong> and confirm it is set to <strong>South Africa</strong> or <strong>Nigeria</strong> (knokkeroo's two markets). If it's set elsewhere, the listing won't show up for you.</li>
+          <li><strong>Search for it.</strong> In AppGallery, search <strong>knokkeroo</strong>, or open the direct link below.</li>
+          <li><strong>Install.</strong> Tap <strong>Install</strong> like any normal AppGallery app — no invitation or tester group needed, it's a normal public listing.</li>
+        </ol>
+        <div class="kroo-button-row">
+          <a class="kroo-button" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker">Open in AppGallery</a>
+          <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v3-qa-docx" download>📄 Full test scenarios (Word)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="kroo-version-card" id="huawei-v4">
+      <span class="kroo-pill dev"><span class="kroo-dot dev"></span>IN DEVELOPMENT — NOT TESTABLE YET</span>
+      <h3>v4.x — notifications, Quick Access widget, version tracking &amp; HMS Push Kit</h3>
+      <p class="kroo-version-sub">Same client code path as Android v4.x (Huawei has no Wear OS/Apple Watch/Apple TV equivalent), plus a Huawei-only addition: HMS Push Kit. Database migrations and edge functions for the shared v4 backend are live (confirmed 20 Jul 2026); not in any AppGallery build yet. Device press-time recording + offline-safe check-in queuing (see Android v4.x above) applies identically here — same anti-spam offline behaviour, same blue/asterisk pending indicator.</p>
+      <p>Huawei is exempt from the notifications/Watch paywall the same way it's exempt from the invite-contact cap — on Huawei, everything in v4.x ships free. Client version tracking and the dismissible "please update" nag work identically on Huawei.</p>
+      <p><strong>HMS Push Kit (20 Jul 2026, server confirmed live, native build confirmed compiling):</strong> Huawei phones have no Google Play Services, so the notifications above — built on Expo's push relay, which goes through Google's FCM — can never actually reach a Huawei device on their own. A second, Huawei-specific delivery path (Huawei's own Push Kit, via a fresh AppGallery Connect project + real device credentials obtained this session) was added alongside it. Server-side: the OAuth token exchange and the actual send call were both tested directly against Huawei's real servers and got back well-formed responses — confirmed working, not just plausible. Client-side: a real Huawei-flavoured Android build was produced and the compiled app was inspected to confirm the Huawei push module is genuinely linked into it (not just an inert dependency). The one thing still unconfirmed is delivery to an actual device — there's no physical Huawei phone anywhere in this project's current test loop, so final on-device confirmation waits for one, same as the Wear OS/Apple Watch/Garmin situation.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> no separate action beyond the shared Android v4 release step above. Once that exists, tell Claude Code:
+        <span class="kroo-say">"Build a v4 Huawei AppGallery test release."</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 1</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>📱 Huawei / HarmonyOS phone</h4>
+          <span class="kroo-pill dev"><span class="kroo-dot dev"></span>NOT ONLINE — NEEDS A DECISION</span>
+        </div>
+        <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased (no build produced from this version yet).</p>
+        <p><strong>Automated tested:</strong> No — no v4 build exists yet, pending the same Android v4 release step.</p>
+        <p><strong>Why not:</strong> Huawei's AGC Cloud Testing offers a free, script-free compatibility crawl across real Huawei devices, but its CI/API automation path is thin on documentation compared to Google's — it hasn't been proven trigger-able without a human clicking through the console yet.</p>
+        <p><strong>The plan:</strong> a time-boxed spike (about 2 hours) to find out whether it's really API-triggerable. If yes, wire it in like the Android Robo test; if console-only, treat it as a manual pre-release check rather than force a fragile integration.</p>
+        <p><strong>Next step:</strong> no separate action beyond the shared Android v4 release step. Once that exists: <span class="kroo-say">"Build a v4 Huawei AppGallery test release."</span></p>
+      </div>
+      <div class="kroo-button-row">
+        <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v4-qa-docx" download>📄 Full test scenarios (Word, draft)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= GARMIN ============================= -->
+  <section class="kroo-section" id="garmin" aria-labelledby="garmin-title">
+    <h2 id="garmin-title">⌚ Garmin</h2>
+    <p class="kroo-platform-tagline">Connect IQ Store · a companion watch app, separate from the phone apps above</p>
+
+    <div class="kroo-version-card">
+      <span class="kroo-pill dev"><span class="kroo-dot dev"></span>SUBMITTED FOR STORE REVIEW — NOT YET DOWNLOADABLE</span>
+      <h3>KNOK watch companion</h3>
+      <p class="kroo-version-sub">One button on the watch: press KNOK, done. No contacts, no status, no admin — same accessibility-first idea as the Apple TV and Wear OS companions.</p>
+      <p>Pairing works like Apple TV's: the watch shows a 6-digit code, you type it into the phone app once (Profile → Pair a Garmin), and the watch keeps a long-lived credential after that — no phone number or PIN needed on the watch itself. The backend for this (pairing + recording the knok) is built and has been tested live, end to end, against the real server — request a code, confirm it, poll for the credential, press KNOK, confirm a retry doesn't double-record, confirm a wrong credential is rejected, and confirm a lost connection saves the press time and retries automatically next time the watch reopens (same offline-safe pattern as the phone/widget/Watch/TV — see the Android v4.x section above). All of that passed.</p>
+      <p><strong>Real build achieved, 21 Jul 2026:</strong> the Connect IQ SDK is now installed and the watch app (written in Garmin's own language, Monkey C) compiles cleanly across <strong>135 watch models</strong> (220/220 individual device targets built successfully) — from your Fenix 7X down to entry-level models, so almost any Garmin smartwatch owner will be covered, not just one device. That produced a real, signed store package. It has been <strong>submitted to Garmin's developer dashboard for review</strong>, but hit a submission-side snag: Garmin's upload form rejected the app icon with a misleading "invalid format" error even though the icon matched Garmin's own published spec (most likely an undocumented alpha-transparency rule) — the icon was re-exported and re-submitted, and a bug report was filed with Garmin (<a class="kroo-link" href="https://forums.garmin.com/developer/connect-iq/i/bug-reports/http-415-on-app-submission-the-icon-format-is-invalid-image-must-be-a-jpg-gif-or-png-errors-are-misleading-spec-compliant-images-rejected" target="_blank" rel="noopener">forum thread</a>, status "Under Review" as of 21 Jul 2026).</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> nothing required right now — this is sitting with Garmin (both the store review and the bug report). Worth checking back on the forum thread periodically.
+        <span class="kroo-say">If it stalls, tell Claude Code: "draft an email to ConnectIQAppAdmin@garmin.com about the stuck submission" and I'll write it for you to send.</span></p>
+      </div>
+
+      <p class="kroo-mini-label">📲 Device 1 of 1</p>
+      <div class="kroo-device">
+        <div class="kroo-device-head">
+          <h4>⌚ Garmin watch</h4>
+          <span class="kroo-pill dev"><span class="kroo-dot dev"></span>NOT ONLINE — AWAITING GARMIN'S STORE REVIEW</span>
+        </div>
+        <p><strong>Version:</strong> unreleased — compiles clean across 135 device models (real signed <code>.iq</code> store package built), submitted to Garmin for review; no version number until Garmin publishes it.</p>
+        <p><strong>Automated tested:</strong> The server side only — the pairing and check-in backend was exercised directly against the live database/edge functions and confirmed working (including the offline-retry path). The watch app itself has never been run — no simulator session, no physical watch — compiling clean across 135 devices is real signal but doesn't confirm the pairing screen or KNOK button actually work on-screen.</p>
+        <p><strong>Why not:</strong> waiting on Garmin's store review (see the bug report above) before it can even reach a "download and side-load to test" stage. Running it in Garmin's own simulator sooner is possible but needs an interactive desktop session this automated environment doesn't have.</p>
+        <p><strong>Next step:</strong> check the Garmin bug report / dashboard status periodically; once approved, tell Claude Code: <span class="kroo-say">"Garmin approved the KNOK submission — what's next to get testers on it?"</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= AMAZON ALEXA ============================= -->
+  <section class="kroo-section" id="amazon" aria-labelledby="amazon-title">
+    <h2 id="amazon-title">🔊 Amazon Alexa</h2>
+    <p class="kroo-platform-tagline">A voice skill — "Alexa, ask knokkeroo to knok in"</p>
+
+    <div class="kroo-version-card">
+      <span class="kroo-pill dev"><span class="kroo-dot dev"></span>NOT STARTED — FEASIBILITY CONFIRMED</span>
+      <h3>Voice check-in skill</h3>
+      <p class="kroo-version-sub">Confirmed buildable — Amazon fully supports this kind of skill today. Nothing has been built yet; this section reflects a feasibility check, not progress.</p>
+      <p>The idea: say "Alexa, ask knokkeroo to knok in" and it's done, no phone needed. The one genuinely new piece of engineering this needs — bigger than the skill itself — is a proper login/consent flow ("Alexa would like permission to knok in for you — allow?"), which is a real new system knokkeroo doesn't have yet, not just a new voice command. Everything else (what Alexa should say back, what happens if the code doesn't recognize your account, how you unlink it later) is designed and ready to build, just sequenced after Garmin.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> none needed yet — this is intentionally queued behind Garmin. When you're ready to start it, tell Claude Code:
+        <span class="kroo-say">"Start on the Alexa skill — build the account-linking page first."</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= GOOGLE HOME ============================= -->
+  <section class="kroo-section" id="google" aria-labelledby="google-title">
+    <h2 id="google-title">🎙️ Google Home (Nest)</h2>
+    <p class="kroo-platform-tagline">"Hey Google, knok in" — feasibility research only so far</p>
+
+    <div class="kroo-version-card">
+      <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>RESEARCH ONLY — GOOGLE'S OWN RULES ARE THE BLOCKER</span>
+      <h3>Google Assistant / Nest speaker check-in</h3>
+      <p class="kroo-version-sub">This one is genuinely uncertain, and that's Google's doing, not a knokkeroo engineering gap.</p>
+      <p>Google shut down the general-purpose way third parties used to build this exact kind of "talk to my app" speaker skill. What's left is narrower: a phone-only voice shortcut (works, but doesn't count as real speaker support), or a "smart home device" style integration that's a bit of a stretch for a check-in app and that Google may not even approve for publishing on its own. Nothing has been ruled impossible yet — it needs a short, hands-on research pass (try the exact phrase on real hardware, see what Google actually allows) before anyone can promise a specific experience.</p>
+
+      <div class="kroo-nextstep">
+        <p><strong>YOUR NEXT STEP:</strong> none needed yet — queued behind Garmin and Alexa, and won't block either of them. When ready: <span class="kroo-say">"Run the Google Home feasibility spike and tell me what's actually achievable."</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= DOWNLOADS ============================= -->
+  <section class="kroo-section" id="downloads" aria-labelledby="downloads-title">
+    <h2 id="downloads-title">📄 Full QA test plans (ISO/IEC/IEEE 29119-3 format)</h2>
+    <p class="kroo-platform-tagline">Downloadable, printable Word documents (.docx). Each has a clickable table of contents that works the moment you open it.</p>
+
+    <div class="kroo-downloads-grid">
+      <div class="kroo-download-card">
+        <h3>v3.x Test Plan (current release)</h3>
+        <p>Covers every case for the released app — auth, contacts, invitations, quiet hours, account deletion, invite limits/kill switch, and subscription/free-tier gating. Applies identically to Android, iOS and Huawei.</p>
+        <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v3-qa-docx" download>Download v3.x test plan (.docx)</a>
+      </div>
+      <div class="kroo-download-card">
+        <h3>v4.x Test Plan (DRAFT — in development)</h3>
+        <p>Covers favourites, notifications, the Quick Access widget, Wear OS, Apple Watch, Apple TV, Garmin and the paywall — plus a dedicated section on device press-time recording and offline-safe check-in queuing. Every case is explicitly marked with its real status (server-verified, compile-verified, not deployed, etc.) and the exact reason. <strong>Regenerated 21 Jul 2026</strong> to reflect the Garmin store submission, iOS Swift compile-verification, and the offline-safe knok feature.</p>
+        <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v4-qa-docx" download>Download v4.x test plan (.docx)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ROADMAP ============================= -->
+  <section class="kroo-section" id="roadmap" aria-labelledby="roadmap-title">
+    <h2 id="roadmap-title">🗺️ What's next, overall</h2>
+    <ul class="kroo-roadmap-list">
+      <li><strong>Android:</strong> waiting on Google's Play review outcome — no action needed.</li>
+      <li><strong>iOS:</strong> blocked on the Apple individual→organization account migration (case 102928467751) — action needed from Charles.</li>
+      <li><strong>Huawei:</strong> live and stable — no action needed.</li>
+      <li><strong>v4.x (all platforms):</strong> database migrations and edge functions are now live on the backend (confirmed 20 Jul 2026) — code-complete for most features, the remaining gap on every platform is cutting an actual test build. See the "YOUR NEXT STEP" box under each platform's v4.x section above.</li>
+      <li><strong>Device press-time recording + offline-safe check-ins (new, 21 Jul 2026, every platform):</strong> a safety-motivated fix — every check-in now records the moment you actually pressed the button, not the moment your phone or watch happened to reconnect and tell the server. If a device is offline, the check-in is saved locally right away and sent automatically once it reconnects, with protection against bulk-resending or spamming the server (built with South Africa/Nigeria's patchier mobile reception specifically in mind). Applies to the phone app, the Android/Huawei widget, Apple Watch, the iOS widget, Apple TV and Garmin identically. Your own status shows a distinct blue colour plus an asterisk while a check-in is saved-but-unconfirmed. Terms &amp; Conditions updated (v2.4) to cover this, including future-dated device clocks (the server always uses its own receipt time if a device reports a time in the future).</li>
+      <li><strong>iOS Watch/Widget Swift — real compile verification (new, 21 Jul 2026):</strong> a genuine EAS iOS cloud build (Apple's own macOS/Xcode infrastructure) confirmed the WidgetKit widget and Apple Watch app's Swift code compiles and links successfully — the first time this had ever been attempted. Two real build bugs (a dependency-lockfile sync issue and a Metro bundler resolution issue, the same one that had separately affected Android) were found and fixed to get there. Still needs a TestFlight/physical-device pass, which is blocked behind the same Apple account migration as the rest of iOS.</li>
+      <li><strong>Huawei HMS Push Kit (20 Jul–21 Jul 2026):</strong> a second, Huawei-specific push delivery path (needed because Huawei phones can't receive Google-relayed push at all) — the server side is now fully live and confirmed working end to end (real credentials, a real test send to Huawei's servers). The watch-side equivalent of this — the actual Android build — has been produced and confirmed to compile with the Huawei push code included. No physical Huawei device exists in this project's test loop, so final on-device confirmation will have to wait for one.</li>
+      <li><strong>Garmin (21 Jul 2026):</strong> furthest along of the three new companion integrations — backend fully tested and working end to end, the watch app itself now compiles cleanly across 135 device models and has been submitted to Garmin's store for review. Hit (and worked around) a submission-side icon-upload bug on Garmin's end; a bug report is filed and under review. Still never actually run on a simulator or physical watch. See the Garmin section above.</li>
+      <li><strong>Amazon Alexa &amp; Google Home:</strong> confirmed buildable (Alexa) / needs a short research spike (Google Home), both intentionally queued behind Garmin — unchanged this update, see the sections above.</li>
+      <li><strong>Apple TV:</strong> additionally needs a one-off engineering task (an Xcode config plugin) before any build can include it — unlike the Watch/Widget, there's no compile target to even attempt building yet.</li>
+      <li><strong>Android submit automation:</strong> blocked until a Google Play service-account key is added in EAS (iOS submit already works).</li>
+      <li><strong>Automated testing (20 Jul 2026):</strong> a plan now exists to test most devices without human testers — Maestro Cloud for Android/iOS phones, Firebase Test Lab for Android compatibility and Wear OS, tvOS Simulator for Apple TV. Apple Watch is the one device that stays human-tester-only permanently, even once everything else is unblocked. See each device's block above for its specific status.</li>
+      <li><strong>Android v4 build pipeline:</strong> the Metro/<code>expo-quick-actions</code> release-bundling bug is now fixed on both Android and iOS. One issue remains open: the Wear OS companion's release packaging step fails outright ("main and micro app package names don't match"), which still blocks a release-type Android build from completing — see the Android v4.x → Android phone device block above.</li>
+    </ul>
+  </section>
+
+  <footer class="kroo-footer">
+    <p>This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
+    <p>Questions? <a class="kroo-link" href="https://www.odderonphi.com/contact">Contact us</a> · <a class="kroo-link" href="https://www.odderonphi.com/knokkeroo-terms">Terms &amp; Privacy Policy</a></p>
+  </footer>
+</section>
