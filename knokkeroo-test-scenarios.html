@@ -1,0 +1,301 @@
+<style>
+  .kk-ts, .kk-ts * { box-sizing: border-box; }
+
+  .kk-ts {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.65;
+  }
+
+  .kk-ts a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .kk-ts__hero {
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.28);
+  }
+
+  .kk-ts h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: inherit;
+  }
+
+  .kk-ts__subtitle {
+    max-width: 780px;
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.84;
+  }
+
+  .kk-ts__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0 28px;
+  }
+
+  .kk-ts__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 14px;
+    border: 1px solid rgba(127, 127, 127, 0.32);
+    border-radius: 999px;
+    background: rgba(127, 127, 127, 0.07);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .kk-ts__nav a:hover { background: rgba(127, 127, 127, 0.14); }
+
+  .kk-ts__section {
+    scroll-margin-top: 110px;
+    margin: 0 0 22px;
+    padding: 24px;
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 18px;
+    background: rgba(127, 127, 127, 0.045);
+  }
+
+  .kk-ts h2 {
+    margin: 0 0 6px;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: inherit;
+  }
+
+  .kk-ts h3 {
+    margin: 22px 0 8px;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    color: inherit;
+  }
+
+  .kk-ts p { margin: 0 0 14px; }
+  .kk-ts p:last-child, .kk-ts ol:last-child, .kk-ts ul:last-child { margin-bottom: 0; }
+
+  .kk-ts ol, .kk-ts ul { margin: 8px 0 16px; padding-left: 22px; }
+  .kk-ts li { margin: 7px 0; }
+
+  /* Checklist items the tester can tick off as they go. */
+  .kk-ts__check {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0;
+  }
+  .kk-ts__check > li {
+    position: relative;
+    padding: 0 0 4px 34px;
+    margin: 0 0 12px;
+  }
+  .kk-ts__check > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(127, 127, 127, 0.5);
+    border-radius: 5px;
+  }
+
+  .kk-ts__expect {
+    margin: 8px 0 0;
+    padding: 11px 14px;
+    border-left: 4px solid #2f7d4f;
+    border-radius: 0 12px 12px 0;
+    background: rgba(47, 125, 79, 0.08);
+    font-size: 0.96rem;
+  }
+
+  .kk-ts__note {
+    margin: 16px 0 0;
+    padding: 16px 18px;
+    border: 1px solid rgba(127, 127, 127, 0.42);
+    border-left-width: 5px;
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.09);
+  }
+
+  .kk-ts__dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    display: inline-block; margin-right: 6px; vertical-align: -1px;
+  }
+  .kk-ts__dot.green { background: #2f7d4f; }
+  .kk-ts__dot.amber { background: #b7791f; }
+  .kk-ts__dot.red { background: #b7412e; }
+
+  .kk-ts__footer {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(127, 127, 127, 0.28);
+    opacity: 0.85;
+  }
+
+  @media (max-width: 640px) {
+    .kk-ts { padding: 18px 12px; }
+    .kk-ts__section { padding: 18px; border-radius: 14px; }
+    .kk-ts__nav { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .kk-ts__nav a { width: 100%; }
+  }
+</style>
+
+<div class="kk-ts">
+  <header class="kk-ts__hero">
+    <h1>knokkeroo — Tester Scenarios</h1>
+    <p class="kk-ts__subtitle">
+      Thanks for testing knokkeroo! Please work through the steps below on your own phone and tick each one off.
+      After each step, check whether what happened matches the <strong>“Expected”</strong> note. If anything is
+      different, confusing, or broken, email us — that feedback is exactly what helps.
+    </p>
+  </header>
+
+  <nav class="kk-ts__nav" aria-label="Tester scenario sections">
+    <a href="#sign-in">1. Sign in</a>
+    <a href="#knok">2. Knok</a>
+    <a href="#settings">3. Your settings</a>
+    <a href="#quiet-hours">4. Quiet hours</a>
+    <a href="#connect">5. Connect</a>
+    <a href="#contacts">6. Contacts &amp; colours</a>
+    <a href="#remove">7. Remove</a>
+    <a href="#plan">8. Your plan</a>
+    <a href="#delete">9. Delete account</a>
+  </nav>
+
+  <section class="kk-ts__section">
+    <h2>Before you start</h2>
+    <p>You will need your phone and the knokkeroo app installed (see the
+      <a href="https://www.odderonphi.com/knokkeroo-beta-testing">beta-testing page</a> if you have not installed it yet).
+      A few steps work best with <strong>a second person who also has knokkeroo</strong> — a friend or family member who
+      is testing with you — so you can connect to each other. There is no harm in trying anything here; you can always
+      change or undo it afterwards.</p>
+  </section>
+
+  <section class="kk-ts__section" id="sign-in">
+    <h2>1. Sign in with your number</h2>
+    <ul class="kk-ts__check">
+      <li>Open knokkeroo. Choose your country, enter your <strong>mobile number</strong>, and tap <strong>Send verification code</strong>.
+        <div class="kk-ts__expect"><strong>Expected:</strong> a verification code arrives by message within a minute or so.</div>
+      </li>
+      <li>Enter the code and continue. If it is your first time, enter your <strong>name</strong> when asked.
+        <div class="kk-ts__expect"><strong>Expected:</strong> you reach the main screen with a <strong>Me</strong> tile and an <strong>＋ Add Contact</strong> tile. No password is ever needed.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="knok">
+    <h2>2. Tap knok</h2>
+    <ul class="kk-ts__check">
+      <li>Tap the big <strong>Knok</strong> tile.
+        <div class="kk-ts__expect"><strong>Expected:</strong> a short flash, a little buzz and a double-knock sound; your <strong>Me</strong> tile turns/stays green and its time updates to now.</div>
+      </li>
+      <li>Leave the app, wait a moment, and come back; also try pulling down to refresh.
+        <div class="kk-ts__expect"><strong>Expected:</strong> the screen refreshes and you should not be left wondering whether your knok was recorded.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="settings">
+    <h2>3. Your settings</h2>
+    <ul class="kk-ts__check">
+      <li>Tap <strong>Me</strong> → change your <strong>name</strong> and your <strong>knok interval</strong> (how often you are expected to check in) → <strong>Save changes</strong>.
+        <div class="kk-ts__expect"><strong>Expected:</strong> the change saves and stays; if you try to leave with unsaved changes, the app asks whether to save or discard.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="quiet-hours">
+    <h2>4. Quiet hours</h2>
+    <ul class="kk-ts__check">
+      <li>In <strong>Me</strong>, turn <strong>Quiet hours</strong> on and set a sleep and wake time → Save.
+        <div class="kk-ts__expect"><strong>Expected:</strong> the summary shows your window (e.g. “22:00 to 06:00”). During quiet hours a person shows a <strong>moon 🌙</strong> to the people watching them; turning it off shows “alert clock stays active”.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="connect">
+    <h2>5. Connect with someone</h2>
+    <div class="kk-ts__note">
+      <strong>How connecting works right now:</strong> knokkeroo is not sending invitation messages at the moment. So the
+      person you want to connect with should <strong>install knokkeroo first</strong>. Then one of you adds the other by
+      phone number, and the other person accepts the request <em>inside the app</em>. Best done with another tester.
+    </div>
+    <ul class="kk-ts__check">
+      <li>Tap <strong>＋ Add Contact</strong>, enter the other person’s <strong>name</strong> and <strong>mobile number</strong>, and send the request.
+        <div class="kk-ts__expect"><strong>Expected:</strong> a “Request sent” confirmation; they appear on your screen as a pending request (“Request sent”).</div>
+      </li>
+      <li>On the other person’s phone, open the request from you.
+        <div class="kk-ts__expect"><strong>Expected:</strong> the request clearly shows <strong>who is asking — your name and number</strong> — with a reminder to only accept if they recognise you. (If you don’t recognise a request, you should Decline it.)</div>
+      </li>
+      <li>Have them tap <strong>Accept</strong>.
+        <div class="kk-ts__expect"><strong>Expected:</strong> you now watch over each other — each of you appears as an approved contact on the other’s screen (you may need to pull to refresh).</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="contacts">
+    <h2>6. Contacts, colours &amp; their number</h2>
+    <p>Once you have a contact, their tile shows a colour for how recently they checked in:</p>
+    <ul>
+      <li><span class="kk-ts__dot green"></span><strong>Green</strong> — checked in recently.</li>
+      <li><span class="kk-ts__dot amber"></span><strong>Amber</strong> — due to check in.</li>
+      <li><span class="kk-ts__dot red"></span><strong>Red</strong> — overdue; you may want to reach out.</li>
+    </ul>
+    <ul class="kk-ts__check">
+      <li>Have your contact tap knok, then refresh your screen.
+        <div class="kk-ts__expect"><strong>Expected:</strong> their tile goes green and the time updates.</div>
+      </li>
+      <li>Tap a contact to open <strong>Contact settings</strong>.
+        <div class="kk-ts__expect"><strong>Expected:</strong> you see their <strong>phone number</strong> (you can’t edit it) so you can check they are who you expect, plus a contact <strong>name</strong> only you see and an <strong>alert interval</strong> you can change.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="remove">
+    <h2>7. Remove a contact</h2>
+    <ul class="kk-ts__check">
+      <li>Open a contact → <strong>Contact settings</strong> → <strong>Remove contact</strong> → confirm.
+        <div class="kk-ts__expect"><strong>Expected:</strong> the contact disappears for you, and after a refresh you also disappear from theirs (it’s removed both ways). Neither of you is notified. You can reconnect later by adding each other again.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section" id="plan">
+    <h2>8. Your plan</h2>
+    <p>knokkeroo will offer a paid subscription so people can watch over more than four contacts. As an early tester you
+      are on a <strong>free-forever plan</strong>, so you are <em>not</em> limited and should keep seeing all of your
+      contacts. There is nothing you need to buy to test the app.</p>
+  </section>
+
+  <section class="kk-ts__section" id="delete">
+    <h2>9. Delete your account (optional — do this last)</h2>
+    <div class="kk-ts__note"><strong>Heads up:</strong> this permanently deletes your knokkeroo account and data. Only do
+      it if you are finished testing or want to test this feature — you can always sign up again afterwards.</div>
+    <ul class="kk-ts__check">
+      <li>Tap <strong>Me → Delete my account</strong> and confirm.
+        <div class="kk-ts__expect"><strong>Expected:</strong> your account is deleted, you are signed out, and you disappear from your contacts’ lists.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-ts__section kk-ts__footer">
+    <h2>Tell us what you found</h2>
+    <p>If anything did not match the “Expected” note, was confusing, or looked wrong, please tell us exactly what you
+      expected and what actually happened — <a href="https://www.odderonphi.com/contact">Contact us</a>.
+      Thank you for testing knokkeroo. 🦘</p>
+  </section>
+</div>

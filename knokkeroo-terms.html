@@ -1,0 +1,737 @@
+<style>
+  .kk-legal,
+  .kk-legal * {
+    box-sizing: border-box;
+  }
+
+  .kk-legal {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.65;
+  }
+
+  .kk-legal a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .kk-legal__hero {
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.28);
+  }
+
+  .kk-legal h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: inherit;
+  }
+
+  .kk-legal__subtitle {
+    max-width: 780px;
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.84;
+  }
+
+  .kk-legal__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0 28px;
+  }
+
+  .kk-legal__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 14px;
+    border: 1px solid rgba(127, 127, 127, 0.32);
+    border-radius: 999px;
+    background: rgba(127, 127, 127, 0.07);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .kk-legal__nav a:hover {
+    background: rgba(127, 127, 127, 0.14);
+  }
+
+  .kk-legal__section {
+    scroll-margin-top: 110px;
+    margin: 0 0 22px;
+    padding: 24px;
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 18px;
+    background: rgba(127, 127, 127, 0.045);
+  }
+
+  .kk-legal h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: inherit;
+  }
+
+  .kk-legal h3 {
+    margin: 22px 0 8px;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    color: inherit;
+  }
+
+  .kk-legal p {
+    margin: 0 0 14px;
+  }
+
+  .kk-legal p:last-child,
+  .kk-legal ul:last-child,
+  .kk-legal ol:last-child {
+    margin-bottom: 0;
+  }
+
+  .kk-legal ul,
+  .kk-legal ol {
+    margin: 8px 0 16px;
+    padding-left: 22px;
+  }
+
+  .kk-legal li {
+    margin: 7px 0;
+  }
+
+  .kk-legal__callout {
+    margin: 16px 0 18px;
+    padding: 16px 18px;
+    border: 1px solid rgba(127, 127, 127, 0.42);
+    border-left-width: 5px;
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.09);
+  }
+
+  .kk-legal__callout p {
+    margin: 0 0 12px;
+  }
+
+  .kk-legal__callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .kk-legal {
+      padding: 18px 12px;
+    }
+
+    .kk-legal__section {
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .kk-legal__nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .kk-legal__nav a {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="kk-legal">
+  <header class="kk-legal__hero">
+    <h1>knokkeroo — Terms &amp; Conditions</h1>
+
+    <p class="kk-legal__subtitle">
+      Terms of Service, Privacy Policy, emergency disclaimer, current functionality notice, account deletion information, and legal conditions for the knokkeroo app.
+    </p>
+  </header>
+
+  <nav class="kk-legal__nav" aria-label="Terms and conditions sections">
+    <a href="#current-functionality">Current Functionality</a>
+    <a href="#disclaimer">Emergency Disclaimer</a>
+    <a href="#terms">Terms of Service</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#account-deletion">Account Deletion</a>
+    <a href="#document-information">Document Information</a>
+  </nav>
+
+  <section class="kk-legal__section" id="current-functionality">
+    <h2>1. Current Functionality Notice</h2>
+
+    <div class="kk-legal__callout">
+      <p>
+        <strong>As of app version 3.3.0, knokkeroo does not send automatic push notifications.</strong>
+      </p>
+
+      <p>
+        Users and approved contacts must open or use the app to view check-in status and related information.
+        Any reference in this document to future alerts, push notifications, or notification delivery applies only if and when that functionality is introduced in a later version of the app.
+      </p>
+    </div>
+  </section>
+
+  <section class="kk-legal__section" id="disclaimer">
+    <h2>2. Emergency Disclaimer — Please read</h2>
+
+    <div class="kk-legal__callout">
+      <p>
+        <strong>knokkeroo is not a medical device, emergency response system, medical monitoring device, professional care platform, or substitute for professional care services.</strong>
+        It is a voluntary personal communication tool only.
+      </p>
+
+      <p>
+        If you believe someone is in immediate danger or requires urgent assistance, contact local emergency services immediately.
+        In South Africa, emergency numbers include <strong>112</strong> from a mobile phone, <strong>10111</strong> for Police, and <strong>10177</strong> for Ambulance or emergency medical assistance.
+        In Nigeria, the national emergency number is <strong>112</strong>.
+      </p>
+
+      <p>
+        Emergency numbers, emergency call routing, call answering, dispatch, and response are provided by local authorities, network operators, emergency services, and other third parties.
+        Availability, correctness, coverage, response times, and outcomes may vary by country, province, state, municipality, network, and local conditions.
+        Emergency numbers may also change over time. knokkeroo does not provide emergency services and is not responsible for whether an emergency number connects, whether assistance is dispatched, how quickly assistance arrives, or the outcome of any emergency response.
+      </p>
+
+      <p>
+        Do not rely on knokkeroo as your only safety net, or as the sole means of monitoring a vulnerable person's wellbeing.
+        Always ensure appropriate alternative care arrangements are in place.
+      </p>
+    </div>
+
+    <h3>2.1 What status indicators mean</h3>
+    <p>
+      Green, amber, and red status indicators reflect only the elapsed time since a user last voluntarily performed a check-in within the app,
+      adjusted for any quiet hours configured for that user. These indicators do not represent any assessment of a person's physical health,
+      mental health, safety, sleep state, location, or current activity.
+    </p>
+
+    <h3>2.2 Quiet-hours indicator</h3>
+    <p>
+      The quiet-hours indicator, including any moon symbol shown on a contact's status card, reflects only the time window that the relevant user
+      has configured as their preferred quiet period. It does not indicate that the user is asleep, at home, unavailable, safe, unsafe, or in any particular physical state.
+    </p>
+
+    <h3>2.3 Emergency situations</h3>
+    <p>
+      If a check-in is missed, late, unclear, or concerning, use ordinary judgement and direct human follow-up.
+      If you believe there is immediate risk, contact emergency services immediately.
+    </p>
+
+    <h3>2.4 Connected devices and wearables</h3>
+    <p>
+      Some versions of knokkeroo let you check in from a paired companion device — for example an Apple Watch,
+      Apple TV, Wear OS watch, or Garmin watch — instead of the phone app directly.
+    </p>
+    <p>
+      <strong>The time recorded for a check-in from a connected device is the time you performed the action on
+      that device</strong> (for example, the moment you pressed the check-in button), not the time our servers
+      happened to receive it. If the device has no connectivity at that moment — no Bluetooth connection to your
+      phone, no Wi-Fi, no cellular, depending on the device and your settings — some devices save the check-in
+      and send it once connectivity returns, reporting the original time; other devices or app versions may not,
+      and may require you to try again once connectivity is available. If a reported check-in time is somehow in
+      the future — for example due to a device clock error or an attempt to falsify a check-in — we disregard it
+      and record the actual time our servers received the request instead.
+    </p>
+    <p>
+      <strong>In areas without reception, Bluetooth range, Wi-Fi, or an internet connection — including remote,
+      rural, or wilderness areas — a check-in from a connected device may be delayed, and on some devices or app
+      versions may never be recorded at all.</strong> Do not treat pressing a button on a connected device as
+      confirmation that your check-in was received. If you are relying on knokkeroo in an area where connectivity
+      is uncertain, confirm on the device's own screen (or the knokkeroo app once you have connectivity) that the
+      check-in actually succeeded, and do not assume it worked simply because you pressed a button.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="terms">
+    <h2>3. Terms of Service</h2>
+
+    <h3>3.1 Acceptance</h3>
+    <p>
+      By downloading, installing, creating an account, accessing, or using knokkeroo (the "App"), you agree to these Terms of Service.
+      If you do not agree, do not use the App.
+    </p>
+
+    <h3>3.2 The service and its purpose</h3>
+    <p>
+      knokkeroo is a personal welfare check-in application. It lets users perform voluntary check-ins and share their check-in status with approved contacts.
+      Contacts watch over each other through mutual, both-approved connections. A connection can be removed at any time, which removes it for both parties.
+    </p>
+
+    <p>
+      knokkeroo is intended for voluntary welfare check-ins between trusted, approved contacts. A check-in means only that the user has chosen to indicate they are okay;
+      it must not be used as a test of affection, loyalty, obedience, availability, or relationship commitment.
+    </p>
+
+    <p>
+      For privacy and anti-abuse reasons, knokkeroo may not disclose whether an invitation message was delivered, whether a phone number is reachable,
+      whether a person already has a knokkeroo account, or whether a person has viewed an invitation, unless that person chooses to accept or approve the connection.
+    </p>
+
+    <h3>3.3 Fees, tiers, and paid features</h3>
+    <p>
+      knokkeroo is offered as a free tier and an optional paid subscription, described below. We may change the tiers or their
+      limits, or introduce further paid features, usage limits, infrastructure-recovery fees, or other charges in the future.
+    </p>
+
+    <p>
+      The App offers a free tier with reasonable usage limits and an optional paid subscription. On the free tier you can
+      fully see a limited number of your contacts (currently your first four, ordered alphabetically); any additional contacts
+      are shown but their details are hidden until you subscribe. A paid subscription removes this limit so you can see all of
+      your contacts. These limits, the available tiers, and any future paid tiers may change over time, and will be applied and
+      disclosed in the App or at the point of purchase.
+    </p>
+
+    <p>
+      <strong>Daily limit.</strong> To protect the service and other users from abuse, the number of new contacts you can add
+      in a given period is limited (currently up to 20 in any 24-hour period). If you reach this limit you will be asked to try
+      again later. This is a fair-use measure, not a penalty.
+    </p>
+
+    <p>
+      <strong>Subscriptions.</strong> Any paid subscription is sold and billed through your app store account (Apple App Store
+      or Google Play), in your local currency at the price shown at the point of purchase. Subscriptions renew automatically
+      until cancelled, and you can manage or cancel them in your app store account settings. We do not set or store your payment
+      details; the app store handles all payments, renewals, refunds, and applicable taxes. Refunds are handled by the app store
+      under its own policy: for purchases made through Google Play, see the
+      <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play refund policy</a>;
+      for purchases made through the Apple App Store, refunds are requested via
+      <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+    </p>
+
+    <p>
+      <strong>Availability of the paid subscription.</strong> The paid subscription is offered on the Apple App Store and
+      Google Play. On the Huawei AppGallery version, knokkeroo is currently provided free of charge with all contacts visible,
+      and the paid subscription is not offered there.
+    </p>
+
+    <p>
+      <strong>Invitation delivery.</strong> Invitations are sent on a best-effort basis through our third-party messaging
+      partner (currently WhatsApp). We do not guarantee that an invitation will be sent, delivered, viewed, or received.
+      Delivery depends on the messaging partner, the recipient's phone, device and messaging account, network conditions,
+      and other factors outside our control. WhatsApp is available in most, but not all, countries and regions.
+      Receiving the WhatsApp invitation is not required to connect: once the person you invited installs knokkeroo and
+      registers with the invited number, your invitation appears in the app for them to accept, whether or not the
+      WhatsApp message was delivered. If you are not certain that an invitation has reached the person you invited,
+      it is your responsibility to let them know directly that you have invited them to knokkeroo. To the maximum extent
+      permitted by law, we are not liable for invitations that are delayed, not sent, not delivered, or not received.
+    </p>
+
+    <p>
+      If paid functionality is introduced, the applicable price, billing period, renewal terms, cancellation method, and included features
+      will be disclosed before any charge applies. You will not be charged merely for having an existing account unless you actively agree
+      to the relevant paid feature, subscription, or purchase through the applicable app store, payment provider, or other lawful purchase flow.
+    </p>
+
+    <p>
+      Paid features, subscriptions, trials, renewals, refunds, cancellations, and payment methods may be subject to additional terms from Apple,
+      Google, app stores, payment processors, or other relevant service providers.
+    </p>
+
+    <h3>3.4 Eligibility</h3>
+    <p>
+      You must be at least 18 years old, or the age of majority in your jurisdiction, to use knokkeroo.
+      By registering, you confirm that you meet this requirement.
+    </p>
+
+    <h3>3.5 Account registration, phone-number control, and reassigned numbers</h3>
+    <ul>
+      <li>You must provide a valid mobile phone number to register.</li>
+      <li>One account may be associated with a phone number at a time.</li>
+      <li>You are responsible for the accuracy of the information you provide.</li>
+      <li>You are responsible for your own device, app permissions, account access, and use of the App.</li>
+      <li>You must not register on behalf of another person without that person's explicit consent.</li>
+      <li>You must not use a phone number that you do not control or are not authorised to use.</li>
+      <li>You must tell us or delete your account if you lose control of the phone number associated with your account.</li>
+    </ul>
+
+    <p>
+      <strong>Changing your number — you must migrate it yourself, in the app, while you still have your current number.</strong>
+      Your account is identified by your verified mobile number, and signing in requires a verification code sent to that number.
+      If you are going to change numbers, you must update it in the app <em>before</em> you lose access to the old one:
+      go to <strong>Me → Phone number → Change</strong> and verify the new number from within your signed-in session. This securely moves
+      your account, contacts, and history to the new number.
+    </p>
+    <p>
+      <strong>If you lose access to your mobile number without first migrating it in the app, your account cannot be recovered, transferred,
+      or moved to a new number.</strong> Because we can only verify the account holder by a code sent to the registered number, we are unable to
+      re-assign an account to a different number on request. Your previous account then remains tied to the old number and you will need to register a
+      new account (and your contacts will need to add you again). This is a deliberate security measure to stop anyone from taking over an account by
+      obtaining a recycled or reassigned number.
+    </p>
+    <p>
+      <strong>knokkeroo is not a backup or storage service for your contacts.</strong> Your contacts exist only as live connections within your
+      account. If you lose or change your number without migrating in the app, you may permanently lose access to your account, and your contacts
+      cannot be recovered — you will need to register a new account and invite your contacts again. Do not rely on knokkeroo to store or back up your
+      contacts or any other information.
+    </p>
+    <p>
+      We are not obligated to change, transfer, merge, recover, or reassign accounts or phone-number associations on request, and we cannot verify
+      ownership of a lost or changed number.
+    </p>
+
+    <p>
+      Mobile phone numbers may be reassigned, recycled, transferred, ported, cancelled, or used by a different person over time.
+      For privacy, security, and anti-abuse reasons, we may require re-verification of a phone number at any time.
+      If we believe a phone number has been reassigned, is no longer controlled by the original user, is being misused, or is associated with misconduct,
+      we may suspend, restrict, terminate, delete, reset, or separate the account, number association, invitations, contact connections, and related records.
+    </p>
+
+    <p>
+      We may also mark an account dormant, disable contact visibility, sever or remove connections, require re-verification,
+      delete or anonymise records, or treat later registration using that phone number as a new account after a prolonged period of inactivity,
+      including where there has been no successful sign-in, check-in, or app activity for 180 days or more.
+      We may act sooner where reasonably necessary for privacy, security, abuse prevention, legal compliance, or protection of another person.
+    </p>
+
+    <h3>3.6 Mutual consent</h3>
+    <p>
+      All contact relationships are based on mutual approval. No user can watch another user without approval in the app.
+      The App is designed to support consensual check-ins, not non-consensual monitoring.
+    </p>
+
+    <h3>3.7 Acceptable use</h3>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the App to harass, monitor, stalk, impersonate, threaten, or pressure any person.</li>
+      <li>Use the App to pressure, shame, control, emotionally manipulate, or demand proof of affection, loyalty, obedience, availability, or relationship commitment from another person.</li>
+      <li>Add or invite contacts who have not consented to being contacted.</li>
+      <li>Use invitations, repeated requests, multiple accounts, automation, or any other method to test, enumerate, validate, harvest, or infer information about phone numbers, users, accounts, contactability, message delivery, or invitation-viewing status.</li>
+      <li>Send excessive, unwanted, misleading, automated, or abusive invitations or requests.</li>
+      <li>Use a phone number that is not yours, that you do not control, or that you know or suspect has been reassigned to someone else.</li>
+      <li>Circumvent the mutual approval requirement for contacts.</li>
+      <li>Use automated scripts, bots, scraping, enumeration, credential-stuffing, rate-limit bypass, or abuse tooling against the service.</li>
+      <li>Attempt to access another user's data without authorisation.</li>
+      <li>Use the App or service for any unlawful purpose.</li>
+      <li>Reverse engineer, decompile, or attempt to extract the App's source code except where applicable law expressly allows it.</li>
+      <li>Enter profane, offensive, misleading, or inappropriate content in any name or profile field.</li>
+    </ul>
+
+    <h3>3.8 Abuse, suspension, termination, and cost recovery</h3>
+    <p>
+      We may limit, block, suspend, restrict, reset, delete, or terminate access to the App, an account, a profile, a phone-number association,
+      invitations, verification flows, contact connections, or related records where we reasonably believe that a user has violated these Terms,
+      abused invitations or verification flows, attempted enumeration, interfered with the service, created risk for other users,
+      lost control of a phone number, used a reassigned number, or caused operational, legal, security, messaging, or infrastructure costs.
+    </p>
+
+    <p>
+      To the maximum extent permitted by law, users are responsible for losses, claims, charges, third-party fees, messaging costs, infrastructure costs,
+      investigation costs, remediation costs, and reasonable legal costs arising from their breach of these Terms, unlawful conduct, abusive use, attempted enumeration,
+      excessive invitations, automation, scraping, unauthorised access, misuse of phone numbers, or interference with the App or service.
+    </p>
+
+    <p>
+      We may take civil action and may report suspected unlawful conduct, abuse, security incidents, harassment, fraud, unauthorised access,
+      misuse of phone numbers, or misuse of personal information to relevant service providers, regulators, platform operators, or law-enforcement authorities.
+      Unlawful conduct may result in civil or criminal proceedings.
+    </p>
+
+    <h3>3.9 Account deletion, verification, and authorised requests</h3>
+    <p>
+      In-app deletion is the preferred deletion method because it confirms that the request comes from an authenticated user.
+      If you can access the App, open <strong>Me → Delete account</strong> and follow the confirmation steps.
+      Dedicated web-page and email deletion options are described in the Account Deletion section below.
+    </p>
+
+    <p>
+      For web-form, email, deceased-user, disputed-number, or unusual deletion requests, we may require verification that the requester is the account holder,
+      currently controls the relevant mobile phone number, is legally authorised to act for the account holder, or has another valid basis for the request.
+      If we cannot reasonably verify a request, we may refuse, delay, restrict, or take no action on the request.
+    </p>
+
+    <p>
+      If an account holder is deceased, a family member, executor, estate representative, or other authorised person may contact us at
+      <a href="https://www.odderonphi.com/contact">Contact us</a>. We will not disclose unnecessary account information to the requester during this process.
+    </p>
+
+    <h3>3.10 No warranty</h3>
+    <p>
+      The App is provided "as is" and "as available", without warranties of any kind, to the maximum extent permitted by law.
+      We do not warrant that the App will be uninterrupted, error-free, secure, available at all times, or that the service will meet your specific requirements.
+    </p>
+
+    <h3>3.11 Limitation of liability</h3>
+    <p>
+      To the maximum extent permitted by law, the provider is not liable for missed check-ins, delayed status updates,
+      technical failures, network outages, device issues, connected or wearable device connectivity failures,
+      delayed or non-transmission of a check-in from a connected device due to lack of network, Bluetooth, Wi-Fi,
+      or other connectivity, loss of data, account deletion, inactive-account cleanup, reassigned-number handling,
+      mistaken restoration, non-restoration of account records, emergency-number failure, emergency-service failure, or any harm arising from reliance on the App as a primary safety mechanism.
+      The provider is not liable for indirect, incidental, special, consequential, or punitive loss.
+      Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited under applicable law.
+    </p>
+
+    <h3>3.12 Intellectual property</h3>
+    <p>
+      All intellectual property in knokkeroo, including the name "knokkeroo", app design, logo, artwork, branding, text, and code,
+      is owned by or licensed to Odderon Phi (Pty) Ltd. You are granted a limited, non-exclusive, non-transferable licence to use the App for personal, lawful, non-commercial use.
+    </p>
+
+    <h3>3.13 Changes and termination</h3>
+    <p>
+      We may update the App and these Terms. Material changes will update the "Last updated" date in the Document Information section below.
+      We may suspend, restrict, or terminate accounts, number associations, invitations, or connections that violate these Terms or create risk to the service or other users.
+      You may stop using the App and delete your account at any time.
+    </p>
+
+    <h3>3.14 Governing law</h3>
+    <p>
+      These Terms are governed by the laws of the Republic of South Africa, without regard to conflict-of-laws rules.
+      Disputes are subject to the jurisdiction of the South African courts.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="privacy">
+    <h2>4. Privacy Policy</h2>
+
+    <h3>4.1 Who we are</h3>
+    <p>
+      knokkeroo is provided by Odderon Phi (Pty) Ltd, a company registered in the Republic of South Africa.
+      References to "we", "us", and "our" refer to Odderon Phi (Pty) Ltd as the provider of knokkeroo.
+      <a href="https://www.odderonphi.com/contact">Contact us</a>.
+    </p>
+
+    <h3>4.2 Applicable law and age</h3>
+    <p>
+      This Privacy Policy is governed primarily by the Protection of Personal Information Act, 2013 (POPIA) of South Africa.
+      Where users are located in the European Union or European Economic Area, the General Data Protection Regulation (GDPR) may also apply.
+      Where users are in the United States, child privacy laws such as COPPA may apply.
+    </p>
+
+    <p>
+      knokkeroo is intended for adults and is not directed at persons under 18. We do not knowingly collect information from anyone under 18.
+      If you believe a minor has registered, contact <a href="https://www.odderonphi.com/contact">Contact us</a>.
+    </p>
+
+    <h3>4.3 Personal information we collect</h3>
+    <ul>
+      <li><strong>Mobile phone number:</strong> used for account creation and verification, and stored in international format where applicable.</li>
+      <li><strong>Display name or profile name:</strong> the name you choose to show to approved contacts.</li>
+      <li><strong>Check-in information:</strong> the date and time of voluntary check-ins and related check-in status information.</li>
+      <li><strong>Quiet-hours settings:</strong> quiet-hours start time, end time, and timezone information used to display status correctly.</li>
+      <li><strong>Connection records:</strong> mutual contact relationships, invitations, approvals, and configured check-in intervals.</li>
+      <li><strong>Technical service data:</strong> limited operational data needed to keep the service working, secure, and abuse-resistant.</li>
+      <li><strong>Verification-request information:</strong> information you provide when requesting account deletion, account restriction, support, or privacy assistance.</li>
+    </ul>
+
+    <h3>4.4 Information we do not collect</h3>
+    <p>The knokkeroo app does not intentionally collect:</p>
+    <ul>
+      <li>Physical location or GPS coordinates.</li>
+      <li>Your device contacts list.</li>
+      <li>Camera or microphone data.</li>
+      <li>Browsing history or behaviour outside the App.</li>
+      <li>Biometric data of any kind.</li>
+      <li>Health information or medical data.</li>
+      <li>Payment card or financial account information.</li>
+      <li>Advertising identifiers for advertising purposes.</li>
+    </ul>
+
+    <h3>4.5 How we use your information</h3>
+    <ul>
+      <li>To verify your identity during registration and sign-in.</li>
+      <li>To operate the check-in service.</li>
+      <li>To display your check-in status to approved contacts inside the app.</li>
+      <li>To send invitations to people you choose to invite where invitation functionality is available.</li>
+      <li>To apply quiet-hours rules and timezone handling correctly.</li>
+      <li>To process account deletion, restriction, support, or privacy requests.</li>
+      <li>To protect the App, prevent abuse, detect misuse, reduce enumeration risk, manage reassigned-number risk, and maintain service reliability.</li>
+    </ul>
+
+    <p>
+      We do not use your personal information for marketing, advertising, profiling, or sale to third parties.
+    </p>
+
+    <h3>4.6 Legal basis for processing</h3>
+    <p>
+      Where GDPR or similar laws apply, we process personal information on the basis of contract performance,
+      legitimate interests in operating and protecting the check-in service, consent where required for optional actions,
+      and legal obligations where applicable.
+    </p>
+
+    <h3>4.7 Service providers</h3>
+    <p>
+      We do not sell your personal data. We use service providers to operate the App:
+    </p>
+
+    <ul>
+      <li><strong>Supabase</strong> — database, authentication, and hosting. knokkeroo's Supabase project is hosted in the EU / AWS eu-west-1 region.</li>
+      <li><strong>Twilio</strong> — sends WhatsApp/SMS verification codes and contact invitations where used.</li>
+      <li><strong>Expo</strong> — app platform services. If future versions enable push notifications, Expo or another provider may be used for push notification delivery.</li>
+      <li><strong>Squarespace</strong> — public website and web-form infrastructure for published web pages and account-deletion requests.</li>
+    </ul>
+
+    <p>
+      These providers process information on our behalf under their own terms and privacy commitments.
+      Phone numbers are shared with Twilio only where needed to deliver verification codes or invitations that you initiate.
+    </p>
+
+    <h3>4.8 International data transfers</h3>
+    <p>
+      Some service providers may process information outside South Africa, including in the European Union, United Kingdom, United States,
+      or other locations where their infrastructure or support teams operate. Where required by applicable law, transfers are subject to appropriate safeguards,
+      which may include contractual safeguards and service-provider data processing terms.
+    </p>
+
+    <h3>4.9 Privacy-protective limits</h3>
+    <p>
+      To protect privacy and reduce abuse, knokkeroo may intentionally limit what an inviter can see about an invited phone number.
+      The App may not disclose whether an invitation message was delivered, whether a phone number is reachable,
+      whether a person already has a knokkeroo account, or whether a person has viewed an invitation,
+      unless that person chooses to accept or approve the connection.
+    </p>
+
+    <p>
+      Because mobile phone numbers may be reassigned over time, we may require re-verification, restrict access, mark accounts dormant,
+      remove stale connections, delete or anonymise inactive records, or treat later use of the phone number as a new account.
+    </p>
+
+    <h3>4.10 Verification information and sensitive documents</h3>
+    <p>
+      For web-form, email, deceased-user, disputed-number, or unusual deletion requests, we may ask for reasonable verification before acting.
+      Please do not send identity documents, death certificates, SIM documents, legal documents, or other sensitive documents unless we specifically request them.
+      If exceptional verification information is requested or received, it will be used only to assess the relevant request and will not be kept longer than reasonably necessary,
+      except where limited retention is required for security, legal compliance, dispute handling, abuse prevention, or audit purposes.
+    </p>
+
+    <h3>4.11 Security</h3>
+    <ul>
+      <li>Data is transmitted over encrypted connections where supported by the service providers and platform infrastructure.</li>
+      <li>The App uses one-time verification codes rather than stored user passwords.</li>
+      <li>Session tokens are stored using the device's secure storage mechanisms where available.</li>
+      <li>Access to user data is designed around authenticated access and approved mutual connections.</li>
+      <li>Service credentials are not intended to be exposed in the public app interface.</li>
+      <li>Abuse-prevention controls may be applied to verification and messaging flows.</li>
+    </ul>
+
+    <h3>4.12 Data retention</h3>
+    <p>
+      We keep your data while your account is active and while it is needed to operate the service.
+      When you delete your account in the App, your account data, profile, check-in history, and connection records are deleted as described in the Account Deletion section.
+      Some limited records may remain temporarily where technically necessary for security, troubleshooting, legal compliance, backup recovery, dispute handling, abuse prevention, or audit purposes.
+    </p>
+
+    <p>
+      <strong>Audit log.</strong> We keep a restricted internal audit log of key account and connection events — such as account
+      creation, changes to your profile or phone number, connection invitations and approvals, and account deletion — for security,
+      fraud prevention, dispute handling, and legal compliance. Access to this log is restricted. When you delete your account, the
+      personal identifiers in this log (such as your phone number) are irreversibly de-identified using a one-way keyed hash so they
+      cannot be reconstructed, and free-text details such as names are removed; only a minimal, non-identifying record that the event
+      occurred is retained for legal, audit, and compliance purposes. This record is not used to operate the App, restore your account,
+      contact you, market to you, or recreate your deleted history.
+    </p>
+
+    <p>
+      <strong>Backups.</strong> Our database is protected by automated, encrypted backups that are retained on a rolling basis for up
+      to 7 days. When you delete data or your account, it is removed from our live systems promptly; however, residual copies may
+      persist in these automated backups for up to 7 days, after which they are overwritten in the normal backup rotation. We do not
+      use backups to restore deleted accounts except where necessary to recover from a system failure.
+    </p>
+
+    <p>
+      Because phone numbers may be reassigned, we do not guarantee indefinite retention of inactive accounts or restoration of historic account records.
+      We may delete, anonymise, restrict, or separate inactive or stale records to reduce privacy and reassigned-number risks.
+    </p>
+
+    <h3>4.13 Your rights</h3>
+    <p>
+      Depending on where you live, you may have rights to access, correct, delete, export, object to, or restrict processing of your personal information,
+      and to withdraw consent where processing is based on consent.
+    </p>
+
+    <p>
+      To exercise these rights, contact <a href="https://www.odderonphi.com/contact">Contact us</a>.
+      We aim to respond to privacy requests within 30 days, unless a different period applies under law.
+      We may require reasonable verification before acting on a request.
+    </p>
+
+    <h3>4.14 Cookies, tracking, analytics, and ads</h3>
+    <p>
+      The knokkeroo app does not use cookies, web tracking, advertising identifiers, advertising SDKs, or in-app advertisements.
+      The public Squarespace website may use ordinary website infrastructure required to display and operate the website and receive form submissions.
+    </p>
+
+    <h3>4.15 Contact and complaints</h3>
+    <p>
+      Privacy queries: <a href="https://www.odderonphi.com/contact">Contact us</a>.
+    </p>
+
+    <p>
+      South Africa: you may contact the Information Regulator at
+      <a href="https://inforegulator.org.za">inforegulator.org.za</a>.
+      EU/EEA users may contact their local data protection authority.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="account-deletion">
+    <h2>5. Account Deletion</h2>
+
+    <p>
+      Account deletion is safest and fastest from inside the knokkeroo app.
+      If you can access the App, open <strong>Me → Delete account</strong> and confirm deletion there.
+    </p>
+
+    <ul>
+      <li>
+        <strong>In the App:</strong> open <strong>Me → Delete account</strong> and confirm.
+        This permanently removes your profile, your check-in history, and all your connections in both directions,
+        and frees your phone number for future sign-up.
+      </li>
+      <li>
+        <strong>Dedicated web page:</strong> visit
+        <a href="https://www.odderonphi.com/knokkeroo-account-deletion">knokkeroo Account Deletion</a>
+        to request deletion or restriction of a knokkeroo account linked to a mobile phone number.
+      </li>
+      <li>
+        <strong>Online:</strong> request assistance via <a href="https://www.odderonphi.com/contact">Contact us</a>.
+      </li>
+    </ul>
+
+    <p>
+      In-app deletion is immediate and irreversible. Web-page and email deletion requests are not automatic and may require verification before deletion, restriction, or any other account action is completed.
+      For privacy and security reasons, we do not delete an account merely because someone submits a phone number.
+    </p>
+
+    <p>
+      If we cannot reasonably verify that the requester is the account holder, currently controls the relevant phone number, or is legally authorised to act for the account holder,
+      we may refuse, delay, restrict, or take no action on the request.
+    </p>
+
+    <p>
+      Demo/review accounts are protected and are reset by us rather than deleted.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="document-information">
+    <h2>6. Document Information</h2>
+
+    <!-- At go-live: confirm the "Last updated" date and the app version this ships with. -->
+    <p>
+      Last updated: 21 July 2026 · Document version 2.5 · Applies to app version 3.5.0 and later unless replaced by a later published version.
+    </p>
+
+    <p>
+      Provider: Odderon Phi (Pty) Ltd (Reg. No. 2026/439085/07), a company registered in the Republic of South Africa ·
+      <a href="https://www.odderonphi.com/contact">Contact us</a>
+    </p>
+
+    <p>
+      knokkeroo — daily check-ins for people who care.
+    </p>
+
+    <p>
+      © 2026 Odderon Phi (Pty) Ltd. All rights reserved.
+    </p>
+  </section>
+</div>

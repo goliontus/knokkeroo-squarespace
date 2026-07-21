@@ -1,0 +1,458 @@
+<style>
+  .kk-rev,
+  .kk-rev * {
+    box-sizing: border-box;
+  }
+
+  .kk-rev {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.65;
+  }
+
+  .kk-rev a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .kk-rev__hero {
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.28);
+  }
+
+  .kk-rev h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: inherit;
+  }
+
+  .kk-rev__subtitle {
+    max-width: 780px;
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.84;
+  }
+
+  .kk-rev__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0 28px;
+  }
+
+  .kk-rev__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 14px;
+    border: 1px solid rgba(127, 127, 127, 0.32);
+    border-radius: 999px;
+    background: rgba(127, 127, 127, 0.07);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .kk-rev__nav a:hover {
+    background: rgba(127, 127, 127, 0.14);
+  }
+
+  .kk-rev__section {
+    scroll-margin-top: 110px;
+    margin: 0 0 22px;
+    padding: 24px;
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 18px;
+    background: rgba(127, 127, 127, 0.045);
+  }
+
+  .kk-rev h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: inherit;
+  }
+
+  .kk-rev h3 {
+    margin: 22px 0 8px;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    color: inherit;
+  }
+
+  .kk-rev p {
+    margin: 0 0 14px;
+  }
+
+  .kk-rev p:last-child,
+  .kk-rev ol:last-child,
+  .kk-rev ul:last-child {
+    margin-bottom: 0;
+  }
+
+  .kk-rev ol,
+  .kk-rev ul {
+    margin: 8px 0 16px;
+    padding-left: 22px;
+  }
+
+  .kk-rev li {
+    margin: 7px 0;
+  }
+
+  .kk-rev__credential,
+  .kk-rev__note {
+    margin: 16px 0 18px;
+    padding: 18px;
+    border: 1px solid rgba(127, 127, 127, 0.42);
+    border-left-width: 5px;
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.09);
+  }
+
+  .kk-rev__credential ol,
+  .kk-rev__note ul {
+    margin-bottom: 0;
+  }
+
+  .kk-rev__tablewrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 16px 0 18px;
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.045);
+  }
+
+  .kk-rev table {
+    width: 100%;
+    min-width: 820px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .kk-rev th,
+  .kk-rev td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.22);
+    border-right: 1px solid rgba(127, 127, 127, 0.18);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .kk-rev th:last-child,
+  .kk-rev td:last-child {
+    border-right: 0;
+  }
+
+  .kk-rev tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .kk-rev th {
+    font-weight: 700;
+    background: rgba(127, 127, 127, 0.10);
+  }
+
+  .kk-rev code {
+    padding: 0.08em 0.36em;
+    border: 1px solid rgba(127, 127, 127, 0.22);
+    border-radius: 5px;
+    background: rgba(127, 127, 127, 0.10);
+    color: inherit;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.94em;
+    white-space: nowrap;
+  }
+
+  .kk-rev__compact {
+    font-size: 0.95rem;
+    opacity: 0.78;
+  }
+
+  @media (max-width: 640px) {
+    .kk-rev {
+      padding: 18px 12px;
+    }
+
+    .kk-rev__section {
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .kk-rev__nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .kk-rev__nav a {
+      width: 100%;
+    }
+
+    .kk-rev table {
+      font-size: 0.88rem;
+    }
+  }
+</style>
+
+<div class="kk-rev">
+  <header class="kk-rev__hero">
+    <h1>knokkeroo — Reviewer Access</h1>
+    <p class="kk-rev__subtitle">
+      Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
+    </p>
+  </header>
+
+  <nav class="kk-rev__nav" aria-label="Reviewer access sections">
+    <a href="#what-the-app-does">What the app does</a>
+    <a href="#demo-login">Demo login</a>
+    <a href="#demo-accounts">Demo accounts</a>
+    <a href="#suggested-test-steps">Suggested test steps</a>
+    <a href="#reviewer-notes">Reviewer notes</a>
+    <a href="#requirements-links">Requirements &amp; links</a>
+    <a href="#document-information">Document information</a>
+  </nav>
+
+  <section class="kk-rev__section" id="what-the-app-does">
+    <h2>1. What the app does</h2>
+    <p>
+      knokkeroo is a simple daily check-in app. A user taps <strong>Knok</strong> to let the people who care about them
+      know they are okay. Contacts watch over each other through mutual, both-approved connections and are alerted
+      if someone is overdue.
+    </p>
+    <p>
+      It is a personal communication tool — <strong>not a medical or emergency service</strong>.
+      Please see the in-app disclaimer and our Terms for the full emergency disclaimer.
+    </p>
+  </section>
+
+  <section class="kk-rev__section" id="demo-login">
+    <h2>2. Demo login — no SMS is sent</h2>
+    <p>
+      Use the reserved demo account below. These accounts <strong>do not send any real WhatsApp/SMS</strong>.
+      The verification code is fixed, so no message is needed.
+    </p>
+    <div class="kk-rev__credential">
+      <ol>
+        <li>On the login screen, open the country selector and choose <strong>United States (+1)</strong>.</li>
+        <li>Enter phone number <strong>202 555 0100</strong>, then tap <strong>Send verification code</strong>.</li>
+        <li>Enter code <strong>148392</strong>, then tap <strong>Verify code</strong>.</li>
+      </ol>
+    </div>
+    <p>
+      This signs you in as the primary demo reviewer. <strong>All demo accounts start on the FREE plan</strong>, so you can
+      review the free tier and the subscription paywall: the first four contacts are fully visible and any further contacts
+      (and the "Add contact" tile) appear as anonymous "locked" tiles that open the paywall.
+    </p>
+    <p>
+      <strong>To see the full, unlocked experience, tap "Subscribe" on the paywall.</strong> For demo/review accounts this is
+      <em>simulated</em> — it unlocks every contact immediately with <strong>no real transaction, no charge, and no Google
+      Play purchase sheet</strong>. Simply <strong>log out and back in</strong> to return the account to the free view and
+      review the paywall again.
+    </p>
+    <p>
+      <strong>No action in the app can charge a demo account.</strong> "Subscribe" and "Restore purchases" are simulated for
+      demo accounts; "Terms of Use", "Not now", and the contact tiles never involve payment. (For real, non-demo accounts the
+      Subscribe button opens Google Play's own purchase sheet, which must be explicitly confirmed and can be cancelled.)
+    </p>
+  </section>
+
+  <section class="kk-rev__section" id="demo-accounts">
+    <h2>3. Demo accounts</h2>
+    <p>
+      All ten demo accounts can be signed into the same way: choose <strong>United States (+1)</strong>,
+      enter the phone number below, then enter its fixed code. No SMS is sent for these accounts.
+    </p>
+    <p>
+      The statuses below are refreshed automatically each time you sign in, so the colours always match
+      this table no matter how long after release you test. (Status colour is derived from the time since
+      each contact last checked in, so it would otherwise drift over time.)
+    </p>
+    <div class="kk-rev__tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone (US +1)</th>
+            <th>Verification Code</th>
+            <th>Timezone</th>
+            <th>What it shows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reviewer</td>
+            <td><code>202 555 0100</code></td>
+            <td><code>148392</code></td>
+            <td>UTC-07 Pacific (Los Angeles)</td>
+            <td>Main account — sign in here first; watches the others</td>
+          </tr>
+          <tr>
+            <td>Alex</td>
+            <td><code>212 555 0101</code></td>
+            <td><code>502716</code></td>
+            <td>UTC-04 Eastern (New York)</td>
+            <td>Approved contact, recently checked in (green)</td>
+          </tr>
+          <tr>
+            <td>Morgan</td>
+            <td><code>310 555 0102</code></td>
+            <td><code>839104</code></td>
+            <td>UTC-05 Central (Chicago)</td>
+            <td>Pending approval waiting on you</td>
+          </tr>
+          <tr>
+            <td>Taylor</td>
+            <td><code>312 555 0103</code></td>
+            <td><code>267451</code></td>
+            <td>UTC-06 Mountain (Denver)</td>
+            <td>Outbound invite you sent (pending)</td>
+          </tr>
+          <tr>
+            <td>Jamie</td>
+            <td><code>617 555 0104</code></td>
+            <td><code>910538</code></td>
+            <td>UTC-08 Alaska (Anchorage)</td>
+            <td>Approved, overdue (red)</td>
+          </tr>
+          <tr>
+            <td>Casey</td>
+            <td><code>415 555 0105</code></td>
+            <td><code>384269</code></td>
+            <td>UTC-07 Pacific (Los Angeles)</td>
+            <td>Approved, recently checked in (green)</td>
+          </tr>
+          <tr>
+            <td>Riley</td>
+            <td><code>646 555 0106</code></td>
+            <td><code>725140</code></td>
+            <td>UTC+01 UK (London)</td>
+            <td>Approved, due soon (amber)</td>
+          </tr>
+          <tr>
+            <td>Jordan</td>
+            <td><code>305 555 0107</code></td>
+            <td><code>491623</code></td>
+            <td>UTC+02 Germany (Berlin)</td>
+            <td>Pending approval (inbound)</td>
+          </tr>
+          <tr>
+            <td>Sam</td>
+            <td><code>206 555 0108</code></td>
+            <td><code>658074</code></td>
+            <td>UTC+03 Greece (Athens)</td>
+            <td>Approved, recently checked in (green) — no quiet hours</td>
+          </tr>
+          <tr>
+            <td>Quinn</td>
+            <td><code>702 555 0109</code></td>
+            <td><code>103957</code></td>
+            <td>UTC-04 Eastern (New York)</td>
+            <td>Approved, overdue (red) — no quiet hours</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="kk-rev__compact">
+      UTC offsets shown are for current daylight-saving time (June); they shift back one hour in winter
+      (for example, New York becomes UTC-05).
+    </p>
+  </section>
+
+  <section class="kk-rev__section" id="suggested-test-steps">
+    <h2>4. Suggested test steps</h2>
+    <ol>
+      <li>
+        <strong>Contacts screen:</strong> after login you see a grid of tiles — green for recently checked in,
+        amber for due, red for overdue, and some with a moon for quiet hours. Three tiles appear per row.
+      </li>
+      <li>
+        <strong>Knok:</strong> tap the <strong>Knok</strong> tile. Your <strong>Me</strong> tile turns green and updates the time.
+      </li>
+      <li>
+        <strong>Add a contact:</strong> tap <strong>Add Contact</strong>, then enter a name and a number.
+        For demo accounts, no real message is sent.
+      </li>
+      <li>
+        <strong>Respond to a request:</strong> tap a purple <strong>Approve</strong> tile to accept or decline a pending request.
+      </li>
+      <li>
+        <strong>Timezones &amp; quiet hours:</strong> the demo contacts are pinned to real timezones across the United States
+        (Pacific, Mountain, Central, Eastern, Alaska) and Europe (London, Berlin, Athens). Each contact's time and quiet-hours
+        moon reflect <em>their own</em> timezone, so they will <strong>not</strong> match your device's time. That is intentional,
+        to show the feature. A normal, non-demo account instead follows the device's timezone.
+      </li>
+      <li>
+        <strong>Settings:</strong> tap <strong>Me</strong> to change your name, knok interval, and quiet hours.
+      </li>
+      <li>
+        <strong>Account deletion:</strong> open <strong>Me → Delete account</strong>. Demo accounts are protected and show a notice.
+        Real accounts are permanently deleted. See our Account Deletion policy.
+      </li>
+    </ol>
+  </section>
+
+  <section class="kk-rev__section" id="reviewer-notes">
+    <h2>5. Notes for reviewers</h2>
+    <div class="kk-rev__note">
+      <ul>
+        <li>No real SMS/WhatsApp is sent for demo accounts. Logging in and inviting demo contacts triggers no messages.</li>
+        <li>Demo data is reset by us between reviews, so the demo accounts always start in a known state.</li>
+        <li>
+          Demo contacts keep fixed US/European timezones. We never overwrite them. Their displayed times differ from yours on purpose
+          so that timezone and quiet-hours behaviour can be reviewed.
+        </li>
+        <li>The app targets adults and is not directed at children.</li>
+        <li>
+          <strong>Subscriptions &amp; billing:</strong> the free tier fully shows a user's first four contacts; a paid
+          subscription (sold and billed entirely by Google Play — we never see or store card details) shows all of them.
+          <strong>All demo accounts start on the FREE plan.</strong> Tapping <strong>Subscribe</strong> on a demo account is
+          <strong>simulated</strong> — it unlocks everything with no charge and no Google Play purchase sheet; log out and
+          back in to reset to the free view. For real (non-demo) users, Subscribe opens Google Play's own cancellable
+          purchase sheet. <strong>No purchase is required to review the app, and nothing a reviewer taps can charge them.</strong>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="kk-rev__section" id="requirements-links">
+    <h2>6. Requirements &amp; links</h2>
+    <ul>
+      <li>Android and iOS; internet connection required.</li>
+      <li>
+        Test scenarios (feature walkthrough):
+        <a href="https://www.odderonphi.com/knokkeroo-test-scenarios">knokkeroo Test Scenarios</a>.
+      </li>
+      <li>
+        Terms, Privacy, Disclaimer &amp; Account Deletion:
+        <a href="https://www.odderonphi.com/knokkeroo-terms">knokkeroo Terms &amp; Legal</a>.
+      </li>
+      <li><a href="https://www.odderonphi.com/contact">Contact us</a>.</li>
+    </ul>
+  </section>
+
+  <section class="kk-rev__section" id="document-information">
+    <h2>7. Document information</h2>
+    <p>
+      Last updated: 10 July 2026 · Applies to app version 3.5.13 and above
+    </p>
+    <p>
+      Intended for Apple App Review and Google Play review teams.
+    </p>
+    <p>
+      <a href="https://www.odderonphi.com/contact">Contact us</a>
+    </p>
+  </section>
+</div>

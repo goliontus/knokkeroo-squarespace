@@ -1,0 +1,913 @@
+<section class="knokkeroo-test-page" aria-labelledby="knokkeroo-test-title">
+  <style>
+    .knokkeroo-test-page {
+      --kroo-brown: #583b1f;
+      --kroo-ink: #2f2418;
+      --kroo-muted: rgba(47, 36, 24, 0.72);
+      --kroo-line: rgba(88, 59, 31, 0.18);
+      --kroo-panel: rgba(88, 59, 31, 0.055);
+      --kroo-panel-strong: rgba(88, 59, 31, 0.09);
+      --kroo-green: #2f7d4f;
+      --kroo-amber: #b7791f;
+      --kroo-red: #b7412e;
+      --kroo-soft-gold: #f6ead2;
+      --kroo-soft-gold-line: rgba(183, 121, 31, 0.28);
+      --kroo-radius: 22px;
+      --kroo-shadow: 0 18px 45px rgba(47, 36, 24, 0.08);
+      color: var(--kroo-ink);
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(24px, 4vw, 56px) clamp(18px, 3vw, 34px);
+      font-family: inherit;
+      line-height: 1.62;
+    }
+
+    .knokkeroo-test-page * {
+      box-sizing: border-box;
+    }
+
+    .kroo-hero {
+      border: 1px solid var(--kroo-line);
+      border-radius: calc(var(--kroo-radius) + 8px);
+      background:
+        radial-gradient(circle at top right, rgba(88, 59, 31, 0.10), transparent 34%),
+        linear-gradient(135deg, rgba(88, 59, 31, 0.075), rgba(255, 255, 255, 0));
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: var(--kroo-shadow);
+      margin-bottom: clamp(20px, 3vw, 30px);
+    }
+
+    .kroo-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      background: rgba(88, 59, 31, 0.09);
+      border: 1px solid var(--kroo-line);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    .kroo-hero h1 {
+      color: var(--kroo-brown);
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      margin: 0 0 16px;
+    }
+
+    .kroo-hero .kroo-subtitle {
+      color: var(--kroo-muted);
+      font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .kroo-explainer-jump {
+      margin: 0 0 clamp(16px, 3vw, 22px);
+    }
+
+    .kroo-explainer-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: 100%;
+      min-height: 108px;
+      padding: clamp(20px, 3vw, 28px);
+      border: 1px solid var(--kroo-soft-gold-line);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 92% 0%, rgba(183, 121, 31, 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(246, 234, 210, 0.92), rgba(255, 255, 255, 0.9));
+      color: var(--kroo-ink) !important;
+      text-decoration: none !important;
+      box-shadow: 0 16px 42px rgba(47, 36, 24, 0.075);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .kroo-explainer-button:hover,
+    .kroo-explainer-button:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 52px rgba(47, 36, 24, 0.11);
+      border-color: rgba(183, 121, 31, 0.42);
+    }
+
+    .kroo-explainer-button span {
+      display: block;
+    }
+
+    .kroo-explainer-title {
+      color: var(--kroo-brown);
+      font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .kroo-explainer-copy {
+      color: var(--kroo-muted);
+      font-size: 0.98rem;
+      line-height: 1.38;
+    }
+
+    .kroo-explainer-arrow,
+    .kroo-cloud-arrow {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid !important;
+      place-items: center;
+      background: var(--kroo-brown);
+      color: white;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .kroo-platform-jump {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 20px);
+      margin: 0 0 clamp(28px, 4vw, 44px);
+    }
+
+    .kroo-cloud-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 118px;
+      padding: clamp(20px, 3vw, 28px);
+      border: 1px solid var(--kroo-line);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.9), transparent 42%),
+        linear-gradient(135deg, rgba(88, 59, 31, 0.09), rgba(88, 59, 31, 0.035));
+      color: var(--kroo-ink) !important;
+      text-decoration: none !important;
+      box-shadow: 0 16px 42px rgba(47, 36, 24, 0.075);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .kroo-cloud-button:hover,
+    .kroo-cloud-button:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 52px rgba(47, 36, 24, 0.11);
+      border-color: rgba(88, 59, 31, 0.32);
+    }
+
+    .kroo-cloud-button span {
+      display: block;
+    }
+
+    .kroo-cloud-title {
+      color: var(--kroo-brown);
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .kroo-cloud-copy {
+      color: var(--kroo-muted);
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    #android-testers,
+    #ios-testers,
+    #huawei-testers,
+    #explainer-and-test-instructions,
+    #join-the-test {
+      scroll-margin-top: 110px;
+    }
+
+    .kroo-section {
+      margin: clamp(26px, 5vw, 54px) 0;
+    }
+
+    .kroo-section h2 {
+      color: var(--kroo-brown);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1.12;
+      margin: 0 0 16px;
+      letter-spacing: -0.025em;
+    }
+
+    .kroo-section h3 {
+      color: var(--kroo-brown);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    .kroo-section p {
+      margin: 0 0 16px;
+    }
+
+    .kroo-lead {
+      font-size: 1.08rem;
+      color: var(--kroo-ink);
+    }
+
+    .kroo-explainer-card {
+      border: 1px solid var(--kroo-soft-gold-line);
+      border-radius: calc(var(--kroo-radius) + 4px);
+      background:
+        radial-gradient(circle at top right, rgba(183, 121, 31, 0.10), transparent 32%),
+        linear-gradient(135deg, rgba(246, 234, 210, 0.88), rgba(255, 255, 255, 0.94));
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: 0 18px 46px rgba(47, 36, 24, 0.07);
+    }
+
+    .kroo-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(88, 59, 31, 0.16);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+    }
+
+    .kroo-highlight {
+      border-left: 5px solid var(--kroo-amber);
+      background: rgba(255, 255, 255, 0.76);
+      border-radius: 0 var(--kroo-radius) var(--kroo-radius) 0;
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+
+    .kroo-highlight p {
+      margin: 0 0 12px;
+      color: var(--kroo-ink);
+    }
+
+    .kroo-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .kroo-status-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .kroo-status {
+      border: 1px solid var(--kroo-line);
+      border-radius: 18px;
+      background: white;
+      padding: 16px;
+      min-height: 112px;
+      box-shadow: 0 10px 28px rgba(47, 36, 24, 0.055);
+    }
+
+    .kroo-status strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .kroo-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: -1px;
+    }
+
+    .kroo-dot.green { background: var(--kroo-green); }
+    .kroo-dot.amber { background: var(--kroo-amber); }
+    .kroo-dot.red { background: var(--kroo-red); }
+
+    .kroo-detail-grid,
+    .kroo-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(16px, 2vw, 22px);
+      margin-top: 20px;
+    }
+
+    .kroo-detail,
+    .kroo-card {
+      border: 1px solid var(--kroo-line);
+      border-radius: var(--kroo-radius);
+      background: white;
+      padding: clamp(20px, 3vw, 28px);
+      box-shadow: 0 12px 34px rgba(47, 36, 24, 0.06);
+    }
+
+    .kroo-detail h3,
+    .kroo-card h3 {
+      margin-top: 0;
+    }
+
+    .kroo-detail p:last-child,
+    .kroo-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .kroo-mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      font-weight: 900;
+      margin-bottom: 10px;
+      font-size: 1.03rem;
+    }
+
+    .kroo-list {
+      padding-left: 1.15rem;
+      margin: 14px 0 0;
+    }
+
+    .kroo-list li {
+      margin-bottom: 10px;
+    }
+
+    .kroo-note {
+      border-left: 4px solid var(--kroo-brown);
+      background: var(--kroo-panel);
+      border-radius: 0 var(--kroo-radius) var(--kroo-radius) 0;
+      padding: 18px 20px;
+      margin-top: 22px;
+      color: var(--kroo-muted);
+    }
+
+    .kroo-note p {
+      margin-bottom: 0;
+    }
+
+    .kroo-note strong {
+      color: var(--kroo-ink);
+    }
+
+    .kroo-required-android {
+      margin: 16px 0 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(183, 121, 31, 0.32);
+      background:
+        radial-gradient(circle at top right, rgba(183, 121, 31, 0.10), transparent 30%),
+        rgba(246, 234, 210, 0.72);
+      color: var(--kroo-ink);
+    }
+
+    .kroo-required-android p {
+      margin: 0 0 10px;
+    }
+
+    .kroo-required-android p:last-child {
+      margin-bottom: 0;
+    }
+
+    .kroo-required-android strong {
+      color: var(--kroo-brown);
+    }
+
+    .kroo-platform-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--kroo-brown);
+      font-weight: 800;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .kroo-steps {
+      counter-reset: kroo-step;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .kroo-steps li {
+      counter-increment: kroo-step;
+      position: relative;
+      padding: 0 0 18px 48px;
+      margin: 0;
+    }
+
+    .kroo-steps li::before {
+      content: counter(kroo-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--kroo-brown);
+      color: white;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .kroo-steps li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 38px;
+      bottom: 2px;
+      width: 1px;
+      background: var(--kroo-line);
+    }
+
+    .kroo-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 0;
+    }
+
+    .kroo-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none !important;
+      border-radius: 999px;
+      padding: 12px 18px;
+      border: 1px solid var(--kroo-brown);
+      background: var(--kroo-brown);
+      color: white !important;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .kroo-button.secondary {
+      background: transparent;
+      color: var(--kroo-brown) !important;
+    }
+
+    .kroo-button.must-tap-first {
+      background: var(--kroo-brown);
+      color: white !important;
+    }
+
+    .kroo-button.must-tap-second {
+      background: var(--kroo-amber);
+      border-color: var(--kroo-amber);
+      color: white !important;
+    }
+
+    .kroo-link {
+      color: var(--kroo-brown);
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .kroo-small {
+      color: var(--kroo-muted);
+      font-size: 0.94rem;
+    }
+
+    .kroo-footer {
+      margin-top: clamp(30px, 5vw, 56px);
+      padding-top: 22px;
+      border-top: 1px solid var(--kroo-line);
+      color: var(--kroo-muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 780px) {
+      .kroo-status-row,
+      .kroo-card-grid,
+      .kroo-detail-grid,
+      .kroo-platform-jump {
+        grid-template-columns: 1fr;
+      }
+
+      .kroo-hero {
+        padding: 26px 20px;
+      }
+
+      .kroo-cloud-button {
+        border-radius: 28px;
+        min-height: 104px;
+      }
+
+      .kroo-explainer-button {
+        border-radius: 28px;
+        min-height: 104px;
+      }
+
+      .kroo-explainer-arrow,
+      .kroo-cloud-arrow {
+        width: 38px;
+        height: 38px;
+      }
+
+      .kroo-button,
+      .kroo-explainer-button {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="kroo-hero">
+    <p class="kroo-kicker">Pre-release tester guide</p>
+    <h1 id="knokkeroo-test-title">Welcome to the knokkeroo test</h1>
+    <p class="kroo-subtitle">A plain-language guide for testers: what knokkeroo does, what to try, and how to join on android or iOS.</p>
+  </div>
+
+  <nav class="kroo-explainer-jump" aria-label="Read the knokkeroo explanation and tester instructions">
+    <a class="kroo-explainer-button" href="#explainer-and-test-instructions">
+      <span>
+        <span class="kroo-explainer-title">Start here: explanation &amp; tester instructions</span>
+        <span class="kroo-explainer-copy">Learn what a knok means, what the colours mean, what the moon means, and what should change when you update settings.</span>
+      </span>
+      <span class="kroo-explainer-arrow" aria-hidden="true">↓</span>
+    </a>
+  </nav>
+
+  <nav class="kroo-platform-jump" aria-label="Choose your testing platform">
+    <a class="kroo-cloud-button" href="#android-testers">
+      <span>
+        <span class="kroo-cloud-title">📱 android testers</span>
+        <span class="kroo-cloud-copy">Join the tester group, accept the invite, and install from Google Play.</span>
+      </span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+
+    <a class="kroo-cloud-button" href="#ios-testers">
+      <span>
+        <span class="kroo-cloud-title">🍎 iOS testers</span>
+        <span class="kroo-cloud-copy">Join with the TestFlight invite link and install the iOS beta.</span>
+      </span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+
+    <a class="kroo-cloud-button" href="#huawei-testers">
+      <span>
+        <span class="kroo-cloud-title">🟥 Huawei testers</span>
+        <span class="kroo-cloud-copy">On a Huawei phone without Google? Send us your Huawei ID and we'll add you to the AppGallery test.</span>
+      </span>
+      <span class="kroo-cloud-arrow" aria-hidden="true">↓</span>
+    </a>
+  </nav>
+
+  <section class="kroo-section" id="explainer-and-test-instructions" aria-labelledby="explainer-title">
+    <div class="kroo-explainer-card">
+      <p class="kroo-section-label">Explanation &amp; tester instructions</p>
+
+      <h2 id="explainer-title">What knokkeroo does, and what should happen when you use it</h2>
+
+      <p class="kroo-lead">
+        knokkeroo is a private check-in app for trusted contacts. The main action is called a <strong>knok</strong>. A knok is not a message, not a medical alert, and not a location update. It is a manual check-in that says: <strong>I was able to respond now.</strong>
+      </p>
+
+      <div class="kroo-highlight">
+        <p>
+          In the simplest terms: open knokkeroo, tap <strong>knok</strong>, and your latest check-in should update. Your approved contacts can then see that you checked in recently.
+        </p>
+        <p>
+          The app is designed for everyday reassurance between trusted people: family members, friends, older parents and adult children, people living alone, or anyone who wants a low-effort way to say “I’m okay” without needing a phone call.
+        </p>
+      </div>
+
+      <div class="kroo-highlight">
+        <p><strong>New in this test build — please try these:</strong></p>
+        <p>
+          <strong>Connecting with someone:</strong> the app is <em>not</em> sending invitation messages right now. To connect, both
+          people install knokkeroo, then one of you adds the other by phone number — the other person sees a request inside the app
+          to accept. So if you want a friend or family member to connect, just tell them directly to install knokkeroo first.
+        </p>
+        <p>
+          <strong>Knowing who is asking:</strong> when someone asks to connect with you, the app now shows you <strong>their name and
+          number</strong>. Only accept if you recognise the person and the number — if you don't, tap Decline. Please check this looks right.
+        </p>
+        <p>
+          <strong>Seeing a contact's number:</strong> open any contact and you'll now see their phone number on the settings screen
+          (you can't change it). It's there so you can confirm a contact is really who you think it is.
+        </p>
+        <p>
+          <strong>Subscriptions (coming):</strong> knokkeroo will offer a paid plan to watch over more than four contacts. As an early
+          tester you are on a free-forever plan, so you will <em>not</em> be limited — you should keep seeing all of your contacts.
+        </p>
+      </div>
+
+      <h3>What the colours mean</h3>
+      <p>
+        People you are connected to appear as simple status tiles. The colours are there to help you quickly understand whether someone has checked in recently or may need a human follow-up.
+      </p>
+
+      <div class="kroo-status-row" aria-label="knokkeroo status colours">
+        <div class="kroo-status">
+          <strong><span class="kroo-dot green"></span>Green</strong>
+          <span>Checked in recently. This usually means the person has tapped knok within the expected time.</span>
+        </div>
+
+        <div class="kroo-status">
+          <strong><span class="kroo-dot amber"></span>Amber</strong>
+          <span>Due to check in. This means the person may soon need to knok again, depending on their settings.</span>
+        </div>
+
+        <div class="kroo-status">
+          <strong><span class="kroo-dot red"></span>Red</strong>
+          <span>Overdue. This means the person has not checked in within the expected time, so you may want to reach out.</span>
+        </div>
+      </div>
+
+      <div class="kroo-detail-grid">
+        <div class="kroo-detail">
+          <div class="kroo-mini-label">👆 Tapping knok</div>
+          <p>
+            When you tap <strong>knok</strong>, the app should record a fresh check-in. You should expect your latest check-in time, status, or tile to update so that it is clear something changed.
+          </p>
+          <p>
+            Tester expectation: after tapping knok, you should not be left wondering whether the tap worked. If the screen does not clearly show that your check-in was recorded, please report that.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <div class="kroo-mini-label">🧑‍🤝‍🧑 Approved contacts</div>
+          <p>
+            A contact should only become trusted after the approval flow is complete. Adding someone by phone number should not automatically make them a trusted contact.
+          </p>
+          <p>
+            Tester expectation: pending invites, approval requests, accepted contacts, declined contacts, and cancelled invites should be visibly different enough to understand.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <div class="kroo-mini-label">🌙 The moon</div>
+          <p>
+            The moon represents quiet-hours or sleep-time context. It is there to help explain that a person may be inside a period where check-in expectations are treated differently.
+          </p>
+          <p>
+            Tester expectation: if the moon is shown, it should make sense in relation to the person’s quiet-hours or sleep/wake settings. It should not make the status more confusing.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <div class="kroo-mini-label">⚙️ Settings</div>
+          <p>
+            Settings control how knokkeroo interprets check-ins. When you change settings, the app should save the change and the visible behaviour should match the new setting.
+          </p>
+          <p>
+            Tester expectation: after changing a setting, return to the relevant screen and check whether the app reflects the new value consistently.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 28px;">Settings to test carefully</h3>
+
+      <div class="kroo-detail-grid">
+        <div class="kroo-detail">
+          <h3>Check-in timing</h3>
+          <p>
+            If the app lets you change how often a person is expected to check in, the displayed status should follow that setting. A shorter interval should make check-ins become due sooner. A longer interval should give more time before the person appears due or overdue.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <h3>Quiet hours / sleep and wake times</h3>
+          <p>
+            Quiet hours are intended to stop normal sleep time from being treated like normal active time. If you change sleep or wake times, the app should save them and use the new times when showing status, due, overdue, or moon context.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <h3>Timezone handling</h3>
+          <p>
+            Each person’s check-in expectations should make sense in their own local time. If someone is in another country or timezone, their quiet-hours context should not be treated as if they are in your timezone.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <h3>Display name and profile details</h3>
+          <p>
+            If you change your display name or profile details, the new information should appear consistently where contacts need to recognise you. Old names should not keep appearing in important places.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <h3>Invites and approvals</h3>
+          <p>
+            Inviting someone should show as pending until the other person responds. Accepting, declining, cancelling, or removing should move the contact into the correct state.
+          </p>
+        </div>
+
+        <div class="kroo-detail">
+          <h3>Removing a contact</h3>
+          <p>
+            If you remove a contact or cancel an invite, that person should stop appearing as an active approved contact for you. The app should not leave behind a confusing old trusted-contact state.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 28px;">Useful tester scenarios</h3>
+
+      <ul class="kroo-list">
+        <li><strong>Sign in:</strong> enter your mobile number, complete verification, and confirm that you reach the main app without needing a password.</li>
+        <li><strong>Tap knok:</strong> tap the main knok button and check whether your latest check-in visibly updates.</li>
+        <li><strong>Check your own tile:</strong> confirm that your own status makes sense after you have checked in.</li>
+        <li><strong>Add a contact:</strong> add someone by phone number and check whether they appear as pending until approval is complete.</li>
+        <li><strong>Approve or decline:</strong> respond to a contact request and check whether the resulting state is clear, and that the request clearly shows <strong>who is asking (name and number)</strong>.</li>
+        <li><strong>Check a contact's number:</strong> open one of your contacts and confirm their phone number is shown on the settings screen so you can verify who they are.</li>
+        <li><strong>Watch colours:</strong> look at green, amber, and red states and check whether the meaning is obvious.</li>
+        <li><strong>Look for the moon:</strong> check whether the moon appears only where quiet-hours or sleep-time context makes sense.</li>
+        <li><strong>Change settings:</strong> update check-in timing, quiet hours, sleep/wake times, or display details and confirm that the app saves and reflects the changes.</li>
+        <li><strong>Remove or cancel:</strong> cancel an invite or remove a contact and confirm that the app no longer treats that person as active and approved.</li>
+        <li><strong>Report confusion:</strong> if you expected something different from what happened, please tell us exactly what you expected and what actually happened.</li>
+      </ul>
+
+      <div class="kroo-note">
+        <p>
+          <strong>Important:</strong> knokkeroo is a personal check-in and communication tool. It is not a medical device, alarm, emergency service, healthcare app, location tracker, or substitute for professional or emergency help. The current app version does not send automatic push notifications. If someone is in real danger, call your local emergency services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="kroo-section" aria-labelledby="join-the-test">
+    <h2 id="join-the-test">Join the test</h2>
+    <p>Pick your phone below and follow the steps carefully.</p>
+
+    <div class="kroo-card-grid">
+      <div class="kroo-card" id="android-testers">
+        <div class="kroo-platform-label">📱 android testers</div>
+
+        <div class="kroo-required-android">
+          <p>
+            <strong>Android has two compulsory steps.</strong> Please use the two buttons below in order.
+          </p>
+          <p>
+            The <strong>first button</strong> joins the knokkeroo Google tester group. That Google Group is the list Google uses to decide who is allowed to test the Android app. Anyone who is accepted into that group is eligible to test knokkeroo on Google Play.
+          </p>
+          <p>
+            The <strong>second button</strong> accepts the actual Google Play test invite. Use the same Google/Gmail account for both steps, otherwise Google Play may say that the app is not available or that you are not a tester.
+          </p>
+        </div>
+
+        <ol class="kroo-steps">
+          <li>
+            <strong>Use an Android phone.</strong><br>
+            Check which Google/Gmail account is signed into the Play Store on that phone: open <strong>Play Store</strong>, tap your profile picture at the top right, and note the email shown there. Use that exact same Gmail address for the next steps.
+          </li>
+
+          <li>
+            <strong>Step 1 — join the testers group first.</strong><br>
+            Open <a class="kroo-link" href="https://groups.google.com/g/knokkeroo-testers">https://groups.google.com/g/knokkeroo-testers</a> and tap <strong>Ask to join</strong>, or accept the invite if you were already added. This adds your Google account to the tester group that is allowed to access the Android test.
+          </li>
+
+          <li>
+            <strong>Step 2 — accept the Google Play test invite second.</strong><br>
+            Open <a class="kroo-link" href="https://play.google.com/apps/testing/com.goliontus.knokker">https://play.google.com/apps/testing/com.goliontus.knokker</a> and tap <strong>Become a tester</strong> or <strong>Accept</strong>. This tells Google Play that you want to join the app test.
+          </li>
+
+          <li>
+            <strong>Install the app.</strong><br>
+            On the same page, tap <strong>Download it on Google Play</strong>, or open <a class="kroo-link" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">https://play.google.com/store/apps/details?id=com.goliontus.knokker</a>, then tap <strong>Install</strong>.
+          </li>
+
+          <li>
+            <strong>If it says “not available” or “you’re not a tester”.</strong><br>
+            This is usually because Step 1 and Step 2 were not both completed with the same Google account, or because Google has not updated access yet. Check the Play Store account on the phone, wait an hour or two, and try again.
+          </li>
+        </ol>
+
+        <div class="kroo-button-row">
+          <a class="kroo-button must-tap-first" href="https://groups.google.com/g/knokkeroo-testers">Step 1 — tap me first: join the Google tester group</a>
+          <a class="kroo-button must-tap-second" href="https://play.google.com/apps/testing/com.goliontus.knokker">Step 2 — tap me second: accept the Google Play test invite</a>
+        </div>
+      </div>
+
+      <div class="kroo-card" id="ios-testers">
+        <div class="kroo-platform-label">🍎 iOS testers</div>
+        <h3>Join on iPhone with TestFlight</h3>
+        <p>iOS testing runs through Apple <strong>TestFlight</strong>. Use the public invite link below to join the knokkeroo beta and install the test build.</p>
+
+        <ol class="kroo-steps">
+          <li>
+            <strong>Use an iPhone.</strong><br>
+            Make sure you can sign in with the Apple ID you normally use for App Store downloads.
+          </li>
+
+          <li>
+            <strong>Install TestFlight.</strong><br>
+            Open the App Store and install the free <strong>TestFlight</strong> app from Apple.
+          </li>
+
+          <li>
+            <strong>Open the knokkeroo TestFlight invite.</strong><br>
+            Open <a class="kroo-link" href="https://testflight.apple.com/join/XaabanK9">https://testflight.apple.com/join/XaabanK9</a> and tap <strong>Accept</strong>.
+          </li>
+
+          <li>
+            <strong>Install the beta.</strong><br>
+            In TestFlight, tap <strong>Install</strong> next to knokkeroo.
+          </li>
+
+          <li>
+            <strong>If the link says the beta is not available.</strong><br>
+            The build may still be waiting for Apple approval, propagating, or the tester limit may have been reached. Please try again later or email us.
+          </li>
+        </ol>
+
+        <div class="kroo-button-row">
+          <a class="kroo-button" href="https://testflight.apple.com/join/XaabanK9">Open TestFlight invite</a>
+        </div>
+      </div>
+
+      <div class="kroo-card" id="huawei-testers">
+        <div class="kroo-platform-label">🟥 Huawei testers</div>
+        <h3>Join on a Huawei phone (AppGallery)</h3>
+        <p>
+          This is for Huawei phones that use <strong>AppGallery</strong> instead of Google Play. If your Huawei phone
+          <em>does</em> have Google Play, it is easier to just follow the Android steps above.
+        </p>
+
+        <div class="kroo-required-android">
+          <p>
+            <strong>Huawei testing works differently.</strong> There is no public join link. Huawei only lets us add a tester
+            <strong>by their Huawei ID</strong> — the email address or mobile number on your Huawei account. So the way in is:
+            you send us your Huawei ID, we add you, and Huawei then sends you an invitation to install from AppGallery.
+          </p>
+          <p>
+            <strong>You will need:</strong> a Huawei / HarmonyOS phone with the AppGallery app, a <strong>Huawei ID</strong>, and
+            your Huawei ID <strong>Country/Region set to South Africa or Nigeria</strong> (in AppGallery → <strong>Me</strong> →
+            <strong>Settings</strong> → <strong>Country/Region</strong>). If your region is set elsewhere, the test app will not
+            appear for you.
+          </p>
+        </div>
+
+        <ol class="kroo-steps">
+          <li>
+            <strong>Find your Huawei ID.</strong><br>
+            Open <strong>AppGallery</strong> → tap <strong>Me</strong>. Note the email address or mobile number your Huawei
+            account uses, and check that your <strong>Country/Region</strong> is South Africa or Nigeria.
+          </li>
+          <li>
+            <strong>Send us your Huawei ID.</strong><br>
+            Send it via our <a class="kroo-link" href="https://www.odderonphi.com/contact">Contact us</a> page
+            with the email or mobile number on your Huawei account and say you would like to test on Huawei. We add you to the
+            AppGallery tester list.
+          </li>
+          <li>
+            <strong>Accept the invitation.</strong><br>
+            Huawei sends you an invitation by <strong>email or SMS</strong>. Open it and accept — this enrols you in the test.
+          </li>
+          <li>
+            <strong>Install from AppGallery.</strong><br>
+            After accepting, open knokkeroo in <strong>AppGallery</strong> and install it like any normal app. Make sure you are
+            signed in to AppGallery with the <strong>same Huawei ID</strong> you sent us.
+          </li>
+          <li>
+            <strong>If you can't see the app.</strong><br>
+            Check that you are signed in with the exact Huawei ID you sent us, that your Country/Region is South Africa or
+            Nigeria, and that a little time has passed since we added you. If it still doesn't appear, email us.
+          </li>
+        </ol>
+
+        <div class="kroo-button-row">
+          <a class="kroo-button" href="https://www.odderonphi.com/contact">Send us your Huawei ID to join</a>
+        </div>
+
+        <p class="kroo-small" style="margin-top: 16px;">
+          We are still finalising knokkeroo on AppGallery. Email us your Huawei ID now and we will add you as soon as the Huawei
+          test is open — you don't need to check back.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="kroo-section" aria-labelledby="once-you-are-in">
+    <h2 id="once-you-are-in">Once you are in</h2>
+
+    <div class="kroo-card">
+      <ul class="kroo-list">
+        <li><strong>Open knokkeroo, sign up, and use it.</strong> Tap knok, add a contact, change settings, and check whether the app clearly shows what changed.</li>
+        <li><strong>Stay opted in.</strong> Please do not leave the Android tester group or uninstall the app while testing. For iOS, please keep TestFlight installed and stay in the beta while testing.</li>
+        <li><strong>Tell us what breaks or confuses you.</strong> Send anything unexpected via <a class="kroo-link" href="https://www.odderonphi.com/contact">Contact us</a>.</li>
+      </ul>
+    </div>
+
+    <p class="kroo-lead" style="margin-top: 24px;"><strong>Thank you for testing — it genuinely helps. 🦘</strong></p>
+  </section>
+
+  <footer class="kroo-footer">
+    <p>By testing knokkeroo you agree to our <a class="kroo-link" href="https://www.odderonphi.com/knokkeroo-terms">Terms &amp; Privacy Policy</a>.</p>
+    <p>Questions? <a class="kroo-link" href="https://www.odderonphi.com/contact">Contact us</a></p>
+  </footer>
+</section>
