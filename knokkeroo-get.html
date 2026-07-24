@@ -21,6 +21,8 @@
   .kk-get__hw-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.08; font-size: 1.05rem; font-weight: 700; }
   .kk-get__hw-text small { font-size: 0.52rem; font-weight: 600; letter-spacing: 0.06em; opacity: 0.92; }
 
+  .kk-get__badge-img { height: 62px; width: auto; }
+
   .kk-get__footer { margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; }
 </style>
 
@@ -31,10 +33,19 @@
 
   <header class="kk-get__hero">
     <h1>Get knokkeroo</h1>
-    <p class="kk-get__subtitle">knokkeroo is available today on the following device.</p>
+    <p class="kk-get__subtitle">knokkeroo is available today on the following devices.</p>
   </header>
 
   <div class="kk-get__grid">
+    <div class="kk-get__card">
+      <span class="kk-get__pill">Live now</span>
+      <h2>Android phones</h2>
+      <p>Free to download from Google Play.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker" aria-label="Get knokkeroo on Google Play">
+        <img class="kk-get__badge-img" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" loading="lazy" />
+      </a>
+    </div>
+
     <div class="kk-get__card">
       <span class="kk-get__pill">Live now</span>
       <h2>Huawei phones</h2>
@@ -46,5 +57,5 @@
     </div>
   </div>
 
-  <p class="kk-get__footer">Page v1 · Last updated 24 July 2026 · Applies to app version 3.5.9 (Huawei — the only version currently in production).</p>
+  <p class="kk-get__footer">Page v2 · Last updated 24 July 2026 · Applies to app versions Android 3.5.15 and Huawei 3.5.9 (the versions currently in production).</p>
 </div>
