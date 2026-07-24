@@ -1,0 +1,52 @@
+<style>
+  .kk-stat, .kk-stat * { box-sizing: border-box; }
+  .kk-stat { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
+  .kk-stat a { color: inherit; }
+  .kk-stat__crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 0.88rem; opacity: 0.68; }
+  .kk-stat__crumbs a { text-decoration: underline; text-underline-offset: 0.16em; }
+  .kk-stat__hero { margin-bottom: 22px; }
+  .kk-stat h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; }
+
+  .kk-stat__panel {
+    padding: 28px;
+    border: 1px solid rgba(127, 127, 127, 0.28);
+    border-radius: 20px;
+    background: rgba(127, 127, 127, 0.045);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .kk-stat__pill { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 16px; padding: 5px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; background: rgba(201, 162, 39, 0.18); }
+
+  .kk-stat__panel p { max-width: 460px; margin: 0 auto 18px; font-size: 1.02rem; opacity: 0.86; }
+  .kk-stat__panel p:last-child { margin-bottom: 0; }
+
+  .kk-stat__badge { height: 68px; width: auto; filter: grayscale(1); opacity: 0.5; }
+
+  .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
+</style>
+
+<div class="kk-stat">
+  <nav class="kk-stat__crumbs" aria-label="Breadcrumb">
+    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span>
+    <a href="/knokkeroo-test">Test knokkeroo</a><span>›</span><span>Google / Android</span>
+  </nav>
+
+  <header class="kk-stat__hero">
+    <h1>knokkeroo for Android</h1>
+  </header>
+
+  <div class="kk-stat__panel">
+    <span class="kk-stat__pill" style="background: rgba(24, 148, 87, 0.18);">Testable now, as a tester</span>
+    <p>The public Play Store listing is still being reviewed by Google, but you can install and try knokkeroo today as a registered tester. It's the same app, same account — nothing extra to keep track of.</p>
+    <p style="text-align:left; max-width: 460px; margin: 0 auto;">
+      <strong>1.</strong> Join the tester group: <a href="https://groups.google.com/g/knokkeroo-testers">groups.google.com/g/knokkeroo-testers</a><br /><br />
+      <strong>2.</strong> Opt in to testing: <a href="https://play.google.com/apps/testing/com.goliontus.knokker">play.google.com/apps/testing/com.goliontus.knokker</a><br /><br />
+      <strong>3.</strong> Install from the Play Store as normal.
+    </p>
+    <p>Use the same Google account for steps 1 and 2 — it can take an hour or two to take effect. Once knokkeroo is publicly live, no tester group will be needed — anyone will be able to just search "knokkeroo".</p>
+    <img class="kk-stat__badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="knokkeroo on Google Play" loading="lazy" style="filter:none; opacity:1;" />
+  </div>
+
+  <p class="kk-stat__footer">Page v1 · Last updated 24 July 2026 · Applies to app version 3.5.15 (submitted for review).</p>
+</div>
