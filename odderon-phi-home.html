@@ -1,0 +1,90 @@
+<style>
+  .op-home,
+  .op-home * {
+    box-sizing: border-box;
+  }
+
+  .op-home {
+    width: 100%;
+    padding-top: 48px;
+    color: inherit;
+    font-family: inherit;
+  }
+
+  .op-home__grid {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .op-home__copy {
+    flex: 1 1 380px;
+    min-width: 280px;
+  }
+
+  .op-home__media {
+    flex: 1 1 420px;
+    min-width: 280px;
+  }
+
+  .op-home__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .op-home h1 {
+    margin: 0 0 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.6rem, 6vw, 4.85rem);
+    font-weight: 500;
+    line-height: 1;
+    color: #583b1f;
+  }
+
+  .op-home__subtitle {
+    margin: 0 0 32px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.35;
+    max-width: 460px;
+    color: #583b1f;
+  }
+
+  .op-home__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 78px;
+    padding: 0 32px;
+    border-radius: 300px;
+    background: #583b1f;
+    color: #c2bfcb;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+</style>
+
+<div class="op-home">
+  <div class="op-home__grid">
+    <div class="op-home__copy">
+      <h1>Odderon Phi</h1>
+      <p class="op-home__subtitle">
+        Odderon Phi is a home for careful <strong>C-STEM</strong> work — Science, Technology,
+        Engineering, Maths, and Computer Science — from physics education and research to
+        hands-on software like <strong>knokkeroo</strong>. If any of that overlaps with what
+        you're working on, teaching, or curious about, get in touch.
+      </p>
+      <a class="op-home__cta" href="/contact">Get In Touch</a>
+    </div>
+    <div class="op-home__media">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1726049089.053794-PYBOOTSXBVEPHDBMXHAG/imgg-od3-64ti9awh.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
