@@ -1,0 +1,50 @@
+<style>
+  .kk-get, .kk-get * { box-sizing: border-box; }
+  .kk-get { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
+  .kk-get a { color: inherit; }
+  .kk-get__crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 0.88rem; opacity: 0.68; }
+  .kk-get__crumbs a { text-decoration: underline; text-underline-offset: 0.16em; }
+  .kk-get__hero { margin-bottom: 26px; }
+  .kk-get h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; }
+  .kk-get__subtitle { max-width: 620px; margin: 0; font-size: 1.05rem; opacity: 0.84; }
+
+  .kk-get__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+  .kk-get__card { padding: 26px; border: 1px solid rgba(127, 127, 127, 0.28); border-radius: 20px; background: rgba(127, 127, 127, 0.045); text-align: center; }
+  .kk-get__pill { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: rgba(24, 148, 87, 0.18); }
+  .kk-get__card h2 { margin: 0 0 8px; font-size: 1.3rem; }
+  .kk-get__card p { max-width: 380px; margin: 0 auto 16px; font-size: 0.96rem; opacity: 0.85; }
+  .kk-get__card p:last-of-type { margin-bottom: 16px; }
+
+  .kk-get__badge-hw { display: inline-flex; align-items: center; gap: 9px; height: 62px; padding: 0 16px; border-radius: 10px; background: #000; color: #fff; text-decoration: none; }
+  .kk-get__hw-mark { width: 28px; height: 28px; border-radius: 6px; background: #c8102e; flex: 0 0 auto; }
+  .kk-get__hw-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.08; font-size: 1.05rem; font-weight: 700; }
+  .kk-get__hw-text small { font-size: 0.52rem; font-weight: 600; letter-spacing: 0.06em; opacity: 0.92; }
+
+  .kk-get__footer { margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; }
+</style>
+
+<div class="kk-get">
+  <nav class="kk-get__crumbs" aria-label="Breadcrumb">
+    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span><span>Get knokkeroo</span>
+  </nav>
+
+  <header class="kk-get__hero">
+    <h1>Get knokkeroo</h1>
+    <p class="kk-get__subtitle">knokkeroo is available today on the following device.</p>
+  </header>
+
+  <div class="kk-get__grid">
+    <div class="kk-get__card">
+      <span class="kk-get__pill">Live now</span>
+      <h2>Huawei phones</h2>
+      <p>Free to download from the Huawei AppGallery.</p>
+      <a class="kk-get__badge-hw" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker" aria-label="Explore knokkeroo on Huawei AppGallery">
+        <span class="kk-get__hw-mark"></span>
+        <span class="kk-get__hw-text"><small>EXPLORE IT ON</small>AppGallery</span>
+      </a>
+    </div>
+  </div>
+
+  <p class="kk-get__footer">Page v1 · Last updated 24 July 2026 · Applies to app version 3.5.9 (Huawei — the only version currently in production).</p>
+</div>
