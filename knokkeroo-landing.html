@@ -166,14 +166,26 @@
     gap: 6px 14px;
   }
 
-  /* Live store badges. */
-  .kk-home__badge-link { display: inline-flex; }
-  .kk-home__badge--apple { height: 46px; width: auto; }
+  /* Live store badges. All three badges share one fixed height and align on the same row;
+     the "Coming soon" tag is taken out of flow (absolute) so it never affects that alignment. */
+  .kk-home__badge-link { display: inline-flex; align-items: center; height: 68px; }
+  .kk-home__badge--apple { height: 68px; width: auto; }
   .kk-home__badge--google { height: 68px; width: auto; }
   /* Apple = coming soon (Android live first): greyed, not tappable, with a small label. */
-  .kk-home__badge-soon { flex-direction: column; align-items: center; cursor: default; }
+  .kk-home__badge-soon { position: relative; align-items: center; cursor: default; }
   .kk-home__badge-soon img { filter: grayscale(1); opacity: 0.5; }
-  .kk-home__soon-tag { display: block; font-size: 0.68rem; letter-spacing: 0.04em; opacity: 0.7; margin-top: 3px; text-transform: uppercase; }
+  .kk-home__soon-tag {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4px;
+    white-space: nowrap;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
 
   .kk-home__badge-hw {
     display: inline-flex;
