@@ -24,19 +24,15 @@
   .kk-stat__badge-hw {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
     height: 68px;
-    padding: 0 16px;
+    padding: 0 22px;
     border-radius: 10px;
-    background: #000;
-    color: #fff;
+    border: 1px solid rgba(127, 127, 127, 0.32);
+    color: inherit;
     text-decoration: none;
+    font-size: 1.02rem;
+    font-weight: 600;
   }
-
-  .kk-stat__hw-mark { width: 30px; height: 30px; border-radius: 7px; background: #c8102e; flex: 0 0 auto; }
-
-  .kk-stat__hw-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.08; font-size: 1.15rem; font-weight: 700; }
-  .kk-stat__hw-text small { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.06em; opacity: 0.92; }
 
   .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
 </style>
@@ -54,10 +50,7 @@
   <div class="kk-stat__panel">
     <span class="kk-stat__pill">Live now</span>
     <p>knokkeroo is available today on the Huawei AppGallery, completely free.</p>
-    <a class="kk-stat__badge-hw" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker" aria-label="Explore knokkeroo on Huawei AppGallery">
-      <span class="kk-stat__hw-mark"></span>
-      <span class="kk-stat__hw-text"><small>EXPLORE IT ON</small>AppGallery</span>
-    </a>
+    <a class="kk-stat__badge-hw" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker">Huawei AppGallery</a>
   </div>
 
   <p class="kk-stat__footer">Page v1 · Last updated 24 July 2026 · Applies to app version 3.5.9 (Huawei build).</p>
