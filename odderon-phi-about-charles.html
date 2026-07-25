@@ -10,8 +10,30 @@
     padding-bottom: 48px;
   }
 
+  .op-about-charles__grid {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
   .op-about-charles__body {
+    flex: 1 1 460px;
+    min-width: 280px;
     max-width: 720px;
+  }
+
+  .op-about-charles__photo {
+    flex: 1 1 260px;
+    min-width: 220px;
+  }
+
+  .op-about-charles__photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(88, 59, 31, 0.22);
   }
 
   .op-about-charles h3 {
@@ -37,6 +59,7 @@
 </style>
 
 <div class="op-about-charles">
+  <div class="op-about-charles__grid">
   <div class="op-about-charles__body">
       <h3>About Charles</h3>
       <p>Charles is a South African technologist, physicist, QA Lead, and builder with a strong background in scientific thinking, software quality, systems design, and hands-on problem-solving.</p>
@@ -47,5 +70,9 @@
       <p>Charles believes good software should reduce friction, not add noise. It should help people make sense of something, keep track of something, or care for something better than before. The best tools do not need to shout; they simply do their job clearly and reliably.</p>
       <p>Outside formal product work, Charles is a deep collector, organiser, and systems thinker: the kind of person who will rebuild a music library, audit a data pipeline, refine a release process, document evidence, improve a workflow, or chase a technical fault until the cause is clear. He brings a similar persistence to cycling and running, where rhythm, endurance, and steady improvement matter as much as speed.</p>
       <p>His work is shaped by curiosity, precision, persistence, and a simple standard: make it useful, make it understandable, and make it properly.</p>
+  </div>
+  <div class="op-about-charles__photo">
+      <img src="https://images.squarespace-cdn.com/content/6a268f0befc0150171ea2888/1784913452530-B8DH8I1W4DJ33YSHY01S/unsplash-image-jz34K6k_8-E.jpg" alt="Aerial view of ocean waves meeting a sandy beach at golden hour" />
+  </div>
   </div>
 </div>
