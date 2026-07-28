@@ -1,0 +1,69 @@
+<style>
+  .kk-go, .kk-go * { box-sizing: border-box; }
+  .kk-go { width: 100%; max-width: 520px; margin: 40px auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; text-align: center; }
+  .kk-go a { color: inherit; }
+  .kk-go h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.15; letter-spacing: -0.02em; }
+  .kk-go__sub { margin: 0 0 26px; font-size: 1rem; opacity: 0.8; }
+  .kk-go__spinner { width: 34px; height: 34px; margin: 0 auto 20px; border: 3px solid rgba(127,127,127,0.25); border-top-color: currentColor; border-radius: 50%; animation: kkgo-spin 0.9s linear infinite; }
+  @keyframes kkgo-spin { to { transform: rotate(360deg); } }
+  .kk-go__manual { margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(127,127,127,0.2); }
+  .kk-go__manual p { margin: 0 0 12px; font-size: 0.88rem; opacity: 0.7; }
+  .kk-go__row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .kk-go__btn { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(127,127,127,0.32); font-size: 0.88rem; text-decoration: none; }
+</style>
+
+<div class="kk-go" id="kk-go-root">
+  <div class="kk-go__spinner" aria-hidden="true"></div>
+  <h1 id="kk-go-title">Taking you to the right store…</h1>
+  <p class="kk-go__sub" id="kk-go-sub">If nothing happens in a few seconds, use a link below.</p>
+  <div class="kk-go__qr" id="kk-go-qr" style="display:none; margin:0 auto 26px; padding:10px; background:#fff; border:1px solid rgba(127,127,127,0.28); border-radius:14px; width:fit-content;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoAQMAAAB3bUanAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEJklEQVR4nO3dQXLaMBQGYGe6YJkjcBSOBkfjKBwhSxaduHHqpz5Zsh2mnU6Tfv8GEE/vE1uNZIZBROR/yGncyPdcdcvTzsuBPO2eqzab0+l0Op1Op9PpdDqdTv8cetUm8hx6VE9Vh/hweftwXPa7zlOnqtfuGpfN6XQ6nU6n0+l0Op1Op9M/ph+WbYo+DPX+ymsMTvrL2+u3aTSqXjJy3mtOp9PpdDqdTqfT6XQ6nf67egxGVdkTGTOWp93pdDqdTqfT6XQ6nU6n0/+aHjnOfZ+mikv6oto5iVSnPuh0Op1Op9PpdDqdTqd/Ab1JtXdxTfoQfbvpnrtYbU6n0+l0Op1Op9PpdDqdvq+vpquXnZPjuHJnZNooqU5nrDan0+l0Op1Op9PpdDqdTt9p/nDW9b8ROp1Op9PpdDqdTqfT6f+Xfho7uQ4/D2Y0KTsnkXLII09r9lfueY2nNI1Op9PpdDqdTqfT6XQ6fV+/ze+bvtWMqHrPOQ18662zSXXIo3dfhk6n0+l0Op1Op9PpdPq/qTc5L2fEhwk7rPad3lx7vW7Lwc3Q6XQ6nU6n0+l0Op1Opzc5jj+PRlR6daIi5zVPe1n26v6SqXn33AWdTqfT6XQ6nU6n0+l0+oN6pPqfkSm3IT2FM1eVXOfBpmoIPVfR6XQ6nU6n0+l0Op1Op+/rp3ms0ZvEGp/ycqq+3cSiV+/L0Ol0Op1Op9PpdDqdTqdv61FQ/tf0mgoafYiqKruLXt05odPpdDqdTqfT6XQ6nf7v62Ov78vajGrvopy7iG+rgxiXWR/zLzmNv+6M0Ol0Op1Op9PpdDqdTqc/qOfBasYt603fjFa9juMjOyd0Op1Op9PpdDqdTqfT6d1TH6VvLnifsbrGIVftpqxxar68M0Kn0+l0Op1Op9PpdDqdvq1XN1aaGU0us1wd8ohFl15TjnnRuSp+FZ1Op9PpdDqdTqfT6XT6vl5yXhRUafo2/5H6+I0VOp1Op9PpdDqdTqfT6Z9Mz22qsxKNXiWqKj2n2QdZnvqg0+l0Op1Op9PpdDqdTm/1/WR9ylNuUT3RMwaaNR5Wl0On0+l0Op1Op9PpdDqdvqmfel9Uy4sPt9zvvDVtDP08/rqQUpJ/CZ1Op9PpdDqdTqfT6XT6vl71jZRTH8tU/5HanVb0yGHZK5rT6XQ6nU6n0+l0Op1Op39MbzY3ujdWin55e3Mc09M2ctX6EZNlLzqdTqfT6XQ6nU6n0+lfRR/Hla2KKdt3RqY13pdVsRw6nU6n0+l0Op1Op9Pp9D+pl6rL3Pt5OS1SPRWjSWy40Ol0Op1Op9PpdDqdTqd/TG/S6JFqT6Q8qzN6davuyyo6nU6n0+l0Op1Op9Pp9I/rqyn6dW5T9a0SVc8zVnJcNr2mL+l0Op1Op9PpdDqdTqfTt3URka+fH5J38j/hWvkfAAAAAElFTkSuQmCC" alt="QR code — scan to get knokkeroo" width="132" height="132" style="display:block;" />
+  </div>
+
+  <div class="kk-go__manual">
+    <p>Not the right store? Pick one:</p>
+    <div class="kk-go__row">
+      <a class="kk-go__btn" href="https://apps.apple.com/app/id6776208791">Apple App Store</a>
+      <a class="kk-go__btn" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Google Play</a>
+      <a class="kk-go__btn" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker">Huawei AppGallery</a>
+      <a class="kk-go__btn" href="https://www.odderonphi.com/knokkeroo-get">More options</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var APPLE_URL = 'https://apps.apple.com/app/id6776208791';
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.goliontus.knokker';
+  var HUAWEI_URL = 'https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker';
+
+  var ua = (navigator.userAgent || '').toLowerCase();
+  var isIOS = /iphone|ipad|ipod/.test(ua);
+  var isHuawei = /huawei|honor|harmonyos/.test(ua);
+  var isAndroid = /android/.test(ua);
+  var isMobile = isIOS || isAndroid || isHuawei;
+
+  var title = document.getElementById('kk-go-title');
+  var sub = document.getElementById('kk-go-sub');
+
+  function go(url) {
+    window.location.replace(url);
+  }
+
+  if (isIOS) {
+    title.textContent = 'Taking you to the App Store…';
+    go(APPLE_URL);
+  } else if (isHuawei) {
+    title.textContent = 'Taking you to AppGallery…';
+    go(HUAWEI_URL);
+  } else if (isAndroid) {
+    title.textContent = 'Taking you to Google Play…';
+    go(PLAY_URL);
+  } else {
+    document.querySelector('.kk-go__spinner').style.display = 'none';
+    title.textContent = 'Get knokkeroo';
+    sub.textContent = 'Scan this on your phone, or pick your store below.';
+    document.getElementById('kk-go-qr').style.display = 'block';
+  }
+})();
+</script>
