@@ -221,9 +221,19 @@
     <a href="#demo-accounts">Demo accounts</a>
     <a href="#suggested-test-steps">Suggested test steps</a>
     <a href="#reviewer-notes">Reviewer notes</a>
+    <a href="#apple-watch">Apple Watch companion</a>
+    <a href="#apple-tv">Apple TV companion</a>
     <a href="#requirements-links">Requirements &amp; links</a>
     <a href="#document-information">Document information</a>
   </nav>
+
+  <div class="kk-rev__note" style="margin-bottom:22px;">
+    <p style="margin:0;">
+      <strong>Reviewing a specific device?</strong> Jump straight to it:
+      <a href="#apple-watch">Apple Watch</a> · <a href="#apple-tv">Apple TV</a>.
+      Everything else on this page applies to the main iPhone/Android app.
+    </p>
+  </div>
 
   <section class="kk-rev__section" id="what-the-app-does">
     <h2>1. What the app does</h2>
@@ -427,8 +437,55 @@
     </div>
   </section>
 
+  <section class="kk-rev__section" id="apple-watch">
+    <h2>6. Apple Watch companion</h2>
+    <p>
+      The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
+      <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
+      It installs automatically alongside the phone app onto any paired Apple Watch.
+    </p>
+    <ol>
+      <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
+      <li>
+        On the paired Apple Watch, open the Watch app (installed automatically — check the Watch's app
+        list, or open the Watch app on iPhone and confirm knokkeroo shows as installed).
+      </li>
+      <li>Open knokkeroo on the Watch. It shows a single <strong>Knok</strong> button.</li>
+      <li>Tap <strong>Knok</strong> on the Watch. Return to the iPhone app — the <strong>Me</strong> tile should update to reflect the new check-in.</li>
+    </ol>
+    <p>
+      <strong>Free feature:</strong> the Watch app itself is free on every plan. (Push notifications are a
+      separate, paid/beta feature — not required to test the Watch app above.)
+    </p>
+  </section>
+
+  <section class="kk-rev__section" id="apple-tv">
+    <h2>7. Apple TV companion ("knokkeroo TV")</h2>
+    <p>
+      knokkeroo TV is a <strong>separate app</strong> with its own App Store listing (App Store id
+      <code>6795920763</code>, bundle id <code>com.goliontus.knokker.tv</code>) and its own TestFlight
+      build. It is a companion display only — it requires the iPhone app to be signed in first, then
+      paired to it.
+    </p>
+    <div class="kk-rev__credential">
+      <ol>
+        <li>Install and sign in to knokkeroo on an iPhone/simulator using the demo account in section 2 above.</li>
+        <li>Install and open <strong>knokkeroo TV</strong> on the Apple TV / tvOS simulator. It displays a 6-digit pairing code.</li>
+        <li>On the iPhone app, go to <strong>Me → Settings</strong> and choose <strong>Pair a TV</strong>, then enter the 6-digit code shown on the TV.</li>
+        <li>The TV screen should then show the demo account's approved contacts and their check-in status tiles, matching what the phone app shows.</li>
+      </ol>
+    </div>
+    <p>
+      What to check specifically: the pairing flow above; that contact status tiles match the phone app;
+      general Siri Remote navigation; and the app icon / Top Shelf image on the tvOS Home Screen.
+    </p>
+    <p>
+      <strong>Free feature:</strong> knokkeroo TV is free on every plan, same as the Watch app and widgets.
+    </p>
+  </section>
+
   <section class="kk-rev__section" id="requirements-links">
-    <h2>6. Requirements &amp; links</h2>
+    <h2>8. Requirements &amp; links</h2>
     <ul>
       <li>Android and iOS; internet connection required.</li>
       <li>
@@ -440,9 +497,10 @@
   </section>
 
   <section class="kk-rev__section" id="document-information">
-    <h2>7. Document information</h2>
+    <h2>9. Document information</h2>
     <p>
-      Last updated: 28 July 2026 · Applies to app version 3.5.16 and above
+      Last updated: 29 July 2026 · app version 4.22.0 (adds Apple Watch and Apple TV companion sections;
+      applies to the main app from version 3.5.13 and above)
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
