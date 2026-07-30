@@ -466,7 +466,7 @@
     <p class="kroo-kicker">Live status &amp; QA hub</p>
     <h1 id="kroo-status-title">Status as of 28 July 2026</h1>
     <p class="kroo-subtitle">
-      What's live, what's in review, and what's still in development for knokkeroo on Android, iOS and Huawei —
+      What's live, what's in review, and what's still in development for <strong>knokkeroo</strong> on Android, iOS and Huawei —
       plus the newer companion integrations (Garmin watch, Amazon Alexa, Google Home) — with plain download/install
       steps wherever something is actually testable today, and a full ISO-format QA test plan you can download,
       print or open in Word for every stream.
@@ -575,7 +575,7 @@
         <p><strong>Automated tested:</strong> No — there is no automated test pipeline for any release yet. Tested manually against the QA test plan below.</p>
         <p class="kroo-mini-label">✅ Install</p>
         <ol class="kroo-steps">
-          <li><strong>Install.</strong> Search "knokkeroo" in Google Play, or open <a class="kroo-link" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">play.google.com/store/apps/details?id=com.goliontus.knokker</a> and tap <strong>Install</strong> — no tester group or invite needed, it's public.</li>
+          <li><strong>Install.</strong> Search "<strong>knokkeroo</strong>" in Google Play, or open <a class="kroo-link" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">play.google.com/store/apps/details?id=com.goliontus.knokker</a> and tap <strong>Install</strong> — no tester group or invite needed, it's public.</li>
         </ol>
         <div class="kroo-button-row">
           <a class="kroo-button" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Open in Play Store</a>
@@ -588,8 +588,8 @@
       <span class="kroo-pill dev"><span class="kroo-dot dev"></span>IN DEVELOPMENT — NOT TESTABLE YET</span>
       <h3>v4.x — notifications, Quick Access widget &amp; Wear OS companion</h3>
       <p class="kroo-version-sub">Code lives on the main branch only. Database migrations and edge functions are now live on the backend (confirmed 20 Jul 2026) — the remaining gap is entirely client-side: no Play build has been produced from this code yet.</p>
-      <p>What's built: calm push notifications (≤1 unsolicited/day, quiet hours respected), a free-for-everyone home-screen/lock-screen Knok widget, favourite-contact status dot + own-interval greyscale nudge, a Wear OS watch companion (Kotlin) that has been verified to <em>compile and assemble</em> alongside the phone app — but has never been run on a watch or emulator, and its Play Store distribution path (a separate signed AAB via Play Console's Wear OS release flow) isn't configured yet — and client version tracking with a dismissible "please update" nag (soft only, never blocks the app).</p>
-      <p><strong>Device press-time recording + offline-safe check-ins (new, 21 Jul 2026):</strong> every check-in surface now records the actual moment you pressed the button, not the moment the server happened to receive it — important because a phone can sit disconnected for a while before it reconnects and the knok finally goes through. If a device is offline when you press Knok, the check-in is saved on-device immediately and sent automatically the next time it reconnects, with a single-pending-slot design that prevents bulk-resending or spamming the server when connectivity comes back after being flaky (built with South Africa/Nigeria's patchier mobile reception specifically in mind). While a check-in is waiting to send, your own status shows a distinct blue colour plus an asterisk (not colour alone, for accessibility) so you can tell "saved, not yet confirmed" apart from a normal confirmed knok. The Terms &amp; Conditions were updated (v2.4) to cover this, including what happens if a device's clock is wrong: if a check-in arrives with a future timestamp, the server records the actual receipt time instead.</p>
+      <p>What's built: calm push notifications (≤1 unsolicited/day, quiet hours respected), a free-for-everyone home-screen/lock-screen <strong>knok</strong> widget, favourite-contact status dot + own-interval greyscale nudge, a Wear OS watch companion (Kotlin) that has been verified to <em>compile and assemble</em> alongside the phone app — but has never been run on a watch or emulator, and its Play Store distribution path (a separate signed AAB via Play Console's Wear OS release flow) isn't configured yet — and client version tracking with a dismissible "please update" nag (soft only, never blocks the app).</p>
+      <p><strong>Device press-time recording + offline-safe check-ins (new, 21 Jul 2026):</strong> every check-in surface now records the actual moment you pressed the button, not the moment the server happened to receive it — important because a phone can sit disconnected for a while before it reconnects and the <strong>knok</strong> finally goes through. If a device is offline when you press <strong>knok</strong>, the check-in is saved on-device immediately and sent automatically the next time it reconnects, with a single-pending-slot design that prevents bulk-resending or spamming the server when connectivity comes back after being flaky (built with South Africa/Nigeria's patchier mobile reception specifically in mind). While a check-in is waiting to send, your own status shows a distinct blue colour plus an asterisk (not colour alone, for accessibility) so you can tell "saved, not yet confirmed" apart from a normal confirmed <strong>knok</strong>. The Terms &amp; Conditions were updated (v2.4) to cover this, including what happens if a device's clock is wrong: if a check-in arrives with a future timestamp, the server records the actual receipt time instead.</p>
 
       <div class="kroo-nextstep">
         <p><strong>YOUR NEXT STEP:</strong> decide when you want this tested, then tell Claude Code:
@@ -607,7 +607,7 @@
         <p><strong>Version:</strong> 4.13.0 — latest code on <code>main</code>, unreleased (no build produced from this version yet).</p>
         <p><strong>Automated tested:</strong> Not yet — no v4 build has been produced at all yet, so there's nothing to run an automated test against.</p>
         <p><strong>Why not:</strong> a real build bug was found and fixed (20-21 Jul 2026) — a Metro bundler issue that broke release JS bundling wherever the app imports <code>expo-quick-actions</code> (its package.json ships no legacy entry point Metro can resolve). Fixed on both Android and, since, iOS too (confirmed via a real EAS build, see the iOS v4.x section). One separate issue is still open: the Wear OS companion's release packaging step fails outright ("main and micro app package names don't match"), which blocks a release-type Android build from completing at all — this is Android-specific and doesn't affect iOS.</p>
-        <p><strong>The plan once unblocked:</strong> Maestro Cloud, wired into an EAS Workflow, running automatically against every build (Android + iOS, on emulator/simulator) — no human tester needed for the core knok/contacts/invites/paywall regression flows.</p>
+        <p><strong>The plan once unblocked:</strong> Maestro Cloud, wired into an EAS Workflow, running automatically against every build (Android + iOS, on emulator/simulator) — no human tester needed for the core <strong>knok</strong>/contacts/invites/paywall regression flows.</p>
         <p><strong>Next step:</strong> tell Claude Code: <span class="kroo-say">"Fix the Wear OS release-packaging bug and build a v4 Android test release."</span></p>
       </div>
 
@@ -658,7 +658,7 @@
         <p><strong>Automated tested:</strong> No — there is no automated test pipeline for any release yet. Tested manually against the QA test plan below.</p>
         <p class="kroo-mini-label">✅ Install</p>
         <ol class="kroo-steps">
-          <li><strong>Install.</strong> Search "knokkeroo" in the App Store, or open <a class="kroo-link" href="https://apps.apple.com/app/id6776208791">apps.apple.com/app/id6776208791</a> and tap <strong>Get</strong> — no TestFlight or invite needed, it's public.</li>
+          <li><strong>Install.</strong> Search "<strong>knokkeroo</strong>" in the App Store, or open <a class="kroo-link" href="https://apps.apple.com/app/id6776208791">apps.apple.com/app/id6776208791</a> and tap <strong>Get</strong> — no TestFlight or invite needed, it's public.</li>
         </ol>
         <div class="kroo-button-row">
           <a class="kroo-button" href="https://apps.apple.com/app/id6776208791">Open in App Store</a>
@@ -754,7 +754,7 @@
         <p><strong>Automated tested:</strong> No — there is no automated test pipeline for any release yet. Tested manually against the QA test plan below.</p>
         <p class="kroo-mini-label">✅ Register, download and install</p>
         <ol class="kroo-steps">
-          <li><strong>Check your AppGallery region.</strong> Open <strong>AppGallery</strong> → <strong>Me</strong> → <strong>Settings</strong> → <strong>Country/Region</strong> and confirm it is set to <strong>South Africa</strong> or <strong>Nigeria</strong> (knokkeroo's two markets). If it's set elsewhere, the listing won't show up for you.</li>
+          <li><strong>Check your AppGallery region.</strong> Open <strong>AppGallery</strong> → <strong>Me</strong> → <strong>Settings</strong> → <strong>Country/Region</strong> and confirm it is set to <strong>South Africa</strong> or <strong>Nigeria</strong> (<strong>knokkeroo</strong>'s two markets). If it's set elsewhere, the listing won't show up for you.</li>
           <li><strong>Search for it.</strong> In AppGallery, search <strong>knokkeroo</strong>, or open the direct link below.</li>
           <li><strong>Install.</strong> Tap <strong>Install</strong> like any normal AppGallery app — no invitation or tester group needed, it's a normal public listing.</li>
         </ol>
@@ -804,7 +804,7 @@
       <span class="kroo-pill dev"><span class="kroo-dot dev"></span>SUBMITTED FOR STORE REVIEW — NOT YET DOWNLOADABLE</span>
       <h3>KNOK watch companion</h3>
       <p class="kroo-version-sub">One button on the watch: press KNOK, done. No contacts, no status, no admin — same accessibility-first idea as the Apple TV and Wear OS companions.</p>
-      <p>Pairing works like Apple TV's: the watch shows a 6-digit code, you type it into the phone app once (Profile → Pair a Garmin), and the watch keeps a long-lived credential after that — no phone number or PIN needed on the watch itself. The backend for this (pairing + recording the knok) is built and has been tested live, end to end, against the real server — request a code, confirm it, poll for the credential, press KNOK, confirm a retry doesn't double-record, confirm a wrong credential is rejected, and confirm a lost connection saves the press time and retries automatically next time the watch reopens (same offline-safe pattern as the phone/widget/Watch/TV — see the Android v4.x section above). All of that passed.</p>
+      <p>Pairing works like Apple TV's: the watch shows a 6-digit code, you type it into the phone app once (Profile → Pair a Garmin), and the watch keeps a long-lived credential after that — no phone number or PIN needed on the watch itself. The backend for this (pairing + recording the <strong>knok</strong>) is built and has been tested live, end to end, against the real server — request a code, confirm it, poll for the credential, press KNOK, confirm a retry doesn't double-record, confirm a wrong credential is rejected, and confirm a lost connection saves the press time and retries automatically next time the watch reopens (same offline-safe pattern as the phone/widget/Watch/TV — see the Android v4.x section above). All of that passed.</p>
       <p><strong>Real build achieved, 21 Jul 2026:</strong> the Connect IQ SDK is now installed and the watch app (written in Garmin's own language, Monkey C) compiles cleanly across <strong>135 watch models</strong> (220/220 individual device targets built successfully) — from your Fenix 7X down to entry-level models, so almost any Garmin smartwatch owner will be covered, not just one device. That produced a real, signed store package. It has been <strong>submitted to Garmin's developer dashboard for review</strong>, but hit a submission-side snag: Garmin's upload form rejected the app icon with a misleading "invalid format" error even though the icon matched Garmin's own published spec (most likely an undocumented alpha-transparency rule) — the icon was re-exported and re-submitted, and a bug report was filed with Garmin (<a class="kroo-link" href="https://forums.garmin.com/developer/connect-iq/i/bug-reports/http-415-on-app-submission-the-icon-format-is-invalid-image-must-be-a-jpg-gif-or-png-errors-are-misleading-spec-compliant-images-rejected" target="_blank" rel="noopener">forum thread</a>, status "Under Review" as of 21 Jul 2026).</p>
 
       <div class="kroo-nextstep">
@@ -829,13 +829,13 @@
   <!-- ============================= AMAZON ALEXA ============================= -->
   <section class="kroo-section" id="amazon" aria-labelledby="amazon-title">
     <h2 id="amazon-title">🔊 Amazon Alexa</h2>
-    <p class="kroo-platform-tagline">A voice skill — "Alexa, ask knokkeroo to knok in"</p>
+    <p class="kroo-platform-tagline">A voice skill — "Alexa, ask <strong>knokkeroo</strong> to <strong>knok</strong> in"</p>
 
     <div class="kroo-version-card">
       <span class="kroo-pill dev"><span class="kroo-dot dev"></span>NOT STARTED — FEASIBILITY CONFIRMED</span>
       <h3>Voice check-in skill</h3>
       <p class="kroo-version-sub">Confirmed buildable — Amazon fully supports this kind of skill today. Nothing has been built yet; this section reflects a feasibility check, not progress.</p>
-      <p>The idea: say "Alexa, ask knokkeroo to knok in" and it's done, no phone needed. The one genuinely new piece of engineering this needs — bigger than the skill itself — is a proper login/consent flow ("Alexa would like permission to knok in for you — allow?"), which is a real new system knokkeroo doesn't have yet, not just a new voice command. Everything else (what Alexa should say back, what happens if the code doesn't recognize your account, how you unlink it later) is designed and ready to build, just sequenced after Garmin.</p>
+      <p>The idea: say "Alexa, ask <strong>knokkeroo</strong> to <strong>knok</strong> in" and it's done, no phone needed. The one genuinely new piece of engineering this needs — bigger than the skill itself — is a proper login/consent flow ("Alexa would like permission to <strong>knok</strong> in for you — allow?"), which is a real new system <strong>knokkeroo</strong> doesn't have yet, not just a new voice command. Everything else (what Alexa should say back, what happens if the code doesn't recognize your account, how you unlink it later) is designed and ready to build, just sequenced after Garmin.</p>
 
       <div class="kroo-nextstep">
         <p><strong>YOUR NEXT STEP:</strong> none needed yet — this is intentionally queued behind Garmin. When you're ready to start it, tell Claude Code:
@@ -847,12 +847,12 @@
   <!-- ============================= GOOGLE HOME ============================= -->
   <section class="kroo-section" id="google" aria-labelledby="google-title">
     <h2 id="google-title">🎙️ Google Home (Nest)</h2>
-    <p class="kroo-platform-tagline">"Hey Google, knok in" — feasibility research only so far</p>
+    <p class="kroo-platform-tagline">"Hey Google, <strong>knok</strong> in" — feasibility research only so far</p>
 
     <div class="kroo-version-card">
       <span class="kroo-pill deferred"><span class="kroo-dot deferred"></span>RESEARCH ONLY — GOOGLE'S OWN RULES ARE THE BLOCKER</span>
       <h3>Google Assistant / Nest speaker check-in</h3>
-      <p class="kroo-version-sub">This one is genuinely uncertain, and that's Google's doing, not a knokkeroo engineering gap.</p>
+      <p class="kroo-version-sub">This one is genuinely uncertain, and that's Google's doing, not a <strong>knokkeroo</strong> engineering gap.</p>
       <p>Google shut down the general-purpose way third parties used to build this exact kind of "talk to my app" speaker skill. What's left is narrower: a phone-only voice shortcut (works, but doesn't count as real speaker support), or a "smart home device" style integration that's a bit of a stretch for a check-in app and that Google may not even approve for publishing on its own. Nothing has been ruled impossible yet — it needs a short, hands-on research pass (try the exact phrase on real hardware, see what Google actually allows) before anyone can promise a specific experience.</p>
 
       <div class="kroo-nextstep">
@@ -874,7 +874,7 @@
       </div>
       <div class="kroo-download-card">
         <h3>v4.x Test Plan (DRAFT — in development)</h3>
-        <p>Covers favourites, notifications, the Quick Access widget, Wear OS, Apple Watch, Apple TV, Garmin and the paywall — plus a dedicated section on device press-time recording and offline-safe check-in queuing. Every case is explicitly marked with its real status (server-verified, compile-verified, not deployed, etc.) and the exact reason. <strong>Regenerated 21 Jul 2026</strong> to reflect the Garmin store submission, iOS Swift compile-verification, and the offline-safe knok feature.</p>
+        <p>Covers favourites, notifications, the Quick Access widget, Wear OS, Apple Watch, Apple TV, Garmin and the paywall — plus a dedicated section on device press-time recording and offline-safe check-in queuing. Every case is explicitly marked with its real status (server-verified, compile-verified, not deployed, etc.) and the exact reason. <strong>Regenerated 21 Jul 2026</strong> to reflect the Garmin store submission, iOS Swift compile-verification, and the offline-safe <strong>knok</strong> feature.</p>
         <a class="kroo-button download" href="PASTE-SQUARESPACE-FILE-URL-v4-qa-docx" download>Download v4.x test plan (.docx)</a>
       </div>
     </div>
