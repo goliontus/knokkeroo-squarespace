@@ -1,142 +1,50 @@
-
 <style>
-  .kk-stat,
-  .kk-stat * {
-    box-sizing: border-box;
-  }
+  .kk-stat, .kk-stat * { box-sizing: border-box; }
+  .kk-stat { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
+  .kk-stat a { color: inherit; }
+  .kk-stat__crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 0.88rem; opacity: 0.68; }
+  .kk-stat__crumbs a { text-decoration: underline; text-underline-offset: 0.16em; }
+  .kk-stat__hero { margin-bottom: 26px; }
+  .kk-stat h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; }
+  .kk-stat h2 { font-size: 1.4rem; margin: 34px 0 12px; }
+  .kk-stat h3 { font-size: 1.1rem; margin: 18px 0 8px; }
+  .kk-stat__subtitle { max-width: 620px; margin: 0; font-size: 1.05rem; opacity: 0.84; }
 
-  .kk-stat {
-    width: 100%;
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 24px 16px;
-    color: inherit;
-    font-family: inherit;
-    line-height: 1.6;
-  }
+  .kk-stat__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .kk-stat__card { display: flex; align-items: center; gap: 16px; padding: 22px; border: 1px solid rgba(127, 127, 127, 0.28); border-radius: 20px; background: rgba(127, 127, 127, 0.045); text-decoration: none; color: inherit; min-height: 92px; }
+  .kk-stat__card:hover { background: rgba(127, 127, 127, 0.1); }
+  .kk-stat__icon { width: 48px; height: 48px; border-radius: 12px; flex: 0 0 auto; background: #000; }
+  .kk-stat__card-body h2 { margin: 0 0 4px; font-size: 1.25rem; line-height: 1.25; }
+  .kk-stat__card-body p { margin: 0; font-size: 0.92rem; opacity: 0.78; }
 
-  .kk-stat a {
-    color: inherit;
-  }
+  .kk-stat__pill { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; margin-bottom: 12px; padding: 3px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; }
+  .kk-stat__pill--live { background: rgba(24, 148, 87, 0.16); }
+  .kk-stat__pill--beta { background: rgba(201, 162, 39, 0.18); }
 
-  .kk-stat__crumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
-    font-size: 0.88rem;
-    opacity: 0.68;
-  }
+  .kk-stat__panel { padding: 24px; border: 1px solid rgba(127, 127, 127, 0.28); border-radius: 20px; background: rgba(127, 127, 127, 0.045); margin-bottom: 20px; scroll-margin-top: 20px; }
+  .kk-stat__panel p { margin: 0 0 12px; font-size: 1.02rem; opacity: 0.92; }
+  .kk-stat__panel p:last-child { margin-bottom: 0; }
+  .kk-stat__panel ol, .kk-stat__panel ul { margin: 0 0 12px; padding-left: 22px; }
+  .kk-stat__panel li { margin-bottom: 6px; }
 
-  .kk-stat__crumbs a {
-    text-decoration: underline;
-    text-underline-offset: 0.16em;
-  }
+  .kk-stat__btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: #000; color: #fff !important; text-decoration: none !important; font-weight: 700; margin-top: 4px; }
 
-  .kk-stat__hero {
-    margin-bottom: 26px;
-  }
+  .kk-stat__scenario-list { columns: 1; }
+  @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
+  .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
 
-  .kk-stat h1 {
-    margin: 0 0 10px;
-    font-size: clamp(1.9rem, 5vw, 2.7rem);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-  }
-
-  .kk-stat__subtitle {
-    max-width: 620px;
-    margin: 0;
-    font-size: 1.05rem;
-    opacity: 0.84;
-  }
-
-  .kk-stat__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .kk-stat__card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 22px;
-    border: 1px solid rgba(127, 127, 127, 0.28);
-    border-radius: 20px;
-    background: rgba(127, 127, 127, 0.045);
-    text-decoration: none;
-    color: inherit;
-    min-height: 92px;
-  }
-
-  .kk-stat__card:hover {
-    background: rgba(127, 127, 127, 0.1);
-  }
-
-  .kk-stat__card--disabled {
-    opacity: 0.55;
-    cursor: default;
-  }
-
-  .kk-stat__card--disabled:hover {
-    background: rgba(127, 127, 127, 0.045);
-  }
-
-  .kk-stat__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    flex: 0 0 auto;
-    background: #000;
-  }
-
-  .kk-stat__card-body h2 {
-    margin: 0 0 4px;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-
-  .kk-stat__card-body p {
-    margin: 0;
-    font-size: 0.92rem;
-    opacity: 0.78;
-  }
-
-  .kk-stat__pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 6px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 0.76rem;
-    font-weight: 700;
-  }
-
-  .kk-stat__pill--live { background: rgba(24, 148, 87, 0.16); color: inherit; }
-  .kk-stat__pill--review { background: rgba(201, 162, 39, 0.18); color: inherit; }
-  .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22); color: inherit; }
-
-  .kk-stat__footer {
-    margin-top: 8px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(127, 127, 127, 0.2);
-    font-size: 0.8rem;
-    opacity: 0.62;
-  }
+  .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; }
 </style>
 
 <div class="kk-stat">
   <nav class="kk-stat__crumbs" aria-label="Breadcrumb">
     <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span>
-<a href="/knokkeroo/test">Test knokkeroo</a><span>›</span><span>Apple</span>
+    <a href="/knokkeroo/test">Test knokkeroo</a><span>›</span><span>Apple</span>
   </nav>
 
   <header class="kk-stat__hero">
     <h1>Apple devices</h1>
-    <p class="kk-stat__subtitle">Tap your Apple device below.</p>
+    <p class="kk-stat__subtitle">Tap your device below, or jump straight to Apple Watch / Apple TV further down this page.</p>
   </header>
 
   <div class="kk-stat__grid">
@@ -145,30 +53,88 @@
       <span class="kk-stat__card-body">
         <h2>iPhone</h2>
         <p>knokkeroo for iPhone</p>
-        <span class="kk-stat__pill kk-stat__pill--live">Live</span>
+        <span class="kk-stat__pill kk-stat__pill--live">Live + Beta</span>
       </span>
     </a>
 
-    <span class="kk-stat__card kk-stat__card--disabled">
+    <a class="kk-stat__card" href="#watch">
       <span class="kk-stat__icon"></span>
       <span class="kk-stat__card-body">
         <h2>Apple Watch</h2>
-        <p>Not built yet</p>
-        <span class="kk-stat__pill kk-stat__pill--wait">Not yet available</span>
+        <p>Companion app</p>
+        <span class="kk-stat__pill kk-stat__pill--beta">Beta — build 4.21.0 (28)</span>
       </span>
-    </span>
+    </a>
 
-    <span class="kk-stat__card kk-stat__card--disabled">
+    <a class="kk-stat__card" href="#tv">
       <span class="kk-stat__icon"></span>
       <span class="kk-stat__card-body">
         <h2>Apple TV</h2>
-        <p>Not built yet</p>
-        <span class="kk-stat__pill kk-stat__pill--wait">Not yet available</span>
+        <p>Companion app</p>
+        <span class="kk-stat__pill kk-stat__pill--beta">Beta — build 4.21.0 (29)</span>
       </span>
-    </span>
+    </a>
   </div>
 
-  <p class="kk-stat__footer">Page v2 · Last updated 28 July 2026 · Reflects app version iOS 3.5.16.</p>
+  <h2 id="watch">Apple Watch</h2>
+  <div class="kk-stat__panel">
+    <span class="kk-stat__pill kk-stat__pill--beta">Beta — rides along inside the iPhone TestFlight build</span>
+    <p>Requires the iPhone TestFlight beta first (see the <a href="/knokkeroo/test/apple/iphone">iPhone page</a>, Option B) and an Apple Watch paired to that iPhone, watchOS 9+. Watch is a paid/beta-plan feature.</p>
+    <h3>Register</h3>
+    <ol>
+      <li>Join the iPhone beta first: <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a>.</li>
+    </ol>
+    <h3>Install</h3>
+    <ol>
+      <li>On the iPhone's Watch app (My Watch tab), find knokkeroo under Available Apps.</li>
+      <li>Install it on the Watch if it hasn't installed automatically.</li>
+    </ol>
+    <h3>What to test</h3>
+    <ul class="kk-stat__scenario-list">
+      <li>Watch shows your current status on open</li>
+      <li>Tapping Knok on the Watch records a check-in</li>
+      <li>The iPhone app reflects a Watch-recorded Knok without needing a manual refresh</li>
+      <li>Behaviour when signed out (should show a clear "not signed in" state, not crash)</li>
+    </ul>
+    <p><a class="kk-stat__btn" href="https://goliontus.github.io/knokkeroo-squarespace/downloads/knokkeroo-tester-test-plan-apple.docx">Download full test plan (.docx)</a> — Section 3 covers Apple Watch in ISO test-case format.</p>
+  </div>
+
+  <h2 id="tv">Apple TV</h2>
+  <div class="kk-stat__panel">
+    <span class="kk-stat__pill kk-stat__pill--beta">Beta — separate TestFlight app, build 4.21.0 (29)</span>
+    <p>Apple TV is a separate app in App Store Connect (its own TestFlight beta, not bundled with the iPhone app). Requires an Apple TV on tvOS 16+, and a phone already signed into knokkeroo to complete pairing.</p>
+    <h3>Register</h3>
+    <ol>
+      <li>On the Apple TV (or a device signed into the same Apple ID), open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a>.</li>
+      <li>Accept the invite.</li>
+    </ol>
+    <h3>Install</h3>
+    <ol>
+      <li>Install knokkeroo TV via TestFlight on the Apple TV.</li>
+      <li>Open it — it will show a 6-digit pairing code.</li>
+    </ol>
+    <h3>What to test</h3>
+    <ul class="kk-stat__scenario-list">
+      <li>TV shows a 6-digit pairing code on first open</li>
+      <li>On the phone app (already signed in): Me → Pair a TV → enter the code</li>
+      <li>TV screen advances to the main status screen once paired</li>
+      <li>The big "I'M OKAY" button on the TV records a Knok (free — not gated behind a paid plan)</li>
+      <li><strong>Shared-screen awareness:</strong> anyone who can see the TV can see your contacts' check-in status — read the Terms' Connected Devices clause below before pairing a shared/communal TV</li>
+    </ul>
+    <p><a class="kk-stat__btn" href="https://goliontus.github.io/knokkeroo-squarespace/downloads/knokkeroo-tester-test-plan-apple.docx">Download full test plan (.docx)</a> — Section 4 covers Apple TV in ISO test-case format.</p>
+  </div>
+
+  <h2>Report a bug</h2>
+  <div class="kk-stat__panel">
+    <p>Email <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a> with what you did, what you expected, and what actually happened (include the test case ID from the downloadable test plan if you're using it).</p>
+  </div>
+
+  <h2>Terms &amp; conditions</h2>
+  <div class="kk-stat__panel">
+    <p>Full Terms & Conditions, including "2.4 Connected devices and wearables" (Watch/TV check-in timing, shared-screen visibility): <a href="https://www.odderonphi.com/knokkeroo-terms">odderonphi.com/knokkeroo-terms</a>.</p>
+  </div>
+
+  <p class="kk-stat__footer">Page v3 · Last updated 30 July 2026 · iPhone: live 3.5.16 + beta 4.21.0 (28). Watch: beta 4.21.0 (28). Apple TV: beta 4.21.0 (29), separate app id 6795920763.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970499663-1C3BNPJDJK3DSK2KHJCS/unsplash-image-dQejX2ucPBs.jpg" alt="A calm sunrise over layered mountain ridges" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
