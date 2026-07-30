@@ -1,4 +1,3 @@
-
 <style>
   .kk-stat, .kk-stat * { box-sizing: border-box; }
   .kk-stat { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
@@ -37,6 +36,17 @@
   }
 
   .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
+
+  .kk-stat h2 { font-size: 1.4rem; margin: 34px 0 12px; text-align: left; }
+  .kk-stat__panel--left { text-align: left; }
+  .kk-stat__panel--left p { max-width: none; margin: 0 0 12px; text-align: left; }
+  .kk-stat__panel--left ul { margin: 0 0 12px; padding-left: 22px; }
+  .kk-stat__panel--left li { margin-bottom: 6px; }
+  .kk-stat__scenario-list { columns: 1; }
+  @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
+  .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
+  .kk-stat__btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: #000; color: #fff !important; text-decoration: none !important; font-weight: 700; margin-top: 4px; }
+  .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22) !important; }
 </style>
 
 <div class="kk-stat">
@@ -55,7 +65,36 @@
     <a class="kk-stat__badge-hw" href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgd2lkdGg9IjM2IgogICBoZWlnaHQ9IjM2IgogICB2aWV3Qm94PSIwIDAgMzYgMzYiCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzE5IgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgPHRpdGxlCiAgICAgaWQ9InRpdGxlMiI+aWNfYWc8L3RpdGxlPgogIDxkZXNjCiAgICAgaWQ9ImRlc2M0Ij5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICA8ZGVmcwogICAgIGlkPSJkZWZzMTEiPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4MT0iMTgiCiAgICAgICB5MT0iMCIKICAgICAgIHgyPSIxOCIKICAgICAgIHkyPSIzNiIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudC0xIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcAogICAgICAgICBzdG9wLWNvbG9yPSIjRkI2MzYxIgogICAgICAgICBvZmZzZXQ9IjAlIgogICAgICAgICBpZD0ic3RvcDYiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0b3AtY29sb3I9IiNFRDNFNDUiCiAgICAgICAgIG9mZnNldD0iMTAwJSIKICAgICAgICAgaWQ9InN0b3A4IiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGcKICAgICBpZD0iaWNfYWciCiAgICAgc3Ryb2tlPSJub25lIgogICAgIHN0cm9rZS13aWR0aD0iMSIKICAgICBmaWxsPSJub25lIgogICAgIGZpbGwtcnVsZT0iZXZlbm9kZCIKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMiwtMikiPgogICAgPGcKICAgICAgIGlkPSLnvJbnu4QiCiAgICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLDIpIj4KICAgICAgPHBhdGgKICAgICAgICAgZD0iTSAxMC4xMDEsMCBDIDIuNzA1MTEyOCwwIDAsMi43MDQ2NDEgMCwxMC4wOTkwMjkgViAyNS45MDA5NzEgQyAwLDMzLjI5NTM1OSAyLjcwNTExMjgsMzYgMTAuMTAxLDM2IEggMjUuODk0MTg2IEMgMzMuMjg5ODYzLDM2IDM2LDMzLjI5NTM1OSAzNiwyNS45MDA5NzEgViAxMC4wOTkwMjkgQyAzNiwyLjcwNDY0MSAzMy4yOTQ4ODcsMCAyNS44OTksMCBaIgogICAgICAgICBpZD0iRmlsbC0xIgogICAgICAgICBmaWxsPSJ1cmwoI2xpbmVhckdyYWRpZW50LTEpIgogICAgICAgICBzdHlsZT0iZmlsbDp1cmwoI2xpbmVhckdyYWRpZW50LTEpIiAvPgogICAgICA8cGF0aAogICAgICAgICBkPSJtIDE1LjcwMzA1MiwyMC44NzkyNTEgaCAxLjQ0NTI2NyBsIC0wLjcyNTA5MywtMS42ODYyOSB6IG0gLTAuMzU1ODkyLDAuODQ5OCAtMC40Mjg4MDYsMC45ODExNjIgaCAtMC45NzYyNDMgbCAyLjA3NjAzNSwtNC43MDk5MjQgaCAwLjg0MzcyNCBsIDIuMDY3NjQ0LDQuNzA5OTI0IEggMTcuOTI3MjMgbCAtMC40MjMzMDgsLTAuOTgxMTYyIHogbSAxNS43MDkyOTMsMC45Nzc2OSBIIDMyIFYgMTggaCAtMC45NDM1NDcgeiBtIC0zLjc1NTM4MSwtMi4wMjE5MjggaCAxLjczOTI0IHYgLTAuODU4MTkxIGggLTEuNzM5MjQgdiAtMC45NjQ2NyBoIDIuNTI0ODA2IHYgLTAuODU4NDggaCAtMy40NjgwNjQgdiA0LjcwNjQ1MSBoIDMuNTU4OTE3IHYgLTAuODU4NDggSCAyNy4zMDEwNzIgWiBNIDIzLjU1MjA1NiwyMS4yNDA5MyAyMi40ODIzNTUsMTggaCAtMC43ODA2NDcgbCAtMS4wNjk3MDEsMy4yNDA5MyAtMS4wNDEwNTUsLTMuMjM4MzI2IGggLTEuMDE3OTA4IGwgMS42NDI4ODgsNC43MTAyMTMgaCAwLjc5MTM1MyBsIDEuMDcxNDM3LC0zLjA5Mzk0NCAxLjA3MTQzNywzLjA5Mzk0NCBoIDAuNzk4Mjk3IGwgMS42Mzg1NDgsLTQuNzEwMjEzIEggMjQuNTk1NDI2IFogTSAxMi41MDE3NjIsMjAuNjk3ODMzIGMgMCwwLjc2NjE4IC0wLjM4MDQ4NiwxLjE3NTYgLTEuMDcxNDM3LDEuMTc1NiAtMC42OTQ3MTIsMCAtMS4wNzcyMjMsLTAuNDIxMjgzIC0xLjA3NzIyMywtMS4yMDgyOTYgViAxOC4wMDMxODMgSCA5LjM5NjgyMzQgdiAyLjY5NDY1IGMgMCwxLjMyNTQ4IDAuNzM2NjY2NiwyLjA4NTU4NCAyLjAyMDQ4MTYsMi4wODU1ODQgMS4yOTY1NDUsMCAyLjAzOTg2NywtMC43NzQ1NzEgMi4wMzk4NjcsLTIuMTI0OTM1IHYgLTIuNjU4MTkzIGggLTAuOTU1NDEgeiBNIDcuMTE1MzU0OCwxOC4wMDAyODkgaCAwLjk1NTY5OTUgdiA0LjcxMjgxNyBIIDcuMTE1MzU0OCBWIDIwLjc5OTEwMyBIIDQuOTU2Mjc4MiB2IDEuOTE0MDAzIEggNCB2IC00LjcxMjgxNyBoIDAuOTU2Mjc4MiB2IDEuOTAwOTgzIGggMi4xNTkwNzY2IHoiCiAgICAgICAgIGlkPSJwYXRoMTQiCiAgICAgICAgIGZpbGw9IiNmZmZmZmYiIC8+CiAgICAgIDxwYXRoCiAgICAgICAgIGQ9Ik0gMTgsMTIgQyAxNC42OTEyNjIsMTIgMTIsOS4zMDg0NDkxIDEyLDYgaCAwLjg0NzUxMiBjIDAsMi44NDA4NTY1IDIuMzExNjMyLDUuMTUyMTk5IDUuMTUyNDg4LDUuMTUyMTk5IDIuODQwODU2LDAgNS4xNTI0ODgsLTIuMzExMzQyNSA1LjE1MjQ4OCwtNS4xNTIxOTkgSCAyNCBjIDAsMy4zMDg0NDkxIC0yLjY5MTU1MSw2IC02LDYiCiAgICAgICAgIGlkPSJGaWxsLTMiCiAgICAgICAgIGZpbGw9IiNmZmZmZmYiIC8+CiAgICA8L2c+CiAgPC9nPgogIDxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTEyNyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzp0aXRsZT5pY19hZzwvZGM6dGl0bGU+CiAgICAgIDwvY2M6V29yaz4KICAgIDwvcmRmOlJERj4KICA8L21ldGFkYXRhPgo8L3N2Zz4K" alt="" style="width:20px;height:20px;border-radius:4px;flex:0 0 auto;" />Huawei AppGallery</a>
   </div>
 
-  <p class="kk-stat__footer">Page v1 · Last updated 24 July 2026 · Applies to app version 3.5.9 (Huawei build).</p>
+  <h2>Beta (v4) status</h2>
+  <div class="kk-stat__panel kk-stat__panel--left">
+    <span class="kk-stat__pill kk-stat__pill--wait">Not yet available</span>
+    <p>No v4 build exists yet for Huawei (HMS Push Kit work is in progress, unshipped). Everything below applies to the live production build. Ask <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a> for an update.</p>
+  </div>
+
+  <h2>What to test</h2>
+  <div class="kk-stat__panel kk-stat__panel--left">
+    <ul class="kk-stat__scenario-list">
+      <li>Registration / login (verification code)</li>
+      <li>Contacts screen — status colours (green/amber/red)</li>
+      <li>Sending and accepting a connection request</li>
+      <li>Knok (checking in) and seeing your own time update</li>
+      <li>Quiet hours settings</li>
+      <li>Account deletion</li>
+    </ul>
+    <p><strong>Full ISO-format test case document</strong> (fillable steps, test data, expected/actual result columns): <a class="kk-stat__btn" href="https://goliontus.github.io/knokkeroo-squarespace/downloads/knokkeroo-tester-test-plan-core.docx">Download test plan (.docx)</a></p>
+  </div>
+
+  <h2>Report a bug</h2>
+  <div class="kk-stat__panel kk-stat__panel--left">
+    <p>Email <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a> with what you did, what you expected, and what actually happened. If you're working from the downloadable test plan, include the test case ID (e.g. "CORE-3") in the subject line.</p>
+  </div>
+
+  <h2>Terms &amp; conditions</h2>
+  <div class="kk-stat__panel kk-stat__panel--left">
+    <p>Full Terms &amp; Conditions: <a href="https://www.odderonphi.com/knokkeroo/terms">odderonphi.com/knokkeroo/terms</a>.</p>
+  </div>
+
+  <p class="kk-stat__footer">Page v2 · Last updated 30 July 2026 · Applies to app version 3.5.9 (Huawei build). No v4 build exists yet.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
