@@ -1,0 +1,50 @@
+<style>
+  .ar-hold, .ar-hold * { box-sizing: border-box; }
+  .ar-hold {
+    width: 100%; max-width: 720px; margin: 0 auto; padding: 40px 16px;
+    color: inherit; font-family: inherit; line-height: 1.65; text-align: center;
+  }
+  .ar-hold h1 {
+    margin: 0 0 16px; font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.05; letter-spacing: -0.03em;
+  }
+  .ar-hold__quote {
+    max-width: 560px; margin: 0 auto; font-size: 1.15rem; font-style: italic; opacity: 0.9;
+  }
+  .ar-hold__note {
+    max-width: 560px; margin: 22px auto 0; font-size: 1rem; opacity: 0.78;
+  }
+  .ar-hold__status {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 26px;
+    padding: 6px 16px; border-radius: 999px; background: rgba(127, 127, 127, 0.12);
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em;
+    text-transform: uppercase; opacity: 0.85;
+  }
+  .ar-hold__contact {
+    margin-top: 40px; padding-top: 26px;
+    border-top: 1px solid rgba(127, 127, 127, 0.24);
+    font-size: 0.9rem; opacity: 0.72;
+  }
+  .ar-hold a { color: inherit; }
+</style>
+
+<div class="ar-hold">
+  <h1>Archisaurus Rex</h1>
+
+  <p class="ar-hold__quote">&ldquo;Everything worth finding has been buried a long time.&rdquo;</p>
+
+  <p class="ar-hold__note">This one is still under the dust sheet. We are taking our time over
+  the parts that matter, and we would rather do that quietly than quickly.</p>
+
+  <span class="ar-hold__status">Excavation in progress</span>
+
+  <figure style="margin:36px 0 0;">
+    <img src="https://images.unsplash.com/photo-1582751836565-74f64cc184cb?auto=format&fit=crop&w=1200&h=675&q=80"
+      alt="Rows of vinyl records on shelves in a record store"
+      style="width:100%;height:auto;border-radius:16px;display:block;" loading="lazy" />
+    <figcaption style="font-size:0.8rem;opacity:0.6;margin-top:8px;">Photo via Unsplash</figcaption>
+  </figure>
+
+  <p class="ar-hold__contact">Odderon Phi (Pty) Ltd &middot;
+    <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a></p>
+</div>
