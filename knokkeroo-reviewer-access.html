@@ -275,7 +275,8 @@
     <p>
       <strong>No action in the app can charge a demo account.</strong> "Subscribe" and "Restore purchases" are simulated for
       demo accounts; "Terms of Use", "Not now", and the contact tiles never involve payment. (For real, non-demo accounts the
-      Subscribe button opens Google Play's own purchase sheet, which must be explicitly confirmed and can be cancelled.)
+      Subscribe button opens the platform's own purchase sheet — Apple's In-App Purchase sheet on iOS, Google Play Billing on
+      Android — which must be explicitly confirmed and can be cancelled.)
     </p>
   </section>
 
@@ -427,10 +428,12 @@
         <li>The app targets adults and is not directed at children.</li>
         <li>
           <strong>Subscriptions &amp; billing:</strong> the free tier fully shows a user's first four contacts; a paid
-          subscription (sold and billed entirely by Google Play — we never see or store card details) shows all of them.
+          subscription shows all of them. The subscription is sold and billed entirely by the platform's own store —
+          <strong>Apple In-App Purchase</strong> on iOS and <strong>Google Play Billing</strong> on Android — and we never see or
+          store card details. On the Huawei AppGallery build there is no billing at all: every contact is visible, free.
           <strong>All demo accounts start on the FREE plan.</strong> Tapping <strong>Subscribe</strong> on a demo account is
-          <strong>simulated</strong> — it unlocks everything with no charge and no Google Play purchase sheet; log out and
-          back in to reset to the free view. For real (non-demo) users, Subscribe opens Google Play's own cancellable
+          <strong>simulated</strong> — it unlocks everything with no charge and no store purchase sheet at all; log out and
+          back in to reset to the free view. For real (non-demo) users, Subscribe opens that platform's own cancellable
           purchase sheet. <strong>No purchase is required to review the app, and nothing a reviewer taps can charge them.</strong>
         </li>
       </ul>
@@ -443,6 +446,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
+      <strong>Note:</strong> the Watch companion ships from app version 4.x onwards. It is not present in the
+      currently public App Store build (3.5.16); this section applies to whichever build carries it.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -499,8 +504,8 @@
   <section class="kk-rev__section" id="document-information">
     <h2>9. Document information</h2>
     <p>
-      Last updated: 29 July 2026 · app version 4.22.0 (adds Apple Watch and Apple TV companion sections;
-      applies to the main app from version 3.5.13 and above)
+      Last updated: 31 July 2026 · applies to the live store builds — iOS 3.5.16, Android 3.5.15, Huawei 3.5.9 —
+      and to the Apple Watch and Apple TV companions currently in TestFlight (4.21.0).
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
