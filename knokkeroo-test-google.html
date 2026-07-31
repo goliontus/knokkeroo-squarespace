@@ -26,6 +26,7 @@
   .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
 
   .kk-stat h2 { font-size: 1.4rem; margin: 34px 0 12px; text-align: left; }
+  .kk-stat h3 { font-size: 1.1rem; margin: 18px 0 8px; }
   .kk-stat__panel--left { text-align: left; }
   .kk-stat__panel--left p { max-width: none; margin: 0 0 12px; text-align: left; }
   .kk-stat__panel--left ul { margin: 0 0 12px; padding-left: 22px; }
@@ -65,9 +66,26 @@
   <h2>Wear OS smartwatch</h2>
   <div class="kk-stat__panel kk-stat__panel--left">
     <span class="kk-stat__pill kk-stat__pill--wait">Closed testing track exists — invite-only, pending review</span>
-    <p>There is now a knokkeroo watch app for <strong>Wear OS</strong> (build 4.28.1), on its own Google Play closed testing track, submitted for Google's review 31 July. It uses the <strong>same join link and the same tester list</strong> as the Android phone beta above — if you're already on that list, you don't need to do anything extra; the watch app appears on your watch's Play Store once Google approves the track.</p>
-    <p><strong>What to test on the watch:</strong> that the watch shows your current status when you open it, that tapping <em>knok</em> on the watch records a check-in, that the phone app reflects a watch-recorded knok without a manual refresh, and that a signed-out watch shows a clear "not signed in" state rather than crashing.</p>
-    <p>Requires a Wear OS watch paired to an Android phone that has knokkeroo installed.</p>
+    <p>There is now a knokkeroo watch app for <strong>Wear OS</strong> (build 4.28.1) — Galaxy Watch, Pixel Watch and other Wear OS watches. It is on its own Google Play closed testing track, submitted for Google's review 31 July, and uses the <strong>same join link and the same tester list</strong> as the Android phone beta above.</p>
+
+    <p><strong>You need:</strong> a Wear OS watch already paired to your Android phone in the normal way (Galaxy Wearable, or the Wear OS app) — that is your watch's own setup, nothing to do with knokkeroo.</p>
+
+    <h3>1 · Join the test</h3>
+    <p>Exactly the same step as the phone beta above — you do it once and it covers both. Email <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a> with the Google account address you want added, wait for us to confirm, then opt in at <a href="https://play.google.com/apps/testing/com.goliontus.knokker">play.google.com/apps/testing/com.goliontus.knokker</a>.</p>
+
+    <h3>2 · Install on your phone</h3>
+    <p>Once you have opted in, open the <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">knokkeroo Play Store listing</a> and install or update from there. It is the same listing as the public app — after opting in it serves you the tester build instead of the public one, so there is no separate download link to hunt for.</p>
+
+    <h3>3 · Install on your watch</h3>
+    <p>The watch app ships under the same package as the phone app, so Google Play delivers it to your paired watch for you — you should not have to search for it. If it has not appeared after a few minutes, open the <strong>Play Store on the watch</strong> and look under <strong>Apps on your phone</strong>, where knokkeroo will be listed with an Install button.</p>
+    <p>Nothing will appear until Google approves the track, which is still pending. If the watch shows no knokkeroo at all, that is the most likely reason — it is not something you have done wrong.</p>
+
+    <h3>4 · Pairing — there isn't any</h3>
+    <p><strong>There is no code to enter and nothing to pair.</strong> The watch app has no login screen of its own: your phone hands it your signed-in session automatically over the watch link. So the whole of "pairing" is: <strong>open knokkeroo on your phone once</strong> after installing, while the watch is connected. Then open it on the watch and you should already be signed in.</p>
+    <p>If the watch says you are not signed in, open the phone app and check you are signed in there, then reopen the watch app — the phone re-sends the session every time it starts and every time you sign in or out.</p>
+
+    <h3>What to test on the watch</h3>
+    <p>That the watch shows your current status when you open it; that tapping <em>knok</em> on the watch records a check-in; that the phone app reflects a watch-recorded knok without a manual refresh; and that a signed-out watch shows a clear "not signed in" state rather than crashing.</p>
   </div>
 
   <h2>What to test</h2>
