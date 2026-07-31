@@ -79,16 +79,25 @@
   <h2 id="watch">Apple Watch</h2>
   <div class="kk-stat__panel">
     <span class="kk-stat__pill kk-stat__pill--beta">Beta — rides along inside the iPhone TestFlight build</span>
-    <p>Requires the iPhone TestFlight beta first (see the <a href="/knokkeroo/test/apple/iphone">iPhone page</a>, Option B) and an Apple Watch paired to that iPhone, watchOS 9+. Watch is a paid/beta-plan feature.</p>
-    <h3>Register</h3>
+    <p><strong>Before you start:</strong> your Apple Watch must already be paired to your iPhone in the normal way, and be on watchOS 9 or later. That is the Watch's own setup and has nothing to do with knokkeroo. <strong>The Watch app is free on every plan</strong> — you do not need a paid subscription for it.</p>
+
+    <h3>Step 1 · Join the beta</h3>
     <ol>
-      <li>Join the iPhone beta first: <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a>.</li>
+      <li>Install <strong>TestFlight</strong> from the App Store if you do not have it.</li>
+      <li>On your iPhone, open <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a> — this is a public link, anyone can use it and nobody needs to invite you.</li>
+      <li>Tap <strong>Accept</strong>, then <strong>Install</strong>. There is no separate Watch beta — the Watch app is inside this one.</li>
     </ol>
-    <h3>Install</h3>
+
+    <h3>Step 2 · Get it onto the Watch</h3>
     <ol>
-      <li>On the iPhone's Watch app (My Watch tab), find <strong>knokkeroo</strong> under Available Apps.</li>
-      <li>Install it on the Watch if it hasn't installed automatically.</li>
+      <li>Usually it installs itself within a few minutes. Check your Watch's app list first.</li>
+      <li>If it has not: on the iPhone open the <strong>Watch</strong> app → <strong>My Watch</strong> tab → scroll to <strong>Available Apps</strong> → tap <strong>Install</strong> next to knokkeroo.</li>
     </ol>
+
+    <h3>Step 3 · Pairing — there is none</h3>
+    <p><strong>There is no code to type and nothing to pair.</strong> The Watch app has no login screen: it reads your signed-in session from the iPhone. So all you do is <strong>open knokkeroo on your iPhone once</strong> after installing. Then open it on the Watch and you will already be signed in.</p>
+    <p><strong>If the Watch says you are not signed in:</strong> open the app on your iPhone, confirm you are signed in there, then open the Watch app again.</p>
+
     <h3>What to test</h3>
     <ul class="kk-stat__scenario-list">
       <li>Watch shows your current status on open</li>
@@ -102,17 +111,31 @@
   <h2 id="tv">Apple TV</h2>
   <div class="kk-stat__panel">
     <span class="kk-stat__pill kk-stat__pill--beta">Beta — separate TestFlight app, build 4.21.0 (29)</span>
-    <p>Apple TV is a separate app in App Store Connect (its own TestFlight beta, not bundled with the iPhone app). Requires an Apple TV on tvOS 16+, and a phone already signed into <strong>knokkeroo</strong> to complete pairing.</p>
-    <h3>Register</h3>
+    <p><strong>Before you start:</strong> you need an Apple TV on tvOS 16 or later, and an iPhone that already has knokkeroo installed and signed in. <strong>knokkeroo TV is free on every plan.</strong> This is a <em>separate</em> app from the iPhone one, with its own beta — joining the iPhone beta does not give you this.</p>
+
+    <h3>Step 1 · Join the TV beta</h3>
     <ol>
-      <li>On the Apple TV (or a device signed into the same Apple ID), open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a>.</li>
-      <li>Accept the invite.</li>
+      <li>On any device signed into your Apple ID, open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a> — a public link, no invitation needed.</li>
+      <li>Tap <strong>Accept</strong>.</li>
     </ol>
-    <h3>Install</h3>
+
+    <h3>Step 2 · Install on the Apple TV</h3>
     <ol>
-      <li>Install <strong>knokkeroo</strong> TV via TestFlight on the Apple TV.</li>
-      <li>Open it — it will show a 6-digit pairing code.</li>
+      <li>On the Apple TV, open <strong>TestFlight</strong> (install it from the tvOS App Store if it is not there).</li>
+      <li>Find <strong>knokkeroo TV</strong> and install it.</li>
+      <li>Open it. It will display a <strong>6-digit code</strong> on screen.</li>
     </ol>
+
+    <h3>Step 3 · Pair the TV to your phone</h3>
+    <p>This one <em>does</em> pair, unlike the Watch — the TV has no keyboard, so your phone authorises it.</p>
+    <ol>
+      <li>On your iPhone, open knokkeroo and make sure you are signed in.</li>
+      <li>Go to <strong>Me</strong> → <strong>Settings</strong> → <strong>Pair a TV</strong>.</li>
+      <li>Type the 6-digit code shown on the television.</li>
+      <li>The TV screen moves on to your status screen. That is it — you only do this once.</li>
+    </ol>
+    <p><strong>Before you pair a shared or family TV:</strong> anyone who can see that screen can see your contacts' check-in status. Read the "Connected devices and wearables" clause in the Terms below first.</p>
+
     <h3>What to test</h3>
     <ul class="kk-stat__scenario-list">
       <li>TV shows a 6-digit pairing code on first open</li>
@@ -131,12 +154,12 @@
 
   <h2>Terms &amp; conditions</h2>
   <div class="kk-stat__panel">
-    <p>Full Terms & Conditions, including "2.4 Connected devices and wearables" (Watch/TV check-in timing, shared-screen visibility): <a href="https://www.odderonphi.com/knokkeroo/terms">odderonphi.com/knokkeroo-terms</a>.</p>
+    <p>Full Terms & Conditions, including "2.4 Connected devices and wearables" (Watch/TV check-in timing, shared-screen visibility): <a href="https://www.odderonphi.com/knokkeroo/terms">odderonphi.com/knokkeroo/terms</a>.</p>
   </div>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970499663-1C3BNPJDJK3DSK2KHJCS/unsplash-image-dQejX2ucPBs.jpg" alt="A calm sunrise over layered mountain ridges" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v3 · Last updated 30 July 2026 · iPhone: live 3.5.16 + beta 4.21.0 (28). Watch: beta 4.21.0 (28). Apple TV: beta 4.21.0 (29), separate app id 6795920763.</p>
+  <p class="kk-stat__footer">Page v4 · Last updated 31 July 2026 · iPhone: live 3.5.16 + beta 4.21.0 (28). Apple Watch: inside the same iPhone beta, free on every plan. Apple TV: separate beta 4.21.0 (29), app id 6795920763, free on every plan. Both betas are public TestFlight links — no invitation needed.</p>
 </div>
