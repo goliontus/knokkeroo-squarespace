@@ -75,6 +75,28 @@
       rgba(88, 59, 31, 0.11);
   }
 
+  /* Beta-tester call to action. Deliberately the only SOLID card on the page — the
+     others are translucent greys that pick up the Squarespace section colour, so a
+     filled olive block is what makes this one stand out rather than blend in. Text
+     colour is set explicitly because .kk-home a inherits the section's colour. */
+  /* Selector must out-specify `.kk-home a { color: inherit }` above (0,1,1), or the
+     link colour falls back to the section's own text colour — which rendered as black
+     on the dark fill. `.kk-home a.kk-home__card--tester` is 0,2,1 and wins. */
+  .kk-home a.kk-home__card--tester {
+    border-color: #583B1F;
+    background: #583B1F;
+    color: #F7F3E8;
+  }
+
+  .kk-home a.kk-home__card--tester:hover {
+    background: #6B4826;
+    border-color: #6B4826;
+  }
+
+  .kk-home__card--tester .kk-home__card-text {
+    opacity: 0.88;
+  }
+
   .kk-home__pill {
     display: inline-flex;
     align-items: center;
@@ -279,6 +301,11 @@
       <span class="kk-home__card-title">Account Deletion</span>
       <span class="kk-home__card-text">Request or complete deletion of a knokkeroo account and associated data.</span>
     </a>
+
+    <a class="kk-home__card kk-home__card--tester" href="https://www.odderonphi.com/knokkeroo/test">
+      <span class="kk-home__card-title">Become Beta Tester</span>
+      <span class="kk-home__card-text">Try knokkeroo early on your phone, watch or TV — everything you need to get set up, for every device.</span>
+    </a>
   </main>
 
   <section class="kk-home__download" aria-label="Download knokkeroo">
@@ -308,6 +335,6 @@
       <strong>knokkeroo</strong> is provided by Odderon Phi (Pty) Ltd.
       Need help? <a href="https://www.odderonphi.com/contact">Contact us</a>.
     </p>
-    <p style="margin-top:8px;font-size:0.8rem;opacity:0.62;">Page v3 · Last updated 31 July 2026.</p>
+    <p style="margin-top:8px;font-size:0.8rem;opacity:0.62;">Page v4 · Last updated 1 August 2026.</p>
   </footer>
 </div>
