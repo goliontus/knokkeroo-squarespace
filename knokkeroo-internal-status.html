@@ -58,15 +58,18 @@
   <p class="kk-int__subtitle">
     What's live in production, what's on TestFlight/closed testing, and what's still in development for
     <strong>knokkeroo</strong> v4 on Android, iOS and Huawei — plus the companion integrations (Garmin watch, Amazon Alexa,
-    Google Home) — with the exact next action for each. Last revised 1 August 2026: iOS TestFlight, Wear OS
-    and Huawei entries were all materially stale and have been corrected against the live App Store Connect
-    API, EAS build history and <code>docs/DEPLOYMENT_STATE.md</code>.
+    Google Home) — with the exact next action for each. Last revised 2 August 2026 (evening): the Garmin
+    watch app is listed on Connect IQ and has now genuinely run on a real watch; iOS TestFlight carries
+    4.30.3 (build 32); four further releases (v4.31.0–v4.33.0) are committed but have never been built,
+    so nothing in them is on any device. Corrected against the live App Store Connect API, EAS build
+    history, the live Supabase database and <code>docs/DEPLOYMENT_STATE.md</code>.
   </p>
 
   <nav class="kk-int__toc" aria-label="Section index">
     <p>Jump to</p>
     <div class="kk-int__toc-grid">
-      <a href="#today">Latest (31 Jul &ndash; 1 Aug)</a>
+      <a href="#today">Latest (2 Aug)</a>
+      <a href="#today-1aug">Earlier (31 Jul &ndash; 1 Aug)</a>
       <a href="#today-30jul">Earlier (30 Jul)</a>
       <a href="#android">🤖 Android</a>
       <a href="#ios">🍎 iOS</a>
@@ -83,7 +86,44 @@
   </nav>
 
   <section class="kk-int__section" id="today">
-    <h2>What changed 31 July &ndash; 1 August 2026</h2>
+    <h2>What changed 2 August 2026</h2>
+    <p style="opacity:0.75;font-size:0.88rem;">Earlier logs are kept below, unchanged, for history.</p>
+    <ol>
+      <li><strong>The Garmin watch app actually works — first ever real run.</strong> Installed on a real
+        <strong>Fenix 7X</strong> and used end to end, then verified in the live database rather than taken
+        on trust: the watch paired at 16:55, the pairing code was consumed exactly as designed, and
+        <strong>two check-ins landed with <code>source = garmin</code></strong>. That also proves the
+        profile-status trigger works on real traffic. Two years of "compiles, never run" is over.</li>
+      <li><strong>Build 32 (v4.30.3) reached external testers.</strong> Submitted, attached to the external
+        TestFlight group and <em>verified by reading the group membership back</em> — and Apple required no
+        Beta App Review for it, so testers could install immediately. This is the build-30 failure (a build
+        uploaded but never attached) properly closed.</li>
+      <li><strong>Founder registration push — live on the database, no build needed.</strong> Every new
+        signup now pushes a private "New registration. Total <em>x</em>." to you alone. Proven end to end by
+        running the real signup path inside a transaction that was <em>always rolled back</em>, reading the
+        queued request out of the database, then sending one real push down the production path — Expo
+        returned a ticket and it arrived on the phone.</li>
+      <li><strong>The one-per-day notification cap is gone for v4 testing</strong> (your call: "v3 is in
+        production, nothing changes; v4 is testing, send all notifications"). Applied live.
+        <strong>Quiet hours were deliberately kept.</strong></li>
+      <li><strong>Four releases are committed and on nobody's phone.</strong> <strong>v4.31.0</strong> — the
+        notification you tapped is shown at the top of home, so you can read what it said.
+        <strong>v4.32.0</strong> — notifications now deep-link to the contact they are about, and the contact
+        screen finally leads with status, last check-in time and how they checked in.
+        <strong>v4.32.1</strong> — six button labels that rendered black-on-dark (measured at 2.02:1, failing
+        even the large-text standard) fixed, with a contrast check now wired into the pre-commit hook so it
+        cannot happen again; it caught three offenders that had been missed by hand.
+        <strong>v4.33.0</strong> — "Ask them to check in", rate-limited by construction so a second ask in
+        the same hour silently no-ops. <strong>No build carries any of it.</strong></li>
+      <li><strong>One deploy is owed before any build ships "Ask them to check in".</strong> The database
+        side is live, but the notification dispatcher has not been redeployed, so a request queued today
+        would fail to send. Nothing can trigger it yet — no shipped build has the button — but it must go
+        out first. Needs a Supabase access token from you.</li>
+    </ol>
+  </section>
+
+  <section class="kk-int__section" id="today-1aug">
+    <h2>What changed 31 July &ndash; 1 August 2026 (historical)</h2>
     <p style="opacity:0.75;font-size:0.88rem;">The 30 July log is kept below, unchanged, for history.</p>
     <ol>
       <li><strong>Huawei upload blocker SOLVED (31 Jul).</strong> The full 82MB v4.20.0 APK is uploaded to
@@ -105,7 +145,7 @@
         five weeks while all three stores went live. The duplicated status was removed in favour of
         <code>docs/DEPLOYMENT_STATE.md</code>, and <code>scripts/check-claude-md.mjs</code> now fails the
         pre-commit hook if a version number or point-in-time claim reappears there.</li>
-      <li><strong>Real user-blocking bug found on a tester's iPhone and shipped (1 Aug, v4.30.2 build 31).</strong>
+      <li><strong>Real user-blocking bug found on a tester's iPhone; half-fixed 1 Aug (v4.30.2/31), finished 2 Aug (v4.30.3/32).</strong>
         At OS font sizes above scale 1.15 the <strong>knok</strong> tile expanded to 562px against a 166px
         contact tile, spanning both rows of the wrapping grid, pushing every contact off-screen
         <em>and</em> making the scroll container report exactly one viewport of content &mdash; so the
@@ -283,15 +323,27 @@
         device-farm equivalent and stays a real-tester task permanently.</div>
       <div class="kk-int__device">
         <div class="kk-int__device-head"><h4>📱 iPhone + ⌚ Apple Watch (same build)</h4><span class="kk-int__pill kk-int__pill--live">TESTFLIGHT — JOINABLE NOW</span></div>
-        <p><strong>Version: 4.30.2, build 31</strong> (built and submitted 1 Aug, attached to the external
-          group the same day and verified by reading the group membership back — it now lists builds 31, 28,
-          20, 16). Join: <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a>
+        <p><strong>Version: 4.30.3, build 32</strong> (built and submitted 2 Aug, attached to the external
+          group the same day and verified by reading the group membership back — it now lists builds 32, 31,
+          28, 20, 16). <strong>Note the direction of that check:</strong> querying the App Store Connect API
+          from the build's side (<code>/v1/builds/&lt;id&gt;/betaGroups</code>) returns an empty list even
+          when the attach is real — an API quirk that looks alarming. Query from the group's side
+          (<code>/v1/betaGroups/&lt;id&gt;/builds</code>). Build 30 is genuinely absent from that group,
+          which is why external testers sat on build 28 for two releases. 4.30.3 completes the knok-tile
+          fix that 4.30.2 only half-fixed — 4.30.2 corrected the large-OS-text branch only, and the tile
+          was still ~21% too wide on normal text. Join: <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a>
           (external group "<strong>knokkeroo</strong> Beta Testers iOS"). Apple required <strong>no Beta App
           Review</strong> for this build — queried directly, zero submissions exist — so testers can install
           as soon as it appears. Includes the Home Screen quick action, WidgetKit
           widget, and Watch companion. Never run on a physical Watch yet — TestFlight installability is
           confirmed, on-wrist behaviour (Bluetooth reconnection, locked-screen notifications, haptics) is
           not.</p>
+        <p><strong>Build 32 is already four releases behind the code.</strong> v4.31.0, v4.32.0, v4.32.1 and
+          v4.33.0 are committed and tested at the unit level, but <strong>no build carries them</strong> —
+          reading the notification you tapped, notifications deep-linking to the right contact, the
+          black-on-dark button labels, and "Ask them to check in" are all invisible to every tester until the
+          next build is cut. The notification dispatcher must be redeployed <em>before</em> that build ships,
+          or the new request type will fail to send.</p>
         <p style="opacity:0.75;font-size:0.85rem;"><strong>Silent failure found 1 Aug, worth remembering:</strong>
           build 30 (v4.29.1, uploaded 31 July) was <em>never attached to the external group at all</em>, so
           every external tester silently stayed on build 28 for two releases — which is why a tester
@@ -380,25 +432,37 @@
     <h2>⌚ Garmin</h2>
     <p class="kk-int__tagline">Connect IQ Store · a companion watch app, separate from the phone apps above</p>
     <div class="kk-int__card">
-      <span class="kk-int__pill kk-int__pill--blocked">SUBMITTED FOR STORE REVIEW — AWAITING GARMIN</span>
-      <h3>knok watch companion</h3>
-      <p>Status unchanged since the last update — deliberately not overstated. Backend (pairing +
-        recording) built and tested live end-to-end against the real server, all cases passing. Monkey C
-        watch app compiles cleanly across 135 watch models, a real signed store package was submitted to
-        Garmin's developer dashboard. Hit a submission snag (icon upload rejected with a misleading
-        "invalid format" error) — re-exported and re-submitted, bug report filed with Garmin
+      <span class="kk-int__pill kk-int__pill--live">LISTED ON CONNECT IQ (BETA) — AND PROVEN ON A REAL WATCH</span>
+      <h3><strong>knokkeroo</strong> watch companion — v1.0.1</h3>
+      <p>The three-week submission blocker is over and the app is <strong>listed on the Connect IQ store as
+        a Beta app</strong> (1 Aug). Garmin never fixed the underlying bug — their HTTP 415 icon rejection
         (<a href="https://forums.garmin.com/developer/connect-iq/i/bug-reports/http-415-on-app-submission-the-icon-format-is-invalid-image-must-be-a-jpg-gif-or-png-errors-are-misleading-spec-compliant-images-rejected" target="_blank" rel="noopener">forum thread</a>,
-        ref <strong>CIQQA-4576</strong>). Status moved from "Under Review" to <strong>"Acknowledged"</strong>
-        as of 30 July — Garmin has confirmed the bug is real, but no fix or staff reply with next steps
-        yet.</p>
-      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> nothing required right now — sitting with
-        Garmin. Check the forum thread periodically. If it stalls: <span class="kk-int__say">"draft an
-        email to ConnectIQAppAdmin@garmin.com about the stuck submission"</span>.</div>
+        ref <strong>CIQQA-4576</strong>) is still open and has been silent since 22 July. It was beaten with
+        a workaround instead: upload blank placeholder images first, then swap the real ones in. The app was
+        also renamed from "knok" to <strong>knokkeroo</strong>, since that is what the product is called.</p>
+      <p><strong>It has now actually run (2 Aug), which it never had before.</strong> Installed on a real
+        <strong>Fenix 7X</strong> and confirmed in the live database, not on trust: paired at 16:55, the
+        pairing code was consumed as designed, and two check-ins were recorded with
+        <code>source = garmin</code>. Pressing the button twice records two check-ins — that is correct
+        behaviour, not a bug; the app only reuses a send while one is still pending, so a failed retry can
+        never double-count, but a person checking in twice genuinely means twice.</p>
+      <p><strong>What "Beta" costs:</strong> a Connect IQ beta listing installs <em>only</em> for the
+        developer account. No tester can install it, however well the page explains how. Making it public
+        needs a new app ID in the manifest and a full Garmin review — <strong>not yet decided</strong>.</p>
+      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> decide whether Garmin goes public (new app
+        ID + full review) or stays developer-only for now. Three smaller things are owed regardless: upload
+        <strong>v1.1.0</strong> (adds the at-a-glance widget — built and signed across 205 targets), replace
+        the store description, and fix the tester page, which currently has no install link at all and points
+        people at a "Beta Apps" menu that does not exist. The route that works is the app's own store page:
+        <a href="https://apps.garmin.com/apps/a251aae1-5b9b-49f9-82d3-72691bfedafc" target="_blank" rel="noopener">apps.garmin.com/apps/a251aae1…</a>.</div>
       <div class="kk-int__device">
-        <div class="kk-int__device-head"><h4>⌚ Garmin watch</h4><span class="kk-int__pill kk-int__pill--blocked">NOT ONLINE — AWAITING GARMIN'S STORE REVIEW</span></div>
-        <p>Compiles clean across 135 models, real signed <code>.iq</code> package built and submitted; no
-          version number until Garmin publishes. Never run on simulator or physical watch — needs an
-          interactive desktop session this environment doesn't have.</p>
+        <div class="kk-int__device-head"><h4>⌚ Garmin watch</h4><span class="kk-int__pill kk-int__pill--live">WORKING ON A REAL WATCH (DEVELOPER ACCOUNT ONLY)</span></div>
+        <p><strong>Version 1.0.1 listed</strong>, compiles clean across every supported model, and verified
+          working on a Fenix 7X on 2 August. <strong>v1.1.0 is built and signed but not uploaded</strong> —
+          it adds a glance view that deliberately does <em>not</em> check you in, because a check-in recorded
+          by brushing past a scrolling list would be a lie about whether someone is okay. The glance has been
+          compiled but never run; the sideload file is on the build machine and needs to reach the PC the
+          watch plugs into.</p>
       </div>
     </div>
   </section>
@@ -490,18 +554,20 @@
         13 Jul) — no action needed.</li>
       <li><strong>iOS v4 (phone/Watch/TV):</strong> real, joinable TestFlight builds for both apps — the
         furthest along of any v4 platform. Remaining gap is real-device testing (Watch/TV never touched
-        physical hardware).</li>
+        physical hardware), plus <strong>four committed releases (v4.31.0–v4.33.0) that no build carries
+        yet</strong>.</li>
       <li><strong>Android v4:</strong> closed testing track is active with testers assigned, pending
         Google's review of the resume — real fix landed 30 Jul, previously the track existed but nobody
         could actually join it. Wear OS's wrong-signing-key bug is root-caused and fixed in code
         (v4.25.0) but not yet rebuilt/verified — needs one real EAS build.</li>
-      <li><strong>Huawei v4:</strong> a real build exists but has never been uploaded to AppGallery —
-        the file is too large for this session's browser-upload tooling (86MB vs. a 10MB cap), needs the
-        user to do the console upload directly. HMS Push Kit is server-verified end-to-end, client
-        linked-and-compiled, only real-device delivery unconfirmed.</li>
-      <li><strong>Garmin:</strong> furthest along of the new companion integrations behind the phone apps —
-        backend fully tested, watch app compiles across 135 models, submitted to Garmin's store, sitting
-        on their side awaiting an icon-upload bug resolution.</li>
+      <li><strong>Huawei v4:</strong> the 82MB v4.20.0 APK is uploaded to AppGallery and bound to the
+        version, done over the publishing API — the browser upload cap never has to be hit again. Submission
+        is <strong>paused by your decision</strong> until v4 has had real device testing elsewhere. HMS Push
+        Kit is server-verified end-to-end, client linked-and-compiled, only real-device delivery
+        unconfirmed.</li>
+      <li><strong>Garmin:</strong> now the only companion integration that has actually run on real hardware
+        — listed on Connect IQ as a Beta app and proven on a Fenix 7X. Open question is whether it goes
+        public, which needs a new app ID and a full Garmin review.</li>
       <li><strong>Amazon Alexa &amp; Google Home:</strong> confirmed buildable (Alexa) / needs a short
         research spike (Google Home), both queued behind Garmin.</li>
       <li><strong>Client version-tracking bug fixed (v4.24.0, 30 Jul):</strong> <code>users.
@@ -521,16 +587,20 @@
   <section class="kk-int__section" id="nextsteps">
     <h2>Immediate next steps</h2>
     <ol>
+      <li><strong>Redeploy the notification dispatcher.</strong> Must happen before any build ships "Ask them
+        to check in", or that request will fail to send. Needs a Supabase access token from you — it is the
+        only thing standing in the way.</li>
+      <li><strong>Cut an iOS build.</strong> Four releases (v4.31.0–v4.33.0) are committed and on nobody's
+        phone: reading the notification you tapped, deep-linking to the right contact, the black-on-dark
+        button labels, and "Ask them to check in".</li>
+      <li><strong>Decide whether Garmin goes public</strong> (new app ID + a full Garmin review) or stays a
+        developer-only Beta listing. While it is Beta, no tester can install it however good the
+        instructions are.</li>
+      <li><strong>Garmin housekeeping:</strong> upload v1.1.0 (the glance), replace the store description,
+        and fix the tester page — it has no install link at all and points at a menu that does not exist.</li>
       <li>Once Google clears the Android alpha-track review, grow the "<strong>knokkeroo</strong> Beta Testers - Closed"
         list beyond its current 2 addresses (or switch it to an open Google Group) so more testers can
         actually join.</li>
-      <li>Run <code>eas build -p android --profile wear</code> (a real EAS build — this session
-        deliberately didn't trigger it) to produce a Wear OS AAB with the v4.25.0 signing fix, confirm its
-        fingerprint matches the app's real upload cert, then upload it to the now-active closed testing
-        track.</li>
-      <li>Manually upload the v4.20.0 Huawei APK to AppGallery Connect as a closed-testing release — needs
-        a human at a real desktop, the file's too large for this session's tooling.</li>
-      <li>Garmin: no action pending on our side — check the forum thread periodically.</li>
       <li>Recruit real Apple Watch owners from the tester panel — the one device that stays
         human-tester-only permanently.</li>
     </ol>
@@ -538,7 +608,7 @@
 
   <p style="font-size:0.9rem;opacity:0.7;">This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
   <p style="font-size:0.9rem;opacity:0.7;">Questions? <a href="https://www.odderonphi.com/contact">Contact us</a> · <a href="https://www.odderonphi.com/knokkeroo/terms">Terms &amp; Privacy Policy</a></p>
-  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v7 · Last updated 1 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
+  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v8 · Last updated 2 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
