@@ -62,7 +62,7 @@
       <span class="kk-stat__card-body">
         <h2>Apple Watch</h2>
         <p>Companion app</p>
-        <span class="kk-stat__pill kk-stat__pill--beta">Beta — build 4.30.2 (31)</span>
+        <span class="kk-stat__pill kk-stat__pill--beta">Beta — build 4.30.3 (32)</span>
       </span>
     </a>
 
@@ -113,10 +113,17 @@
     <span class="kk-stat__pill kk-stat__pill--beta">Beta — separate TestFlight app, build 4.21.0 (29)</span>
     <p><strong>Before you start:</strong> you need an Apple TV on tvOS 16 or later, and an iPhone that already has knokkeroo installed and signed in. <strong>knokkeroo TV is free on every plan.</strong> This is a <em>separate</em> app from the iPhone one, with its own beta — joining the iPhone beta does not give you this.</p>
 
-    <h3>Step 1 · Join the TV beta</h3>
+    <h3>Step 1 · Join the TV beta — on your iPhone, not on the TV</h3>
+    <p><strong>This step cannot be done on the Apple TV, and it cannot be done on a computer.</strong>
+      A join link only works inside the TestFlight app, and the Apple TV has no way to open a web
+      link. On a PC or Mac browser the page simply tells you to open it on a device — there is no
+      Accept button. Do it on the iPhone; you are joining with your <em>Apple ID</em>, not with a
+      particular device, which is why the TV picks it up afterwards.</p>
     <ol>
-      <li>On any device signed into your Apple ID, open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a> — a public link, no invitation needed.</li>
-      <li>Tap <strong>Accept</strong>.</li>
+      <li><strong>On your iPhone</strong>, open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a> — a public link, no invitation needed.</li>
+      <li>It opens the TestFlight app. Tap <strong>Accept</strong>.
+        <span class="kk-stat__sub">If nothing happens, install <strong>TestFlight</strong> from the App Store first, then open the link again. You can also open TestFlight, tap <strong>Redeem</strong>, and type the code from the end of the link: <strong>72H1DdnT</strong>.</span></li>
+      <li>Make sure the iPhone is signed into <strong>the same Apple ID as the Apple TV</strong> — that is what carries the beta across.</li>
     </ol>
 
     <h3>Step 2 · Install on the Apple TV</h3>
@@ -141,7 +148,8 @@
       <li>TV shows a 6-digit pairing code on first open</li>
       <li>On the phone app (already signed in): Me → Pair a TV → enter the code</li>
       <li>TV screen advances to the main status screen once paired</li>
-      <li>The big "I'M OKAY" button on the TV records a <strong>knok</strong> (free — not gated behind a paid plan)</li>
+      <li><strong>Opening the app is itself a check-in</strong> — the time under the kangaroo should come up green, not grey</li>
+      <li>Pressing the kangaroo records another <strong>knok</strong> (free — not gated behind a paid plan); the time turns green each time</li>
       <li><strong>Shared-screen awareness:</strong> anyone who can see the TV can see your contacts' check-in status — read the Terms' Connected Devices clause below before pairing a shared/communal TV</li>
     </ul>
     <p><a class="kk-stat__btn" href="https://goliontus.github.io/knokkeroo-squarespace/downloads/knokkeroo-tester-test-plan-apple.docx">Download full test plan (.docx)</a> — Section 4 covers Apple TV in ISO test-case format.</p>
@@ -161,5 +169,5 @@
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970499663-1C3BNPJDJK3DSK2KHJCS/unsplash-image-dQejX2ucPBs.jpg" alt="A calm sunrise over layered mountain ridges" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v5 · Last updated 1 August 2026 · iPhone: live 3.5.16 + beta 4.30.2 (31). Apple Watch: inside the same iPhone beta, free on every plan. Apple TV: separate beta 4.21.0 (29), app id 6795920763, free on every plan. Both betas are public TestFlight links — no invitation needed.</p>
+  <p class="kk-stat__footer">Page v5 · Last updated 2 August 2026 · iPhone: live 3.5.16 + beta 4.30.3 (32). Apple Watch: inside the same iPhone beta, free on every plan. Apple TV: separate beta 4.21.0 (29), app id 6795920763, free on every plan. Both betas are public TestFlight links — no invitation needed.</p>
 </div>
