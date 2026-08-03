@@ -58,7 +58,8 @@
   <p class="kk-int__subtitle">
     What's live in production, what's on TestFlight/closed testing, and what's still in development for
     <strong>knokkeroo</strong> v4 on Android, iOS and Huawei — plus the companion integrations (Garmin watch, Amazon Alexa,
-    Google Home) — with the exact next action for each. Last revised 2 August 2026 (evening): the Garmin
+    Google Home) — with the exact next action for each. Last revised 3 August 2026: Garmin is closed after
+    their rejection, and a LaMetric desk-clock tile is live.
     watch app is listed on Connect IQ and has now genuinely run on a real watch; iOS TestFlight carries
     4.30.3 (build 32); four further releases (v4.31.0–v4.33.0) are committed but have never been built,
     so nothing in them is on any device. Corrected against the live App Store Connect API, EAS build
@@ -75,6 +76,7 @@
       <a href="#ios">🍎 iOS</a>
       <a href="#huawei">🟥 Huawei</a>
       <a href="#garmin">⌚ Garmin</a>
+      <a href="#lametric">🕒 LaMetric</a>
       <a href="#amazon">🔊 Amazon Alexa</a>
       <a href="#google">🎙️ Google Home</a>
       <a href="#automation">Automation &amp; test coverage</a>
@@ -430,40 +432,67 @@
 
   <section class="kk-int__section" id="garmin">
     <h2>⌚ Garmin</h2>
-    <p class="kk-int__tagline">Connect IQ Store · a companion watch app, separate from the phone apps above</p>
+    <p class="kk-int__tagline">Connect IQ Store · closed — Garmin will not list knokkeroo</p>
     <div class="kk-int__card">
-      <span class="kk-int__pill kk-int__pill--live">LISTED ON CONNECT IQ (BETA) — AND PROVEN ON A REAL WATCH</span>
-      <h3><strong>knokkeroo</strong> watch companion — v1.0.1</h3>
-      <p>The three-week submission blocker is over and the app is <strong>listed on the Connect IQ store as
-        a Beta app</strong> (1 Aug). Garmin never fixed the underlying bug — their HTTP 415 icon rejection
-        (<a href="https://forums.garmin.com/developer/connect-iq/i/bug-reports/http-415-on-app-submission-the-icon-format-is-invalid-image-must-be-a-jpg-gif-or-png-errors-are-misleading-spec-compliant-images-rejected" target="_blank" rel="noopener">forum thread</a>,
-        ref <strong>CIQQA-4576</strong>) is still open and has been silent since 22 July. It was beaten with
-        a workaround instead: upload blank placeholder images first, then swap the real ones in. The app was
-        also renamed from "knok" to <strong>knokkeroo</strong>, since that is what the product is called.</p>
-      <p><strong>It has now actually run (2 Aug), which it never had before.</strong> Installed on a real
-        <strong>Fenix 7X</strong> and confirmed in the live database, not on trust: paired at 16:55, the
-        pairing code was consumed as designed, and two check-ins were recorded with
-        <code>source = garmin</code>. Pressing the button twice records two check-ins — that is correct
-        behaviour, not a bug; the app only reuses a send while one is still pending, so a failed retry can
-        never double-count, but a person checking in twice genuinely means twice.</p>
-      <p><strong>What "Beta" costs:</strong> a Connect IQ beta listing installs <em>only</em> for the
-        developer account. No tester can install it, however well the page explains how. Making it public
-        needs a new app ID in the manifest and a full Garmin review — <strong>not yet decided</strong>.</p>
-      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> decide whether Garmin goes public (new app
-        ID + full review) or stays developer-only for now. Three smaller things are owed regardless: upload
-        <strong>v1.1.0</strong> (adds the at-a-glance widget — built and signed across 205 targets), replace
-        the store description, and fix the tester page, which currently has no install link at all and points
-        people at a "Beta Apps" menu that does not exist. The route that works is the app's own store page:
-        <a href="https://apps.garmin.com/apps/a251aae1-5b9b-49f9-82d3-72691bfedafc" target="_blank" rel="noopener">apps.garmin.com/apps/a251aae1…</a>.</div>
+      <span class="kk-int__pill kk-int__pill--parked">CLOSED — REJECTED BY GARMIN, 3 AUGUST 2026</span>
+      <h3><strong>knokkeroo</strong> watch companion — v1.1.1 (beta listing only)</h3>
+      <p><strong>Garmin declined to list knokkeroo publicly, and the stream is now closed.</strong> A public
+        listing was submitted on 3 August and rejected the same day, about two hours later. Their reason,
+        verbatim: <em>"given the nature of the app, this is something we are unfortunately not able to
+        approve for the store as it would fall under our 'safety awareness' category."</em></p>
+      <p><strong>This is a category exclusion, not a defect — there is nothing to fix and resubmit.</strong>
+        Garmin's own
+        <a href="https://developer.garmin.com/connect-iq/app-review-guidelines/" target="_blank" rel="noopener">App Review Guidelines</a>
+        reserve rejection for apps that "may create a false sense of security, such as 'safety awareness'
+        apps". Their worry is reliance: someone believing help is coming when the watch is off, out of range
+        or the phone is flat. Our disclaimer was read, thanked for, and set aside in the same sentence.
+        A developer who argued the same policy over an anchor alarm — which mirrored Garmin's <em>own</em>
+        app — was blocked by their legal department and never reversed.</p>
+      <p><strong>Decision taken: do not appeal, and do not send them the Terms.</strong> Our Terms describe a
+        system that alerts your contacts when you are overdue, which argues Garmin's case rather than ours.
+        Garmin's policy explicitly permits distribution outside their store, so the developer-account beta
+        listing is a sanctioned route, not a workaround.</p>
+      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> none. Nothing is owed here. The rejected
+        public listing and the beta listing both still exist and were deliberately left in place — say the
+        word if you want either removed. <strong>Pair a Garmin is now founder-only in the phone app</strong>
+        (v4.37.0), so no ordinary user is offered a door that opens onto nothing, while your own watch keeps
+        working exactly as it does today.</div>
       <div class="kk-int__device">
-        <div class="kk-int__device-head"><h4>⌚ Garmin watch</h4><span class="kk-int__pill kk-int__pill--live">WORKING ON A REAL WATCH (DEVELOPER ACCOUNT ONLY)</span></div>
-        <p><strong>Version 1.0.1 listed</strong>, compiles clean across every supported model, and verified
-          working on a Fenix 7X on 2 August. <strong>v1.1.0 is built and signed but not uploaded</strong> —
-          it adds a glance view that deliberately does <em>not</em> check you in, because a check-in recorded
-          by brushing past a scrolling list would be a lie about whether someone is okay. The glance has been
-          compiled but never run; the sideload file is on the build machine and needs to reach the PC the
-          watch plugs into.</p>
+        <div class="kk-int__device-head"><h4>⌚ Garmin watch</h4><span class="kk-int__pill kk-int__pill--live">STILL WORKING ON YOUR OWN WATCH</span></div>
+        <p><strong>Version 1.1.1 is on the beta listing</strong> (uploaded 3 August, Internal 4), and your
+          fēnix stays paired — the database shows one live Garmin device, never revoked, with four real
+          check-ins. 1.1.1 fixes two things found in an audit that day: <strong>the glance had no kangaroo
+          on it at all</strong> (it drew the word "knokkeroo", the same defect the Apple TV had), and opening
+          the app now records a check-in the way unlocking your phone does, so the time comes up green rather
+          than grey. The glance still deliberately does <em>not</em> check you in — scrolling past it is not
+          the same as opening the app.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="kk-int__section" id="lametric">
+    <h2>🕒 LaMetric</h2>
+    <p class="kk-int__tagline">A desk clock showing live knokkeroo numbers — yours only, nothing published</p>
+    <div class="kk-int__card">
+      <span class="kk-int__pill kk-int__pill--live">DEPLOYED AND VERIFIED — 3 AUGUST 2026</span>
+      <h3>Live user counts on a LaMetric Time</h3>
+      <p>Nothing was built <em>for</em> LaMetric and nothing was published to their app market. The route is
+        LaMetric's own <strong>"My Data DIY"</strong> app, which you install on the clock and point at a URL
+        we control — so there is no LaMetric app to write, submit or maintain.</p>
+      <p>The URL is a new Supabase function, <code>stats-tile</code>, deployed and proven the same day. It
+        showed <strong>28 users, 11 active today, 125 check-ins, 4 new this week</strong> on its first real
+        call.</p>
+      <p><strong>How "and nobody else" is actually enforced</strong>, since a clock polling the open internet
+        means a public URL: the address carries a secret, and anything without it gets a plain
+        <strong>404</strong> rather than a "wrong password", so probing the address teaches an outsider
+        nothing. The query asks the database for <em>counts only</em> — no names, no numbers, no rows — so
+        even a leaked URL reveals nothing but totals. Demo accounts are excluded, or the number on the wall
+        would be about ten too high.</p>
+      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> find the clock. When it turns up, open
+        <strong>My Data DIY</strong> on it, choose <strong>HTTP Poll</strong>, and paste the URL — it is
+        saved in the private memory store, not in the repo, because the URL <em>is</em> the password. One
+        small correction is queued for the next deploy: check-ins were counting demo accounts while every
+        other number excluded them (125 vs 123 — small, but the tile should mean one thing).</div>
     </div>
   </section>
 
@@ -608,7 +637,7 @@
 
   <p style="font-size:0.9rem;opacity:0.7;">This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
   <p style="font-size:0.9rem;opacity:0.7;">Questions? <a href="https://www.odderonphi.com/contact">Contact us</a> · <a href="https://www.odderonphi.com/knokkeroo/terms">Terms &amp; Privacy Policy</a></p>
-  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v8 · Last updated 2 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
+  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v9 · Last updated 3 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
