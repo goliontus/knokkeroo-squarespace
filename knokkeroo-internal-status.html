@@ -498,29 +498,41 @@
 
   <section class="kk-int__section" id="amazon">
     <h2>🔊 Amazon Alexa</h2>
-    <p class="kk-int__tagline">A voice skill — "Alexa, ask <strong>knokkeroo</strong> to <strong>knok</strong> in"</p>
+    <p class="kk-int__tagline">A voice skill — halted before any work started</p>
     <div class="kk-int__card">
-      <span class="kk-int__pill kk-int__pill--parked">NOT STARTED — FEASIBILITY CONFIRMED</span>
+      <span class="kk-int__pill kk-int__pill--parked">HALTED — 3 AUGUST 2026</span>
       <h3>Voice check-in skill</h3>
-      <p>Confirmed buildable, nothing built yet. Queued behind Garmin. The one genuinely new piece of
-        engineering: a proper login/consent flow ("Alexa would like permission to <strong>knok</strong> in for you —
-        allow?").</p>
-      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> none yet — queued behind Garmin. When
-        ready: <span class="kk-int__say">"Start on the Alexa skill — build the account-linking page
-        first."</span></div>
+      <p><strong>Researched properly, then stopped — and not because it is impossible.</strong> Amazon
+        has no equivalent of the rule that killed Garmin: they exclude a whole category, Amazon only
+        forbids specific claims and behaviours (no life-saving claims, no contacting emergency
+        services) and none of those are things knokkeroo does. The skill would be buildable and
+        approvable.</p>
+      <p><strong>It was halted on the commercial question instead.</strong> There is no confirmation
+        that Alexa properly covers <strong>South Africa and Nigeria</strong>, our only two markets.
+        South Africa has partial support — Echo devices sell there — but international Echo models
+        have features cut, and nothing was found at all for Nigeria or for a South African skill
+        locale. A skill nobody here can invoke is worth nothing, however cleanly it passes
+        certification.</p>
+      <p>The research is kept in <code>docs/alexa/ALEXA_ROADMAP.md</code>, marked halted, with the
+        real work identified: Alexa links accounts with OAuth, and we would have to run an
+        authorisation server of our own — the 6-digit pairing we already use for Garmin and Apple TV
+        does not transfer.</p>
+      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> none. What would restart it is
+        evidence that a real number of knokkeroo users own an Alexa device in South Africa or
+        Nigeria — a question about users, not about Amazon.</div>
     </div>
   </section>
 
   <section class="kk-int__section" id="google">
     <h2>🎙️ Google Home (Nest)</h2>
-    <p class="kk-int__tagline">"Hey Google, <strong>knok</strong> in" — feasibility research only so far</p>
+    <p class="kk-int__tagline">"Hey Google, knok in" — halted alongside Alexa</p>
     <div class="kk-int__card">
-      <span class="kk-int__pill kk-int__pill--parked">RESEARCH ONLY — GOOGLE'S OWN RULES ARE THE BLOCKER</span>
+      <span class="kk-int__pill kk-int__pill--parked">HALTED — 3 AUGUST 2026</span>
       <h3>Google Assistant / Nest speaker check-in</h3>
-      <p>Google shut down the general-purpose way third parties used to build this kind of skill. Nothing
-        ruled impossible yet — needs a short hands-on research pass. Queued behind Garmin and Alexa.</p>
-      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> none yet. When ready: <span class="kk-int__say">"Run
-        the Google Home feasibility spike and tell me what's actually achievable."</span></div>
+      <p><strong>Halted in the same breath as Alexa, and it was always the weaker of the two.</strong>
+        Google shut down the general-purpose route third parties used to build this kind of thing, and
+        we had never done more than desk research — nothing was built and nothing is lost.</p>
+      <div class="kk-int__next"><strong>YOUR NEXT STEP:</strong> none.</div>
     </div>
   </section>
 
@@ -637,7 +649,7 @@
 
   <p style="font-size:0.9rem;opacity:0.7;">This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
   <p style="font-size:0.9rem;opacity:0.7;">Questions? <a href="https://www.odderonphi.com/contact">Contact us</a> · <a href="https://www.odderonphi.com/knokkeroo/terms">Terms &amp; Privacy Policy</a></p>
-  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v9 · Last updated 3 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
+  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v10 · Last updated 3 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
