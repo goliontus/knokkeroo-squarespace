@@ -39,138 +39,19 @@
     <h1>knokkeroo for Garmin</h1>
   </header>
 
-  <div class="kk-stat__panel">
-    <span class="kk-stat__pill">On the Connect IQ store — beta</span>
-    <p>knokkeroo is now on the Garmin Connect IQ store as a beta app. It works on 135 Garmin
-      watch models, including the fēnix, Forerunner, Venu, Instinct, epix, vívoactive, MARQ,
-      Descent, Approach and tactix families.</p>
-  </div>
-
   <div class="kk-stat__panel kk-stat__panel--note">
-    <h2>Right now, only the owner's Garmin account can install it</h2>
-    <p>That is a Garmin rule, not a choice: a Connect IQ <em>beta</em> app can only be downloaded by
-      the developer account that uploaded it. It cannot be shared with other testers yet.</p>
-    <p><strong>Garmin has declined to list knokkeroo publicly</strong> (3 August 2026). A public
-      version was submitted and rejected the same day. The reason was not a bug or anything we can
-      correct: Garmin places apps like this in their <em>safety awareness</em> category, and their
-      published policy is that such apps are not listed on the Connect IQ store at all.</p>
-    <p>So the beta install below stays the only route onto a Garmin watch for now, and it remains
-      limited to the developer account. If that changes, this page changes with it.</p>
+    <h2>knokkeroo is not available on Garmin watches</h2>
+    <p><strong>Garmin will not list knokkeroo on the Connect IQ store.</strong> We submitted it on
+      3 August 2026 and it was declined the same day.</p>
+    <p>The reason was not a fault in the app, and it is not something we can fix and try again.
+      Garmin does not allow apps whose purpose is letting people know you are okay — they place
+      them in a category they keep off the store altogether. They read our explanation that
+      knokkeroo is not an emergency or safety service, and declined anyway.</p>
+    <p>So there is nothing to install and nothing to test on a Garmin watch, and we are not asking
+      anyone to try. <strong>knokkeroo works on your phone, and on Apple Watch, Wear OS and Apple
+      TV</strong> — please <a href="/knokkeroo/test">pick your device here</a> instead.</p>
   </div>
 
-  <div class="kk-stat__panel">
-    <h2>Install it on your watch</h2>
-    <ol>
-      <li>Make sure your watch is paired to your phone in the <strong>Garmin Connect</strong> app and
-        is showing as connected.</li>
-      <li>Open the app's own page in the Connect IQ store:
-        <a href="https://apps.garmin.com/apps/a251aae1-5b9b-49f9-82d3-72691bfedafc">apps.garmin.com/apps/a251aae1-5b9b-49f9-82d3-72691bfedafc</a>,
-        signed in with the Garmin account that owns the app.
-        <span class="kk-stat__sub">Open that link on your phone and it hands over to the Connect IQ
-          app. There is no "Beta Apps" list to browse — a beta app is reached by its own link.</span></li>
-      <li>Tap <strong>Install</strong>, and pick your watch.
-        <span class="kk-stat__sub">The watch must be nearby and connected. Installing takes a minute
-          or two and the watch may restart the app list afterwards.</span></li>
-      <li>On the watch, hold the middle-left button to open the app list (or press <code>START</code>
-        and scroll), and open <strong>knokkeroo</strong>.</li>
-    </ol>
-  </div>
 
-  <div class="kk-stat__panel kk-stat__panel--note">
-    <h2>Your phone needs the v4 test version — the store version cannot pair yet</h2>
-    <p><strong>Pair a Garmin does not exist in the knokkeroo you get from the App Store, Google Play
-      or the AppGallery today.</strong> It is part of v4, which is still in testing. If you install
-      the normal store version and go looking for it under Profile, you will not find it, and
-      nothing is wrong with your watch.</p>
-    <p>Get the v4 test version of the phone app first, from
-      <a href="/knokkeroo/test">the testing pages</a> — pick your phone there (iPhone, Android or
-      Huawei) and follow that page. Then come back here and carry on below.</p>
-  </div>
-
-  <div class="kk-stat__panel">
-    <h2>Connect it to your knokkeroo account</h2>
-    <ol>
-      <li>On your phone, make sure you are running the <strong>v4 test version</strong> of knokkeroo,
-        not the one from the store — see the note just above.</li>
-      <li>The first time you open it, the watch shows a <strong>6-digit code</strong> and the words
-        <em>“Enter this in the app: Profile → Pair a Garmin”</em>.
-        <span class="kk-stat__sub">If it says it could not get a code, press the button to try again —
-          the watch needs your phone's connection to reach the internet.</span></li>
-      <li>On your phone, open the knokkeroo app, go to <strong>Profile</strong>, and find
-        <strong>Pair a Garmin</strong>.</li>
-      <li>Type the 6-digit code from the watch and confirm.
-        <span class="kk-stat__sub">The watch checks every few seconds and switches itself to the knok
-          screen once it is accepted. You only do this once per watch.</span></li>
-    </ol>
-  </div>
-
-  <div class="kk-stat__panel">
-    <h2>What to test</h2>
-    <ol>
-      <li><strong>It opens.</strong> The screen shows the kangaroo with the time of your last check-in
-        underneath. There is no wordmark — the kangaroo is the button.</li>
-      <li><strong>Press the button to knok.</strong> Confirm the time underneath updates, and that the
-        same check-in appears on your phone within a few seconds.</li>
-      <li><strong>Press it twice.</strong> That should record <em>two</em> check-ins — pressing twice
-        means you checked in twice, and the app is right to record both.
-        <span class="kk-stat__sub">What must never happen is one press turning into two because a send
-          was retried. The watch only reuses a send while it is still waiting for an answer.</span></li>
-      <li><strong>Try it with your phone out of range</strong> (leave the phone in another room). It
-        should tell you it could not send, rather than pretending it worked.</li>
-      <li><strong>Reopen the app later.</strong> It should still be paired and go straight to the
-        kangaroo screen, not ask for a code again.</li>
-    </ol>
-  </div>
-
-  <div class="kk-stat__panel">
-    <h2>What this testing is for</h2>
-    <p><strong>The purpose of testing is to find errors.</strong> You are not here to confirm that
-      <strong>knokkeroo</strong> works — you are here to find the places where it does not. A test that
-      finds nothing tells us very little. A test that finds a problem is the most useful thing you can
-      give us.</p>
-    <p>So please don't smooth anything over. If something looks wrong, reads oddly, arrives at a strange
-      time, is hard to read, or simply confuses you, that counts — even if you're not sure it's a fault,
-      and even if it feels too small to mention. Nothing is too small, and you can never report too
-      much.</p>
-  </div>
-
-  <div class="kk-stat__panel">
-    <h2>About the messages you receive</h2>
-    <p><strong>Every notification knokkeroo sends you during testing is part of the test.</strong> That
-      includes reminders to <strong>knok</strong>, alerts that one of your contacts is overdue,
-      invitations, and anything else that appears on your phone or watch.</p>
-    <p>They're sent so we can confirm they actually arrive, on time, on your device. So please don't
-      switch them off or ignore them — and do judge them as if they were real. If a message arrives that
-      you didn't expect, arrives at an odd hour, says something confusing, or doesn't arrive when you
-      think it should, that is exactly what we need to hear about.</p>
-    <p><strong>knokkeroo is not an emergency service</strong>, and nothing you receive while testing
-      should be treated as an emergency alert.</p>
-  </div>
-
-  <div class="kk-stat__panel">
-    <h2>How to report anything you find</h2>
-    <p>Two ways, whichever suits you:</p>
-    <ul>
-      <li><strong>WhatsApp</strong> — <a href="https://wa.me/27846001188">+27 84 600 1188</a></li>
-      <li><strong>Email</strong> — <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a></li>
-    </ul>
-    <p>Both go straight to Charles, who builds <strong>knokkeroo</strong> — there's no support desk or
-      queue in between, and he reads every one.</p>
-    <p>Please include, as far as you can:</p>
-    <ul>
-      <li><strong>What you did</strong> — the steps, in the order you did them</li>
-      <li><strong>What you expected</strong> to happen</li>
-      <li><strong>What actually happened</strong> instead</li>
-      <li><strong>When</strong> it happened — the date and roughly what time</li>
-      <li><strong>Your watch model</strong>, and the phone you had it paired with</li>
-      <li>A <strong>photo of the watch screen</strong> — worth far more than a description</li>
-    </ul>
-    <p>Don't worry about getting this perfect or writing it up neatly — a short message saying "this
-      looked wrong at about 7 this morning" is far better than saying nothing. On WhatsApp a photo or a
-      voice note is perfectly fine — you don't have to type it out.</p>
-    <p>Full Terms &amp; Conditions:
-      <a href="https://www.odderonphi.com/knokkeroo/terms">odderonphi.com/knokkeroo/terms</a>.</p>
-  </div>
-
-  <p class="kk-stat__footer">Page v8 · Last updated 3 August 2026 · Garmin rejected the public Connect IQ listing on 3 August 2026 under their "safety awareness" policy, so the beta install below — developer account only — remains the only route. knokkeroo is on the Connect IQ store as a beta app; beta installs are limited by Garmin to the developer account until the public release. Pairing a Garmin needs the v4 test version of the phone app — the store version does not have it yet.</p>
+  <p class="kk-stat__footer">Page v9 · Last updated 3 August 2026 · Garmin declined the Connect IQ listing on 3 August 2026 under their published policy on apps that could create a false sense of security. knokkeroo is not available on Garmin watches and there is no Garmin testing to take part in.</p>
 </div>
