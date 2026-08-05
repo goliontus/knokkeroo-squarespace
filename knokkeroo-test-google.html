@@ -35,6 +35,27 @@
   @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
   .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
   .kk-stat__btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: #000; color: #fff !important; text-decoration: none !important; font-weight: 700; margin-top: 4px; }
+
+  /* Same big tap targets as the Apple tester pages: every step a tester has to
+     act on is a button, not a web address they have to read and type. */
+  .kk-stat__cta {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    min-height: 60px;
+    padding: 18px 22px;
+    border: 2px solid #000;
+    border-radius: 14px;
+    background: #000;
+    color: #fff !important;
+    font-weight: 800;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 12px 0 8px;
+  }
+  .kk-stat__cta--ghost { background: transparent; color: inherit !important; border-color: rgba(127, 127, 127, 0.55); }
   .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22) !important; }
 </style>
 
@@ -68,20 +89,21 @@
     <p><strong>First, check which Google account you are using.</strong> Open the Play Store, tap your profile picture (top right) and note the address shown. <strong>Both steps below must use that exact same account</strong> — this is the single most common reason the beta does not show up.</p>
 
     <h3>Step 1 · Join the tester group</h3>
-    <p>Open <a href="https://groups.google.com/g/knokkeroo-testers">groups.google.com/g/knokkeroo-testers</a> and tap <strong>Ask to join</strong> (or accept, if you were already invited).</p>
+    <p>Tap the button, then tap <strong>Ask to join</strong> (or accept, if you were already invited).</p>
+    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://groups.google.com/g/knokkeroo-testers">Join the tester group</a>
 
     <h3>Step 2 · Become a tester on Google Play</h3>
-    <p>Open <a href="https://play.google.com/apps/testing/com.goliontus.knokker">play.google.com/apps/testing/com.goliontus.knokker</a> and tap <strong>Become a tester</strong>.</p>
+    <p>Tap the button, then tap <strong>Become a tester</strong>.</p>
+    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://play.google.com/apps/testing/com.goliontus.knokker">Become a tester</a>
 
     <h3>Step 3 · Install on your phone</h3>
-    <p>On that same page tap <strong>Download it on Google Play</strong> — or open the <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">knokkeroo listing</a> and tap <strong>Install</strong> (or <strong>Update</strong>, if you already have the public version). It is the same listing as the public app; once you are a tester it serves you the beta build instead, so there is no separate download to find.</p>
+    <p>On that same page tap <strong>Download it on Google Play</strong> — or use the button below and
+      tap <strong>Install</strong> (or <strong>Update</strong>, if you already have the public version).
+      It is the same listing as the public app; once you are a tester it serves you the beta build
+      instead, so there is no separate download to find.</p>
+    <a class="kk-stat__cta" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Open knokkeroo on Google Play</a>
 
     <p><strong>If it says "not available" or "you're not a tester":</strong> check that Steps 1 and 2 used the same Google account, then wait — Google can take an hour or two to propagate access. Retry after that before reporting a problem.</p>
-
-    <p style="margin-top:14px;">
-      <a class="kk-stat__btn" href="https://groups.google.com/g/knokkeroo-testers">1. Join the tester group</a>
-      <a class="kk-stat__btn" href="https://play.google.com/apps/testing/com.goliontus.knokker" style="margin-left:8px;">2. Become a tester</a>
-    </p>
   </div>
 
   <h2>Your Wear OS watch</h2>
@@ -183,5 +205,5 @@
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v8 · Last updated 3 August 2026 · Public app: 3.5.15. Beta: phone 4.36.2 on the closed alpha track — one signup covers phone and watch, open to anyone via the tester group. The Wear OS build is older than the phone build. Versions read from the Google Play Developer API on 3 August 2026.</p>
+  <p class="kk-stat__footer">Page v9 · Last updated 5 August 2026 · Public app: 3.5.15. Beta: phone 4.36.2 on the closed alpha track — one signup covers phone and watch, open to anyone via the tester group. The Wear OS build is older than the phone build. Versions read from the Google Play Developer API on 3 August 2026.</p>
 </div>
