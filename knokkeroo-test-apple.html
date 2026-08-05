@@ -29,6 +29,29 @@
 
   .kk-stat__btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: #000; color: #fff !important; text-decoration: none !important; font-weight: 700; margin-top: 4px; }
 
+  /* Big install buttons. Plain labelled buttons on purpose — Apple's official
+     "Download on the App Store" badge may only point at a real store listing,
+     never at a TestFlight join link. */
+  .kk-stat__cta {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    min-height: 60px;
+    padding: 18px 22px;
+    border: 2px solid #000;
+    border-radius: 14px;
+    background: #000;
+    color: #fff !important;
+    font-weight: 800;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 12px 0 8px;
+  }
+  .kk-stat__cta--ghost { background: transparent; color: inherit !important; border-color: rgba(127, 127, 127, 0.55); }
+  .kk-stat__cta-note { font-size: 0.92rem; opacity: 0.74; }
+
   .kk-stat__scenario-list { columns: 1; }
   @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
   .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
@@ -82,11 +105,14 @@
     <p><strong>Before you start:</strong> your Apple Watch must already be paired to your iPhone in the normal way, and be on watchOS 9 or later. That is the Watch's own setup and has nothing to do with knokkeroo. <strong>The Watch app is free on every plan</strong> — you do not need a paid subscription for it.</p>
 
     <h3>Step 1 · Join the beta</h3>
-    <ol>
-      <li>Install <strong>TestFlight</strong> from the App Store if you do not have it.</li>
-      <li>On your iPhone, open <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a> — this is a public link, anyone can use it and nobody needs to invite you.</li>
-      <li>Tap <strong>Accept</strong>, then <strong>Install</strong>. There is no separate Watch beta — the Watch app is inside this one.</li>
-    </ol>
+    <p><strong>Both buttons must be tapped on the iPhone</strong>, not on a computer. There is no
+      separate Watch beta — the Watch app is inside the iPhone one.</p>
+    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://apps.apple.com/app/id899247664">Install TestFlight</a>
+    <p class="kk-stat__cta-note">Apple's own free app. Skip this if you already have it.</p>
+    <a class="kk-stat__cta" href="https://testflight.apple.com/join/XaabanK9">Join the knokkeroo beta</a>
+    <p class="kk-stat__cta-note">Then tap <strong>Accept</strong> and <strong>Install</strong>. A public
+      link — nobody needs to invite you. Button did nothing? Open TestFlight, tap
+      <strong>Redeem</strong>, and type <strong>XaabanK9</strong>.</p>
 
     <h3>Step 2 · Get it onto the Watch</h3>
     <ol>
@@ -119,12 +145,13 @@
       link. On a PC or Mac browser the page simply tells you to open it on a device — there is no
       Accept button. Do it on the iPhone; you are joining with your <em>Apple ID</em>, not with a
       particular device, which is why the TV picks it up afterwards.</p>
-    <ol>
-      <li><strong>On your iPhone</strong>, open <a href="https://testflight.apple.com/join/72H1DdnT">testflight.apple.com/join/72H1DdnT</a> — a public link, no invitation needed.</li>
-      <li>It opens the TestFlight app. Tap <strong>Accept</strong>.
-        <span class="kk-stat__sub">If nothing happens, install <strong>TestFlight</strong> from the App Store first, then open the link again. You can also open TestFlight, tap <strong>Redeem</strong>, and type the code from the end of the link: <strong>72H1DdnT</strong>.</span></li>
-      <li>Make sure the iPhone is signed into <strong>the same Apple ID as the Apple TV</strong> — that is what carries the beta across.</li>
-    </ol>
+    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://apps.apple.com/app/id899247664">Install TestFlight</a>
+    <p class="kk-stat__cta-note">Apple's own free app. Skip this if you already have it.</p>
+    <a class="kk-stat__cta" href="https://testflight.apple.com/join/72H1DdnT">Join the knokkeroo TV beta</a>
+    <p class="kk-stat__cta-note">Then tap <strong>Accept</strong>. Button did nothing? Open TestFlight,
+      tap <strong>Redeem</strong>, and type <strong>72H1DdnT</strong>.</p>
+    <p>Make sure the iPhone is signed into <strong>the same Apple ID as the Apple TV</strong> — that
+      is what carries the beta across.</p>
 
     <h3>Step 2 · Install on the Apple TV</h3>
     <ol>
@@ -198,5 +225,5 @@
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970499663-1C3BNPJDJK3DSK2KHJCS/unsplash-image-dQejX2ucPBs.jpg" alt="A calm sunrise over layered mountain ridges" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v6 · Last updated 3 August 2026 · iPhone: live 3.5.16 + beta 4.36.2 (37). Apple Watch: inside the same iPhone beta, free on every plan. Apple TV: separate beta 4.36.3 (66), app id 6795920763, free on every plan. Both betas are public TestFlight links — no invitation needed.</p>
+  <p class="kk-stat__footer">Page v7 · Last updated 5 August 2026 · iPhone: live 3.5.16 + beta 4.36.2 (37). Apple Watch: inside the same iPhone beta, free on every plan. Apple TV: separate beta 4.36.3 (66), app id 6795920763, free on every plan. Both betas are public TestFlight links — no invitation needed.</p>
 </div>
