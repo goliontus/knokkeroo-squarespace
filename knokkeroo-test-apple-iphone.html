@@ -40,6 +40,34 @@
     margin-top: 4px;
   }
 
+  /* Big, one-decision-at-a-time install steps. Deliberately plain labelled
+     buttons, NOT Apple's "Download on the App Store" badge — that badge may
+     only point at a real store listing, never at a TestFlight join link. */
+  .kk-stat__step { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 22px; }
+  .kk-stat__step-num { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; background: rgba(127, 127, 127, 0.2); }
+  .kk-stat__step-body { flex: 1 1 auto; min-width: 0; }
+  .kk-stat__step-body p { margin: 0 0 10px; }
+
+  .kk-stat__cta {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    min-height: 60px;
+    padding: 18px 22px;
+    border: 2px solid #000;
+    border-radius: 14px;
+    background: #000;
+    color: #fff !important;
+    font-weight: 800;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 12px 0 8px;
+  }
+  .kk-stat__cta--ghost { background: transparent; color: inherit !important; border-color: rgba(127, 127, 127, 0.55); }
+  .kk-stat__cta-note { font-size: 0.92rem; opacity: 0.74; }
+
   .kk-stat__scenario-list { columns: 1; }
   @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
   .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
@@ -72,18 +100,31 @@
   <div class="kk-stat__panel">
     <span class="kk-stat__pill kk-stat__pill--beta">Beta — build 4.36.2 (37)</span>
     <p>The beta includes features not yet on the public App Store: the Home Screen widget, a Home Screen quick action, Apple Watch companion, and Apple TV pairing.</p>
-    <h3>Register</h3>
-    <p><strong>Do all of this on the iPhone itself.</strong> A join link only works inside the
-      TestFlight app — opened in a browser on a computer it shows an information page with no
-      Accept button, and nothing reaches your phone.</p>
-    <ol>
-      <li>Install TestFlight from the App Store if you don't already have it.</li>
-      <li><strong>On the iPhone</strong>, open <a href="https://testflight.apple.com/join/XaabanK9">testflight.apple.com/join/XaabanK9</a>.
-        <span class="kk-stat__sub">Or open TestFlight, tap <strong>Redeem</strong>, and type the code from the end of that link: <strong>XaabanK9</strong>.</span></li>
-      <li>Tap Accept, then Install.</li>
-    </ol>
-    <h3>Install</h3>
-    <p>TestFlight installs <strong>knokkeroo</strong> (build 4.36.2 / 37) automatically once you accept the invite above — open it from TestFlight or your Home Screen.</p>
+    <p><strong>Two steps, both on the iPhone itself.</strong> These buttons only work on the phone —
+      on a computer they open a page with nothing to accept, and nothing reaches your iPhone.</p>
+
+    <div class="kk-stat__step">
+      <span class="kk-stat__step-num" aria-hidden="true">1</span>
+      <div class="kk-stat__step-body">
+        <p><strong>Get TestFlight.</strong> It is free, it is made by Apple, and it is how Apple
+          hands out early versions of apps. Already have it? Skip to step 2.</p>
+        <a class="kk-stat__cta kk-stat__cta--ghost" href="https://apps.apple.com/app/id899247664">Install TestFlight</a>
+      </div>
+    </div>
+
+    <div class="kk-stat__step">
+      <span class="kk-stat__step-num" aria-hidden="true">2</span>
+      <div class="kk-stat__step-body">
+        <p><strong>Join the knokkeroo beta.</strong> Tap the button, then tap <strong>Accept</strong>,
+          then <strong>Install</strong>. Nobody needs to invite you first.</p>
+        <a class="kk-stat__cta" href="https://testflight.apple.com/join/XaabanK9">Join the knokkeroo beta</a>
+        <p class="kk-stat__cta-note">Button did nothing? Open TestFlight, tap <strong>Redeem</strong>,
+          and type <strong>XaabanK9</strong>.</p>
+      </div>
+    </div>
+
+    <p>That is all. <strong>knokkeroo</strong> (build 4.36.2 / 37) installs itself — open it from
+      TestFlight or from your Home Screen.</p>
   </div>
 
   <h2>What this testing is for</h2>
@@ -152,5 +193,5 @@
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v5 · Last updated 3 August 2026 · Live app: iOS 3.5.16. Beta: iOS 4.36.2 build 37 (TestFlight).</p>
+  <p class="kk-stat__footer">Page v6 · Last updated 5 August 2026 · Live app: iOS 3.5.16. Beta: iOS 4.36.2 build 37 (TestFlight).</p>
 </div>
