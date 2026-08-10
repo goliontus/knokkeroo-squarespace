@@ -1,9 +1,22 @@
 <style>
-  /* The olive section carries this same eclipse as its FULL-BLEED background, which made the
-     image tower over the text. The image now lives in the grid below, sized to the text
-     column - so the background copy is hidden. :has() is fine on every current browser. */
-  section:has(.op-about-intro) .section-background img {
-    display: none;
+  /* The olive section carries this same eclipse as its FULL-BLEED background, and the code
+     block only owned a narrow right-hand column of the fluid grid - which is why the image
+     towered over the text. Three overrides, all verified live: hide the background copy (the
+     image lives in the grid below, sized to the text), let the section collapse to its
+     content, and span this block across the content columns. !important because Squarespace
+     positions fe-blocks with element-level rules. */
+  section.page-section:has(.op-about-intro) .section-background img {
+    display: none !important;
+  }
+
+  section.page-section:has(.op-about-intro) .fluid-engine {
+    grid-template-rows: auto !important;
+    grid-auto-rows: auto !important;
+  }
+
+  section.page-section:has(.op-about-intro) .fe-block {
+    grid-column: 2 / -2 !important;
+    grid-row: auto !important;
   }
 
   .op-about-intro,
