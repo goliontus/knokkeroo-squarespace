@@ -179,12 +179,20 @@
 
     <div class="kk-legal__callout">
       <p>
-        <strong>As of app version 3.5.16, knokkeroo does not send automatic push notifications.</strong>
+        <strong>Current versions of knokkeroo can send push notifications.</strong>
+        Where you have granted notification permission, the app may notify you when a contact's
+        check-in status changes, when someone invites you to connect or accepts your invitation,
+        when a contact asks you to check in, and — if you opt in — as a daily check-in reminder.
       </p>
 
       <p>
-        Users and approved contacts must open or use the app to view check-in status and related information.
-        Any reference in this document to future alerts, push notifications, or notification delivery applies only if and when that functionality is introduced in a later version of the app.
+        Notifications are delivered on a best-effort basis and can be delayed, batched, or blocked by
+        your device, its operating system, or network conditions; they must never be relied on as an
+        alerting or safety mechanism (see the Emergency Disclaimer below). You can switch notification
+        types off in the app's settings or withdraw the permission entirely in your device settings,
+        and the app remains usable without them — check-in status is always visible by opening the app.
+        Some notification types are available only on paid plans; which types are included is described
+        in the app at the point of subscription.
       </p>
     </div>
   </section>
@@ -583,7 +591,7 @@
     <ul>
       <li><strong>Supabase</strong> — database, authentication, and hosting. knokkeroo's Supabase project is hosted in the EU / AWS eu-west-1 region.</li>
       <li><strong>Twilio</strong> — sends WhatsApp/SMS verification codes and contact invitations where used.</li>
-      <li><strong>Expo</strong> — app platform services. If future versions enable push notifications, Expo or another provider may be used for push notification delivery.</li>
+      <li><strong>Expo</strong> — app platform services, including push notification delivery to Apple and Google devices. On Huawei devices, push notifications are delivered via Huawei Mobile Services (Push Kit).</li>
       <li><strong>Squarespace</strong> — public website and web-form infrastructure for published web pages and account-deletion requests.</li>
       <li><strong>MacinCloud</strong> — remote macOS build infrastructure used to compile and test platform-specific versions of the App (e.g. Apple TV); does not otherwise process end-user personal data.</li>
     </ul>
@@ -734,7 +742,7 @@
 
     <!-- At go-live: confirm the "Last updated" date and the app version this ships with. -->
     <p>
-      Last updated: 10 August 2026 · Document version 2.9 · Applies to app version 3.5.0 and later unless replaced by a later published version.
+      Last updated: 11 August 2026 · Document version 2.10 · Applies to app version 3.5.0 and later unless replaced by a later published version.
     </p>
 
     <p>
