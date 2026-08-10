@@ -212,6 +212,13 @@
   .kk-rev__pick strong { display: block; font-size: 1.15rem; margin-bottom: 4px; }
   .kk-rev__pick span { font-size: 0.9rem; opacity: 0.75; }
   .kk-rev__done { margin-top: 18px; padding: 12px 16px; border-radius: 12px; background: rgba(24,148,87,0.13); border: 1px solid rgba(24,148,87,0.3); font-weight: 700; }
+
+  /* Readability measure (the 50-75 characters-per-line guideline): running text is capped;
+     cards, tables and headings keep the page width. */
+  .kk-rev__section p,
+  .kk-rev__section li {
+    max-width: 660px;
+  }
 </style>
 
 <div class="kk-rev">
