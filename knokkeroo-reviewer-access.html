@@ -472,6 +472,27 @@
     </p>
   </section>
 
+<section class="kk-rev__section" id="whats-new-v5">
+    <h2>New in version 5.0.0 (the build under review)</h2>
+    <ul>
+      <li><strong>Android push notifications now work.</strong> Earlier version-4 Android builds shipped without
+        Firebase configuration, so notification registration failed silently; 5.0.0 carries the full configuration.
+        To verify: sign in with the demo account, allow notifications, then Me → Settings → "Send a test
+        notification" — a banner should appear on the device within seconds.</li>
+      <li><strong>iOS in-app purchases are fully functional.</strong> Earlier version-4 iOS builds shipped with a
+        placeholder purchases key, so Subscribe showed "Coming soon"; 5.0.0 carries the production key. On a demo
+        account Subscribe remains <em>simulated</em> (no sheet, no charge — so review is never blocked); on a real
+        account it opens Apple's own In-App Purchase sheet.</li>
+      <li><strong>Redesigned terms-acceptance screen:</strong> five numbered plain-language points, a full-width
+        "Read the full Terms &amp; Conditions" row, explicit accept and decline actions (declining does not enter
+        the app).</li>
+      <li><strong>Home-screen widget keeps its colour:</strong> the knok button retains the user's own
+        green/amber/red status across widget refreshes instead of resetting to blue.</li>
+      <li>Reliability: provider-verified delivery logging behind the scenes, clearer error messages, and honest
+        confirmation wording throughout (no message claims a delivery that has not been confirmed).</li>
+    </ul>
+  </section>
+
 <section class="kk-rev__section" id="whats-new-v4">
     <h2>New in version 4 (vs the previous 3.5.x builds)</h2>
     <p>Version 4.38.0 is the first version 4 release submitted to the stores. Everything below is new relative to the
@@ -710,10 +731,10 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 11 August 2026 · applies to the versions live in production — iOS 4.39.8 (build 41, which
-      includes the Apple Watch companion, on the App Store since 10 August 2026) and Android 4.39.10
-      (versionCode 34, which includes the Wear OS companion, live on Google Play). Huawei remains 3.5.9.
-      The Apple TV companion is in TestFlight at 4.36.3.
+      Last updated: 11 August 2026 · applies to version 5.0.0, in review/rollout on both stores — iOS build 43
+      (includes the Apple Watch companion) and Android versionCode 35 (includes the Wear OS companion) — and to
+      the versions they replace (iOS 4.39.8, Android 4.39.10). Huawei remains 3.5.9 with 5.0.0 prepared.
+      The Apple TV companion is in TestFlight.
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
