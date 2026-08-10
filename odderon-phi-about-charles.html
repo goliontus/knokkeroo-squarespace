@@ -14,6 +14,7 @@
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
+    align-items: stretch;
   }
 
   .op-about-charles__body {
@@ -23,14 +24,16 @@
   }
 
   .op-about-charles__photo {
-    flex: 1 1 260px;
-    min-width: 220px;
-    max-width: 420px;
+    flex: 1 1 340px;
+    min-width: 260px;
+    display: flex;
   }
 
   .op-about-charles__photo img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
     display: block;
     border-radius: 8px;
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
