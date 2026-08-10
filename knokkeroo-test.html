@@ -116,6 +116,38 @@
   .kk-stat__pill--review { background: rgba(201, 162, 39, 0.18); color: inherit; }
   .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22); color: inherit; }
 
+  .kk-stat__note {
+    padding: 22px;
+    border: 1px solid rgba(127, 127, 127, 0.28);
+    border-radius: 20px;
+    background: rgba(127, 127, 127, 0.045);
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  .kk-stat__note h2 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+
+  .kk-stat__note p {
+    margin: 0 0 10px;
+    font-size: 0.96rem;
+    opacity: 0.86;
+  }
+
+  .kk-stat__note p:last-child { margin-bottom: 0; }
+
+  .kk-stat__note ul {
+    margin: 0 0 10px;
+    padding-left: 22px;
+    font-size: 0.96rem;
+    opacity: 0.86;
+  }
+
+  .kk-stat__note li { margin-bottom: 5px; }
+
   .kk-stat__footer {
     margin-top: 8px;
     padding-top: 14px;
@@ -172,14 +204,47 @@
       <span class="kk-stat__card-body">
         <h2>Garmin</h2>
         <p>Garmin watches</p>
-        <span class="kk-stat__pill kk-stat__pill--wait">Not yet available</span>
+        <span class="kk-stat__pill kk-stat__pill--wait">Not available</span>
       </span>
     </a>
+  </div>
+
+  <div class="kk-stat__note">
+    <h2>What this testing is for</h2>
+    <p><strong>The purpose of testing is to find errors.</strong> You are not here to confirm that <strong>knokkeroo</strong> works — you are here to find the places where it does not. A test that finds nothing tells us very little. A test that finds a problem is the most useful thing you can give us.</p>
+    <p>So please don't smooth anything over. If something looks wrong, reads oddly, arrives at a strange time, is hard to read, or simply confuses you, that counts — even if you're not sure it's a fault, and even if it feels too small to mention. Nothing is too small, and you can never report too much.</p>
+  </div>
+
+  <div class="kk-stat__note">
+    <h2>About the messages you receive</h2>
+    <p><strong>Every notification knokkeroo sends you during testing is part of the test.</strong> That includes reminders to <strong>knok</strong>, alerts that one of your contacts is overdue, invitations, and anything else that appears on your phone, watch or TV.</p>
+    <p>They're sent so we can confirm they actually arrive, on time, on your device. So please don't switch them off or ignore them — and do judge them as if they were real. If a message arrives that you didn't expect, arrives at an odd hour, says something confusing, or doesn't arrive when you think it should, that is exactly what we need to hear about.</p>
+    <p><strong>knokkeroo is not an emergency service</strong>, and nothing you receive while testing should be treated as an emergency alert.</p>
+  </div>
+
+  <div class="kk-stat__note">
+    <h2>How to report anything you find</h2>
+    <p>Two ways, whichever suits you:</p>
+    <ul>
+      <li><strong>WhatsApp</strong> — <a href="https://wa.me/27846001188">+27 84 600 1188</a></li>
+      <li><strong>Email</strong> — <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a></li>
+    </ul>
+    <p>Both go straight to Charles, who builds <strong>knokkeroo</strong> — there's no support desk or queue in between, and he reads every one.</p>
+    <p>Please include, as far as you can:</p>
+    <ul>
+      <li><strong>What you did</strong> — the steps, in the order you did them</li>
+      <li><strong>What you expected</strong> to happen</li>
+      <li><strong>What actually happened</strong> instead</li>
+      <li><strong>When</strong> it happened — the date and roughly what time</li>
+      <li><strong>Which device</strong> you were using</li>
+      <li>A <strong>screenshot or photo</strong>, if there's anything to see</li>
+    </ul>
+    <p>Don't worry about getting this perfect or writing it up neatly — a short message saying "this looked wrong at about 7 this morning" is far better than saying nothing. On WhatsApp a photo or a voice note is perfectly fine — you don't have to type it out.</p>
   </div>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v6 · Last updated 11 August 2026 · Reflects app versions iOS 4.39.8, Android 4.39.10, Huawei 3.5.9 — all live in production. Wear OS remains in closed testing.</p>
+  <p class="kk-stat__footer">Page v7 · Last updated 11 August 2026 · Reflects app versions iOS 4.39.8, Android 4.39.10 and Huawei 3.5.9 — all live in production. Apple TV 4.36.3 (beta) and Wear OS (closed testing) are unchanged.</p>
 </div>
