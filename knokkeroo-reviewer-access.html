@@ -473,7 +473,22 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>New in version 5.0.0 (the build under review)</h2>
+    <h2>New in version 5.0.5 (the build under review)</h2>
+    <ul>
+      <li><strong>Check-in requests pulse the knok button.</strong> When a contact asks the user to check in,
+        the app no longer shows a message banner with its own button — the notification lands the user on the
+        normal home screen and the knok button itself pulsates gently for ten seconds; one tap answers the
+        request. Users with the reduce-motion accessibility setting get no animation (the request still lands
+        on the home screen quietly). To verify with two demo accounts: from one account open a contact and tap
+        "Ask them to check in", then watch the other device's knok button.</li>
+      <li><strong>The knok button and widgets always show the user's own live status colour</strong>
+        (green/amber/red), never a neutral brand colour.</li>
+      <li><strong>Human error messages:</strong> no raw technical error text ever reaches a screen — connectivity
+        problems say "check your connection", each message carries a short support code.</li>
+      <li>Widget freshness improvements and accessibility fixes (screen-reader labels on the consent screen,
+        larger touch targets).</li>
+    </ul>
+    <h2>New in version 5.0.0 (the previous release, now live)</h2>
     <ul>
       <li><strong>Android push notifications now work.</strong> Earlier version-4 Android builds shipped without
         Firebase configuration, so notification registration failed silently; 5.0.0 carries the full configuration.
@@ -731,7 +746,7 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 11 August 2026 · applies to version 5.0.0, in review/rollout on both stores — iOS build 43
+      Last updated: 12 August 2026 · applies to version 5.0.5, in review on both stores — iOS build 46
       (includes the Apple Watch companion) and Android versionCode 35 (includes the Wear OS companion) — and to
       the versions they replace (iOS 4.39.8, Android 4.39.10). Huawei remains 3.5.9 with 5.0.0 prepared.
       The Apple TV companion is in TestFlight.
