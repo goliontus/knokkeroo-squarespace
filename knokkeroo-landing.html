@@ -213,6 +213,94 @@
     opacity: 0.72;
   }
 
+  /* ---- Widget how-to ----
+     The widget is the product's real power surface, and many people have never
+     added one on any phone — so this section is deliberately prominent (solid
+     olive header band, same treatment as the tester card) and teaches the
+     mechanics from zero, with the vendors' own official videos linked. */
+  .kk-home__widget {
+    max-width: 620px;
+    margin: 34px auto 0;
+    text-align: left;
+    border: 1px solid rgba(88, 59, 31, 0.34);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .kk-home__widget-head {
+    padding: 18px 20px;
+    background: #583B1F;
+    color: #F7F3E8;
+  }
+
+  .kk-home__widget-head h2 {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: inherit;
+  }
+
+  .kk-home__widget-head p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.88;
+  }
+
+  .kk-home__widget-body {
+    padding: 18px 20px 20px;
+    background: rgba(88, 59, 31, 0.055);
+  }
+
+  .kk-home__widget-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  @media (max-width: 560px) {
+    .kk-home__widget-cols { grid-template-columns: 1fr; }
+  }
+
+  .kk-home__widget-col h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+  }
+
+  .kk-home__widget-col ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.93rem;
+  }
+
+  .kk-home__widget-col li { margin-bottom: 6px; }
+
+  .kk-home__widget-note {
+    margin: 10px 0 0;
+    font-size: 0.85rem;
+    opacity: 0.72;
+  }
+
+  .kk-home__widget-videos {
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(88, 59, 31, 0.18);
+    font-size: 0.93rem;
+  }
+
+  .kk-home__widget-videos p { margin: 0 0 8px; font-weight: 700; }
+
+  .kk-home__widget-videos ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .kk-home__widget-videos li { margin-bottom: 6px; }
+
+  .kk-home__widget-videos a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   /* ---- Official store badges ----
      All three are the unmodified official badge artwork, laid out on one row at
      one shared visible height (--kk-badge-h). Google's official PNG bakes in
@@ -330,11 +418,55 @@
     </div>
   </section>
 
+  <section class="kk-home__widget" aria-label="Add the knokkeroo widget to your home screen">
+    <div class="kk-home__widget-head">
+      <h2>The real magic is the widget</h2>
+      <p>
+        Put <strong>knokkeroo</strong> on your home screen and you'll see how your people are doing
+        at a glance, and <strong>knok</strong> with a single tap &mdash; without ever opening the app.
+        Never used a widget before? It takes under a minute, and here is exactly how.
+      </p>
+    </div>
+    <div class="kk-home__widget-body">
+      <div class="kk-home__widget-cols">
+        <div class="kk-home__widget-col">
+          <h3>On iPhone</h3>
+          <ol>
+            <li>Touch and hold an empty area of your Home Screen until the apps start to jiggle.</li>
+            <li>Tap <strong>Edit</strong> in the top corner, then <strong>Add Widget</strong> (on older iPhones, tap the <strong>+</strong> button instead).</li>
+            <li>Search for <strong>knokkeroo</strong>, pick the size you like, and tap <strong>Add Widget</strong>.</li>
+            <li>Tap <strong>Done</strong>. That's it.</li>
+          </ol>
+          <p class="kk-home__widget-note">The <strong>knokkeroo</strong> widget needs iOS&nbsp;18 or later.</p>
+        </div>
+        <div class="kk-home__widget-col">
+          <h3>On Android</h3>
+          <ol>
+            <li>Touch and hold an empty space on your Home screen.</li>
+            <li>Tap <strong>Widgets</strong>.</li>
+            <li>Find <strong>knokkeroo</strong> in the list, then touch and hold the widget.</li>
+            <li>Slide it to where you want it and lift your finger.</li>
+          </ol>
+          <p class="kk-home__widget-note">Huawei phones work the same way: hold the home screen, tap <strong>Widgets</strong>, and look for <strong>knokkeroo</strong>.</p>
+        </div>
+      </div>
+      <div class="kk-home__widget-videos">
+        <p>Prefer to watch it done? These are the phone makers' own official videos:</p>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=yqYRYyAl-x8" target="_blank" rel="noopener">Apple Support &mdash; How to add and edit widgets on your iPhone</a></li>
+          <li><a href="https://www.youtube.com/watch?v=V1xsuaD17xY" target="_blank" rel="noopener">Apple Support &mdash; How to stack widgets on your iPhone Home Screen</a></li>
+          <li><a href="https://www.youtube.com/watch?v=c0nKTvsJIio" target="_blank" rel="noopener">Samsung &mdash; How to add, remove and edit widgets on your Galaxy phone</a></li>
+          <li><a href="https://support.google.com/android/answer/9450271" target="_blank" rel="noopener">Google's official step-by-step guide for Android</a> (Google publishes no official video, so their written guide is the reference)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <footer class="kk-home__footer">
     <p>
       <strong>knokkeroo</strong> is provided by Odderon Phi (Pty) Ltd.
       Need help? <a href="https://www.odderonphi.com/contact">Contact us</a>.
     </p>
-    <p style="margin-top:8px;font-size:0.8rem;opacity:0.62;">Page v5 · Last updated 5 August 2026.</p>
+    <p style="margin-top:8px;font-size:0.8rem;opacity:0.62;">Page v6 · Last updated 12 August 2026.</p>
   </footer>
 </div>
