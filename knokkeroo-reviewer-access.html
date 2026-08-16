@@ -477,18 +477,19 @@
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> A new card in <strong>Me → Settings</strong>,
         simply labelled "Appearance", lets an account switch the whole app between the existing dark
-        theme and a new light theme. It is not yet available to real accounts — while it is being
-        trialled, it is only reachable on the founder's own personal account and on every <strong>demo
-        account</strong>, including the Reviewer account used throughout this page, specifically so App
-        Store, Play and Huawei reviewers can see and use it once it ships. The card carries no
-        "founder only" wording, so a reviewer will not see anything implying restricted access —
-        it behaves like an ordinary setting for the signed-in demo account. This is not present in
-        any build currently live in production (Android 5.0.10, iOS 5.0.0) or submitted for App
-        Store/Play production review (neither store has a pending production submission right now).
-        It is present in code on the newest TestFlight build (5.2.9, build 54) and the newest Play
-        internal-testing build (5.2.9, versionCode 45) — neither of which is a store-review build; it
-        will be called out under its own "New in version X" heading here once it actually ships to a
-        build submitted for production review.</li>
+        theme and a new light theme. <strong>Updated 2026-08-16:</strong> this card is no longer
+        restricted to founder/demo accounts in code — every signed-in account can now reach and use
+        it (a real, severe light-theme contrast defect that justified the earlier restriction was
+        found and fixed the same day it was widened). The card has never carried any "founder only"
+        wording, so a reviewer never saw anything implying restricted access even before this change.
+        This is not present in any build currently live in production (Android 5.0.10, iOS 5.0.0) or
+        submitted for App Store/Play production review (neither store has a pending production
+        submission right now), NOR in the newest TestFlight build (5.2.9, build 54) or the newest
+        Play internal-testing build (5.2.9, versionCode 45) — those builds predate this change and
+        still show the card only to founder/demo accounts. The now-universal version exists only in
+        source (`main`, v5.3.0) and has not been built or submitted anywhere yet; it will be called
+        out under its own "New in version X" heading here once it actually ships to a build submitted
+        for production review.</li>
       <li><strong>"Choose from your contacts" on the Invite screen.</strong> A new button at the top of
         <strong>Add Contact</strong> opens the device's own native contact-picker sheet; picking a
         contact fills in the name and number fields below it (with a follow-up step to pick which
@@ -508,12 +509,16 @@
       <li><strong>Account-status line on Me → Settings.</strong> A small line of text will appear under
         the app version number reading the signed-in account's status in plain language (for example
         "demo &middot; free" or "founder &middot; paid"). <strong>Reviewers will see this</strong> — it
-        uses the same gate as the Appearance toggle above (founder accounts and every demo account,
-        including the Reviewer account used throughout this page), not a founder-only gate. A real,
-        ordinary end-user account never sees it. It is purely informational and does not affect any
-        functionality. Not present in version 5.0.10 production; exists in code on the newest
-        TestFlight build (5.2.9, build 54) and Play internal-testing build (5.2.9, versionCode 45);
-        will be called out here once it ships to a build submitted for production review.</li>
+        uses a founder-or-demo gate (founder accounts and every demo account, including the Reviewer
+        account used throughout this page), not a founder-only gate. <strong>Updated 2026-08-16:</strong>
+        this is deliberately still restricted, unlike the Appearance toggle above — the two used to
+        share one gate, but the Appearance toggle's gate was removed while this diagnostic line's was
+        intentionally left in place, since it is an internal status aid, not a feature a real end
+        user should see. A real, ordinary end-user account never sees it. It is purely informational
+        and does not affect any functionality. Not present in version 5.0.10 production; exists in
+        code on the newest TestFlight build (5.2.9, build 54) and Play internal-testing build (5.2.9,
+        versionCode 45); will be called out here once it ships to a build submitted for production
+        review.</li>
     </ul>
     <h2>New in version 5.0.10 (Android is live; the iOS submission for this version was withdrawn
       by the developer before review — production iOS still serves 5.0.0, see "Document
