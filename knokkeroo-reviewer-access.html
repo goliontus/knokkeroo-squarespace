@@ -483,9 +483,12 @@
         Store, Play and Huawei reviewers can see and use it once it ships. The card carries no
         "founder only" wording, so a reviewer will not see anything implying restricted access —
         it behaves like an ordinary setting for the signed-in demo account. This is not present in
-        any build currently live or reviewable (Android 5.0.10 production, iOS 5.0.0 production /
-        5.2.2 external TestFlight); it will be called out under its own "New in version X" heading
-        here once it ships in a submitted build.</li>
+        any build currently live in production (Android 5.0.10, iOS 5.0.0) or submitted for App
+        Store/Play production review (neither store has a pending production submission right now).
+        It is present in code on the newest TestFlight build (5.2.9, build 54) and the newest Play
+        internal-testing build (5.2.9, versionCode 45) — neither of which is a store-review build; it
+        will be called out under its own "New in version X" heading here once it actually ships to a
+        build submitted for production review.</li>
       <li><strong>"Choose from your contacts" on the Invite screen.</strong> A new button at the top of
         <strong>Add Contact</strong> opens the device's own native contact-picker sheet; picking a
         contact fills in the name and number fields below it (with a follow-up step to pick which
@@ -497,15 +500,20 @@
         contact-picker intent), which neither platform requires an app to request permission for,
         unlike bulk address-book access. The app never gets standing access to the address book —
         only the single contact tapped is ever received. This is not present in version 5.0.10 (the
-        build currently live/under review); it will be called out under its own "New in version X"
-        heading here once it ships in a submitted build.</li>
+        build currently live in production); like the Appearance toggle above, it exists in code on
+        the newest TestFlight build (5.2.9, build 54) and the newest Play internal-testing build
+        (5.2.9, versionCode 45), neither of which is a store-review build; it will be called out
+        under its own "New in version X" heading here once it ships in a build submitted for
+        production review.</li>
       <li><strong>Account-status line on Me → Settings.</strong> A small line of text will appear under
         the app version number reading the signed-in account's status in plain language (for example
         "demo &middot; free" or "founder &middot; paid"). <strong>Reviewers will see this</strong> — it
         uses the same gate as the Appearance toggle above (founder accounts and every demo account,
         including the Reviewer account used throughout this page), not a founder-only gate. A real,
         ordinary end-user account never sees it. It is purely informational and does not affect any
-        functionality. Not present in version 5.0.10; will be called out here once it ships.</li>
+        functionality. Not present in version 5.0.10 production; exists in code on the newest
+        TestFlight build (5.2.9, build 54) and Play internal-testing build (5.2.9, versionCode 45);
+        will be called out here once it ships to a build submitted for production review.</li>
     </ul>
     <h2>New in version 5.0.10 (Android is live; the iOS submission for this version was withdrawn
       by the developer before review — production iOS still serves 5.0.0, see "Document
@@ -782,13 +790,16 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 15 August 2026 (night) · Android is LIVE in production at version 5.0.10 (versionCode 41,
-      includes the Wear OS companion) — unchanged since the entry above. iOS production is still LIVE at
+      Last updated: 16 August 2026 · Android is LIVE in production at version 5.0.10 (versionCode 41,
+      includes the Wear OS companion) — unchanged since the entry above. A newer build, 5.2.9 (versionCode 45),
+      has been submitted only to Play's internal testing track, not production. iOS production is still LIVE at
       version 5.0.0 (includes the Apple Watch companion); version 5.0.10 (build 49) was submitted for review
       and then withdrawn by the developer before Apple began reviewing it, so no iOS version is currently
-      under review. The newest build available to external TestFlight testers is 5.2.2 (build 50, Beta App
-      Review approved). Huawei is LIVE and approved at version 5.0.0 (versionCode 36) — no billing on that
-      platform.
+      under review or submitted for production release. The newest TestFlight build is 5.2.9 (build 54),
+      attached to the external testers group and awaiting Beta App Review (not yet approved). Huawei is LIVE
+      and approved at version 5.0.0 (versionCode 36) — no billing on that platform. A newer Huawei build,
+      5.2.9 (versionCode 45), has been built and confirmed good but has deliberately not been submitted to
+      AppGallery yet.
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
