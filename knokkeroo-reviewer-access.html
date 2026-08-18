@@ -482,14 +482,17 @@
         it (a real, severe light-theme contrast defect that justified the earlier restriction was
         found and fixed the same day it was widened). The card has never carried any "founder only"
         wording, so a reviewer never saw anything implying restricted access even before this change.
-        This is not present in any build currently live in production (Android 5.0.10, iOS 5.0.0) or
-        submitted for App Store/Play production review (neither store has a pending production
-        submission right now), NOR in the newest TestFlight build (5.2.9, build 54) or the newest
-        Play internal-testing build (5.2.9, versionCode 45) — those builds predate this change and
-        still show the card only to founder/demo accounts. The now-universal version exists only in
-        source (`main`, v5.3.0) and has not been built or submitted anywhere yet; it will be called
-        out under its own "New in version X" heading here once it actually ships to a build submitted
-        for production review.</li>
+        <strong>UPDATED 18 August 2026 — this exists in v5.6.0, which is NOT under App Store or Play
+        production review as of this writing.</strong> It is on TestFlight (build 61, external
+        group, Beta App Review) but no build carrying it has been submitted for production review on
+        either store. Every signed-in account can reach
+        <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between Dark
+        and Light. Dark remains the default; Light is opt-in, and is remembered per device.
+        The text that stood here previously said this was "not present in any build ... submitted
+        for App Store/Play production review" — still true; only the TestFlight-beta framing above
+        has changed. Kept for history: the earlier restriction to founder/demo accounts lasted only until
+        a severe light-theme contrast defect was found and fixed (2026-08-16), and the card never
+        carried any "founder only" wording, so no reviewer ever saw text implying restricted access.</li>
       <li><strong>"Choose from your contacts" on the Invite screen.</strong> A new button at the top of
         <strong>Add Contact</strong> opens the device's own native contact-picker sheet; picking a
         contact fills in the name and number fields below it (with a follow-up step to pick which
@@ -500,12 +503,11 @@
         "hand me one contact" picker (iOS <code>CNContactPickerViewController</code>, Android's
         contact-picker intent), which neither platform requires an app to request permission for,
         unlike bulk address-book access. The app never gets standing access to the address book —
-        only the single contact tapped is ever received. This is not present in version 5.0.10 (the
-        build currently live in production); like the Appearance toggle above, it exists in code on
-        the newest TestFlight build (5.2.9, build 54) and the newest Play internal-testing build
-        (5.2.9, versionCode 45), neither of which is a store-review build; it will be called out
-        under its own "New in version X" heading here once it ships in a build submitted for
-        production review.</li>
+        only the single contact tapped is ever received. <strong>UPDATED 18 August 2026: this exists
+        in v5.6.0, which is on TestFlight (build 61, external group, Beta App Review) only — no build
+        carrying it is under App Store or Play production review.</strong>
+        Production (iOS 5.0.0 / Android 5.0.10) predates
+        it, so a reviewer comparing against the live app will not find it there — that is expected.</li>
       <li><strong>Account-status line on Me → Settings.</strong> A small line of text will appear under
         the app version number reading the signed-in account's status in plain language (for example
         "demo &middot; free" or "founder &middot; paid"). <strong>Reviewers will see this</strong> — it
@@ -516,9 +518,31 @@
         intentionally left in place, since it is an internal status aid, not a feature a real end
         user should see. A real, ordinary end-user account never sees it. It is purely informational
         and does not affect any functionality. Not present in version 5.0.10 production; exists in
-        code on the newest TestFlight build (5.2.9, build 54) and Play internal-testing build (5.2.9,
-        versionCode 45); will be called out here once it ships to a build submitted for production
+        code on the newest TestFlight build (5.3.6, build 55) and Play testing build (5.3.6,
+        versionCode 46); will be called out here once it ships to a build submitted for production
         review.</li>
+      <li><strong>iOS Lock Screen widget — a second way to check in without opening the app.</strong>
+        On iPhone, knokkeroo can be added to the Lock Screen itself, in either the small round
+        (circular) slot or the wide (rectangular) slot. Tapping it records the user's check-in
+        directly from the Lock Screen — the phone is not unlocked and the app is not opened — using
+        the same mechanism as the existing home-screen widget. For elderly users, this is the
+        shortest possible route to checking in. Two things reviewers should know: (a) iOS renders
+        Lock Screen accessory widgets monochrome or tinted by platform design, so the app's
+        green/amber/red status colour deliberately does not appear there — that is Apple's
+        rendering material, not a knokkeroo styling choice; and (b) tapping it now gives visible confirmation —
+        the widget briefly drops its text and shows the knokkeroo mark alone, then returns. That was
+        an open item when this section was written and was fixed in 5.5.x; a reviewer testing the tap
+        should expect a brief change on the widget itself, not a silent tap.
+        <strong>UPDATED 18 August 2026: the Lock Screen widget exists in v5.6.0, which is on
+        TestFlight (build 61, external group, Beta App Review) only — it is NOT in any build
+        submitted for App Store production review.</strong> It was confirmed working on a
+        real iPhone on TestFlight build 55 (four taps recorded as ios_widget check-ins).
+        <strong>Also new in 5.6.0 and not previously disclosed here:</strong> after signing in, the app
+        now shows a one-time screen that PICTURES the Home Screen and Lock Screen widgets so a person
+        can recognise them, with step-by-step instructions; and on Android only, a button asking the
+        launcher to add the widget (Android's own system dialog appears — the app cannot add a widget
+        itself, and cannot tell whether the person accepted). No permission is involved on either
+        platform.</li>
     </ul>
     <h2>New in version 5.0.10 (Android is live; the iOS submission for this version was withdrawn
       by the developer before review — production iOS still serves 5.0.0, see "Document
@@ -572,8 +596,13 @@
         user has not yet checked in.</li>
       <li><strong>"Checking in on you" requests:</strong> a watcher can tap "Ask them to check in" on a contact; the
         contact gets one notification saying who is asking.</li>
+      <li><strong>"I'm okay" messages:</strong> the reverse direction &mdash; a user can tap "Tell them I'm okay" on a
+        contact; that one contact gets a notification saying the user is okay. The same tap also records the user's own
+        check-in, so their status turns green for everyone who watches them and no contradictory overdue alert can
+        follow. Limited to one message per contact per hour.</li>
       <li><strong>Limits, enforced server-side:</strong> each recipient's own quiet hours are always respected; free
-        accounts receive only red alerts and their own opt-in reminder (subscribers receive every type); at most one
+        accounts receive red alerts, their own opt-in reminder, invitations, check-in requests and
+        "I'm okay" messages &mdash; the person-to-person types are never withheld for being on a free account; at most one
         notification is dispatched per person per delivery cycle; all notifications are delivered
         silently (no sound). Tapping a notification opens the app on the relevant contact. A "checking in on you"
         request additionally offers a press-and-hold <strong>"knok now"</strong> action (from 4.39.8) that records the
@@ -588,7 +617,9 @@
         via "Set favourite", shown with that contact's last check-in time (from 4.39.8, tapping the favourite opens
         their settings screen in the app via the knokkeroo:// URL scheme). The widget never shows phone numbers and
         never shows any contact the user did not pick.
-        The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).</li>
+        The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
+        <em>A Lock Screen version of the same widget exists on iOS, but it is not in this build or in any
+        build live in production — see "Coming in a later version" above.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -795,16 +826,17 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 16 August 2026 · Android is LIVE in production at version 5.0.10 (versionCode 41,
-      includes the Wear OS companion) — unchanged since the entry above. A newer build, 5.2.9 (versionCode 45),
-      has been submitted only to Play's internal testing track, not production. iOS production is still LIVE at
+      Last updated: 18 August 2026 · Android is LIVE in production at version 5.0.10 (versionCode 41,
+      includes the Wear OS companion) — unchanged since the entry above. iOS production is still LIVE at
       version 5.0.0 (includes the Apple Watch companion); version 5.0.10 (build 49) was submitted for review
-      and then withdrawn by the developer before Apple began reviewing it, so no iOS version is currently
-      under review or submitted for production release. The newest TestFlight build is 5.2.9 (build 54),
-      attached to the external testers group and awaiting Beta App Review (not yet approved). Huawei is LIVE
-      and approved at version 5.0.0 (versionCode 36) — no billing on that platform. A newer Huawei build,
-      5.2.9 (versionCode 45), has been built and confirmed good but has deliberately not been submitted to
-      AppGallery yet.
+      and then withdrawn by the developer before Apple began reviewing it. Huawei is LIVE
+      and approved at version 5.0.0 (versionCode 36) — no billing on that platform.
+      New builds carrying version 5.7.1 have just finished on all three platforms (iOS build 62, Android
+      versionCode 50, Huawei versionCode 50) and are about to be submitted — by the time you read this
+      they may already be under review. If a build number above does not match what you are looking at,
+      this page is a revision behind the live submission; check TestFlight/Play Console/AppGallery
+      Connect directly for the exact build under review, and email hello@knokkeroo.com with any
+      discrepancy.
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
