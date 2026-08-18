@@ -597,9 +597,11 @@
       <li><strong>"Checking in on you" requests:</strong> a watcher can tap "Ask them to check in" on a contact; the
         contact gets one notification saying who is asking.</li>
       <li><strong>"I'm okay" messages:</strong> the reverse direction &mdash; a user can tap "Tell them I'm okay" on a
-        contact; that one contact gets a notification saying the user is okay. The same tap also records the user's own
-        check-in, so their status turns green for everyone who watches them and no contradictory overdue alert can
-        follow. Limited to one message per contact per hour.</li>
+        contact, which shows a confirmation dialog ("Tell them you're okay?") before sending, because the action also
+        overwrites the user's own status to green for every watcher via a real knok. On confirmation, that one contact
+        gets a notification saying the user is okay, and the user's own check-in is recorded so their status turns
+        green for everyone who watches them and no contradictory overdue alert can follow. Limited to one message per
+        contact per rolling 60-minute window (a real elapsed-time check, not a clock-hour bucket).</li>
       <li><strong>Limits, enforced server-side:</strong> each recipient's own quiet hours are always respected; free
         accounts receive red alerts, their own opt-in reminder, invitations, check-in requests and
         "I'm okay" messages &mdash; the person-to-person types are never withheld for being on a free account; at most one
