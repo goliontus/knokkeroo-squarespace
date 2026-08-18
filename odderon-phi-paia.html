@@ -1,0 +1,469 @@
+
+<style>
+  .kk-legal,
+  .kk-legal * {
+    box-sizing: border-box;
+  }
+
+  .kk-legal {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.65;
+  }
+
+  .kk-legal a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .kk-legal__hero {
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.28);
+  }
+
+  .kk-legal h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: inherit;
+  }
+
+  .kk-legal__subtitle {
+    max-width: 780px;
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.84;
+  }
+
+  .kk-legal__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0 28px;
+  }
+
+  .kk-legal__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 14px;
+    border: 1px solid rgba(127, 127, 127, 0.32);
+    border-radius: 999px;
+    background: rgba(127, 127, 127, 0.07);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .kk-legal__nav a:hover {
+    background: rgba(127, 127, 127, 0.14);
+  }
+
+  .kk-legal__section {
+    scroll-margin-top: 110px;
+    margin: 0 0 22px;
+    padding: 24px;
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 18px;
+    background: rgba(127, 127, 127, 0.045);
+  }
+
+  .kk-legal h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: inherit;
+  }
+
+  .kk-legal h3 {
+    margin: 22px 0 8px;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    color: inherit;
+  }
+
+  .kk-legal p {
+    margin: 0 0 14px;
+  }
+
+  .kk-legal p:last-child,
+  .kk-legal ul:last-child,
+  .kk-legal ol:last-child {
+    margin-bottom: 0;
+  }
+
+  .kk-legal ul,
+  .kk-legal ol {
+    margin: 8px 0 16px;
+    padding-left: 22px;
+  }
+
+  .kk-legal li {
+    margin: 7px 0;
+  }
+
+  .kk-legal__callout {
+    margin: 16px 0 18px;
+    padding: 16px 18px;
+    border: 1px solid rgba(127, 127, 127, 0.42);
+    border-left-width: 5px;
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.09);
+  }
+
+  .kk-legal__callout p {
+    margin: 0 0 12px;
+  }
+
+  .kk-legal__callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .kk-legal {
+      padding: 18px 12px;
+    }
+
+    .kk-legal__section {
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .kk-legal__nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .kk-legal__nav a {
+      width: 100%;
+    }
+  }
+
+  /* Readability measure (the 50-75 characters-per-line guideline): running text is capped;
+     cards, tables and headings keep the page width. */
+  .kk-legal__section p,
+  .kk-legal__section li {
+    max-width: 620px;
+  }
+</style>
+
+<div class="kk-legal">
+  <header class="kk-legal__hero">
+    <h1>Odderon Phi — PAIA Manual</h1>
+
+    <p class="kk-legal__subtitle">
+      Manual of Odderon Phi (Pty) Ltd, published in terms of section 51 of the Promotion of Access to Information Act 2 of 2000, read with the Protection of Personal Information Act 4 of 2013. It sets out what records the company holds, how to request access to them, and how to exercise your privacy rights.
+    </p>
+  </header>
+
+  <nav class="kk-legal__nav" aria-label="PAIA manual sections">
+    <a href="#company">1. The company</a>
+    <a href="#officer">2. Information Officer</a>
+    <a href="#guide">3. Regulator's guide</a>
+    <a href="#records">4. Records we hold</a>
+    <a href="#other-law">5. Access under other laws</a>
+    <a href="#requests">6. How to request access</a>
+    <a href="#fees">7. Fees</a>
+    <a href="#refusal">8. Grounds for refusal</a>
+    <a href="#remedies">9. If we refuse</a>
+    <a href="#popia">10. Your privacy rights</a>
+    <a href="#availability">11. Availability</a>
+    <a href="#document-information">12. Document information</a>
+  </nav>
+
+  <section class="kk-legal__section" id="company">
+    <h2>1. The company</h2>
+
+    <p>
+      This manual is published by <strong>Odderon Phi (Pty) Ltd</strong>, registration number
+      <strong>2026/439085/07</strong>, a private company incorporated in the Republic of South Africa on
+      3 June 2026. The company is a "private body" as defined in section 1 of PAIA and a "responsible party"
+      as defined in section 1 of POPIA.
+    </p>
+
+    <ul>
+      <li><strong>Registered office and postal address:</strong> 11 Peltier Drive, 8 Grace Avenue Complex, Johannesburg, Gauteng, 2191, South Africa</li>
+      <li><strong>Email:</strong> <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a></li>
+      <li><strong>Website:</strong> <a href="https://www.odderonphi.com">www.odderonphi.com</a></li>
+      <li><strong>What the company does:</strong> it develops and publishes software, including the knokkeroo check-in app and Archisaurus Rex, and sells goods and digital products through its website and through the Apple App Store and Google Play.</li>
+    </ul>
+  </section>
+
+  <section class="kk-legal__section" id="officer">
+    <h2>2. Information Officer</h2>
+
+    <p>
+      The head of the company for PAIA purposes, and its Information Officer for POPIA purposes, is:
+    </p>
+
+    <ul>
+      <li><strong>Name:</strong> Charles Erasmus Joubert</li>
+      <li><strong>Capacity:</strong> Founder and sole director</li>
+      <li><strong>Postal address:</strong> 11 Peltier Drive, 8 Grace Avenue Complex, Johannesburg, Gauteng, 2191</li>
+      <li><strong>Email:</strong> <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a></li>
+    </ul>
+
+    <p>
+      No deputy Information Officer has been designated. The company has one director and no employees, so all
+      requests are handled by the Information Officer personally. Send every request and every privacy query to
+      the email address above, or by post to the address above.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="guide">
+    <h2>3. The Information Regulator's guide</h2>
+
+    <p>
+      The Information Regulator has compiled a guide, in terms of section 10 of PAIA, on how to use the Act. It is
+      available in each official language and explains how to exercise the rights PAIA creates. You can obtain it from:
+    </p>
+
+    <ul>
+      <li>The Information Regulator (South Africa), JD House, 27 Stiemens Street, Braamfontein, Johannesburg, 2001</li>
+      <li>Post: P.O. Box 31533, Braamfontein, Johannesburg, 2017</li>
+      <li>Email: <a href="mailto:inforeg@inforegulator.org.za">inforeg@inforegulator.org.za</a></li>
+      <li>Website: <a href="https://inforegulator.org.za">inforegulator.org.za</a></li>
+    </ul>
+  </section>
+
+  <section class="kk-legal__section" id="records">
+    <h2>4. Records the company holds</h2>
+
+    <p>
+      The categories below describe the records the company actually keeps. Listing a record here does not mean it will
+      automatically be released — every request is assessed against the grounds for refusal in Chapter 4 of Part 3 of PAIA.
+    </p>
+
+    <h3>4.1 Company and statutory records</h3>
+    <ul>
+      <li>Memorandum of Incorporation, registration certificate and CIPC filings</li>
+      <li>Securities register, share certificates and director records</li>
+      <li>Directors' resolutions and minutes</li>
+      <li>Beneficial ownership records</li>
+    </ul>
+
+    <h3>4.2 Financial records</h3>
+    <ul>
+      <li>Accounting records, ledgers and annual financial statements</li>
+      <li>Invoices, receipts, supplier records and bank statements</li>
+      <li>Tax records and returns</li>
+    </ul>
+
+    <h3>4.3 Customer and user records</h3>
+    <ul>
+      <li>knokkeroo account records: mobile phone number, display name, check-in history, quiet-hours settings and mutual connection records</li>
+      <li>Subscription and purchase records for the app and for goods bought through the website</li>
+      <li>Support, verification, account-deletion and privacy-request correspondence</li>
+    </ul>
+
+    <h3>4.4 Product and technical records</h3>
+    <ul>
+      <li>Source code, designs, build artefacts and release records</li>
+      <li>Service-provider configuration and operational logs needed to keep the service running and secure</li>
+      <li>Trade mark and other intellectual property records</li>
+    </ul>
+
+    <h3>4.5 Supplier and service-provider records</h3>
+    <ul>
+      <li>Agreements and correspondence with the service providers named in the knokkeroo privacy policy — Supabase, Twilio, Expo, Huawei Mobile Services, Squarespace and MacinCloud — and with Apple, Google and other distribution platforms</li>
+    </ul>
+
+    <h3>4.6 Website and store records</h3>
+    <ul>
+      <li>Website content, order records and enquiry-form submissions</li>
+    </ul>
+
+    <p>
+      What personal information the knokkeroo app collects, what it deliberately does not collect, how long it is kept and
+      who processes it is set out in full in the
+      <a href="https://www.odderonphi.com/knokkeroo/terms">knokkeroo Terms &amp; Conditions and Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="other-law">
+    <h2>5. Records accessible under other legislation</h2>
+
+    <p>
+      Some records are available under other laws without a PAIA request, and are governed by those laws. They include
+      records kept under the Companies Act 71 of 2008, the Income Tax Act 58 of 1962, the Tax Administration Act 28 of 2011,
+      the Value-Added Tax Act 89 of 1991, the Consumer Protection Act 68 of 2008, the Electronic Communications and
+      Transactions Act 25 of 2002 and the Protection of Personal Information Act 4 of 2013.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="requests">
+    <h2>6. How to request access to a record</h2>
+
+    <div class="kk-legal__callout">
+      <p>
+        <strong>The short version:</strong> complete Form 2 of the PAIA Regulations, email it to
+        <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a>, pay the R140 request fee if one is payable, and we
+        will respond within 30 days.
+      </p>
+    </div>
+
+    <ol>
+      <li>
+        Complete the prescribed <strong>Form 2 (Request for Access to Record of Private Body)</strong>, published in the
+        PAIA Regulations, 2021 and available from the Information Regulator's website.
+      </li>
+      <li>
+        Provide enough detail to identify the record and to identify you, state the right you are seeking to exercise or
+        protect and why the record is required to exercise or protect it, and state the form of access and the manner of reply
+        you prefer.
+      </li>
+      <li>
+        If you are requesting on behalf of someone else, attach proof of your authority in a form acceptable to the
+        Information Officer.
+      </li>
+      <li>
+        Send the form to <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a> or to the postal address in section 1.
+      </li>
+      <li>
+        Pay the request fee where one is payable. A requester asking for their own personal information does not pay a request fee.
+      </li>
+    </ol>
+
+    <p>
+      We will decide within <strong>30 days</strong> of receiving the request and notify you in writing. That period may be
+      extended by up to a further 30 days where PAIA allows it, in which case we will tell you why. If the record contains
+      information about a third party, we must first give that party an opportunity to make representations, which may extend
+      the timeline as provided in PAIA.
+    </p>
+
+    <p>
+      A request may be made in a different way where a requester cannot read or write, or has a disability — contact the
+      Information Officer and reasonable assistance will be provided.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="fees">
+    <h2>7. Fees</h2>
+
+    <p>
+      The fees below are the fees prescribed in Annexure B to the PAIA Regulations, 2021 and published by the Information
+      Regulator. They are amended from time to time, and the prescribed fee in force on the date of your request applies.
+    </p>
+
+    <ul>
+      <li><strong>Request fee:</strong> R140.00 per request. Not payable where you are requesting your own personal information.</li>
+      <li><strong>Search and preparation:</strong> R145.00 for each hour, or part of an hour, reasonably required to search for and prepare the record, excluding the first hour, capped at R435.00 per request.</li>
+      <li><strong>Photocopy or printed A4 page (black and white):</strong> R2.00 per page or part of a page.</li>
+      <li><strong>Record on a flash drive or CD supplied by you:</strong> R40.00.</li>
+      <li><strong>Record on a CD supplied by the company:</strong> R60.00.</li>
+      <li><strong>Deposit:</strong> where the search is likely to take more than six hours, a deposit of one third of the access fee is payable before the request is processed.</li>
+    </ul>
+
+    <p>
+      We will tell you what the fees are before doing the work, and access is given once the fees are paid. Where a fee is
+      payable and you dispute it, the remedies in section 9 apply.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="refusal">
+    <h2>8. Grounds on which access may be refused</h2>
+
+    <p>
+      PAIA obliges or permits a private body to refuse access in the circumstances set out in Chapter 4 of Part 3 of the Act.
+      The grounds most likely to arise here are:
+    </p>
+
+    <ul>
+      <li><strong>Section 63</strong> — unreasonable disclosure of personal information about a third party, including a deceased person.</li>
+      <li><strong>Section 64</strong> — commercial information of a third party, such as trade secrets, or information whose disclosure would harm their commercial or financial interests.</li>
+      <li><strong>Section 65</strong> — information supplied in confidence, where disclosure would be a breach of a duty of confidence.</li>
+      <li><strong>Section 66</strong> — information whose disclosure could endanger a person's life or physical safety, or prejudice the security of property or a system.</li>
+      <li><strong>Section 67</strong> — privileged records in legal proceedings.</li>
+      <li><strong>Section 68</strong> — the company's own commercial information, including trade secrets, source code and information whose disclosure would put us at a disadvantage in negotiations or commercially.</li>
+      <li><strong>Section 69</strong> — research information of the company or a third party.</li>
+      <li><strong>Section 70</strong> — the public-interest override, which requires disclosure despite a ground of refusal where the public interest in disclosure clearly outweighs the harm.</li>
+    </ul>
+
+    <p>
+      Where part of a record may be refused and the rest may not, we will sever the record and give you access to the
+      remainder, as section 28 requires.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="remedies">
+    <h2>9. If we refuse your request</h2>
+
+    <p>
+      There is no internal appeal against a decision of a private body. If your request is refused, or you are unhappy with
+      the fee, the form of access, or a failure to respond in time, you may:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Complain to the Information Regulator</strong> in terms of section 77A of PAIA, using Form 5, within 180 days of
+        the decision — <a href="mailto:PAIAComplaints@inforegulator.org.za">PAIAComplaints@inforegulator.org.za</a>.
+      </li>
+      <li>
+        <strong>Apply to a court</strong> with jurisdiction, in terms of section 78 of PAIA, for appropriate relief.
+      </li>
+    </ul>
+  </section>
+
+  <section class="kk-legal__section" id="popia">
+    <h2>10. Your rights over your personal information</h2>
+
+    <p>
+      Separately from PAIA, POPIA gives you rights over personal information the company holds about you. You may:
+    </p>
+
+    <ul>
+      <li>Ask us to confirm, free of charge, whether we hold personal information about you, and to give you a record or description of it.</li>
+      <li>Ask us to correct or delete personal information that is inaccurate, irrelevant, excessive, out of date, incomplete, misleading or obtained unlawfully, using Form 2 of the POPIA Regulations.</li>
+      <li>Object to processing on the grounds set out in section 11(3) of POPIA, using Form 1 of the POPIA Regulations.</li>
+      <li>Withdraw consent where processing is based on consent, without affecting processing that already took place.</li>
+      <li>Ask us not to use your details for direct marketing, and be told the source of your details where we did not obtain them from you.</li>
+      <li>Complain to the Information Regulator at <a href="mailto:complaints.IR@inforegulator.org.za">complaints.IR@inforegulator.org.za</a>, or institute civil proceedings.</li>
+    </ul>
+
+    <p>
+      For a knokkeroo account, deletion is quickest in the app itself — see
+      <a href="https://www.odderonphi.com/knokkeroo/account-deletion">knokkeroo Account Deletion</a>. Because a knokkeroo account
+      is tied to a mobile phone number, we verify that a requester controls the number or is properly authorised before we act
+      on a request; a request that we cannot verify may be refused, delayed or restricted.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="availability">
+    <h2>11. Availability of this manual</h2>
+
+    <p>
+      This manual is available free of charge on this page, and on request by email to
+      <a href="mailto:hello@odderonphi.com">hello@odderonphi.com</a>. A printed copy may be inspected at the company's registered
+      office by prior arrangement, and a copy is lodged with the Information Regulator where required. If you ask for a
+      photocopy, the prescribed fee in section 7 applies.
+    </p>
+  </section>
+
+  <section class="kk-legal__section" id="document-information">
+    <h2>12. Document information</h2>
+
+    <p>
+      Published: 18 August 2026 · Document version 1.0 · This manual is reviewed at least annually and whenever the company's
+      records, contact details or Information Officer change.
+    </p>
+
+    <p>
+      Odderon Phi (Pty) Ltd (Reg. No. 2026/439085/07), a company registered in the Republic of South Africa ·
+      <a href="https://www.odderonphi.com/contact">Contact us</a>
+    </p>
+
+    <p>
+      © 2026 Odderon Phi (Pty) Ltd. All rights reserved.
+    </p>
+  </section>
+</div>
