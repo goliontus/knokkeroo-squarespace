@@ -289,7 +289,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion ships from app version 4.38.0 — the build under review.
+      The Watch companion has shipped with the iPhone app since version 4.38.0 and is in the
+      5.7.16 build under review.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -462,7 +463,7 @@
 <section class="kk-rev__section" id="what-the-app-does">
     <h2>What the app does</h2>
     <p>
-      knokkeroo is a simple daily check-in app. A user taps <strong>knok</strong> to let the people who care about them
+      knokkeroo is a simple check-in app. A user taps <strong>knok</strong> any time to let the people who care about them
       know they are okay. Contacts watch over each other through mutual, both-approved connections and are alerted
       if someone is overdue.
     </p>
@@ -473,54 +474,34 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>Coming in a later version (in development — not yet in the build under review)</h2>
+    <h2>In the build under review — features added between the live 5.0.x releases and 5.7.16</h2>
+    <p><em>Everything in this section IS in the 5.7.16 build submitted for review on all three
+      stores. Earlier revisions of this page listed these under "coming in a later version"; that
+      framing is obsolete as of the 5.7.16 submission (19 August 2026).</em></p>
     <ul>
-      <li><strong>Appearance: Dark / Light toggle.</strong> A new card in <strong>Me → Settings</strong>,
-        simply labelled "Appearance", lets an account switch the whole app between the existing dark
-        theme and a new light theme. <strong>Updated 2026-08-16:</strong> this card is no longer
-        restricted to founder/demo accounts in code — every signed-in account can now reach and use
-        it (a real, severe light-theme contrast defect that justified the earlier restriction was
-        found and fixed the same day it was widened). The card has never carried any "founder only"
-        wording, so a reviewer never saw anything implying restricted access even before this change.
-        <strong>UPDATED 18 August 2026 — this exists in v5.6.0, which is NOT under App Store or Play
-        production review as of this writing.</strong> It is on TestFlight (build 61, external
-        group, Beta App Review) but no build carrying it has been submitted for production review on
-        either store. Every signed-in account can reach
-        <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between Dark
-        and Light. Dark remains the default; Light is opt-in, and is remembered per device.
-        The text that stood here previously said this was "not present in any build ... submitted
-        for App Store/Play production review" — still true; only the TestFlight-beta framing above
-        has changed. Kept for history: the earlier restriction to founder/demo accounts lasted only until
-        a severe light-theme contrast defect was found and fixed (2026-08-16), and the card never
-        carried any "founder only" wording, so no reviewer ever saw text implying restricted access.</li>
-      <li><strong>"Choose from your contacts" on the Invite screen.</strong> A new button at the top of
-        <strong>Add Contact</strong> opens the device's own native contact-picker sheet; picking a
+      <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
+        <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
+        Dark and Light. Dark remains the default; Light is opt-in and remembered per device. The
+        toggle was briefly restricted to founder/demo accounts during development, until a severe
+        light-theme contrast defect was found and fixed (2026-08-16); the card never carried any
+        "founder only" wording, so no reviewer ever saw text implying restricted access.</li>
+      <li><strong>"Choose from your contacts" on the Add Contact screen.</strong> A button at the top
+        of <strong>Add Contact</strong> opens the device's own native contact-picker sheet; picking a
         contact fills in the name and number fields below it (with a follow-up step to pick which
         number, if that contact has more than one saved). The existing name/number fields stay on
         screen underneath as a fallback — nothing is removed or hidden. <strong>Important for
         reviewers: no permission dialog appears at any point for this feature</strong> — the picker
-        sheet simply opens directly. This is expected, not a bug: this uses the OS's native
+        sheet simply opens directly. This is expected, not a bug: it uses the OS's native
         "hand me one contact" picker (iOS <code>CNContactPickerViewController</code>, Android's
         contact-picker intent), which neither platform requires an app to request permission for,
         unlike bulk address-book access. The app never gets standing access to the address book —
-        only the single contact tapped is ever received. <strong>UPDATED 18 August 2026: this exists
-        in v5.6.0, which is on TestFlight (build 61, external group, Beta App Review) only — no build
-        carrying it is under App Store or Play production review.</strong>
-        Production (iOS 5.0.0 / Android 5.0.10) predates
-        it, so a reviewer comparing against the live app will not find it there — that is expected.</li>
-      <li><strong>Account-status line on Me → Settings.</strong> A small line of text will appear under
-        the app version number reading the signed-in account's status in plain language (for example
-        "demo &middot; free" or "founder &middot; paid"). <strong>Reviewers will see this</strong> — it
-        uses a founder-or-demo gate (founder accounts and every demo account, including the Reviewer
-        account used throughout this page), not a founder-only gate. <strong>Updated 2026-08-16:</strong>
-        this is deliberately still restricted, unlike the Appearance toggle above — the two used to
-        share one gate, but the Appearance toggle's gate was removed while this diagnostic line's was
-        intentionally left in place, since it is an internal status aid, not a feature a real end
-        user should see. A real, ordinary end-user account never sees it. It is purely informational
-        and does not affect any functionality. Not present in version 5.0.10 production; exists in
-        code on the newest TestFlight build (5.3.6, build 55) and Play testing build (5.3.6,
-        versionCode 46); will be called out here once it ships to a build submitted for production
-        review.</li>
+        only the single contact tapped is ever received.</li>
+      <li><strong>Account-status line on Me → Settings.</strong> A small line of text under the app
+        version number reads the signed-in account's status in plain language (for example
+        "demo &middot; free"). <strong>Reviewers will see this</strong> — it uses a founder-or-demo
+        gate (founder accounts and every demo account, including the Reviewer account used
+        throughout this page). A real, ordinary end-user account never sees it. It is purely
+        informational, an internal status aid, and does not affect any functionality.</li>
       <li><strong>iOS Lock Screen widget — a second way to check in without opening the app.</strong>
         On iPhone, knokkeroo can be added to the Lock Screen itself, in either the small round
         (circular) slot or the wide (rectangular) slot. Tapping it records the user's check-in
@@ -528,25 +509,28 @@
         the same mechanism as the existing home-screen widget. For elderly users, this is the
         shortest possible route to checking in. Two things reviewers should know: (a) iOS renders
         Lock Screen accessory widgets monochrome or tinted by platform design, so the app's
-        green/amber/red status colour deliberately does not appear there — that is Apple's
-        rendering material, not a knokkeroo styling choice; and (b) tapping it now gives visible confirmation —
-        the widget briefly drops its text and shows the knokkeroo mark alone, then returns. That was
-        an open item when this section was written and was fixed in 5.5.x; a reviewer testing the tap
-        should expect a brief change on the widget itself, not a silent tap.
-        <strong>UPDATED 18 August 2026: the Lock Screen widget exists in v5.6.0, which is on
-        TestFlight (build 61, external group, Beta App Review) only — it is NOT in any build
-        submitted for App Store production review.</strong> It was confirmed working on a
-        real iPhone on TestFlight build 55 (four taps recorded as ios_widget check-ins).
-        <strong>Also new in 5.6.0 and not previously disclosed here:</strong> after signing in, the app
-        now shows a one-time screen that PICTURES the Home Screen and Lock Screen widgets so a person
-        can recognise them, with step-by-step instructions; and on Android only, a button asking the
-        launcher to add the widget (Android's own system dialog appears — the app cannot add a widget
-        itself, and cannot tell whether the person accepted). No permission is involved on either
-        platform.</li>
+        green/amber/red status colour deliberately does not appear there — that is Apple's rendering
+        material, not a knokkeroo styling choice; and (b) tapping it gives visible confirmation —
+        the widget briefly drops its text and shows the knokkeroo mark alone, then returns. It was
+        confirmed working on a real iPhone via TestFlight (four taps recorded as ios_widget
+        check-ins).</li>
+      <li><strong>Widget onboarding screen.</strong> After registering, the app shows a one-time
+        screen that PICTURES the home-screen widget so a person can recognise it, with step-by-step
+        instructions; on Android only, a button asks the launcher to add the widget (Android's own
+        system dialog appears — the app cannot add a widget itself, and cannot tell whether the
+        person accepted). No permission is involved on either platform. Demo/review accounts skip
+        this screen by design and land straight on the dashboard.</li>
+      <li><strong>Reliability and clarity fixes new in 5.7.x</strong> (same-day QA/accessibility
+        convergence loop, rounds 4-7, on a real device image): a check-in tapped while offline is
+        saved and now also retries automatically every 15 seconds while the app stays open (not
+        only on next launch); sign-in errors appear at the top of the form where the keyboard
+        cannot hide them, and are announced to screen readers; slow-network waiting text reads as
+        calm information rather than an error; Cancel/dismiss is always the bottom choice in every
+        decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
+        OS font-size change no longer discards the entered phone number.</li>
     </ul>
-    <h2>New in version 5.0.10 (Android is live; the iOS submission for this version was withdrawn
-      by the developer before review — production iOS still serves 5.0.0, see "Document
-      information" above)</h2>
+    <h2>New in version 5.0.10 (all of this is also in the 5.7.16 build under review; production
+      iOS still serves 5.0.0 until that review clears — see "Document information" above)</h2>
     <ul>
       <li><strong>Check-in requests pulse the knok button.</strong> When a contact asks the user to check in,
         the app no longer shows a message banner with its own button — the notification lands the user on the
@@ -620,8 +604,8 @@
         their settings screen in the app via the knokkeroo:// URL scheme). The widget never shows phone numbers and
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
-        <em>A Lock Screen version of the same widget exists on iOS, but it is not in this build or in any
-        build live in production — see "Coming in a later version" above.</em></li>
+        <em>A Lock Screen version of the same widget also exists on iOS and IS in the 5.7.16 build
+        under review — see "In the build under review" above.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -828,17 +812,17 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 18 August 2026 · Android is LIVE in production at version 5.0.10 (versionCode 41,
-      includes the Wear OS companion) — unchanged since the entry above. iOS production is still LIVE at
-      version 5.0.0 (includes the Apple Watch companion); version 5.0.10 (build 49) was submitted for review
-      and then withdrawn by the developer before Apple began reviewing it. Huawei is LIVE
-      and approved at version 5.0.0 (versionCode 36) — no billing on that platform.
-      New builds carrying version 5.7.1 have just finished on all three platforms (iOS build 62, Android
-      versionCode 50, Huawei versionCode 50) and are about to be submitted — by the time you read this
-      they may already be under review. If a build number above does not match what you are looking at,
-      this page is a revision behind the live submission; check TestFlight/Play Console/AppGallery
-      Connect directly for the exact build under review, and email hello@knokkeroo.com with any
-      discrepancy.
+      Last updated: 19 August 2026 · <strong>The build under review on all three stores is version
+      5.7.16.</strong> Store state at the time of writing, read live where an API exists: Android is
+      LIVE in production at version 5.7.1 (versionCode 51, includes the Wear OS companion; Play
+      publisher API read 19 Aug 2026), with 5.7.16 submitted to the production track. iOS production
+      is LIVE at version 5.0.0 (includes the Apple Watch companion); the 5.7.16 submission reuses
+      the version slot of a 5.7.1 submission the developer withdrew before Apple began reviewing it.
+      Huawei is LIVE and approved at version 5.0.0 (versionCode 36) — no billing on that platform;
+      the 5.7.16 AppGallery submission supersedes an interim 5.7.1 (versionCode 50) review.
+      If a version above does not match what you are looking at, this page is a revision behind the
+      live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
+      under review, and email hello@knokkeroo.com with any discrepancy.
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.
