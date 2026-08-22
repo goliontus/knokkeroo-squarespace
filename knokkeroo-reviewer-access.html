@@ -474,10 +474,10 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>In the build under review — features added between the live 5.0.x releases and 5.7.16</h2>
-    <p><em>Everything in this section IS in the 5.7.16 build submitted for review on all three
-      stores. Earlier revisions of this page listed these under "coming in a later version"; that
-      framing is obsolete as of the 5.7.16 submission (19 August 2026).</em></p>
+    <h2>Features added between the 5.0.x releases and 5.7.16 (in the iOS build under review, and
+      live on Android/Huawei)</h2>
+    <p><em>Everything in this section IS in the iOS 5.7.16 build under Apple review and in the
+      Android/Huawei releases that followed it.</em></p>
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
@@ -528,6 +528,19 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
+      <li><strong>Newest changes (versions 5.7.17-5.7.24) — live on Android production now, in
+        review on Huawei, and part of the NEXT iOS submission (not in the 5.7.16 build under Apple
+        review):</strong> the account-status line under the version number now shows for every
+        signed-in account (plain "role &middot; tier" text, informational only); Contact settings
+        gained a bordered header card with the contact's name editor moved to the top; the red
+        status cross is drawn at the same weight as the check mark; "Delete my account" is a
+        clearly bordered red button again (with the same typed confirmation); the profile footer
+        is a bordered card with a real "Contact us" button; and the Android home-screen widget now
+        updates the moment the favourite contact changes and keeps showing the real favourite and
+        a saved check-in even while the phone is offline (it renders from a locally cached
+        snapshot when the network is down). On iOS, the next submission also repairs Apple Watch
+        pairing: the watch now shows a 6-digit code that is entered on the phone under
+        Me &rarr; Apple Watch, replacing the earlier sign-in hand-off.</li>
     </ul>
     <h2>New in version 5.0.10 (all of this is also in the 5.7.16 build under review; production
       iOS still serves 5.0.0 until that review clears — see "Document information" above)</h2>
@@ -812,14 +825,14 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 19 August 2026 · <strong>The build under review on all three stores is version
-      5.7.16.</strong> Store state at the time of writing, read live where an API exists: Android is
-      LIVE in production at version 5.7.1 (versionCode 51, includes the Wear OS companion; Play
-      publisher API read 19 Aug 2026), with 5.7.16 submitted to the production track. iOS production
-      is LIVE at version 5.0.0 (includes the Apple Watch companion); the 5.7.16 submission reuses
-      the version slot of a 5.7.1 submission the developer withdrew before Apple began reviewing it.
-      Huawei is LIVE and approved at version 5.0.0 (versionCode 36) — no billing on that platform;
-      the 5.7.16 AppGallery submission supersedes an interim 5.7.1 (versionCode 50) review.
+      Last updated: 22 August 2026 · Store state at the time of writing, read live where an API
+      exists: Android is LIVE in production at version 5.7.24 (versionCode 53, includes the Wear OS
+      companion; Play publisher API read 22 Aug 2026). iOS production is LIVE at version 5.0.0
+      (includes the Apple Watch companion); <strong>version 5.7.16 is the build under Apple
+      review</strong> (resubmitted 21 Aug 2026 after replacing the listing screenshots), and version
+      5.7.24 (build 65) is on TestFlight awaiting beta review for the submission that follows.
+      Huawei is on shelf at version 5.7.16 (versionCode 52) — no billing on that platform — with
+      5.7.24 (versionCode 53) submitted for AppGallery review.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
