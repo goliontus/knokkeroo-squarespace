@@ -1,3 +1,4 @@
+
 <style>
   .kk-rev,
   .kk-rev * {
@@ -290,7 +291,7 @@
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
       The Watch companion has shipped with the iPhone app since version 4.38.0 and is in the
-      5.7.16 build under review.
+      live 5.7.28 release.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -474,9 +475,9 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>Features added between the 5.0.x releases and 5.7.16 (live on all three stores)</h2>
-    <p><em>Everything in this section IS in the live iOS 5.7.16 release (approved 22 August 2026)
-      and in the Android/Huawei releases that followed it.</em></p>
+    <h2>Features added between the 5.0.x releases and 5.7.28 (live on iOS and Android)</h2>
+    <p><em>Everything in this section IS in the live iOS 5.7.28 release (approved and released
+      23 August 2026) and in the Android 5.7.28 production release.</em></p>
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
@@ -527,8 +528,8 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>Newest changes (versions 5.7.17-5.7.28) — live on Android production now and in
-        the iOS 5.7.28 build under review (not in the live iOS 5.7.16):</strong> an
+      <li><strong>Newest changes (versions 5.7.17-5.7.28) — LIVE on both iOS and Android
+        production now:</strong> an
         accessibility-contrast pass made the quiet-hours moon, the lock on locked tiles and the
         "Saved, sending" message clearly readable in both the light and dark themes, the
         home-screen widget now always matches the chosen theme and clears itself on sign-out,
@@ -544,8 +545,8 @@
         pairing: the watch now shows a 6-digit code that is entered on the phone under
         Me &rarr; Apple Watch, replacing the earlier sign-in hand-off.</li>
     </ul>
-    <h2>New in version 5.0.10 (all of this is also in the 5.7.16 build under review; production
-      iOS still serves 5.0.0 until that review clears — see "Document information" above)</h2>
+    <h2>New in version 5.0.10 (all of this is also in the live 5.7.28 release on iOS and
+      Android — see "Document information" below)</h2>
     <ul>
       <li><strong>Check-in requests pulse the knok button.</strong> When a contact asks the user to check in,
         the app no longer shows a message banner with its own button — the notification lands the user on the
@@ -619,8 +620,8 @@
         their settings screen in the app via the knokkeroo:// URL scheme). The widget never shows phone numbers and
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
-        <em>A Lock Screen version of the same widget also exists on iOS and IS in the 5.7.16 build
-        under review — see "In the build under review" above.</em></li>
+        <em>A Lock Screen version of the same widget also exists on iOS and IS in the live
+        5.7.28 release.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -827,13 +828,16 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 23 August 2026 · Store state at the time of writing, read live where an API
-      exists: <strong>iOS is LIVE at version 5.7.16</strong> (approved 22 Aug 2026; includes the
-      Apple Watch companion), with <strong>version 5.7.28 (build 66) submitted for App Store
-      review on 23 Aug</strong> and the same build on TestFlight awaiting beta review. Android is
-      LIVE in production at version 5.7.28 (versionCode 54, includes the Wear OS companion; Play
-      publisher API read 23 Aug 2026). Huawei is on shelf at version 5.7.16 (versionCode 52) — no
-      billing on that platform — with 5.7.28 (versionCode 54) submitted for AppGallery review.
+      Last updated: 24 August 2026 · Store state at the time of writing, read live where an API
+      exists: <strong>iOS is LIVE at version 5.7.28</strong> (approved and released 23 Aug 2026;
+      includes the Apple Watch companion). Verified 24 Aug 2026 from the public iTunes lookup for
+      app id 6776208791, which returns version 5.7.28 on the ZA and US storefronts, and from the
+      App Store Connect review submission, which reads COMPLETE. Android is LIVE in production at
+      version 5.7.28 (versionCode 54, includes the Wear OS companion; Play publisher API read
+      24 Aug 2026), so iOS and Android are on the same version. Huawei — no billing on that
+      platform — was last recorded with 5.7.28 (versionCode 54) submitted for AppGallery review
+      over 5.7.16 (versionCode 52); AppGallery Connect exposes no read API to us, so that Huawei
+      line is UNVERIFIED on this revision rather than confirmed.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
