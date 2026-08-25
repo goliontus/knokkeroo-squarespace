@@ -1,4 +1,3 @@
-
 <style>
   .kk-rev,
   .kk-rev * {
@@ -277,8 +276,11 @@
     <p><strong>Push notifications</strong> — see the
       <a href="#whats-new-v4">"New in version 4"</a> section for exactly what the app sends and when. Free accounts
       receive red overdue alerts and their own opt-in daily reminder; subscribers additionally receive amber early
-      warnings, invitation notices and "checking in on you" requests. Demo accounts are exempt from
-      every plan gate, so reviewers can test all of it with no purchase.</p>
+      warnings, invitation notices and "checking in on you" requests. Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
+    <p><strong>Android TV card (Android and Huawei only).</strong> My settings shows an "Android TV"
+      card offering to pair a TV. The knokkeroo TV companion is <strong>built but not yet listed on any
+      store</strong>, so there is currently nothing to pair with and the code box will not accept anything.
+      It is deliberately hidden on iPhone. Nothing is charged and no data is sent by opening it.</p>
     <p><strong>Please note:</strong> knokkeroo is a personal communication tool, <strong>not a medical or
       emergency service</strong>, and never contacts emergency services. The in-app disclaimer and the Terms state this.</p>
     <p class="kk-rev__done">✓ End of the iPhone review section — you have everything you need to complete it. Nothing further on this page is required.</p>
@@ -304,7 +306,7 @@
     </ol>
     <p>
       <strong>Plan note:</strong> for real users the Apple Watch app is part of the paid plan (enforced server-side,
-      not just in the UI). Demo accounts are exempt from every plan gate, so reviewing the Watch requires no purchase.
+      not just in the UI). Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free. That one tap is all the Watch review needs — there is nothing to buy.
       Opening the Watch app itself counts as a check-in for the signed-in user, and tapping <strong>knok</strong>
       records another.
     </p>
@@ -382,7 +384,7 @@
       the standard Android 13+ notification permission after sign-in; declining it
       leaves every other feature working. Free accounts receive red overdue alerts and their own opt-in daily
       reminder; subscribers additionally receive amber early warnings, invitation notices and "checking in on you"
-      requests. Demo accounts are exempt from every plan gate, so reviewers can test all of it with no purchase.</p>
+      requests. Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
     <p><strong>Please note:</strong> knokkeroo is a personal communication tool, <strong>not a medical or
       emergency service</strong>, and never contacts emergency services. The in-app disclaimer and the Terms state this.</p>
     <p class="kk-rev__done">✓ End of the Android phone review section — you have everything you need to complete it. Nothing further on this page is required.</p>
@@ -645,8 +647,9 @@
     <p>The free tier still shows a user's first four contacts, with the paid subscription showing all of them — same as
       3.5.x. Newly, <strong>setting up push notifications</strong> and <strong>the Apple Watch app</strong> are part of
       the paid plan for real users, enforced server-side. Widgets, quick actions, Wear OS and the TV app are free on
-      every plan. <strong>Demo accounts are exempt from every plan gate</strong>, so reviewers can test everything with
-      no purchase.</p>
+      every plan. <strong>The demo account starts on the FREE plan so you can see the paywall exactly as a real user
+      does</strong>; if you would rather not make a purchase, note that everything gated behind the paid plan is
+      described in this page in full, and the free flow is itself the reviewable state.</p>
   </section>
 
 <section class="kk-rev__section" id="demo-accounts">
@@ -835,9 +838,10 @@
       App Store Connect review submission, which reads COMPLETE. Android is LIVE in production at
       version 5.7.28 (versionCode 54, includes the Wear OS companion; Play publisher API read
       24 Aug 2026), so iOS and Android are on the same version. Huawei — no billing on that
-      platform — was last recorded with 5.7.28 (versionCode 54) submitted for AppGallery review
-      over 5.7.16 (versionCode 52); AppGallery Connect exposes no read API to us, so that Huawei
-      line is UNVERIFIED on this revision rather than confirmed.
+      platform — is <strong>LIVE on AppGallery at 5.7.28</strong>, read back from the AppGallery Connect
+      publishing API on 25 Aug 2026 (releaseState 0 = on shelf). Earlier revisions of this page said
+      AppGallery Connect exposes no read API to us and marked the Huawei line UNVERIFIED; that was
+      wrong, the API is available and was used for the line above.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
