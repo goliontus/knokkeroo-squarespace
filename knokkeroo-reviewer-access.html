@@ -479,7 +479,7 @@
 <section class="kk-rev__section" id="whats-new-v5">
     <h2>Features added between the 5.0.x releases and 5.7.28 (live on iOS and Android)</h2>
     <p><em>Everything in this section IS in the live iOS 5.7.28 release (approved and released
-      23 August 2026) and in the Android 5.7.28 production release.</em></p>
+      23 August 2026) and in the Android production release (currently 5.7.31).</em></p>
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
@@ -530,14 +530,22 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in the build you are reviewing (5.7.31) — NOT yet in any store:</strong>
-        the knock sound now mixes with other audio instead of taking the audio session, so music
+      <li><strong>What is new in the build you are reviewing (5.7.34):</strong>
+        <em>For Apple reviewers this build carries everything since 5.7.28 (no intermediate build
+        was submitted to Apple); for Google and Huawei reviewers only the widget-reliability and
+        watch-sync items are new relative to the live 5.7.31.</em>
+        The knock sound now mixes with other audio instead of taking the audio session, so music
         keeps playing when someone checks in; on Android and Huawei, knokking from the home-screen widget
         gives a short vibration (WidgetKit gives an iOS widget no way to do that, so on iPhone there is
-        no buzz); and the Back button at the top of a screen now sits on the right on every screen
-        rather than only some. On Android and Huawei only, My settings also gains an "Android TV"
-        card &mdash; the TV companion is built but not yet listed on any store, so there is nothing
-        to pair with yet; it is deliberately hidden on iPhone.</li>
+        no buzz); the Back button at the top of a screen now sits on the right on every screen
+        rather than only some; and My settings gains an "Android TV" card on Android and Huawei
+        (the TV companion is live on Google Play as Android TV 1.0.0). New in 5.7.32-5.7.34,
+        iPhone widget reliability: the widget refreshes its status from the server on every
+        redraw, so it no longer shows an out-of-date colour after a check-in made another way; it
+        no longer shows a false "Verification needed" message after a background wake on a locked
+        phone; and tapping it records the check-in even when the app has not been opened for a
+        while. A signed-in state read in the background is also no longer allowed to mark the
+        paired watch as signed out on Android.</li>
 
       <li><strong>Newest changes (versions 5.7.17-5.7.28) — LIVE on both iOS and Android
         production now:</strong> an
@@ -556,8 +564,8 @@
         pairing: the watch now shows a 6-digit code that is entered on the phone under
         Me &rarr; Apple Watch, replacing the earlier sign-in hand-off.</li>
     </ul>
-    <h2>New in version 5.0.10 (all of this is also in the live 5.7.28 release on iOS and
-      Android — see "Document information" below)</h2>
+    <h2>New in version 5.0.10 (all of this is also in the live iOS and Android releases —
+      see "Document information" below)</h2>
     <ul>
       <li><strong>Check-in requests pulse the knok button.</strong> When a contact asks the user to check in,
         the app no longer shows a message banner with its own button — the notification lands the user on the
@@ -840,17 +848,16 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 25 August 2026 · Store state at the time of writing, read live where an API
+      Last updated: 28 August 2026 · Store state at the time of writing, read live where an API
       exists: <strong>iOS is LIVE at version 5.7.28</strong> (approved and released 23 Aug 2026;
-      includes the Apple Watch companion). Verified 24 Aug 2026 from the public iTunes lookup for
-      app id 6776208791, which returns version 5.7.28 on the ZA and US storefronts, and from the
-      App Store Connect review submission, which reads COMPLETE. Android is LIVE in production at
-      version 5.7.28 (versionCode 54, includes the Wear OS companion; Play publisher API read
-      24 Aug 2026), so iOS and Android are on the same version. Huawei — no billing on that
-      platform — is <strong>LIVE on AppGallery at 5.7.28</strong>, read back from the AppGallery Connect
-      publishing API on 25 Aug 2026 (releaseState 0 = on shelf). Earlier revisions of this page said
-      AppGallery Connect exposes no read API to us and marked the Huawei line UNVERIFIED; that was
-      wrong, the API is available and was used for the line above.
+      includes the Apple Watch companion). Verified 28 Aug 2026 from the public iTunes lookup for
+      app id 6776208791, which returns version 5.7.28. Android is LIVE in production at
+      <strong>version 5.7.31 + Android TV 1.0.0</strong> (versionCodes 55 and 900000001, status
+      completed, includes the Wear OS companion; Play publisher API read 28 Aug 2026). Huawei —
+      no billing on that platform — is <strong>LIVE on AppGallery at 5.7.31</strong>, read back
+      from the AppGallery Connect publishing API on 28 Aug 2026 (releaseState 0 = on shelf).
+      Version 5.7.34, the build this page describes as under review, was submitted to all three
+      stores on 28 August 2026.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
