@@ -293,7 +293,7 @@
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
       The Watch companion has shipped with the iPhone app since version 4.38.0 and is in the
-      live 5.7.28 release.
+      live 5.7.34 release.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -477,9 +477,10 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>Features added between the 5.0.x releases and 5.7.28 (live on iOS and Android)</h2>
-    <p><em>Everything in this section IS in the live iOS 5.7.28 release (approved and released
-      23 August 2026) and in the Android production release (currently 5.7.31).</em></p>
+    <h2>Features in the live 5.7.34 release (live on iOS, Android and Huawei)</h2>
+    <p><em>Everything in this section IS in the live 5.7.34 release — approved and released on
+      28 August 2026 on the App Store, Google Play (with Android TV 1.0.0) and Huawei AppGallery.
+      All three stores are level.</em></p>
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
@@ -530,10 +531,10 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in the build you are reviewing (5.7.34):</strong>
-        <em>For Apple reviewers this build carries everything since 5.7.28 (no intermediate build
-        was submitted to Apple); for Google and Huawei reviewers only the widget-reliability and
-        watch-sync items are new relative to the live 5.7.31.</em>
+      <li><strong>What is new in 5.7.34, the version now live:</strong>
+        <em>On iPhone this release carries everything since 5.7.28, because no 5.7.29-5.7.33 build
+        was submitted to Apple; on Android and Huawei it is the widget-reliability and watch-sync
+        delta on the previous 5.7.31.</em>
         The knock sound now mixes with other audio instead of taking the audio session, so music
         keeps playing when someone checks in; on Android and Huawei, knokking from the home-screen widget
         gives a short vibration (WidgetKit gives an iOS widget no way to do that, so on iPhone there is
@@ -547,7 +548,7 @@
         while. On Android, a failed background session check can also no longer wrongly mark the
         paired watch as signed out.</li>
 
-      <li><strong>Newest changes (versions 5.7.17-5.7.28) — LIVE on both iOS and Android
+      <li><strong>Changes in versions 5.7.17-5.7.28 — LIVE on iOS, Android and Huawei
         production now:</strong> an
         accessibility-contrast pass made the quiet-hours moon, the lock on locked tiles and the
         "Saved, sending" message clearly readable in both the light and dark themes, the
@@ -560,7 +561,7 @@
         is a bordered card with a real "Contact us" button; and the Android home-screen widget now
         updates the moment the favourite contact changes and keeps showing the real favourite and
         a saved check-in even while the phone is offline (it renders from a locally cached
-        snapshot when the network is down). On iOS, the next submission also repairs Apple Watch
+        snapshot when the network is down). On iOS, this release also repairs Apple Watch
         pairing: the watch now shows a 6-digit code that is entered on the phone under
         Me &rarr; Apple Watch, replacing the earlier sign-in hand-off.</li>
     </ul>
@@ -848,16 +849,16 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 28 August 2026 · Store state at the time of writing, read live where an API
-      exists: <strong>iOS is LIVE at version 5.7.28</strong> (approved and released 23 Aug 2026;
-      includes the Apple Watch companion). Verified 28 Aug 2026 from the public iTunes lookup for
-      app id 6776208791, which returns version 5.7.28. Android is LIVE in production at
-      <strong>version 5.7.31 + Android TV 1.0.0</strong> (versionCodes 55 and 900000001, status
-      completed, includes the Wear OS companion; Play publisher API read 28 Aug 2026). Huawei —
-      no billing on that platform — is <strong>LIVE on AppGallery at 5.7.31</strong>, read back
-      from the AppGallery Connect publishing API on 28 Aug 2026 (releaseState 0 = on shelf).
-      Version 5.7.34, the build this page describes as under review, was submitted to all three
-      stores on 28 August 2026.
+      Last updated: 1 September 2026 · Store state, read live where an API exists:
+      <strong>iOS is LIVE at version 5.7.34</strong> (approved and released 28 Aug 2026;
+      includes the Apple Watch companion). Verified 1 Sep 2026 from the public iTunes lookup for
+      app id 6776208791, which returns version 5.7.34, and from App Store Connect
+      (READY_FOR_SALE). Android is LIVE in production at
+      <strong>version 5.7.34 + Android TV 1.0.0</strong> (versionCodes 56 and 900000001, status
+      completed, includes the Wear OS companion; Play publisher API read 1 Sep 2026). Huawei —
+      no billing on that platform — is <strong>LIVE on AppGallery at 5.7.34</strong>, read back
+      from the AppGallery Connect publishing API on 1 Sep 2026 (releaseState 0 = on shelf).
+      All three stores are level at 5.7.34.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
