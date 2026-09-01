@@ -531,7 +531,29 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in 5.7.34, the version now live:</strong>
+      <li><strong>What is new in the build you are reviewing (5.7.36) &mdash; a reliability-fix
+        release with no new features:</strong>
+        <em>Submitted to Apple and to Google Play only; no 5.7.36 build has been submitted to
+        Huawei AppGallery, which stays live on 5.7.34.</em>
+        <strong>iPhone and Android:</strong> cancelling an invitation you had sent failed with an
+        error and left the invitation in the list. It now goes through a dedicated server call
+        that removes only your own invitation, and only while it is still unaccepted.
+        <strong>iPhone and Android:</strong> the app keeps one slot for a check-in that has been
+        pressed but not yet confirmed by the server. A delayed retry of an older check-in could
+        clear that slot while a newer, unconfirmed check-in was sitting in it, so the newer one was
+        lost if its own send then failed. The slot is now cleared only when it still holds the
+        operation that actually finished.
+        <strong>iPhone only:</strong> the app keeps sign-in and device details in the iOS Keychain,
+        and several of those items still used the default protection class, which iOS refuses to
+        open while the device is locked. A check-in the app recorded during a background wake on a
+        locked iPhone could therefore fail silently and never be saved, and registering the device
+        for notifications could fail the same way and leave it unregistered. Every Keychain read
+        and write in the app now uses
+        <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>.
+        Nothing else changes: no new screens, no new permissions, no change to pricing, in-app
+        purchases or the data the app collects.</li>
+
+      <li><strong>What is new in 5.7.34, the version live in all three stores today:</strong>
         <em>On iPhone this release carries everything since 5.7.28, because no 5.7.29-5.7.33 build
         was submitted to Apple; on Android and Huawei it is the widget-reliability and watch-sync
         delta on the previous 5.7.31.</em>
@@ -858,7 +880,9 @@
       completed, includes the Wear OS companion; Play publisher API read 1 Sep 2026). Huawei —
       no billing on that platform — is <strong>LIVE on AppGallery at 5.7.34</strong>, read back
       from the AppGallery Connect publishing API on 1 Sep 2026 (releaseState 0 = on shelf).
-      All three stores are level at 5.7.34.
+      All three stores are level at 5.7.34. <strong>Version 5.7.36, the build this page describes
+      as under review, was submitted to Apple and to Google Play on 1 September 2026.</strong> It
+      was <strong>not</strong> submitted to Huawei AppGallery, which remains live at 5.7.34.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
