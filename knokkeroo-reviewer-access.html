@@ -531,10 +531,15 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in the build you are reviewing (5.7.36) &mdash; a reliability-fix
+      <li><strong>What is new in the build you are reviewing (5.7.37) &mdash; a reliability-fix
         release with no new features:</strong>
-        <em>Submitted to Apple and to Google Play only; no 5.7.36 build has been submitted to
+        <em>Submitted to Apple and to Google Play only; no 5.7.37 build has been submitted to
         Huawei AppGallery, which stays live on 5.7.34.</em>
+        <strong>iPhone and Android:</strong> if a request to our server failed for a moment — a
+        timeout, or a connection that dropped — the app gave up immediately and showed an empty
+        list until a background refresh happened to succeed a minute later. It now retries twice,
+        briefly, so a passing network problem no longer empties the screen. A genuine refusal from
+        the server is still shown at once rather than retried.
         <strong>iPhone and Android:</strong> cancelling an invitation you had sent failed with an
         error and left the invitation in the list. It now goes through a dedicated server call
         that removes only your own invitation, and only while it is still unaccepted.
@@ -880,9 +885,12 @@
       completed, includes the Wear OS companion; Play publisher API read 1 Sep 2026). Huawei —
       no billing on that platform — is <strong>LIVE on AppGallery at 5.7.34</strong>, read back
       from the AppGallery Connect publishing API on 1 Sep 2026 (releaseState 0 = on shelf).
-      All three stores are level at 5.7.34. <strong>Version 5.7.36, the build this page describes
-      as under review, was submitted to Apple and to Google Play on 1 September 2026.</strong> It
-      was <strong>not</strong> submitted to Huawei AppGallery, which remains live at 5.7.34.
+      <strong>Google Play is LIVE at version 5.7.37</strong> (versionCodes 58 and 900000001,
+      status completed; Play publisher API read 1 Sep 2026), while the App Store still serves
+      5.7.34 and AppGallery 5.7.34. <strong>Version 5.7.37, the build this page describes as under
+      review, was submitted to Apple on 1 September 2026</strong> (build 72). A 5.7.36 submission
+      earlier the same day was withdrawn so 5.7.37 could replace it. Neither was submitted to
+      Huawei AppGallery, which remains live at 5.7.34.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
