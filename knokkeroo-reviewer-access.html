@@ -1,3 +1,4 @@
+
 <style>
   .kk-rev,
   .kk-rev * {
@@ -226,7 +227,9 @@
     <h1>knokkeroo — Reviewer Access</h1>
     <p class="kk-rev__subtitle">
       Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
-      Applies to app version 5.7.37 and above.
+      Applies to app version <strong>5.7.45</strong>, the release being submitted to the App Store and Google Play,
+      and to 5.7.37, which is live in both stores today. Huawei AppGallery stays on 5.7.34 and is not part of this
+      round.
     </p>
   </header>
 
@@ -279,9 +282,10 @@
       receive red overdue alerts and their own opt-in daily reminder; subscribers additionally receive amber early
       warnings, invitation notices and "checking in on you" requests. Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
     <p><strong>Android TV card (Android and Huawei only).</strong> My settings shows an "Android TV"
-      card offering to pair a TV. The knokkeroo TV companion is <strong>built but not yet listed on any
-      store</strong>, so there is currently nothing to pair with and the code box will not accept anything.
-      It is deliberately hidden on iPhone. Nothing is charged and no data is sent by opening it.</p>
+      card offering to pair a TV. The knokkeroo TV companion is <strong>live on Google Play as Android TV
+      1.0.0</strong>, delivered from the same Play listing as the phone app, so on an Android TV device the
+      pairing code is accepted. It is deliberately hidden on iPhone, and the separate Apple TV app is covered
+      in its own section above. Nothing is charged and no data is sent by opening the card.</p>
     <p><strong>Please note:</strong> knokkeroo is a personal communication tool, <strong>not a medical or
       emergency service</strong>, and never contacts emergency services. The in-app disclaimer and the Terms state this.</p>
     <p class="kk-rev__done">✓ End of the iPhone review section — you have everything you need to complete it. Nothing further on this page is required.</p>
@@ -293,8 +297,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion has shipped with the iPhone app since version 4.38.0 and is in the
-      live 5.7.34 release.
+      The Watch companion has shipped with the iPhone app since version 4.38.0, is in the
+      5.7.37 release live on the App Store today, and is in the 5.7.45 build being submitted.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -478,10 +482,11 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>Features in the live 5.7.34 release (live on iOS, Android and Huawei)</h2>
-    <p><em>Everything in this section IS in the live 5.7.34 release — approved and released on
-      28 August 2026 on the App Store, Google Play (with Android TV 1.0.0) and Huawei AppGallery.
-      All three stores are level.</em></p>
+    <h2>Features already released (iOS and Android 5.7.37; Huawei AppGallery 5.7.34)</h2>
+    <p><em>Everything in this section is already public. The App Store and Google Play both serve
+      <strong>5.7.37</strong> (Apple approved it and it went public on 2 September 2026; Google Play has served it
+      since 1 September 2026, with Android TV 1.0.0 alongside it). Huawei AppGallery is one release behind at
+      <strong>5.7.34</strong>. The two stores are level with each other; Huawei is not.</em></p>
     <ul>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
@@ -532,10 +537,42 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in the build you are reviewing (5.7.37) &mdash; a reliability-fix
-        release with no new features:</strong>
-        <em>Submitted to Apple and to Google Play only; no 5.7.37 build has been submitted to
-        Huawei AppGallery, which stays live on 5.7.34.</em>
+      <li><strong>What is new in the build you are reviewing (5.7.45) &mdash; a reliability and
+        correctness release with no new features:</strong>
+        <em>Submitted to Apple and to Google Play only. No 5.7.45 build is submitted to Huawei
+        AppGallery, which stays live on 5.7.34. 5.7.45 carries everything from 5.7.38 to 5.7.45,
+        because no build between them was submitted to any store.</em>
+        <strong>iPhone and Android:</strong> contact tiles stopped rearranging themselves. Since
+        August the dashboard re-sorted tiles by urgency as it drew them, so a contact could move
+        position the moment they went overdue. Tiles now stay in the order the user put them in.
+        <strong>iPhone and Android:</strong> an overdue alert can no longer be cancelled by an
+        older check-in arriving late.
+        <strong>iPhone and Android:</strong> the app keeps one slot for a check-in that has been
+        pressed but not yet confirmed by the server. A delayed retry of an older check-in could
+        clear that slot while a newer, unconfirmed check-in was sitting in it, so the newer one was
+        lost if its own send then failed. The slot is now cleared only when it still holds the
+        operation that actually finished.
+        <strong>iPhone and Android:</strong> a contact's detail screen now updates while it is open
+        instead of showing the state it had when it was opened.
+        <strong>iPhone and Android:</strong> a button in a confirmation dialog runs once. Tapping
+        quickly could run "Delete my account", "Remove contact" or "Accept request" more than once,
+        and a failure inside one of those actions was swallowed silently instead of being shown.
+        <strong>iPhone and Android:</strong> if signing out or deleting an account failed part-way,
+        the device had already been de-registered for notifications and was left signed in with its
+        alerts silently off. The registration is now restored when the exit fails.
+        <strong>iPhone and Android:</strong> a notification action ("knok", "Accept", "Decline")
+        that was queued while offline is now tied to the account that queued it and is discarded on
+        sign-out, so it can never be replayed by the next person to sign in on a shared phone.
+        <strong>iPhone and Android:</strong> the retry added in 5.7.37 for momentary network
+        failures now covers the remaining screens that were still giving up immediately, and
+        tapping an external link ("Contact us", and the update banner) no longer fails silently
+        when no browser will open it.
+        Nothing else changes: no new screens, no new permissions, no change to pricing, in-app
+        purchases or the data the app collects.</li>
+
+      <li><strong>What is new in 5.7.37, the version live in the App Store and Google Play today:</strong>
+        <em>Public on the App Store since 2 September 2026 and on Google Play since 1 September 2026.
+        No 5.7.37 build was submitted to Huawei AppGallery, which stays live on 5.7.34.</em>
         <strong>iPhone and Android:</strong> if a request to our server failed for a moment — a
         timeout, or a connection that dropped — the app gave up immediately and showed an empty
         list until a background refresh happened to succeed a minute later. It now retries twice,
@@ -544,24 +581,18 @@
         <strong>iPhone and Android:</strong> cancelling an invitation you had sent failed with an
         error and left the invitation in the list. It now goes through a dedicated server call
         that removes only your own invitation, and only while it is still unaccepted.
-        <strong>iPhone and Android:</strong> the app keeps one slot for a check-in that has been
-        pressed but not yet confirmed by the server. A delayed retry of an older check-in could
-        clear that slot while a newer, unconfirmed check-in was sitting in it, so the newer one was
-        lost if its own send then failed. The slot is now cleared only when it still holds the
-        operation that actually finished.
         <strong>iPhone only:</strong> the app keeps sign-in and device details in the iOS Keychain,
         and several of those items still used the default protection class, which iOS refuses to
         open while the device is locked. A check-in the app recorded during a background wake on a
         locked iPhone could therefore fail silently and never be saved, and registering the device
         for notifications could fail the same way and leave it unregistered. Every Keychain read
         and write in the app now uses
-        <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>.
-        Nothing else changes: no new screens, no new permissions, no change to pricing, in-app
-        purchases or the data the app collects.</li>
+        <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>.</li>
 
-      <li><strong>What is new in 5.7.34, the version live in all three stores today:</strong>
-        <em>On iPhone this release carries everything since 5.7.28, because no 5.7.29-5.7.33 build
-        was submitted to Apple; on Android and Huawei it is the widget-reliability and watch-sync
+      <li><strong>What was new in 5.7.34, the version still live on Huawei AppGallery and carried
+        forward into everything above:</strong>
+        <em>On iPhone this release carried everything since 5.7.28, because no 5.7.29-5.7.33 build
+        was submitted to Apple; on Android and Huawei it was the widget-reliability and watch-sync
         delta on the previous 5.7.31.</em>
         The knock sound now mixes with other audio instead of taking the audio session, so music
         keeps playing when someone checks in; on Android and Huawei, knokking from the home-screen widget
@@ -668,8 +699,8 @@
         their settings screen in the app via the knokkeroo:// URL scheme). The widget never shows phone numbers and
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
-        <em>A Lock Screen version of the same widget also exists on iOS and IS in the live
-        5.7.28 release.</em></li>
+        <em>A Lock Screen version of the same widget also exists on iOS; it shipped in 5.7.28 and is in
+        every release since, including the live 5.7.37 and the 5.7.45 build being submitted.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -877,21 +908,21 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 1 September 2026 · Store state, read live where an API exists:
-      <strong>iOS is LIVE at version 5.7.34</strong> (approved and released 28 Aug 2026;
-      includes the Apple Watch companion). Verified 1 Sep 2026 from the public iTunes lookup for
-      app id 6776208791, which returns version 5.7.34, and from App Store Connect
-      (READY_FOR_SALE). Android is LIVE in production at
-      <strong>version 5.7.34 + Android TV 1.0.0</strong> (versionCodes 56 and 900000001, status
-      completed, includes the Wear OS companion; Play publisher API read 1 Sep 2026). Huawei —
-      no billing on that platform — is <strong>LIVE on AppGallery at 5.7.34</strong>, read back
-      from the AppGallery Connect publishing API on 1 Sep 2026 (releaseState 0 = on shelf).
-      <strong>Google Play is LIVE at version 5.7.37</strong> (versionCodes 58 and 900000001,
-      status completed; Play publisher API read 1 Sep 2026), while the App Store still serves
-      5.7.34 and AppGallery 5.7.34. <strong>Version 5.7.37, the build this page describes as under
-      review, was submitted to Apple on 1 September 2026</strong> (build 72). A 5.7.36 submission
-      earlier the same day was withdrawn so 5.7.37 could replace it. Neither was submitted to
-      Huawei AppGallery, which remains live at 5.7.34.
+      Last updated: 2 September 2026 · Store state, read live where an API exists:
+      <strong>iOS is LIVE at version 5.7.37</strong> — Apple approved it and it went public at
+      07:16 UTC on 2 September 2026. Verified the same day from the public iTunes lookup for app id
+      6776208791, which returns version 5.7.37 with a currentVersionReleaseDate of
+      2026-09-02T07:16:08Z, and from App Store Connect (READY_FOR_SALE). It includes the Apple
+      Watch companion. <strong>Android is LIVE in production at version 5.7.37 + Android TV
+      1.0.0</strong> (versionCodes 58 and 900000001, status completed, includes the Wear OS
+      companion; Play publisher API read 2 Sep 2026). <strong>Huawei</strong> — no billing on that
+      platform — is <strong>LIVE on AppGallery at 5.7.34</strong>, read back from the AppGallery
+      Connect publishing API on 2 Sep 2026 (releaseState 0 = on shelf). So the App Store and Google
+      Play are level at 5.7.37, and Huawei is one release behind at 5.7.34.
+      <strong>Version 5.7.45, the build this page describes, is the release being submitted to
+      Apple and to Google Play in this round</strong>; it is not being submitted to Huawei
+      AppGallery, which remains live at 5.7.34. Until that submission completes, the store versions
+      above are what the public is running.
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
       under review, and email hello@knokkeroo.com with any discrepancy.
