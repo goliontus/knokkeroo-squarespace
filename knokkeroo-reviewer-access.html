@@ -226,8 +226,17 @@
     <h1>knokkeroo — Reviewer Access</h1>
     <p class="kk-rev__subtitle">
       Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
-      Applies to app version <strong>5.7.45</strong>, which is live in the App Store and in Google Play as of
-      3 September 2026. Huawei AppGallery stays on 5.7.34 and was not part of this round.
+      The build you are reviewing is version <strong>5.7.46</strong>. Where it stands differs by store, so
+      each is stated separately:
+      <strong>Apple App Store &mdash; 5.7.46 is with you for review and is NOT yet public.</strong> iPhone
+      users still get <strong>5.7.45</strong>, live since 3 September 2026; 5.7.46 replaces it only once
+      Apple approves and releases it.
+      <strong>Google Play &mdash; 5.7.46 is already live in production</strong>, published 8 September 2026
+      as release &ldquo;5.7.46 + Android TV 1.0.0&rdquo;, so an Android reviewer and an Android user are
+      on the same version.
+      <strong>Huawei AppGallery stays on 5.7.34</strong> and is not part of this round.
+      Everything on this page applies to 5.7.45 and 5.7.46 alike except the short list under
+      <a href="#whats-new-v5">&ldquo;What is new in 5.7.46&rdquo;</a>, which is what 5.7.46 adds.
     </p>
   </header>
 
@@ -295,8 +304,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion has shipped with the iPhone app since version 4.38.0, is in the
-      5.7.45 release that is live on the App Store today.
+      The Watch companion has shipped with the iPhone app since version 4.38.0. It is in 5.7.45,
+      which the App Store serves today, and in the 5.7.46 build you are reviewing.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -480,13 +489,38 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>Features already released (iOS and Android 5.7.45; Huawei AppGallery 5.7.34)</h2>
-    <p><em>Everything in this section is already public. The App Store and Google Play both serve
-      <strong>5.7.45</strong> (Apple approved it and it went public on 3 September 2026; Google Play has served it
-      since 2 September 2026, with Android TV 1.0.0 alongside it). Huawei AppGallery is still on
-      <strong>5.7.34</strong>, which was not part of this release round. The two stores are level with each other;
-      Huawei is not.</em></p>
+    <h2>What is new in 5.7.46, and what is already public</h2>
+    <p><em>The first item below is the <strong>only</strong> thing 5.7.46 changes. Everything after it is
+      already public in <strong>5.7.45</strong>. Where 5.7.46 itself stands is not the same in both stores:
+      it is <strong>live on Google Play</strong> (published 8 September 2026, release &ldquo;5.7.46 +
+      Android TV 1.0.0&rdquo;), and it is <strong>still in review at Apple</strong>, so the App Store
+      continues to serve 5.7.45, live there since 3 September 2026. Huawei AppGallery is still
+      on <strong>5.7.34</strong> and is not part of this round.</em></p>
     <ul>
+      <li><strong>What is new in 5.7.46 &mdash; the build submitted to you. A reliability release:
+        no new features, no new screens, no new permissions, no change to pricing, in-app purchases,
+        or the data the app collects.</strong>
+        <em>Live on Google Play since 8 September 2026. Still in review at Apple, so iPhone users
+        continue to run 5.7.45 until Apple approves and releases this build.</em>
+        <strong>iPhone only:</strong> a check-in made while the phone was locked could be recorded by
+        the app and then silently lost &mdash; nothing was saved, and neither the user nor the people
+        watching them were told anything had gone wrong. The cause was iOS Keychain items written by
+        an older version of the app under a protection class that iOS will not open while the device
+        is locked; iOS applies that class when an item is first written and never re-evaluates it, so
+        simply changing the setting in a later version did not repair items already on the device.
+        5.7.46 rewrites those stored items once, at first launch, which is what actually re-applies
+        the protection class. A reviewer will not see this on a fresh install &mdash; a fresh install
+        was never affected. It matters only to a device upgrading from an earlier version.
+        <strong>iPhone and Android:</strong> a check-in that was made with no usable connection was
+        saved and then waited for the person to next open the app before it was sent. Measured on live
+        data, some waited 77, 300 and 383 minutes; none was lost, but for those hours the people
+        watching that user were reading an out-of-date time. It is now also sent when the app is woken
+        in the background by a notification, which happens while the phone is locked, so it no longer
+        waits for the user to pick the phone up.
+        <strong>Both platforms:</strong> the app can now show an update prompt if a future version
+        ever has to be replaced urgently. The thresholds that would trigger it are set to
+        &ldquo;no minimum&rdquo; on the server, so no user of 5.7.46 or any released version sees it;
+        it is groundwork, not a live behaviour.</li>
       <li><strong>Appearance: Dark / Light toggle.</strong> Every signed-in account can reach
         <strong>Me &rarr; My settings &rarr; Appearance</strong> and switch the whole app between
         Dark and Light. Dark remains the default; Light is opt-in and remembered per device. The
@@ -536,11 +570,13 @@
         calm information rather than an error; Cancel/dismiss is always the bottom choice in every
         decision dialog; the widget-onboarding footer clears the Android gesture bar; a mid-sign-in
         OS font-size change no longer discards the entered phone number.</li>
-      <li><strong>What is new in 5.7.45, the version live in the App Store and Google Play today
+      <li><strong>What is new in 5.7.45, the version iPhone users are running today
         &mdash; a reliability and correctness release with no new features:</strong>
-        <em>Public on the App Store since 3 September 2026 and on Google Play since 2 September 2026.
-        No 5.7.45 build was submitted to Huawei AppGallery, which stays live on 5.7.34. 5.7.45 carries
-        everything from 5.7.38 to 5.7.45, because no build between them was submitted to any store.</em>
+        <em>Public on the App Store since 3 September 2026, and it is still what the App Store serves.
+        It was public on Google Play from 2 September 2026 until 5.7.46 replaced it there on
+        8 September 2026. No 5.7.45 build was submitted to Huawei AppGallery, which stays live on
+        5.7.34. 5.7.45 carries everything from 5.7.38 to 5.7.45, because no build between them was
+        submitted to any store.</em>
         <strong>iPhone and Android:</strong> contact tiles stopped rearranging themselves. Since
         August the dashboard re-sorted tiles by urgency as it drew them, so a contact could move
         position the moment they went overdue. Tiles now stay in the order the user put them in.
@@ -571,7 +607,7 @@
 
       <li><strong>What was new in 5.7.37, superseded in both stores by 5.7.45 on 3 September 2026:</strong>
         <em>It was public on the App Store from 2 September 2026 and on Google Play from 1 September 2026,
-        and everything in it is carried forward into the live 5.7.45. No 5.7.37 build was submitted to
+        and everything in it is carried forward into 5.7.45 and 5.7.46. No 5.7.37 build was submitted to
         Huawei AppGallery, which stays live on 5.7.34.</em>
         <strong>iPhone and Android:</strong> if a request to our server failed for a moment — a
         timeout, or a connection that dropped — the app gave up immediately and showed an empty
@@ -700,7 +736,7 @@
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
         <em>A Lock Screen version of the same widget also exists on iOS; it shipped in 5.7.28 and is in
-        every release since, including the live 5.7.45.</em></li>
+        every release since, including 5.7.45 and 5.7.46.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -908,25 +944,35 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 3 September 2026 · Store state, read live where an API exists:
-      <strong>iOS is LIVE at version 5.7.45</strong> — Apple approved it and it went public at
-      05:01 UTC on 3 September 2026. Verified the same day from the public iTunes lookup for app id
-      6776208791, which returns version 5.7.45 with a currentVersionReleaseDate of
-      2026-09-03T05:01:36Z, and from App Store Connect (appStoreVersion 5.7.45, READY_FOR_SALE). It
-      includes the Apple Watch companion.
-      <strong>Android is LIVE in production at version 5.7.45 + Android TV 1.0.0</strong>
-      (release name "5.7.45 + Android TV 1.0.0", versionCodes 59 and 900000001, status completed,
-      includes the Wear OS companion; Play publisher API read 3 Sep 2026).
+      Last updated: 8 September 2026 · Store state, read live from each store's own API immediately
+      before this revision was published. <strong>The three stores are NOT level in this round</strong>,
+      so each is given separately rather than as one sentence:
+      <strong>Apple — the App Store is serving 5.7.45, and 5.7.46 is IN REVIEW.</strong>
+      <strong>iOS is LIVE at version 5.7.45</strong> — public since 05:01 UTC on 3 September 2026,
+      read from the public iTunes lookup for app id 6776208791 (version 5.7.45,
+      currentVersionReleaseDate 2026-09-03T05:01:36Z) and from App Store Connect
+      (appStoreVersion 5.7.45, READY_FOR_SALE). It includes the Apple Watch companion. App Store
+      Connect also holds appStoreVersion <strong>5.7.46 in state WAITING_FOR_REVIEW</strong>,
+      created 8 September 2026, release type "after approval", built from iOS build 74 which was
+      uploaded 7 September 2026. Until Apple approves and releases it, an iPhone user still gets
+      5.7.45.
+      <strong>Google — Play production is already serving 5.7.46.</strong>
+      <strong>Android is LIVE in production at version 5.7.46 + Android TV</strong> 1.0.0
+      (release name "5.7.46 + Android TV 1.0.0", versionCodes 60 and 900000001, status completed,
+      includes the Wear OS companion; read from the Google Play publisher API today). It replaced
+      5.7.45 + Android TV 1.0.0 (versionCodes 59 and 900000001) on 8 September 2026.
       <strong>Huawei</strong> — no billing on that platform — is
       <strong>LIVE on AppGallery at 5.7.34</strong>, read back from the AppGallery Connect
-      publishing API on 3 Sep 2026 (releaseState 0 = on shelf). So the App Store and Google Play are level at 5.7.45,
-      and Huawei is still on 5.7.34, which was not part of this release round.
-      <strong>Version 5.7.45, the build this page describes, is now live in both the App Store and
-      Google Play — nothing is under review at either store as this page is published</strong>, and
-      no 5.7.45 build was submitted to Huawei AppGallery.
+      publishing API (appId 118181311, releaseState 0 = on shelf, updateTime 28 August 2026).
+      Huawei was not part of this release round, nor of the previous one, so it is two rounds behind
+      the other two stores.
+      <strong>So: 5.7.46 is live on Google Play and is not live on the App Store.</strong> If you are
+      an Apple reviewer, the build in front of you is not yet public anywhere on Apple's platforms.
+      If the version you have in front of you reads 5.7.45 rather than 5.7.46 on an iPhone, you are
+      looking at the live public version, not the submission.
       If a version above does not match what you are looking at, this page is a revision behind the
-      live submission; check TestFlight/Play Console/AppGallery Connect directly for the exact build
-      under review, and email hello@knokkeroo.com with any discrepancy.
+      live submission; check App Store Connect / Play Console / AppGallery Connect directly for the
+      exact build under review, and email hello@knokkeroo.com with any discrepancy.
     </p>
     <p>
       Intended for Apple App Review and Google Play review teams.

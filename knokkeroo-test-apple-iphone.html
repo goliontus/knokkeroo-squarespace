@@ -98,8 +98,9 @@
 
   <h2>Option B — TestFlight beta (early builds, when there is one)</h2>
   <div class="kk-stat__panel">
-    <span class="kk-stat__pill kk-stat__pill--beta">Beta — version 5.7.45 (build 73) — the same version as the App Store</span>
-    <p>There is nothing in the beta that is not already in the public App Store app. The Home Screen and Lock Screen widgets, the Home Screen quick action, the Apple Watch companion, Apple TV pairing and the light theme all shipped publicly and are in 5.7.45, which is what both the App Store and TestFlight give you today. Join the beta only if you want to try the next version before it is released — when there is no newer build waiting, TestFlight simply matches the store.</p>
+    <span class="kk-stat__pill kk-stat__pill--beta">Beta — TestFlight installs build 73 (5.7.45) today; build 74 (5.7.46) is queued behind Apple's beta review</span>
+    <p>The App Store and TestFlight are both on <strong>5.7.45</strong> at the moment, so joining the beta gains you nothing today. The Home Screen and Lock Screen widgets, the Home Screen quick action, the Apple Watch companion, Apple TV pairing and the light theme all shipped publicly and are in 5.7.45.</p>
+    <p><strong>That is about to change, and here is exactly how.</strong> Build 74 (version 5.7.46) has been uploaded and attached to the tester group, but Apple has not finished its beta review of it yet — App Store Connect reports it as <em>waiting for beta review</em>, which is why TestFlight still offers you build 73. When Apple clears it, TestFlight will start installing 5.7.46 and the beta will be one version ahead of the App Store, because the public 5.7.46 release is a separate Apple review that is still in progress. 5.7.46 is a reliability release — no new screens and no new features — so being ahead means fewer bugs, not more buttons.</p>
     <p><strong>Two steps, both on the iPhone itself.</strong> These buttons only work on the phone —
       on a computer they open a page with nothing to accept, and nothing reaches your iPhone.</p>
 
@@ -193,5 +194,5 @@
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
   </div>
 
-  <p class="kk-stat__footer">Page v14 · Last updated 3 September 2026 · Applies to app version 5.7.45 (live in production) — approved by Apple and public since 3 September 2026. TestFlight is on the same version: build 73 (5.7.45) is attached to the external tester group and is what TestFlight installs today, so neither route is ahead of the other. Read from the App Store Connect API on 3 September 2026.</p>
+  <p class="kk-stat__footer">Page v15 · Last updated 8 September 2026 · Applies to app version 5.7.45 (live in production) — approved by Apple and public since 3 September 2026, and still what the App Store serves. Version 5.7.46 has been submitted to Apple and is <strong>waiting for review</strong>; it is not public. On TestFlight, build 74 (5.7.46) is attached to the external tester group but its external state is <strong>waiting for beta review</strong>, so what TestFlight actually installs today is still build 73 (5.7.45) — the same as the App Store. Once Apple clears the beta review, TestFlight moves to 5.7.46 ahead of the App Store. Read from the App Store Connect API on 8 September 2026 (appStoreVersions, betaGroups builds, buildBetaDetail).</p>
 </div>
