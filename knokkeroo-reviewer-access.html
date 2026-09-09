@@ -226,15 +226,17 @@
     <h1>knokkeroo — Reviewer Access</h1>
     <p class="kk-rev__subtitle">
       Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
-      This page describes version <strong>5.7.46</strong>, which is now <strong>public on both
-      stores</strong>. Each is stated separately, because they were not level until this morning:
-      <strong>Apple App Store &mdash; 5.7.46 is LIVE.</strong> Apple approved and released it at
-      02:58 UTC on 9 September 2026; it replaced 5.7.45, which had been live since 3 September.
-      <strong>Google Play &mdash; 5.7.46 is LIVE in production</strong>, published 8 September 2026
-      as release &ldquo;5.7.46 + Android TV 1.0.0&rdquo;.
-      <strong>Huawei AppGallery stays on 5.7.34</strong> and was not part of this round.
-      Everything on this page applies to 5.7.45 and 5.7.46 alike except the short list under
-      <a href="#whats-new-v5">&ldquo;What is new in 5.7.46&rdquo;</a>, which is what 5.7.46 added.
+      This page describes version <strong>5.7.55</strong>. The three stores are <strong>not</strong> on
+      the same version today, so each is stated separately &mdash; please read the line for the store
+      you are reviewing for:
+      <strong>Apple App Store &mdash; 5.7.55 is the build you are reviewing, and it is NOT public.</strong>
+      It was submitted on 9 September 2026 and is waiting for review; the App Store is still serving
+      <strong>5.7.46</strong>, live since 02:58 UTC on 9 September 2026.
+      <strong>Google Play &mdash; 5.7.55 is already LIVE in production</strong>, published 9 September
+      2026 as release &ldquo;5.7.55 + Android TV 1.0.0&rdquo;.
+      <strong>Huawei AppGallery stays on 5.7.34</strong> and was not part of the last three rounds.
+      Everything on this page applies to 5.7.46 and 5.7.55 alike except the short list under
+      <a href="#whats-new-v5">&ldquo;What is new in 5.7.55&rdquo;</a>, which is what 5.7.55 added.
     </p>
   </header>
 
@@ -487,15 +489,32 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>What is new in 5.7.46, and what is already public</h2>
-    <p><em>The first item below is the <strong>only</strong> thing 5.7.46 changed. Everything after it was
-      already public in <strong>5.7.45</strong>. 5.7.46 is now <strong>live on both stores</strong>:
-      on <strong>Google Play</strong> since 8 September 2026 (release &ldquo;5.7.46 + Android TV
-      1.0.0&rdquo;) and on the <strong>App Store</strong> since 02:58 UTC on 9 September 2026, when
-      Apple approved and released it in place of 5.7.45. Huawei AppGallery is still
-      on <strong>5.7.34</strong> and was not part of this round.</em></p>
+    <h2>What is new in 5.7.55, and what is already public</h2>
+    <p><em>The first item below is what <strong>5.7.55</strong> changed. Everything after it was already
+      public in <strong>5.7.46</strong> or earlier. <strong>5.7.55 is live on Google Play</strong>
+      (since 9 September 2026, release &ldquo;5.7.55 + Android TV 1.0.0&rdquo;) but is
+      <strong>not yet public on the App Store</strong> &mdash; it is the build currently with Apple for
+      review, and iPhone users still receive 5.7.46. Huawei AppGallery is still
+      on <strong>5.7.34</strong> and was not part of the last three rounds.</em></p>
     <ul>
-      <li><strong>What is new in 5.7.46. A reliability release:
+      <li><strong>What is new in 5.7.55. A reliability release:
+        no new features, no new screens, no new permissions, no change to pricing, in-app purchases,
+        or the data the app collects.</strong>
+        <em>Live on Google Play since 9 September 2026; with Apple for review, not yet on the App Store.</em>
+        <strong>Notification registration.</strong> Some phones never completed registration for push
+        notifications, so the people watching over that user could not be alerted at all, while the app
+        itself looked completely normal. Two live users were affected and 26 alerts went undelivered.
+        The registration path is fixed, and where a phone is still not registered the app now says so
+        plainly instead of appearing healthy.
+        <strong>Expired sessions.</strong> If a sign-in session had quietly lapsed, a check-in could be
+        discarded rather than sent once the session was renewed; it is now always kept and delivered.
+        The related error path (an authentication failure surfacing during a lapsed session) was
+        repaired at the same time.
+        <strong>For a reviewer:</strong> none of this appears as a new screen or a new permission
+        prompt &mdash; it is repair work behind the existing check-in and notification behaviour, and
+        the demo account below exercises it normally.</li>
+
+      <li><strong>Already public in 5.7.46. A reliability release:
         no new features, no new screens, no new permissions, no change to pricing, in-app purchases,
         or the data the app collects.</strong>
         <em>Live on Google Play since 8 September 2026 and on the App Store since 9 September 2026.</em>
@@ -942,26 +961,30 @@
     <h2>Document information</h2>
     <p>
       Last updated: 9 September 2026 · Store state, read live from each store's own API immediately
-      before this revision was published. <strong>Apple and Google are level on 5.7.46; Huawei is
-      not</strong>, so each is given separately rather than as one sentence:
-      <strong>Apple — the App Store is serving 5.7.46.</strong>
+      before this revision was published. <strong>The three stores are NOT on the same version</strong>,
+      so each is given separately rather than as one sentence:
+      <strong>Apple — the App Store is serving 5.7.46, and 5.7.55 is with you for review.</strong>
       <strong>iOS is LIVE at version 5.7.46</strong> — Apple approved and released it at
       02:58 UTC on 9 September 2026, replacing 5.7.45. Read from the public iTunes lookup for app id
       6776208791 on the US and ZA storefronts, both returning version 5.7.46 with
       currentVersionReleaseDate 2026-09-09T02:58:22Z. It includes the Apple Watch companion.
-      <strong>Nothing is under review at Apple as this revision is published.</strong>
-      <strong>Google — Play production is also serving 5.7.46.</strong>
-      <strong>Android is LIVE in production at version 5.7.46 + Android TV</strong> 1.0.0
-      (release name "5.7.46 + Android TV 1.0.0", versionCodes 60 and 900000001, status completed,
+      <strong>Version 5.7.55 (build 75) was submitted on 9 September 2026 and its App Store Connect
+      state is WAITING_FOR_REVIEW — it is NOT public.</strong> It is set to release automatically once
+      approved. In TestFlight, build 75 is attached to the external tester group but its state is
+      WAITING_FOR_BETA_REVIEW, so external testers are still installing build 74 (5.7.46).
+      <strong>Google — Play production is already serving 5.7.55.</strong>
+      <strong>Android is LIVE in production at version 5.7.55 + Android TV</strong> 1.0.0
+      (release name "5.7.55 + Android TV 1.0.0", versionCodes 61 and 900000001, status completed,
       includes the Wear OS companion; read from the Google Play publisher API today). It replaced
-      5.7.45 + Android TV 1.0.0 (versionCodes 59 and 900000001) on 8 September 2026.
+      5.7.46 + Android TV 1.0.0 (versionCodes 60 and 900000001) on 9 September 2026.
       <strong>Huawei</strong> — no billing on that platform — is
       <strong>LIVE on AppGallery at 5.7.34</strong>, read back from the AppGallery Connect
-      publishing API (appId 118181311, releaseState 0 = on shelf, updateTime 28 August 2026).
-      Huawei was not part of this release round, nor of the previous one, so it is two rounds behind
+      publishing API (appId 118181311, releaseState 0 = on shelf, updateTime 28 August 2026, and
+      versionNumber equal to onShelfVersionNumber, so nothing is pending there).
+      Huawei was not part of the last three release rounds, so it is three rounds behind
       the other two stores.
-      <strong>So: 5.7.46 is live on both the App Store and Google Play, and Huawei AppGallery is on
-      5.7.34.</strong>
+      <strong>So: Google Play is live on 5.7.55, the App Store is live on 5.7.46 with 5.7.55 awaiting
+      review, and Huawei AppGallery is on 5.7.34.</strong>
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check App Store Connect / Play Console / AppGallery Connect directly for the
       exact build under review, and email hello@knokkeroo.com with any discrepancy.
