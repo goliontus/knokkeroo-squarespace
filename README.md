@@ -1,24 +1,28 @@
 # knokkeroo-squarespace
 
-Public mirror of the content behind [odderonphi.com/knokkeroo-status](https://www.odderonphi.com/knokkeroo-status).
+Public mirror of the content fragments behind the knokkeroo and Odderon Phi pages on
+[odderonphi.com](https://www.odderonphi.com/knokkeroo). Each Squarespace page holds only a small
+loader script in a Code Block; on every page load it fetches the matching fragment from this repo's
+GitHub Pages URL and injects it. Squarespace still supplies the site's real header, nav, footer and
+theme — only the fetched fragment fills the content area.
 
 This repo exists only because Squarespace has no API to update page content or Code Blocks, and
-GitHub Pages can't build from the main `knokker` repo (private, and this account isn't on a paid
-GitHub plan). So the flow is: edit the page in the private `knokker` repo as usual, then mirror the
-one file that changed here and push — GitHub Pages redeploys automatically, and a tiny loader
-script already pasted into the Squarespace page's Code Block fetches the live version of
-`knokkeroo-status.html` from this repo's Pages URL on every page load. Squarespace still supplies
-the site's real header, nav, footer and theme — only the fetched fragment fills the content area.
+GitHub Pages can't build from the main `knokker` repo (private). So the flow is: edit the source
+file in the private `knokker` repo (`docs/odderonphi-com/` or `docs/legal/`), strip its leading
+workflow-notes comment, mirror the one file that changed here and push — GitHub Pages redeploys in
+under a minute and Squarespace itself is never touched again.
 
-**Do not hand-edit files here directly.** The source of truth is
-`docs/odderonphi-com/knokkeroo-status.html` in the private `knokker` repo — this repo is a
-generated/synced copy (the leading `<!-- ... -->` workflow-notes comment is stripped since it's
-internal-only).
+**Do not hand-edit files here directly.** The source of truth is the private `knokker` repo — this
+repo is a generated/synced copy.
 
-- `knokkeroo-status.html` — the bare content fragment the Squarespace Code Block's loader script
-  fetches at runtime.
-- `index.html` — a standalone preview that fetches and renders the same fragment, so the content
-  can be checked without touching the live Squarespace page (won't have Squarespace's real
-  header/nav/footer/theme around it — those only apply on the real site).
+Fragments served (one per live page): `odderon-phi-home`, `odderon-phi-about-intro`,
+`odderon-phi-about-charles`, `odderon-phi-paia`, `knokkeroo-landing`, `what-is-knokkeroo`,
+`knokkeroo-terms`, `knokkeroo-account-deletion`, `knokkeroo-reviewer-access`,
+`knokkeroo-internal-status`, `knokkeroo-go`, the six tester pages `knokkeroo-test*`,
+`wearable-mockups`, and `archisaurus-landing` (Archisaurus Rex shares the site — not knokkeroo's
+to delete). `downloads/` holds the tester test-plan `.docx` files.
+
+The original `knokkeroo-status` page this repo was created for was retired on 2026-07-24 and
+folded into `knokkeroo-internal-status`; that history is the reason the repo has this name.
 
 Live Pages URL: https://goliontus.github.io/knokkeroo-squarespace/
