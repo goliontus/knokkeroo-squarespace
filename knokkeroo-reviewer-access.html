@@ -226,17 +226,17 @@
     <h1>knokkeroo — Reviewer Access</h1>
     <p class="kk-rev__subtitle">
       Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
-      This page describes version <strong>5.7.55</strong>. The three stores are <strong>not</strong> on
+      This page describes version <strong>5.7.59</strong>. The three stores are <strong>not</strong> on
       the same version today, so each is stated separately &mdash; please read the line for the store
       you are reviewing for:
-      <strong>Apple App Store &mdash; 5.7.55 is the build you are reviewing, and it is NOT public.</strong>
-      It was submitted on 9 September 2026 and is waiting for review; the App Store is still serving
-      <strong>5.7.46</strong>, live since 02:58 UTC on 9 September 2026.
-      <strong>Google Play &mdash; 5.7.55 is already LIVE in production</strong>, published 9 September
-      2026 as release &ldquo;5.7.55 + Android TV 1.0.0&rdquo;.
-      <strong>Huawei AppGallery stays on 5.7.34</strong> and was not part of the last three rounds.
-      Everything on this page applies to 5.7.46 and 5.7.55 alike except the short list under
-      <a href="#whats-new-v5">&ldquo;What is new in 5.7.55&rdquo;</a>, which is what 5.7.55 added.
+      <strong>Apple App Store &mdash; 5.7.59 is the build you are reviewing, and it is NOT public.</strong>
+      It was submitted on 13 September 2026 and is waiting for review; the App Store is serving
+      <strong>5.7.55</strong>, live since 15:17 UTC on 10 September 2026.
+      <strong>Google Play &mdash; 5.7.59 is already LIVE in production</strong>, published 13 September
+      2026 as release &ldquo;5.7.59 + Android TV 1.0.0&rdquo;.
+      <strong>Huawei AppGallery stays on 5.7.34</strong> and was not part of the last four rounds.
+      Everything on this page applies to 5.7.55 and 5.7.59 alike except the short list under
+      <a href="#whats-new-v5">&ldquo;What is new in 5.7.59&rdquo;</a>, which is what 5.7.59 changed.
     </p>
   </header>
 
@@ -304,8 +304,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion has shipped with the iPhone app since version 4.38.0, and is in 5.7.46,
-      which the App Store serves today.
+      The Watch companion has shipped with the iPhone app since version 4.38.0, and is in 5.7.55,
+      which the App Store serves today (and in 5.7.59, the build under review).
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -489,18 +489,47 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>What is new in 5.7.55, and what is already public</h2>
-    <p><em>The first item below is what <strong>5.7.55</strong> changed. Everything after it was already
-      public in <strong>5.7.46</strong> or earlier. <strong>5.7.55 is live on Google Play</strong>
-      (since 9 September 2026, release &ldquo;5.7.55 + Android TV 1.0.0&rdquo;) but is
+    <h2>What is new in 5.7.59, and what is already public</h2>
+    <p><em>The first item below is what <strong>5.7.59</strong> changed. Everything after it was already
+      public in <strong>5.7.55</strong> or earlier. <strong>5.7.59 is live on Google Play</strong>
+      (since 13 September 2026, release &ldquo;5.7.59 + Android TV 1.0.0&rdquo;) but is
       <strong>not yet public on the App Store</strong> &mdash; it is the build currently with Apple for
-      review, and iPhone users still receive 5.7.46. Huawei AppGallery is still
-      on <strong>5.7.34</strong> and was not part of the last three rounds.</em></p>
+      review, and iPhone users receive 5.7.55 (public since 10 September 2026). Huawei AppGallery is
+      still on <strong>5.7.34</strong> and was not part of the last four rounds.</em></p>
     <ul>
-      <li><strong>What is new in 5.7.55. A reliability release:
+      <li><strong>What is new in 5.7.59. A behaviour correction plus reliability fixes:
+        no new screens, no new permissions, no change to pricing, in-app purchases,
+        or the data the app collects.</strong>
+        <em>Live on Google Play since 13 September 2026; with Apple for review, not yet on the App Store.</em>
+        <strong>No more automatic check-ins.</strong> Earlier versions registered a background task
+        that recorded a check-in for the user roughly every 15 minutes while the phone was switched
+        on, with nobody touching it. That contradicted the app's one promise &mdash; a check-in means
+        the person actually did something &mdash; because the people watching over a user could see
+        them as fine while the phone sat untouched for days. 5.7.59 removes that task entirely, and on
+        first launch it also removes the schedule from any phone that already had it. A check-in is
+        now recorded only when the user does something: pressing <strong>knok</strong>; opening the
+        app (signing in, bringing it to the foreground, returning to the home screen, or pulling down
+        to refresh); or using the Home Screen / Lock Screen widget, the Apple Watch or Apple TV
+        companion, or the app icon's quick action. Nothing on a timer, nothing on a wake-up.
+        <strong>Notification registration keeps trying.</strong> If registering the phone for push
+        notifications did not complete, the app now retries every time it comes to the foreground
+        (without re-asking someone who declined), and the app-version heartbeat retries with it.
+        Where a phone still has no registered device, the <strong>Me</strong> screen says so plainly
+        instead of implying everything is fine.
+        <strong>Lapsed sessions.</strong> A sign-in session that had quietly lapsed could briefly show
+        an already-registered user the &ldquo;your name&rdquo; step and overwrite their name; and a
+        permission refusal from the server during a lapsed session is now treated as a lapsed session
+        and re-authenticated once, rather than surfacing as an error. Both fixed.
+        <strong>For a reviewer:</strong> nothing here adds a screen or a permission prompt. One
+        visible consequence: if you leave the demo account signed in and do not touch it, its own
+        tile will <em>not</em> advance on its own any more &mdash; that is the intended behaviour, not
+        a fault. Tapping knok, or simply reopening the app, records a check-in exactly as before.</li>
+
+      <li><strong>Already public in 5.7.55. A reliability release:
         no new features, no new screens, no new permissions, no change to pricing, in-app purchases,
         or the data the app collects.</strong>
-        <em>Live on Google Play since 9 September 2026; with Apple for review, not yet on the App Store.</em>
+        <em>Live on Google Play since 9 September 2026 and on the App Store since 10 September 2026;
+        carried forward whole into 5.7.59.</em>
         <strong>Notification registration.</strong> Some phones never completed registration for push
         notifications, so the people watching over that user could not be alerted at all, while the app
         itself looked completely normal. Two live users were affected and 26 alerts went undelivered.
@@ -713,12 +742,12 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v4">
-    <h2 id="v4-history">How version 4 differed from 3.5.x <em>(historical background, not new in 5.7.55)</em></h2>
+    <h2 id="v4-history">How version 4 differed from 3.5.x <em>(historical background, not new in 5.7.59)</em></h2>
     <p><strong>Nothing in this section is new in the build you are reviewing.</strong> Version 4.38.0 was the first
       version 4 release submitted to the stores, and everything below was new relative to the 3.5.x builds reviewed
       before it. It is kept because it explains how features such as push notifications work, not because it describes
-      a recent change &mdash; for what actually changed in 5.7.55, see
-      <a href="#whats-new-v5">&ldquo;What is new in 5.7.55&rdquo;</a> above.</p>
+      a recent change &mdash; for what actually changed in 5.7.59, see
+      <a href="#whats-new-v5">&ldquo;What is new in 5.7.59&rdquo;</a> above.</p>
     <h3>Push notifications — new to this app entirely</h3>
     <p>The 3.5.x builds sent no push notifications at all. Version 4 introduces them, with deliberate limits:</p>
     <ul>
@@ -755,7 +784,7 @@
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
         <em>A Lock Screen version of the same widget also exists on iOS; it shipped in 5.7.28 and is in
-        every release since, including the live 5.7.46.</em></li>
+        every release since, including the live 5.7.55.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -963,30 +992,31 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 9 September 2026 · Store state, read live from each store's own API immediately
+      Last updated: 13 September 2026 · Store state, read live from each store's own API immediately
       before this revision was published. <strong>The three stores are NOT on the same version</strong>,
       so each is given separately rather than as one sentence:
-      <strong>Apple — the App Store is serving 5.7.46, and 5.7.55 is with you for review.</strong>
-      <strong>iOS is LIVE at version 5.7.46</strong> — Apple approved and released it at
-      02:58 UTC on 9 September 2026, replacing 5.7.45. Read from the public iTunes lookup for app id
-      6776208791 on the US and ZA storefronts, both returning version 5.7.46 with
-      currentVersionReleaseDate 2026-09-09T02:58:22Z. It includes the Apple Watch companion.
-      <strong>Version 5.7.55 (build 75) was submitted on 9 September 2026 and its App Store Connect
+      <strong>Apple — the App Store is serving 5.7.55, and 5.7.59 is with you for review.</strong>
+      <strong>iOS is LIVE at version 5.7.55</strong> — Apple approved and released it at
+      15:17 UTC on 10 September 2026, replacing 5.7.46. Read from the public iTunes lookup for app id
+      6776208791 on the US, ZA, NG and GB storefronts, all returning version 5.7.55 with
+      currentVersionReleaseDate 2026-09-10T15:17:46Z. It includes the Apple Watch companion.
+      <strong>Version 5.7.59 (build 76) was submitted on 13 September 2026 and its App Store Connect
       state is WAITING_FOR_REVIEW — it is NOT public.</strong> It is set to release automatically once
-      approved. In TestFlight, build 75 is attached to the external tester group but its state is
-      WAITING_FOR_BETA_REVIEW, so external testers are still installing build 74 (5.7.46).
-      <strong>Google — Play production is already serving 5.7.55.</strong>
-      <strong>Android is LIVE in production at version 5.7.55 + Android TV</strong> 1.0.0
-      (release name "5.7.55 + Android TV 1.0.0", versionCodes 61 and 900000001, status completed,
+      approved. In TestFlight, build 75 (5.7.55) is what external testers install (IN_BETA_TESTING,
+      level with the App Store); build 76 (5.7.59) is attached to the external tester group but its
+      state is WAITING_FOR_BETA_REVIEW, so testers do not have it yet.
+      <strong>Google — Play production is already serving 5.7.59.</strong>
+      <strong>Android is LIVE in production at version 5.7.59 + Android TV</strong> 1.0.0
+      (release name "5.7.59 + Android TV 1.0.0", versionCodes 62 and 900000001, status completed,
       includes the Wear OS companion; read from the Google Play publisher API today). It replaced
-      5.7.46 + Android TV 1.0.0 (versionCodes 60 and 900000001) on 9 September 2026.
+      5.7.55 + Android TV 1.0.0 (versionCodes 61 and 900000001) on 13 September 2026.
       <strong>Huawei</strong> — no billing on that platform — is
       <strong>LIVE on AppGallery at 5.7.34</strong>, read back from the AppGallery Connect
       publishing API (appId 118181311, releaseState 0 = on shelf, updateTime 28 August 2026, and
       versionNumber equal to onShelfVersionNumber, so nothing is pending there).
-      Huawei was not part of the last three release rounds, so it is three rounds behind
+      Huawei was not part of the last four release rounds, so it is four rounds behind
       the other two stores.
-      <strong>So: Google Play is live on 5.7.55, the App Store is live on 5.7.46 with 5.7.55 awaiting
+      <strong>So: Google Play is live on 5.7.59, the App Store is live on 5.7.55 with 5.7.59 awaiting
       review, and Huawei AppGallery is on 5.7.34.</strong>
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check App Store Connect / Play Console / AppGallery Connect directly for the
