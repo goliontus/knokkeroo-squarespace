@@ -80,7 +80,7 @@
     "Never should a device record a checkin automatically"), and the app unregisters it from every
     phone that already had it on first launch. The four passive triggers — sign-in, foreground, home
     screen, pull-to-refresh — are KEPT by the same ruling. Also in it (5.7.56–5.7.59): push registration
-    and the version heartbeat retry on every foreground; a Postgres 42501 is treated as a lapsed session;
+    and the version heartbeat retry on every foreground; a profile read is refused before it can go out unauthenticated (the 5.7.56 name-gate fix — the 42501-as-lapsed-session rule itself shipped in 5.7.55);
     the Me screen shows an honest "no registered device" message (ERR642); ERR632 now logs and registers
     anyway. Every phone still on 5.7.55 or older keeps recording automatic check-ins until it updates.
     <strong>TestFlight.</strong> The external group "knokkeroo Beta Testers iOS"

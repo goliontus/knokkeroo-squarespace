@@ -508,18 +508,20 @@
         them as fine while the phone sat untouched for days. 5.7.59 removes that task entirely, and on
         first launch it also removes the schedule from any phone that already had it. A check-in is
         now recorded only when the user does something: pressing <strong>knok</strong>; opening the
-        app (signing in, bringing it to the foreground, returning to the home screen, or pulling down
-        to refresh); or using the Home Screen / Lock Screen widget, the Apple Watch or Apple TV
+        app (signing in, bringing it to the foreground, returning to its main contacts screen, or pulling
+        down to refresh); or using the Home Screen / Lock Screen widget, the Apple Watch or Apple TV
         companion, or the app icon's quick action. Nothing on a timer, nothing on a wake-up.
         <strong>Notification registration keeps trying.</strong> If registering the phone for push
         notifications did not complete, the app now retries every time it comes to the foreground
         (without re-asking someone who declined), and the app-version heartbeat retries with it.
         Where a phone still has no registered device, the <strong>Me</strong> screen says so plainly
         instead of implying everything is fine.
-        <strong>Lapsed sessions.</strong> A sign-in session that had quietly lapsed could briefly show
-        an already-registered user the &ldquo;your name&rdquo; step and overwrite their name; and a
-        permission refusal from the server during a lapsed session is now treated as a lapsed session
-        and re-authenticated once, rather than surfacing as an error. Both fixed.
+        <strong>Lapsed sessions.</strong> If a sign-in session had quietly lapsed, a profile read
+        could go out with no user attached and come back empty, and the app could then briefly show
+        an already-registered user the &ldquo;your name&rdquo; step and overwrite their name. The app
+        now confirms it has a usable session before any such read, and renews it first. (The related
+        re-authentication after a server permission refusal during a lapsed session was already in
+        5.7.55.)
         <strong>For a reviewer:</strong> nothing here adds a screen or a permission prompt. One
         visible consequence: if you leave the demo account signed in and do not touch it, its own
         tile will <em>not</em> advance on its own any more &mdash; that is the intended behaviour, not
