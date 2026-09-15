@@ -57,18 +57,20 @@
   <h1>knokkeroo — Internal Status</h1>
 
   <div class="kk-int__banner" style="background:rgba(180,60,40,0.16);">
-    ⚠️ <strong>STORE STATE AS AT 13 SEPTEMBER 2026 — read this before anything below it. THE THREE
-    STORES ARE ON THREE DIFFERENT VERSIONS, AND ANDROID IS AHEAD OF iOS.</strong>
+    ⚠️ <strong>STORE STATE AS AT 15 SEPTEMBER 2026 — read this before anything below it. iOS AND ANDROID ARE
+    LEVEL ON 5.7.59; HUAWEI ALONE IS BEHIND ON 5.7.34.</strong> Apple released 5.7.59 at 23:59:39Z on
+    13 September and, for the second time in five days, no document recorded an Apple release on the day:
+    scripts/store-release-drift.mjs (added 13 September) fired on 15 September — the first drift it has
+    caught, about 36 hours after the release (5.7.55's went 72 hours).
     <strong>Android is LIVE at 5.7.59</strong> (Play publisher API, production release "5.7.59 + Android
     TV 1.0.0", versionCodes 62 and 900000001, status completed, built from commit f003827; the en-US
     release notes are PRESENT this round — 395 characters, read back from the track — after 5.7.55 went
     out with none).
-    <strong>iOS is LIVE at 5.7.55, and 5.7.59 is SUBMITTED but NOT public.</strong> Apple released 5.7.55
-    at 15:17:46Z on 10 September 2026 (cache-busted iTunes lookup for app id 6776208791, identical on
-    the US, ZA, NG and GB storefronts) — and no document recorded that until 13 September, so every page
-    spent three days calling 5.7.55 "in review". ASC now holds 5.7.59 as <strong>WAITING_FOR_REVIEW</strong>
-    (record 57611468-96d0-4fba-bde3-31244f4af219, releaseType AFTER_APPROVAL so it self-releases on
-    approval, build 76, review submission 38f22395-312f-4ee5-9d6c-b3e45cfcb8d1).
+    <strong>iOS is LIVE at 5.7.59.</strong> Apple approved and released it at 23:59:39Z on 13 September 2026
+    (cache-busted iTunes lookup for app id 6776208791, identical on the US, ZA, NG and GB storefronts,
+    currentVersionReleaseDate 2026-09-13T23:59:39Z; ASC record 57611468-96d0-4fba-bde3-31244f4af219 now
+    READY_FOR_SALE, build 76). All twelve appStoreVersion records are READY_FOR_SALE — <strong>nothing is
+    with Apple for review</strong>. 5.7.55 (released 10 September) is superseded.
     <strong>Huawei is LIVE at 5.7.34</strong> (AppGallery Connect publish API app-info, appId 118181311,
     releaseState 0, versionNumber = onShelfVersionNumber = 5.7.34, updateTime 2026-08-28) — Huawei was
     in none of the 5.7.45, 5.7.46, 5.7.55 or 5.7.59 rounds and is <strong>four rounds behind</strong>.
@@ -84,20 +86,23 @@
     the Me screen shows an honest "no registered device" message (ERR642); ERR632 now logs and registers
     anyway. Every phone still on 5.7.55 or older keeps recording automatic check-ins until it updates.
     <strong>TestFlight.</strong> The external group "knokkeroo Beta Testers iOS"
-    (56f477a4-9331-45ad-8357-e1006ac6a9ae, 7 testers) installs <strong>build 75 = 5.7.55</strong>
-    (IN_BETA_TESTING — level with the App Store). <strong>Build 76 = 5.7.59 is ATTACHED</strong>,
-    processingState VALID, not expired, but its <strong>externalBuildState is WAITING_FOR_BETA_REVIEW</strong>
-    (beta review submitted 13:22:48Z on 13 September). <strong>Attached is not installable.</strong> Its
-    What-to-Test is the boilerplate again ("Please open the app, tap the knok button…") — the same
-    defect recorded for build 75; nothing tells a tester that the automatic check-in is gone.
+    (56f477a4-9331-45ad-8357-e1006ac6a9ae, 6 testers on 15 September — it was 7 on 13 September) installs
+    <strong>build 76 = 5.7.59</strong> (externalBuildState IN_BETA_TESTING, betaAppReviewSubmission APPROVED —
+    level with the App Store). Its What-to-Test is no longer boilerplate: it opens "knokkeroo 5.7.59 (build
+    76). What changed: the app no longer checks in on its own…" (read back 15 September; the 13 September
+    boilerplate finding is closed by a store write made after that sweep).
     Apple TV group holds build 68 (5.3.6), 4 testers; the TV app's only appStoreVersion record is still
     1.0 PREPARE_FOR_SUBMISSION, so it has never been submitted (both re-read 13 September).
-    <strong>Reviewer-facing, still open:</strong> ASC appStoreReviewDetail.notes for 5.7.59 still opens
-    "NEW SINCE 4.38.0 (the currently released version)" — the third consecutive submission carrying
-    reviewer notes from August; the demo credentials and guide URL in it are correct. The demo Reviewer
-    account was re-read from the live database on 13 September: all ten demo rows are plan=free with
-    the disclaimer un-acknowledged (the 9 September drift is closed), and demo accounts logged zero
-    errors in the last 24 hours.
+    <strong>Reviewer-facing, closed:</strong> ASC appStoreReviewDetail.notes for 5.7.59 was rewritten after the
+    13 September sweep and now opens "NEW SINCE 5.7.55 (the currently released version): the app no longer
+    records a check-in on its own…" (read back 15 September) — the August-era notes are gone. Demo Reviewer
+    account (+12025550100), re-read from the live database on 15 September: <strong>plan=paid, disclaimer
+    acknowledged 2026-09-13T13:32:42Z</strong> — eleven minutes after the review submission, i.e. Apple's
+    reviewer signed in, accepted the disclaimer and exercised the demo paywall (demo_subscribe). This is
+    the in-session state the seed comment describes: refresh_demo_knoks resets plan to free on the next
+    fresh demo login, so "starts on the FREE plan" stays true for the next reviewer; the disclaimer stamp
+    is only cleared by npm run reset-demo, which is the standing pre-submit step. The other nine demo rows
+    are plan=free, disclaimer NULL; demo accounts logged zero errors in the last 24 hours.
     <strong>Note the dormant third group:</strong> "Early Testers"
     (490680e6-03b1-437f-8536-49af951fbc0b) is an EXTERNAL group whose newest build is 3.4.7 and whose
     builds are all EXPIRED — it has <strong>zero testers</strong> (re-read 13 September), so it distributes
@@ -748,7 +753,7 @@
 
   <p style="font-size:0.9rem;opacity:0.7;">This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
   <p style="font-size:0.9rem;opacity:0.7;">Questions? <a href="https://www.odderonphi.com/contact">Contact us</a> · <a href="https://www.odderonphi.com/knokkeroo/terms">Terms &amp; Privacy Policy</a></p>
-  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v11 · Last updated 7 August 2026 · Internal only · See git history if anything here needs cross-checking.</p>
+  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v12 · Last updated 15 September 2026 · Internal only · See git history if anything here needs cross-checking.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
