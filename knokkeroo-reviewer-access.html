@@ -229,12 +229,12 @@
       This page describes version <strong>5.7.60</strong>, a maintenance release identical in behaviour
       to 5.7.59. Each store is stated separately &mdash; please read the line for the store you are
       reviewing for:
-      <strong>Apple App Store &mdash; 5.7.59 is LIVE.</strong> 5.7.60 (build 77) was submitted to you
-      on 20 September 2026 and is under review; it changes nothing in behaviour.
+      <strong>Apple App Store &mdash; 5.7.60 is LIVE</strong>, released 21 September 2026 (build 77),
+      replacing 5.7.59; it changes nothing in behaviour.
       <strong>Google Play &mdash; 5.7.60 is in production</strong>, published 20 September 2026 as
       release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;, replacing 5.7.59.
-      <strong>Huawei AppGallery &mdash; 5.7.34 is on the shelf; 5.7.60 was submitted for review on
-      20 September 2026.</strong>
+      <strong>Huawei AppGallery &mdash; 5.7.60 is on the shelf</strong>, released 22 September 2026,
+      replacing 5.7.34. Nothing is under review at any store.
       Everything on this page applies to 5.7.60 exactly as it applied to 5.7.59; the short list under
       <a href="#whats-new-v5">&ldquo;What is new in 5.7.60&rdquo;</a> says so, and then lists what was
       already public.
@@ -305,7 +305,7 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion has shipped with the iPhone app since version 4.38.0, and is in 5.7.59,
+      The Watch companion has shipped with the iPhone app since version 4.38.0, and is in 5.7.60,
       which the App Store serves today.
     </p>
     <ol>
@@ -494,11 +494,10 @@
     <p><em><strong>What is new in 5.7.60: nothing in behaviour.</strong> It is the same app code as
       5.7.59, released again so that Huawei AppGallery comes level with the App Store and Google
       Play. No new screens, no new permissions, no change to pricing, in-app purchases, or the data
-      the app collects. <strong>5.7.60 is in production on Google Play</strong> (since 20 September
-      2026, release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;), <strong>under review at Apple</strong>
-      (build 77, submitted 20 September 2026; the App Store serves 5.7.59 until it clears) and
-      <strong>under review at Huawei</strong> (submitted 20 September 2026; AppGallery serves 5.7.34
-      until it clears). Everything below was already public in 5.7.59 or earlier.</em></p>
+      the app collects. <strong>5.7.60 is live on all three stores</strong>: Google Play since
+      20 September 2026 (release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;), the App Store since
+      21 September 2026 (build 77) and Huawei AppGallery since 22 September 2026. Nothing is under
+      review at any store. Everything below was already public in 5.7.59 or earlier.</em></p>
     <ul>
       <li><strong>Already public in 5.7.59. A behaviour correction plus reliability fixes:
         no new screens, no new permissions, no change to pricing, in-app purchases,
@@ -624,8 +623,8 @@
         &mdash; a reliability and correctness release with no new features:</strong>
         <em>It was public on the App Store from 3 September 2026 until 5.7.46 replaced it there on
         9 September 2026, and on Google Play from 2 September 2026 until 5.7.46 replaced it there on
-        8 September 2026. No 5.7.45 build was submitted to Huawei AppGallery, which stays live on
-        5.7.34. 5.7.45 carries everything from 5.7.38 to 5.7.45, because no build between them was
+        8 September 2026. No 5.7.45 build was submitted to Huawei AppGallery, which stayed on
+        5.7.34 until 5.7.60 replaced it there on 22 September 2026. 5.7.45 carries everything from 5.7.38 to 5.7.45, because no build between them was
         submitted to any store, and all of it is carried forward into 5.7.46.</em>
         <strong>iPhone and Android:</strong> contact tiles stopped rearranging themselves. Since
         August the dashboard re-sorted tiles by urgency as it drew them, so a contact could move
@@ -658,7 +657,7 @@
       <li><strong>What was new in 5.7.37, superseded in both stores by 5.7.45 on 3 September 2026:</strong>
         <em>It was public on the App Store from 2 September 2026 and on Google Play from 1 September 2026,
         and everything in it is carried forward into 5.7.45 and 5.7.46. No 5.7.37 build was submitted to
-        Huawei AppGallery, which stays live on 5.7.34.</em>
+        Huawei AppGallery, which stayed on 5.7.34 until 5.7.60 replaced it there on 22 September 2026.</em>
         <strong>iPhone and Android:</strong> if a request to our server failed for a moment — a
         timeout, or a connection that dropped — the app gave up immediately and showed an empty
         list until a background refresh happened to succeed a minute later. It now retries twice,
@@ -675,7 +674,7 @@
         and write in the app now uses
         <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>.</li>
 
-      <li><strong>What was new in 5.7.34, the version still live on Huawei AppGallery and carried
+      <li><strong>What was new in 5.7.34, the version live on Huawei AppGallery until 22 September 2026 and carried
         forward into everything above:</strong>
         <em>On iPhone this release carried everything since 5.7.28, because no 5.7.29-5.7.33 build
         was submitted to Apple; on Android and Huawei it was the widget-reliability and watch-sync
@@ -789,7 +788,7 @@
         never shows any contact the user did not pick.
         The iOS widget requires iOS 17 or later (the app itself runs on iOS 16.4+).
         <em>A Lock Screen version of the same widget also exists on iOS; it shipped in 5.7.28 and is in
-        every release since, including the live 5.7.59.</em></li>
+        every release since, including the live 5.7.60.</em></li>
       <li>Long-pressing the app icon offers a quick action to knok without opening the app.</li>
       <li>Opening the app now itself counts as a check-in, so simply launching knokkeroo reassures a user's watchers.</li>
     </ul>
@@ -997,29 +996,27 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 20 September 2026 · Store state, read live from each store's own API immediately
+      Last updated: 4 October 2026 · Store state, read live from each store's own API immediately
       before this revision was published. 5.7.60 is a maintenance release identical in app code to
-      5.7.59; each store is given separately, and what is live is stated separately from what is in
-      review:
-      <strong>Apple — the App Store is serving 5.7.59; 5.7.60 (build 77) is with you for review.</strong>
-      <strong>iOS is LIVE at version 5.7.59</strong> — Apple approved and released it at
-      23:59 UTC on 13 September 2026, replacing 5.7.55; in App Store Connect that record is
-      READY_FOR_SALE. The 5.7.60 version record was created on 20 September 2026 with build 77
-      attached and submitted for review the same day. It includes the Apple Watch
-      companion. In TestFlight, build 77 (5.7.60) is attached to the external group and is
-      WAITING_FOR_BETA_REVIEW — external testers install build 76 (5.7.59) until it clears.
+      5.7.59; each store is given separately, and nothing is in review at any of them:
+      <strong>Apple — the App Store is serving 5.7.60.</strong>
+      <strong>iOS is LIVE at version 5.7.60</strong> — Apple approved and released it at
+      02:25 UTC on 21 September 2026 (build 77), replacing 5.7.59; in App Store Connect every version
+      record, 5.7.60 included, is READY_FOR_SALE. It includes the Apple Watch companion. In
+      TestFlight, build 77 (5.7.60) is the newest build in the external group and is IN_BETA_TESTING
+      (beta review approved), the same version as the App Store.
       <strong>Google — Play production is serving 5.7.60.</strong>
       <strong>Android is LIVE in production at version 5.7.60 + Android TV</strong> 1.0.0
-      (release name "5.7.60 + Android TV 1.0.0", versionCodes 63 and 900000001, status completed,
-      includes the Wear OS companion; read from the Google Play publisher API today). It replaced
-      5.7.59 + Android TV 1.0.0 (versionCodes 62 and 900000001) on 20 September 2026.
+      (release name "5.7.60 + Android TV 1.0.0", versionCodes 63 and 900000001, status completed;
+      read from the Google Play publisher API today). It replaced 5.7.59 + Android TV 1.0.0
+      (versionCodes 62 and 900000001) on 20 September 2026. The Wear OS companion is a separate
+      package and is not in production: it is in closed testing at 5.0.0.
       <strong>Huawei</strong> — no billing on that platform — is
-      <strong>LIVE on AppGallery at 5.7.34</strong>, read back from the AppGallery Connect
-      publishing API (appId 118181311, releaseState 0 = on shelf, updateTime 28 August 2026); 5.7.60
-      (versionCode 63) was uploaded, bound and submitted for review on 20 September 2026 and read
-      back as releaseState 5 (under review), so AppGallery keeps serving 5.7.34 until Huawei approves it.
-      <strong>So: Google Play is live on 5.7.60; the App Store is live on 5.7.59 with 5.7.60 in review;
-      Huawei AppGallery is on 5.7.34 with 5.7.60 in review.</strong>
+      <strong>LIVE on AppGallery at 5.7.60</strong>, read back from the AppGallery Connect
+      publishing API (appId 118181311, releaseState 0 = on shelf, on-shelf version 5.7.60,
+      versionCode 63, released 22 September 2026), replacing 5.7.34.
+      <strong>So: the App Store, Google Play and Huawei AppGallery are all live on 5.7.60, and
+      nothing is in review.</strong>
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check App Store Connect / Play Console / AppGallery Connect directly for the
       exact build under review, and email hello@knokkeroo.com with any discrepancy.

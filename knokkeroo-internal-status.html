@@ -57,6 +57,20 @@
   <h1>knokkeroo — Internal Status</h1>
 
   <div class="kk-int__banner" style="background:rgba(40,120,60,0.18);">
+    ✅ <strong>STORE STATE AS AT 4 OCTOBER 2026 — ALL THREE STORES ARE LEVEL ON 5.7.60; NOTHING IS IN REVIEW.</strong>
+    <strong>iOS is LIVE at 5.7.60</strong> — Apple released it at 02:25:46Z on 21 September 2026 (cache-busted iTunes
+    lookup, US/ZA/NG/GB; App Store Connect: all thirteen appStoreVersion records READY_FOR_SALE). TestFlight: build 77
+    = 5.7.60 is IN_BETA_TESTING in "knokkeroo Beta Testers iOS" (beta review APPROVED), level with the App Store; the
+    Apple TV app is unchanged (TestFlight-only, build 68 = 5.3.6, 4 testers).
+    <strong>Android is LIVE at 5.7.60</strong> (Play production "5.7.60 + Android TV 1.0.0", versionCodes 63 and
+    900000001, status completed; Wear OS still closed testing 5.0.0).
+    <strong>Huawei is LIVE at 5.7.60</strong> (AppGallery Connect: releaseState 0, on-shelf version 5.7.60, versionCode
+    63, released 22 September 2026) — Huawei is no longer behind, and the automatic 15-minute check-in that 5.7.34
+    still ran is gone from every store. The published pages still said iOS 5.7.59 and Huawei
+    5.7.34 until scripts/store-release-drift.mjs flagged both on 4 October. The banners below are previous states, kept as history.
+  </div>
+
+  <div class="kk-int__banner" style="background:rgba(40,120,60,0.10);">
     ✅ <strong>STORE STATE AS AT 20 SEPTEMBER 2026 (evening) — 5.7.60 SUBMITTED TO ALL THREE STORES.</strong> A version-only
     release, identical app code to 5.7.59, chosen by the owner to prove the moved development environment end to end and
     to bring Huawei level. <strong>Android is LIVE at 5.7.60</strong> (Play publisher API: production release
@@ -766,7 +780,7 @@
 
   <p style="font-size:0.9rem;opacity:0.7;">This page is a living document, kept in sync with the engineering deployment record every time something ships or its review status changes. If a date or status here looks stale, ask and it will be refreshed.</p>
   <p style="font-size:0.9rem;opacity:0.7;">Questions? <a href="https://www.odderonphi.com/contact">Contact us</a> · <a href="https://www.odderonphi.com/knokkeroo/terms">Terms &amp; Privacy Policy</a></p>
-  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v13 · Last updated 20 September 2026 · Internal only · See git history if anything here needs cross-checking.</p>
+  <p style="font-size:0.8rem;opacity:0.6;margin-top:14px;">Page v14 · Last updated 4 October 2026 · Internal only · See git history if anything here needs cross-checking.</p>
 
   <div style="max-width: 640px; margin: 40px auto 0;">
     <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
