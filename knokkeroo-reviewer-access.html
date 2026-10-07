@@ -1,3 +1,4 @@
+
 <style>
   .kk-rev,
   .kk-rev * {
@@ -226,18 +227,18 @@
     <h1>knokkeroo — Reviewer Access</h1>
     <p class="kk-rev__subtitle">
       Instructions for Apple App Review and Google Play review teams to access and test the knokkeroo app.
-      This page describes version <strong>5.7.60</strong>, a maintenance release identical in behaviour
-      to 5.7.59. Each store is stated separately &mdash; please read the line for the store you are
-      reviewing for:
-      <strong>Apple App Store &mdash; 5.7.60 is LIVE</strong>, released 21 September 2026 (build 77),
-      replacing 5.7.59; it changes nothing in behaviour.
+      This page describes version <strong>5.7.62</strong>, a two-fix release on top of 5.7.60. Each store
+      is stated separately &mdash; please read the line for the store you are reviewing for:
+      <strong>Apple App Store &mdash; 5.7.62 is IN REVIEW</strong> (build 78, submitted 7 October 2026);
+      the App Store keeps serving 5.7.60 (build 77, released 21 September 2026) until Apple releases it.
       <strong>Google Play &mdash; 5.7.60 is in production</strong>, published 20 September 2026 as
-      release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;, replacing 5.7.59.
-      <strong>Huawei AppGallery &mdash; 5.7.60 is on the shelf</strong>, released 22 September 2026,
-      replacing 5.7.34. Nothing is under review at any store.
-      Everything on this page applies to 5.7.60 exactly as it applied to 5.7.59; the short list under
-      <a href="#whats-new-v5">&ldquo;What is new in 5.7.60&rdquo;</a> says so, and then lists what was
-      already public.
+      release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;; 5.7.62 is being submitted to production and is not
+      in the Play Console yet.
+      <strong>Huawei AppGallery &mdash; 5.7.60 is on the shelf</strong>, released 22 September 2026;
+      5.7.62 has not been submitted there yet.
+      Everything on this page applies to 5.7.62 exactly as it applied to 5.7.60, apart from the two fixes
+      listed under <a href="#whats-new-v5">&ldquo;What is new in 5.7.62&rdquo;</a>; that list then says
+      what was already public.
     </p>
   </header>
 
@@ -305,8 +306,8 @@
       The knokkeroo Apple Watch app is <strong>part of the same iPhone app</strong> (App Store id
       <code>6776208791</code>) — there is no separate App Store listing or TestFlight build to install.
       It installs automatically alongside the phone app onto any paired Apple Watch.
-      The Watch companion has shipped with the iPhone app since version 4.38.0, and is in 5.7.60,
-      which the App Store serves today.
+      The Watch companion has shipped with the iPhone app since version 4.38.0, is in 5.7.60,
+      which the App Store serves today, and is unchanged in 5.7.62, which is in review.
     </p>
     <ol>
       <li>Install and sign in to knokkeroo on the iPhone using the demo account in section 2 above.</li>
@@ -490,14 +491,18 @@
   </section>
 
 <section class="kk-rev__section" id="whats-new-v5">
-    <h2>What is new in 5.7.60, and what is already public</h2>
-    <p><em><strong>What is new in 5.7.60: nothing in behaviour.</strong> It is the same app code as
-      5.7.59, released again so that Huawei AppGallery comes level with the App Store and Google
-      Play. No new screens, no new permissions, no change to pricing, in-app purchases, or the data
-      the app collects. <strong>5.7.60 is live on all three stores</strong>: Google Play since
-      20 September 2026 (release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;), the App Store since
-      21 September 2026 (build 77) and Huawei AppGallery since 22 September 2026. Nothing is under
-      review at any store. Everything below was already public in 5.7.59 or earlier.</em></p>
+    <h2>What is new in 5.7.62, and what is already public</h2>
+    <p><em><strong>What is new in 5.7.62: two fixes, nothing else.</strong> (1) The iOS Home Screen
+      widget&rsquo;s favourite-contact tile now fetches that contact&rsquo;s latest check-in from the
+      server on its own schedule, so it stays current without the app being opened. (2) A knok pressed
+      at a moment the app&rsquo;s sign-in had briefly lapsed used to wait in a queue; the app now
+      refreshes the sign-in once, on the spot, and sends it straight away. No new screens, no new
+      permissions, no change to pricing, in-app purchases, or the data the app collects.
+      <strong>Store state on 7 October 2026:</strong> App Store &mdash; 5.7.62 (build 78) submitted for
+      review today, 5.7.60 (build 77) stays live until Apple releases it; Google Play &mdash; production
+      still serves 5.7.60 (release &ldquo;5.7.60 + Android TV 1.0.0&rdquo;), 5.7.62 being submitted;
+      Huawei AppGallery &mdash; 5.7.60 on the shelf, 5.7.62 to follow. Everything below was already
+      public in 5.7.60 or earlier.</em></p>
     <ul>
       <li><strong>Already public in 5.7.59. A behaviour correction plus reliability fixes:
         no new screens, no new permissions, no change to pricing, in-app purchases,
@@ -750,8 +755,8 @@
     <p><strong>Nothing in this section is new in the build you are reviewing.</strong> Version 4.38.0 was the first
       version 4 release submitted to the stores, and everything below was new relative to the 3.5.x builds reviewed
       before it. It is kept because it explains how features such as push notifications work, not because it describes
-      a recent change &mdash; for what actually changed in 5.7.59, see
-      <a href="#whats-new-v5">&ldquo;What is new in 5.7.60&rdquo;</a> above.</p>
+      a recent change &mdash; for what actually changed in 5.7.62 (and, before it, 5.7.59), see
+      <a href="#whats-new-v5">&ldquo;What is new in 5.7.62&rdquo;</a> above.</p>
     <h3>Push notifications — new to this app entirely</h3>
     <p>The 3.5.x builds sent no push notifications at all. Version 4 introduces them, with deliberate limits:</p>
     <ul>
@@ -996,27 +1001,28 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 4 October 2026 · Store state, read live from each store's own API immediately
-      before this revision was published. 5.7.60 is a maintenance release identical in app code to
-      5.7.59; each store is given separately, and nothing is in review at any of them:
-      <strong>Apple — the App Store is serving 5.7.60.</strong>
-      <strong>iOS is LIVE at version 5.7.60</strong> — Apple approved and released it at
-      02:25 UTC on 21 September 2026 (build 77), replacing 5.7.59; in App Store Connect every version
-      record, 5.7.60 included, is READY_FOR_SALE. It includes the Apple Watch companion. In
-      TestFlight, build 77 (5.7.60) is the newest build in the external group and is IN_BETA_TESTING
-      (beta review approved), the same version as the App Store.
+      Last updated: 7 October 2026 · Store state, read live from each store's own API immediately
+      before this revision was published. 5.7.62 is a two-fix release on top of 5.7.60; each store is
+      given separately:
+      <strong>Apple — the App Store is serving 5.7.60; 5.7.62 is in review.</strong>
+      <strong>iOS 5.7.62 (build 78) was submitted for App Review on 7 October 2026</strong>, right
+      after this page was published. In App Store Connect the 5.7.62 version record is
+      WAITING_FOR_REVIEW; 5.7.60 (build 77, released 21 September 2026) is READY_FOR_SALE and stays
+      live until Apple releases 5.7.62. It includes the Apple Watch companion. In TestFlight, build 77
+      (5.7.60) remains the newest build in the external group (IN_BETA_TESTING); build 78 goes straight
+      to production, with no TestFlight gate.
       <strong>Google — Play production is serving 5.7.60.</strong>
       <strong>Android is LIVE in production at version 5.7.60 + Android TV</strong> 1.0.0
       (release name "5.7.60 + Android TV 1.0.0", versionCodes 63 and 900000001, status completed;
-      read from the Google Play publisher API today). It replaced 5.7.59 + Android TV 1.0.0
-      (versionCodes 62 and 900000001) on 20 September 2026. The Wear OS companion is a separate
+      read from the Google Play publisher API today). 5.7.62 (versionCode 64) is being submitted to
+      production and is not in the Play Console yet. The Wear OS companion is a separate
       package and is not in production: it is in closed testing at 5.0.0.
       <strong>Huawei</strong> — no billing on that platform — is
       <strong>LIVE on AppGallery at 5.7.60</strong>, read back from the AppGallery Connect
       publishing API (appId 118181311, releaseState 0 = on shelf, on-shelf version 5.7.60,
-      versionCode 63, released 22 September 2026), replacing 5.7.34.
-      <strong>So: the App Store, Google Play and Huawei AppGallery are all live on 5.7.60, and
-      nothing is in review.</strong>
+      versionCode 63, released 22 September 2026); 5.7.62 has not been submitted there yet.
+      <strong>So: Google Play and Huawei AppGallery serve 5.7.60; the App Store serves 5.7.60 with
+      5.7.62 in review.</strong>
       If a version above does not match what you are looking at, this page is a revision behind the
       live submission; check App Store Connect / Play Console / AppGallery Connect directly for the
       exact build under review, and email hello@knokkeroo.com with any discrepancy.
