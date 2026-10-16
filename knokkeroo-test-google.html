@@ -1,207 +1,44 @@
 <style>
   .kk-stat, .kk-stat * { box-sizing: border-box; }
   .kk-stat { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
-  .kk-stat a { color: inherit; }
+  .kk-stat a { color: inherit; text-decoration: underline; text-underline-offset: 0.16em; }
+  .kk-stat p { overflow-wrap: anywhere; }
   .kk-stat__crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 0.88rem; opacity: 0.68; }
-  .kk-stat__crumbs a { text-decoration: underline; text-underline-offset: 0.16em; }
   .kk-stat__hero { margin-bottom: 22px; }
   .kk-stat h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; }
 
   .kk-stat__panel {
-    padding: 28px;
+    padding: 26px 28px;
     border: 1px solid rgba(127, 127, 127, 0.28);
     border-radius: 20px;
     background: rgba(127, 127, 127, 0.045);
-    text-align: center;
     margin-bottom: 20px;
   }
-
-  .kk-stat__pill { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 16px; padding: 5px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; background: rgba(201, 162, 39, 0.18); }
-
-  .kk-stat__panel p { max-width: 460px; margin: 0 auto 18px; font-size: 1.02rem; opacity: 0.86; }
+  .kk-stat__panel--note { border-color: rgba(201, 162, 39, 0.42); background: rgba(201, 162, 39, 0.08); }
+  .kk-stat__panel p { margin: 0 0 12px; font-size: 1.02rem; }
   .kk-stat__panel p:last-child { margin-bottom: 0; }
 
-  .kk-stat__badge { height: 68px; width: auto; filter: grayscale(1); opacity: 0.5; }
-
   .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
-
-  .kk-stat h2 { font-size: 1.4rem; margin: 34px 0 12px; text-align: left; }
-  .kk-stat h3 { font-size: 1.1rem; margin: 18px 0 8px; }
-  .kk-stat__panel--left { text-align: left; }
-  .kk-stat__panel--left p { max-width: none; margin: 0 0 12px; text-align: left; }
-  .kk-stat__panel--left ul { margin: 0 0 12px; padding-left: 22px; }
-  .kk-stat__panel--left li { margin-bottom: 6px; }
-  .kk-stat__scenario-list { columns: 1; }
-  @media (min-width: 640px) { .kk-stat__scenario-list { columns: 2; column-gap: 24px; } }
-  .kk-stat__scenario-list li { break-inside: avoid; font-size: 0.95rem; opacity: 0.88; }
-  .kk-stat__btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: #000; color: #fff !important; text-decoration: none !important; font-weight: 700; margin-top: 4px; }
-
-  /* Same big tap targets as the Apple tester pages: every step a tester has to
-     act on is a button, not a web address they have to read and type. */
-  .kk-stat__cta {
-    display: block;
-    width: 100%;
-    max-width: 420px;
-    min-height: 60px;
-    padding: 18px 22px;
-    border: 2px solid #000;
-    border-radius: 14px;
-    background: #000;
-    color: #fff !important;
-    font-weight: 800;
-    font-size: 1.12rem;
-    line-height: 1.25;
-    text-align: center;
-    text-decoration: none !important;
-    margin: 12px 0 8px;
-  }
-  .kk-stat__cta--ghost { background: transparent; color: inherit !important; border-color: rgba(127, 127, 127, 0.55); }
-  .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22) !important; }
 </style>
 
 <div class="kk-stat">
   <nav class="kk-stat__crumbs" aria-label="Breadcrumb">
-    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span>
-    <a href="/knokkeroo/test">Test knokkeroo</a><span>›</span><span>Google / Android</span>
+    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span><span>Test programme</span>
   </nav>
 
   <header class="kk-stat__hero">
-    <h1>knokkeroo for Android</h1>
+    <h1>This page has been withdrawn</h1>
   </header>
 
-  <div class="kk-stat__panel">
-    <span class="kk-stat__pill" style="background: rgba(24, 148, 87, 0.18);">Live now, public</span>
-    <p><strong>knokkeroo</strong> is publicly live on the Play Store — no tester group or sign-up needed anymore. Just search "<strong>knokkeroo</strong>" or use the button below.</p>
-    <p>As a tester, thank you for trying it early. If you're still on a testing-track install, you can keep using it as-is, or reinstall from the public listing below — either way you're on the same app and account.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker" aria-label="Get knokkeroo on Google Play">
-      <img class="kk-stat__badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" loading="lazy" style="filter:none; opacity:1;" />
-    </a>
+  <div class="kk-stat__panel kk-stat__panel--note">
+    <p><strong>knokkeroo's test programme has ended.</strong> There is nothing to sign up for and no
+      test version to install. Thank you to everyone who tested knokkeroo.</p>
+    <p>The released app is in every store: get knokkeroo from the
+      <a href="https://apps.apple.com/app/id6776208791">App Store</a>,
+      <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Google Play</a> or
+      <a href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker">AppGallery</a>.</p>
+    <p>Back to the <a href="https://www.odderonphi.com/knokkeroo">knokkeroo page</a>.</p>
   </div>
 
-  <h2>Join the beta — one signup covers phone and watch</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <span class="kk-stat__pill kk-stat__pill--wait">Open to anyone — no invitation needed</span>
-
-    <p><strong>Right now the public app IS the newest build</strong> — the Home Screen widget, favourite contacts, notifications and the light theme are all in the public Play Store version, and the phone testing track currently carries an older build. The one exception is the Wear OS watch app, which is not in the public version at all — it is only available to testers (see "Your Wear OS watch" below). Joining the beta today changes nothing on your phone; it simply means that when a new pre-release build is posted, you get it before everyone else. Anyone can join — you do <strong>not</strong> need to be invited and you do not need to email anyone.</p>
-
-    <p><strong>First, check which Google account you are using.</strong> Open the Play Store, tap your profile picture (top right) and note the address shown. <strong>Both steps below must use that exact same account</strong> — this is the single most common reason the beta does not show up.</p>
-
-    <h3>Step 1 · Join the tester group</h3>
-    <p>Tap the button, then tap <strong>Ask to join</strong> (or accept, if you were already invited).</p>
-    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://groups.google.com/g/knokkeroo-testers">Join the tester group</a>
-
-    <h3>Step 2 · Become a tester on Google Play</h3>
-    <p>Tap the button, then tap <strong>Become a tester</strong>.</p>
-    <a class="kk-stat__cta kk-stat__cta--ghost" href="https://play.google.com/apps/testing/com.goliontus.knokker">Become a tester</a>
-
-    <h3>Step 3 · Install on your phone</h3>
-    <p>On that same page tap <strong>Download it on Google Play</strong> — or use the button below and
-      tap <strong>Install</strong> (or <strong>Update</strong>, if you already have the public version).
-      It is the same listing as the public app; once you are a tester it serves you the beta build
-      instead, so there is no separate download to find.</p>
-    <a class="kk-stat__cta" href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Open knokkeroo on Google Play</a>
-
-    <p><strong>If it says "not available" or "you're not a tester":</strong> check that Steps 1 and 2 used the same Google account, then wait — Google can take an hour or two to propagate access. Retry after that before reporting a problem.</p>
-  </div>
-
-  <h2>Your Wear OS watch</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <span class="kk-stat__pill kk-stat__pill--wait">Included in the same beta — nothing extra to join</span>
-
-    <p>The watch app works on <strong>Galaxy Watch, Pixel Watch and other Wear OS watches</strong>. It is part of the same beta you joined above — there is no second signup, no second group and no separate tester list.</p>
-
-    <p><strong>The watch app is an earlier build than the phone app.</strong> Google distributes it as its own package, and it has not been rebuilt alongside the newest phone releases. So expect the watch to be behind the phone — if something is on the phone and missing on the watch, that is known, and it is the phone build we most need tested.</p>
-
-    <p><strong>Before you start:</strong> your watch must already be paired to your phone the normal way, through <strong>Galaxy Wearable</strong> (Samsung) or the <strong>Wear OS</strong> app. That is your watch's own setup and has nothing to do with knokkeroo. If your watch already shows your notifications, you are done with this part.</p>
-
-    <h3>Step 1 · Install knokkeroo on your phone first</h3>
-    <p>The watch app will not appear until the phone app is installed on the paired phone. Do the three steps above first.</p>
-
-    <h3>Step 2 · Get it onto the watch</h3>
-    <p>The watch app ships under the same Play listing as the phone app, so <strong>Google Play sends it to your watch for you</strong>. Give it a few minutes after installing on the phone.</p>
-    <p>If it has not arrived: on the <strong>watch</strong>, open the <strong>Play Store</strong> → <strong>Apps on your phone</strong>. knokkeroo will be in that list with an <strong>Install</strong> button. Tap it.</p>
-
-    <h3>Step 3 · Pairing — there is none</h3>
-    <p><strong>There is no code to type and nothing to pair.</strong> The watch app has no login screen of its own. Your phone hands it your signed-in session automatically over the watch connection.</p>
-    <p>So all you do is: <strong>open knokkeroo on your phone once</strong> after installing, with the watch connected. Then open knokkeroo on the watch — you will already be signed in, and you will see your own status and a <em>knok</em> button.</p>
-    <p><strong>If the watch says you are not signed in:</strong> open the app on your phone, confirm you are signed in there, then open the watch app again. The phone re-sends your session every time it starts and every time you sign in or out, so reopening the phone app is always the fix.</p>
-  </div>
-
-  <h2>What this testing is for</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <p><strong>The purpose of testing is to find errors.</strong> You are not here to confirm that <strong>knokkeroo</strong> works — you are here to find the places where it does not. A test that finds nothing tells us very little. A test that finds a problem is the most useful thing you can give us.</p>
-    <p>So please don't smooth anything over. If something looks wrong, reads oddly, arrives at a strange time, is hard to read, or simply confuses you, that counts — even if you're not sure it's a fault, and even if it feels too small to mention. Nothing is too small, and you can never report too much.</p>
-  </div>
-
-  <h2>About the messages you receive</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <p><strong>Every notification knokkeroo sends you during testing is part of the test.</strong> That includes reminders to <strong>knok</strong>, alerts that one of your contacts is overdue, invitations, and anything else that appears on your phone or watch.</p>
-    <p>They're sent so we can confirm they actually arrive, on time, on your device. So please don't switch them off or ignore them — and do judge them as if they were real. If a message arrives that you didn't expect, arrives at an odd hour, says something confusing, or doesn't arrive when you think it should, that is exactly what we need to hear about.</p>
-    <p><strong>knokkeroo is not an emergency service</strong>, and nothing you receive while testing should be treated as an emergency alert.</p>
-  </div>
-
-  <h2>What to test — on your phone</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <ol>
-      <li><strong>Register / sign in.</strong> Enter your number, receive the verification code, sign in.</li>
-      <li><strong>knok.</strong> Tap the big button. Your own time should update immediately.</li>
-      <li><strong>Add a contact.</strong> Send a connection request; have them accept; check they appear.</li>
-      <li><strong>Accept a request.</strong> Approve an incoming request and check both sides now watch each other.</li>
-      <li><strong>Status colours.</strong> Check contacts show green (recent), amber (a little overdue), red (missed).</li>
-      <li><strong>Quiet hours.</strong> Set them, and check a normal night does not count as a missed check-in.</li>
-      <li><strong>Invite someone not on knokkeroo.</strong> Check they receive the WhatsApp invitation.</li>
-      <li><strong>Widget.</strong> Add the knokkeroo widget to your Home Screen; check it shows your status and updates after a knok.</li>
-      <li><strong>Account deletion.</strong> Me → Delete account. Check it signs you out and the account is gone.</li>
-    </ol>
-  </div>
-
-  <h2>What to test — on your watch</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <ol>
-      <li><strong>It opens signed in.</strong> Open knokkeroo on the watch — no login screen, your own status is shown.</li>
-      <li><strong>knok from the watch.</strong> Tap <em>knok</em>. The watch should confirm it.</li>
-      <li><strong>The phone catches up on its own.</strong> Open the phone app — your new check-in should already be there, without you pulling to refresh.</li>
-      <li><strong>Out of range.</strong> Walk away from the phone (or turn Bluetooth off) and tap <em>knok</em>. It should tell you clearly rather than silently failing, and go through once reconnected.</li>
-      <li><strong>Signed out.</strong> Sign out on the phone, then open the watch app. It should say plainly that you are not signed in — it must not crash or show a blank screen.</li>
-      <li><strong>The watch face tile</strong>, if your watch shows tiles: check the knokkeroo tile appears and works.</li>
-    </ol>
-  </div>
-
-  <h2>Test document to check off</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <p>The same tests as above, in a formal ISO/IEC/IEEE 29119-3 Word document with fillable steps, test data, and expected/actual result columns — so you can tick each one off as you go and send it back.</p>
-    <p><a class="kk-stat__btn" href="https://goliontus.github.io/knokkeroo-squarespace/downloads/knokkeroo-tester-test-plan-core.docx">Download the test plan (Word .docx)</a></p>
-  </div>
-
-  <h2>How to report anything you find</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <p>Two ways, whichever suits you:</p>
-    <ul>
-      <li><strong>WhatsApp</strong> — <a href="https://wa.me/27846001188">+27 84 600 1188</a></li>
-      <li><strong>Email</strong> — <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a></li>
-    </ul>
-    <p>Both go straight to Charles, who builds <strong>knokkeroo</strong> — there's no support desk or queue in between, and he reads every one.</p>
-    <p>Please include, as far as you can:</p>
-    <ul>
-      <li><strong>What you did</strong> — the steps, in the order you did them</li>
-      <li><strong>What you expected</strong> to happen</li>
-      <li><strong>What actually happened</strong> instead</li>
-      <li><strong>When</strong> it happened — the date and roughly what time</li>
-      <li><strong>Which device</strong> you were using</li>
-      <li>A <strong>screenshot</strong>, if there's anything to see</li>
-    </ul>
-    <p>Don't worry about getting this perfect or writing it up neatly — a short message saying "this looked wrong at about 7 this morning" is far better than saying nothing. On WhatsApp a photo or a voice note is perfectly fine — you don't have to type it out.</p>
-    <p>If you're working from the downloadable test plan, put the test case ID (for example "CORE-3") in the subject line.</p>
-  </div>
-
-  <h2>Terms &amp; conditions</h2>
-  <div class="kk-stat__panel kk-stat__panel--left">
-    <p>Full Terms &amp; Conditions: <a href="https://www.odderonphi.com/knokkeroo/terms">odderonphi.com/knokkeroo/terms</a>.</p>
-  </div>
-
-  <div style="max-width: 640px; margin: 40px auto 0;">
-    <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
-  </div>
-
-  <p class="kk-stat__footer">Page v23 · Last updated 16 October 2026 · Applies to app version 5.7.62 (live in production). The Wear OS watch app is a separate package that is not in production: it is in closed testing at 5.0.0. Read from the Google Play Developer API on 16 October 2026 — production release "5.7.62 + Android TV 1.0.0", versionCodes 64 and 900000001, status completed; Wear OS closed testing release "5.0.0 (wear)", status completed. 5.7.62, in production since 8 October 2026, is a two-fix release on top of 5.7.60, with no new screens or permissions. What 5.7.59 changed: the app no longer records a check-in on its own while the phone sits idle — a check-in now happens only when you do something (press knok, open the app, or use the widget, watch or TV); and if the phone was never set up for notifications, the app keeps retrying and tells you plainly if it still cannot be. Android, iPhone and Huawei are level: the App Store has served 5.7.62 since 8 October 2026 and Huawei AppGallery since 12 October 2026, and nothing is under review at any store.</p>
+  <p class="kk-stat__footer">Page withdrawn 16 October 2026.</p>
 </div>

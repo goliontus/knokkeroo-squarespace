@@ -1,261 +1,44 @@
-<!--
-  RECONCILED 2026-09-02. The repo source had fallen BEHIND the published page: live was
-  "Page v7" with a whole kk-stat__note block (44 lines) that this file did not have, so
-  mirroring the repo over it would have DELETED real published content. The live page was
-  therefore taken as the base and only its footer corrected — that footer claimed iOS 4.39.8,
-  Android 4.39.10 and Huawei 3.5.9, which are v4 and v3 numbers, on a page testers read.
-  Measured truth on 2026-09-02: iOS 5.7.37 (public since 07:16Z, iTunes lookup), Android 5.7.37
-  (Play production track, versionCodes 58 + 900000001, status completed), Huawei 5.7.34 (AGC
-  releaseState 0). Bumped to Page v8.
--->
-
 <style>
-  .kk-stat,
-  .kk-stat * {
-    box-sizing: border-box;
-  }
+  .kk-stat, .kk-stat * { box-sizing: border-box; }
+  .kk-stat { width: 100%; max-width: 820px; margin: 0 auto; padding: 24px 16px; color: inherit; font-family: inherit; line-height: 1.6; }
+  .kk-stat a { color: inherit; text-decoration: underline; text-underline-offset: 0.16em; }
+  .kk-stat p { overflow-wrap: anywhere; }
+  .kk-stat__crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 0.88rem; opacity: 0.68; }
+  .kk-stat__hero { margin-bottom: 22px; }
+  .kk-stat h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; }
 
-  .kk-stat {
-    width: 100%;
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 24px 16px;
-    color: inherit;
-    font-family: inherit;
-    line-height: 1.6;
-  }
-
-  .kk-stat a {
-    color: inherit;
-  }
-
-  .kk-stat__crumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
-    font-size: 0.88rem;
-    opacity: 0.68;
-  }
-
-  .kk-stat__crumbs a {
-    text-decoration: underline;
-    text-underline-offset: 0.16em;
-  }
-
-  .kk-stat__hero {
-    margin-bottom: 26px;
-  }
-
-  .kk-stat h1 {
-    margin: 0 0 10px;
-    font-size: clamp(1.9rem, 5vw, 2.7rem);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-  }
-
-  .kk-stat__subtitle {
-    max-width: 620px;
-    margin: 0;
-    font-size: 1.05rem;
-    opacity: 0.84;
-  }
-
-  .kk-stat__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .kk-stat__card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 22px;
+  .kk-stat__panel {
+    padding: 26px 28px;
     border: 1px solid rgba(127, 127, 127, 0.28);
     border-radius: 20px;
     background: rgba(127, 127, 127, 0.045);
-    text-decoration: none;
-    color: inherit;
-    min-height: 92px;
+    margin-bottom: 20px;
   }
+  .kk-stat__panel--note { border-color: rgba(201, 162, 39, 0.42); background: rgba(201, 162, 39, 0.08); }
+  .kk-stat__panel p { margin: 0 0 12px; font-size: 1.02rem; }
+  .kk-stat__panel p:last-child { margin-bottom: 0; }
 
-  .kk-stat__card:hover {
-    background: rgba(127, 127, 127, 0.1);
-  }
-
-  .kk-stat__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .kk-stat__icon--apple { background: #000; }
-  .kk-stat__icon--google { background: #01875f; }
-  .kk-stat__icon--huawei { background: #c8102e; }
-  .kk-stat__icon--garmin { background: #007cc3; }
-
-  .kk-stat__card-body h2 {
-    margin: 0 0 4px;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-
-  .kk-stat__card-body p {
-    margin: 0;
-    font-size: 0.92rem;
-    opacity: 0.78;
-  }
-
-  .kk-stat__pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 6px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 0.76rem;
-    font-weight: 700;
-  }
-
-  .kk-stat__pill--live { background: rgba(24, 148, 87, 0.16); color: inherit; }
-  .kk-stat__pill--review { background: rgba(201, 162, 39, 0.18); color: inherit; }
-  .kk-stat__pill--wait { background: rgba(160, 160, 160, 0.22); color: inherit; }
-
-  .kk-stat__note {
-    padding: 22px;
-    border: 1px solid rgba(127, 127, 127, 0.28);
-    border-radius: 20px;
-    background: rgba(127, 127, 127, 0.045);
-    margin-bottom: 16px;
-    text-align: left;
-  }
-
-  .kk-stat__note h2 {
-    margin: 0 0 8px;
-    font-size: 1.2rem;
-    line-height: 1.25;
-  }
-
-  .kk-stat__note p {
-    margin: 0 0 10px;
-    font-size: 0.96rem;
-    opacity: 0.86;
-  }
-
-  .kk-stat__note p:last-child { margin-bottom: 0; }
-
-  .kk-stat__note ul {
-    margin: 0 0 10px;
-    padding-left: 22px;
-    font-size: 0.96rem;
-    opacity: 0.86;
-  }
-
-  .kk-stat__note li { margin-bottom: 5px; }
-
-  .kk-stat__footer {
-    margin-top: 8px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(127, 127, 127, 0.2);
-    font-size: 0.8rem;
-    opacity: 0.62;
-  }
-
-  @media (max-width: 480px) {
-    .kk-stat__card { padding: 18px; }
-  }
+  .kk-stat__footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(127, 127, 127, 0.2); font-size: 0.8rem; opacity: 0.62; text-align: center; }
 </style>
 
 <div class="kk-stat">
   <nav class="kk-stat__crumbs" aria-label="Breadcrumb">
-    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span><span>Test <strong>knokkeroo</strong></span>
+    <a href="https://www.odderonphi.com/knokkeroo">knokkeroo</a><span>›</span><span>Test programme</span>
   </nav>
 
   <header class="kk-stat__hero">
-    <h1>Test knokkeroo</h1>
-    <p class="kk-stat__subtitle">Thanks for helping test <strong>knokkeroo</strong>. Tap your device's maker below for exact steps — including ways to try it before it's publicly released.</p>
+    <h1>This page has been withdrawn</h1>
   </header>
 
-  <div class="kk-stat__grid">
-    <a class="kk-stat__card" href="/knokkeroo/test/apple">
-      <span class="kk-stat__icon kk-stat__icon--apple"></span>
-      <span class="kk-stat__card-body">
-        <h2>Apple</h2>
-        <p>iPhone, Apple Watch, Apple TV</p>
-        <span class="kk-stat__pill kk-stat__pill--live">Live</span>
-      </span>
-    </a>
-
-    <a class="kk-stat__card" href="/knokkeroo/test/google">
-      <span class="kk-stat__icon kk-stat__icon--google"></span>
-      <span class="kk-stat__card-body">
-        <h2>Google / Android</h2>
-        <p>Android phones, Wear OS watches</p>
-        <span class="kk-stat__pill kk-stat__pill--live">Live now</span>
-      </span>
-    </a>
-
-    <a class="kk-stat__card" href="/knokkeroo/test/huawei">
-      <span class="kk-stat__icon kk-stat__icon--huawei"></span>
-      <span class="kk-stat__card-body">
-        <h2>Huawei</h2>
-        <p>Huawei phones (AppGallery)</p>
-        <span class="kk-stat__pill kk-stat__pill--live">Live now</span>
-      </span>
-    </a>
-
-    <a class="kk-stat__card" href="/knokkeroo/test/garmin">
-      <span class="kk-stat__icon kk-stat__icon--garmin"></span>
-      <span class="kk-stat__card-body">
-        <h2>Garmin</h2>
-        <p>Garmin watches</p>
-        <span class="kk-stat__pill kk-stat__pill--wait">Not available</span>
-      </span>
-    </a>
+  <div class="kk-stat__panel kk-stat__panel--note">
+    <p><strong>knokkeroo's test programme has ended.</strong> There is nothing to sign up for and no
+      test version to install. Thank you to everyone who tested knokkeroo.</p>
+    <p>The released app is in every store: get knokkeroo from the
+      <a href="https://apps.apple.com/app/id6776208791">App Store</a>,
+      <a href="https://play.google.com/store/apps/details?id=com.goliontus.knokker">Google Play</a> or
+      <a href="https://appgallery.cloud.huawei.com/appDetail?pkgName=com.goliontus.knokker">AppGallery</a>.</p>
+    <p>Back to the <a href="https://www.odderonphi.com/knokkeroo">knokkeroo page</a>.</p>
   </div>
 
-  <div class="kk-stat__note">
-    <h2>What this testing is for</h2>
-    <p><strong>The purpose of testing is to find errors.</strong> You are not here to confirm that <strong>knokkeroo</strong> works — you are here to find the places where it does not. A test that finds nothing tells us very little. A test that finds a problem is the most useful thing you can give us.</p>
-    <p>So please don't smooth anything over. If something looks wrong, reads oddly, arrives at a strange time, is hard to read, or simply confuses you, that counts — even if you're not sure it's a fault, and even if it feels too small to mention. Nothing is too small, and you can never report too much.</p>
-  </div>
-
-  <div class="kk-stat__note">
-    <h2>About the messages you receive</h2>
-    <p><strong>Every notification knokkeroo sends you during testing is part of the test.</strong> That includes reminders to <strong>knok</strong>, alerts that one of your contacts is overdue, invitations, and anything else that appears on your phone, watch or TV.</p>
-    <p>They're sent so we can confirm they actually arrive, on time, on your device. So please don't switch them off or ignore them — and do judge them as if they were real. If a message arrives that you didn't expect, arrives at an odd hour, says something confusing, or doesn't arrive when you think it should, that is exactly what we need to hear about.</p>
-    <p><strong>knokkeroo is not an emergency service</strong>, and nothing you receive while testing should be treated as an emergency alert.</p>
-  </div>
-
-  <div class="kk-stat__note">
-    <h2>How to report anything you find</h2>
-    <p>Two ways, whichever suits you:</p>
-    <ul>
-      <li><strong>WhatsApp</strong> — <a href="https://wa.me/27846001188">+27 84 600 1188</a></li>
-      <li><strong>Email</strong> — <a href="mailto:hello@knokkeroo.com">hello@knokkeroo.com</a></li>
-    </ul>
-    <p>Both go straight to Charles, who builds <strong>knokkeroo</strong> — there's no support desk or queue in between, and he reads every one.</p>
-    <p>Please include, as far as you can:</p>
-    <ul>
-      <li><strong>What you did</strong> — the steps, in the order you did them</li>
-      <li><strong>What you expected</strong> to happen</li>
-      <li><strong>What actually happened</strong> instead</li>
-      <li><strong>When</strong> it happened — the date and roughly what time</li>
-      <li><strong>Which device</strong> you were using</li>
-      <li>A <strong>screenshot or photo</strong>, if there's anything to see</li>
-    </ul>
-    <p>Don't worry about getting this perfect or writing it up neatly — a short message saying "this looked wrong at about 7 this morning" is far better than saying nothing. On WhatsApp a photo or a voice note is perfectly fine — you don't have to type it out.</p>
-  </div>
-
-  <div style="max-width: 640px; margin: 40px auto 0;">
-    <img src="https://images.squarespace-cdn.com/content/v1/6a268f0befc0150171ea2888/1784970311084-4YJZSLHYJ88AF3TIXZ4E/unsplash-image-hrHsSoY4lWY.jpg" alt="A calm, misty lake between mountains" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.18); border: 1px solid rgba(88,59,31,0.18);" />
-  </div>
-
-  <p class="kk-stat__footer">Page v17 · Last updated 16 October 2026 · Reflects app versions iOS 5.7.62, Android 5.7.62, Huawei 5.7.62. All three stores are level on 5.7.62 (a two-fix release on top of 5.7.60, with no new screens or permissions), and nothing is under review at any store. Google Play production serves 5.7.62 (released 8 October 2026, alongside Android TV 1.0.0; versionCodes 64 and 900000001, status completed). The App Store serves 5.7.62 — Apple released it at 01:39 UTC on 8 October 2026, replacing 5.7.60. Huawei AppGallery serves 5.7.62 (versionCode 64, on the shelf since 12 October 2026), replacing 5.7.60. Wear OS remains in closed testing. What 5.7.59 changed, for testers — on every store now, Huawei included: the app no longer records a check-in on its own while the phone sits idle — a check-in now happens only when you do something (press knok, open the app, or use the widget, watch or TV). Every version here was read live from that store’s own API on 16 October 2026.</p>
+  <p class="kk-stat__footer">Page withdrawn 16 October 2026.</p>
 </div>

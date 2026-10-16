@@ -18,9 +18,11 @@ repo is a generated/synced copy.
 Fragments served (one per live page): `odderon-phi-home`, `odderon-phi-about-intro`,
 `odderon-phi-about-charles`, `odderon-phi-paia`, `knokkeroo-landing`, `what-is-knokkeroo`,
 `knokkeroo-terms`, `knokkeroo-account-deletion`, `knokkeroo-reviewer-access`,
-`knokkeroo-internal-status`, `knokkeroo-go`, the six tester pages `knokkeroo-test*`,
-`wearable-mockups`, and `archisaurus-landing` (Archisaurus Rex shares the site — not knokkeroo's
-to delete). `downloads/` holds the tester test-plan `.docx` files.
+`knokkeroo-internal-status`, `knokkeroo-go`, the six tester pages `knokkeroo-test*` (since
+16 October 2026 each serves only a "withdrawn — test programme ended" notice; the real pages are kept
+in the private repo for reuse), `wearable-mockups`, and `archisaurus-landing` (Archisaurus Rex shares
+the site — not knokkeroo's to delete). `downloads/` is empty: the tester test-plan `.docx` files were
+withdrawn on 16 October 2026 (kept in the private repo's `docs/qa/`).
 
 The original `knokkeroo-status` page this repo was created for was retired on 2026-07-24 and
 folded into `knokkeroo-internal-status`; that history is the reason the repo has this name.
