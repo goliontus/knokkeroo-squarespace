@@ -277,8 +277,7 @@
       alerts reach the people watching you — see "How version 4 differed from 3.5.x" below); tap <strong>Knok</strong> and watch your own time update; open the
       contacts list and check the status colours (green recently checked in, amber a little overdue, red missed); open a
       contact tile to see their current status, when they last checked in and how (new); set quiet hours; optionally add
-      the home-screen widget (new, requires iOS 17 or later); then use <strong>Me → Delete account</strong>, which
-      permanently removes the account.</p>
+      the home-screen widget (new, requires iOS 17 or later); then look at account deletion. On a demo account, <strong>Me &rarr; Delete account</strong> shows a notice that it cannot be deleted, because demo accounts are protected; on a real account it permanently removes the account.</p>
     <p><strong>What to review specifically — the paywall.</strong> The demo account starts FREE, so the first four
       contacts are visible and further contacts appear as anonymous locked tiles that open the paywall. Tapping
       <strong>Subscribe</strong> on a demo account is <em>simulated</em>: it unlocks everything with no transaction, no
@@ -288,7 +287,7 @@
     <p><strong>Push notifications</strong> — see the
       <a href="#whats-new-v4">"How version 4 differed from 3.5.x"</a> section for exactly what the app sends and when. Free accounts
       receive red overdue alerts and their own opt-in daily reminder; subscribers additionally receive amber early
-      warnings, invitation notices and "checking in on you" requests. Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
+      warnings, invitation notices and "checking in on you" requests. Demo accounts are exempt on the server from sending caps, rate limits, push tiers and the Apple Watch check, but NOT from the plan screens in the app — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
     <p><strong>Android TV card (Android and Huawei only).</strong> My settings shows an "Android TV"
       card offering to pair a TV. The knokkeroo TV companion is <strong>live on Google Play as Android TV
       1.0.0</strong>, delivered from the same Play listing as the phone app, so on an Android TV device the
@@ -314,12 +313,13 @@
         On the paired Apple Watch, open the Watch app (installed automatically — check the Watch's app
         list, or open the Watch app on iPhone and confirm knokkeroo shows as installed).
       </li>
-      <li>Open knokkeroo on the Watch. It shows a single <strong>knok</strong> button.</li>
+      <li>On the iPhone, tap <strong>Subscribe</strong> once (simulated on a demo account: no transaction, no charge). The Apple Watch card under <strong>Me</strong> is the paywall card until you do.</li>
+      <li>Open knokkeroo on the Watch. It shows <strong>Pair this watch</strong> and a 6-digit code. On the iPhone, go to <strong>Me &rarr; Apple Watch</strong> and enter the code. The Watch then shows a single <strong>knok</strong> button.</li>
       <li>Tap <strong>knok</strong> on the Watch. Return to the iPhone app — the <strong>Me</strong> tile should update to reflect the new check-in.</li>
     </ol>
     <p>
       <strong>Plan note:</strong> for real users the Apple Watch app is part of the paid plan (enforced server-side,
-      not just in the UI). Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free. That one tap is all the Watch review needs — there is nothing to buy.
+      not just in the UI). Demo accounts are exempt on the server from sending caps, rate limits, push tiers and the Apple Watch check, but NOT from the plan screens in the app — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free. That one tap is all the Watch review needs — there is nothing to buy.
       Opening the Watch app itself counts as a check-in for the signed-in user, and tapping <strong>knok</strong>
       records another.
     </p>
@@ -329,9 +329,7 @@
 <section class="kk-rev__section" id="apple-tv">
     <h2>Apple → Apple TV ("knokkeroo TV")</h2>
     <p>
-      knokkeroo TV is a <strong>separate app</strong> with its own App Store listing (App Store id
-      <code>6795920763</code>, bundle id <code>com.goliontus.knokker.tv</code>) and its own TestFlight
-      build. It is a companion display only — it requires the iPhone app to be signed in first, then
+      knokkeroo TV is a <strong>separate app</strong> (App Store id <code>6795920763</code>, bundle id <code>com.goliontus.knokker.tv</code>) that is <strong>not available to install at the moment</strong>: it has no App Store release and no current TestFlight build, so nothing in this section is required for review and it is here for reference. It is a companion display only — it requires the iPhone app to be signed in first, then
       paired to it.
     </p>
     <div class="kk-rev__credential">
@@ -384,8 +382,7 @@
       alerts reach the people watching you — see "How version 4 differed from 3.5.x" below); tap <strong>Knok</strong> and watch your own time update; open the
       contacts list and check the status colours (green recently checked in, amber a little overdue, red missed); open a
       contact tile to see their current status, when they last checked in and how (new); set quiet hours; optionally add
-      the knokkeroo home-screen widget (new); then use <strong>Me → Delete account</strong>, which permanently removes
-      the account.</p>
+      the knokkeroo home-screen widget (new); then look at account deletion. On a demo account, <strong>Me &rarr; Delete account</strong> shows a notice that it cannot be deleted, because demo accounts are protected; on a real account it permanently removes the account.</p>
     <p><strong>What to review specifically — the paywall.</strong> The demo account starts FREE, so the first four
       contacts are visible and further contacts appear as anonymous locked tiles that open the paywall. Tapping
       <strong>Subscribe</strong> on a demo account is <em>simulated</em>: no transaction, no charge, and no Google Play
@@ -397,7 +394,7 @@
       the standard Android 13+ notification permission after sign-in; declining it
       leaves every other feature working. Free accounts receive red overdue alerts and their own opt-in daily
       reminder; subscribers additionally receive amber early warnings, invitation notices and "checking in on you"
-      requests. Demo accounts are exempt from the server-side sending caps and rate limits, but NOT from the plan itself — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
+      requests. Demo accounts are exempt on the server from sending caps, rate limits, push tiers and the Apple Watch check, but NOT from the plan screens in the app — the demo account starts FREE on purpose so the paywall is reviewable. To reach subscriber features, tap <strong>Subscribe</strong> once: on a demo account that is <em>simulated</em>, with no transaction, no charge and no purchase sheet. Logging out and back in returns it to free.</p>
     <p><strong>Please note:</strong> knokkeroo is a personal communication tool, <strong>not a medical or
       emergency service</strong>, and never contacts emergency services. The in-app disclaimer and the Terms state this.</p>
     <p class="kk-rev__done">✓ End of the Android phone review section — you have everything you need to complete it. Nothing further on this page is required.</p>
@@ -407,8 +404,7 @@
     <h2>Google → Wear OS watch</h2>
     <p>
       The Wear OS app is the Android counterpart of the Apple Watch app above. It ships under the
-      <strong>same package name as the phone app</strong> (<code>com.goliontus.knokker</code>) rather than as a separate
-      listing, so Google Play delivers it to a paired watch alongside the phone app. Works on Galaxy Watch, Pixel Watch and
+      <strong>same package name as the phone app</strong> (<code>com.goliontus.knokker</code>) rather than as a separate listing, but it is <strong>not in production</strong>: Google Play carries it on the closed testing track only, so it does not reach a watch from the production listing and nothing in this section is required for review. Works on Galaxy Watch, Pixel Watch and
       other Wear OS devices.
     </p>
     <div class="kk-rev__note">
@@ -461,7 +457,7 @@
       </div>
     <p><strong>What to test:</strong> sign in with the demo account above; tap <strong>Knok</strong> and watch your own
       time update; open the contacts list and check the status colours (green recently checked in, amber a little overdue,
-      red missed); set quiet hours; then use <strong>Me → Delete account</strong>, which permanently removes the account.</p>
+      red missed); set quiet hours; then look at account deletion. On a demo account, <strong>Me &rarr; Delete account</strong> shows a notice that it cannot be deleted, because demo accounts are protected; on a real account it permanently removes the account.</p>
     <p><strong>What to review specifically — there is no billing on this platform at all.</strong> The Huawei build is
       entirely free with every contact visible: no paywall, no locked tiles, no subscription, and no in-app purchase of
       any kind. Nothing in this build can charge a user. The paid tier exists only on iOS and Android.</p>
@@ -504,7 +500,7 @@
       21 October 2026). Nothing is under review.</em></p>
     <p><em><strong>Already public in 5.7.62: two fixes.</strong> (1) The iOS Home Screen
       widget&rsquo;s favourite-contact tile now fetches that contact&rsquo;s latest check-in from the
-      server on its own schedule, so it stays current without the app being opened. (2) A knok pressed
+      server on its own schedule, so it can update without the app being opened, on the schedule iOS allows. (2) A knok pressed
       at a moment the app&rsquo;s sign-in had briefly lapsed used to wait in a queue; the app now
       refreshes the sign-in once, on the spot, and sends it straight away. No new screens, no new
       permissions, no change to pricing, in-app purchases, or the data the app collects.
@@ -699,8 +695,7 @@
         no buzz); the Back button at the top of a screen now sits on the right on every screen
         rather than only some; and My settings gains an "Android TV" card on Android and Huawei
         (the TV companion is live on Google Play as Android TV 1.0.0). New in 5.7.32-5.7.34,
-        iPhone widget reliability: the widget refreshes its status from the server on every
-        redraw, so it no longer shows an out-of-date colour after a check-in made another way; it
+        iPhone widget reliability: the widget asks the server for its status each time iOS rebuilds its timeline, which narrows the gap but does not close it: a check-in made another way, such as the URL shortcut, can still show an out-of-date colour until the next rebuild, and a further fix is waiting for the next release; it
         no longer shows a false "Verification needed" message after a background wake on a locked
         phone; and tapping it records the check-in even when the app has not been opened for a
         while. On Android, a failed background session check can also no longer wrongly mark the
@@ -736,7 +731,7 @@
         (green/amber/red), never a neutral brand colour.</li>
       <li><strong>Human error messages:</strong> no raw technical error text ever reaches a screen — connectivity
         problems say "check your connection", each message carries a short support code.</li>
-      <li>Widget freshness improvements and accessibility fixes (screen-reader labels on the consent screen,
+      <li>Widget refresh changes (an out-of-date colour can still occur, see the widget notes on this page) and accessibility fixes (screen-reader labels on the consent screen,
         larger touch targets).</li>
     </ul>
     <h2>New in version 5.0.0 (the previous release, now live)</h2>
@@ -971,7 +966,7 @@
     <div class="kk-rev__note">
       <ul>
         <li>No real SMS/WhatsApp is sent for demo accounts. Logging in and inviting demo contacts triggers no messages.</li>
-        <li>Demo data is reset by us between reviews, so the demo accounts always start in a known state.</li>
+        <li>Demo data is reset by us before each store submission, and the table above shows that state. An earlier review can leave changes until the next reset, for example a request already approved.</li>
         <li>
           Demo contacts keep fixed US/European timezones. We never overwrite them. Their displayed times differ from yours on purpose
           so that timezone and quiet-hours behaviour can be reviewed.
@@ -1010,7 +1005,7 @@
 <section class="kk-rev__section" id="document-information">
     <h2>Document information</h2>
     <p>
-      Last updated: 21 October 2026 (5.7.63 live on all three stores) · 5.7.63 is a one-fix release on
+      Last updated: 5 November 2026 (corrections to this page only; 5.7.63 live on all three stores) · 5.7.63 is a one-fix release on
       top of 5.7.62, submitted on 16 October 2026 to the App Store (build 79), Google Play production
       (versionCode 65, with Android TV 1.0.0) and Huawei AppGallery (versionCode 65). Store state, read
       from each store's own API on 21 October 2026; each store is given separately:
@@ -1025,7 +1020,7 @@
       (release name "5.7.63 + Android TV 1.0.0", versionCodes 65 and 900000001, status completed;
       read from the Google Play publisher API on 16 October 2026 after the 5.7.63 submission and again
       through the hourly store read on 21 October 2026; 5.7.62, versionCode 64, served production from
-      8 October 2026 until then). The Wear OS companion is a separate package and is not in production:
+      8 October 2026 until then). The Wear OS companion shares the phone app&rsquo;s package and is not in production:
       it is in closed testing at 5.0.0.
       <strong>Huawei</strong> — no billing on that platform — is
       <strong>LIVE on AppGallery at 5.7.63</strong>, read back from the AppGallery Connect
