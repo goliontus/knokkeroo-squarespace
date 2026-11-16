@@ -16,7 +16,7 @@ under a minute and Squarespace itself is never touched again.
 repo is a generated/synced copy.
 
 Fragments served (one per live page): `odderon-phi-home`, `odderon-phi-about-intro`,
-`odderon-phi-about-charles`, `odderon-phi-paia`, `knokkeroo-landing`, `what-is-knokkeroo`,
+`odderon-phi-about-charles`, `odderon-phi-paia`, `odderon-phi-publications` (source C:\Dev\physics\website, not the knokker repo; its preprint PDF is in `papers/`), `knokkeroo-landing`, `what-is-knokkeroo`,
 `knokkeroo-terms`, `knokkeroo-account-deletion`, `knokkeroo-reviewer-access`,
 `knokkeroo-internal-status`, `knokkeroo-go`, the six tester pages `knokkeroo-test*` (since
 16 October 2026 each serves only a "withdrawn — test programme ended" notice; the real pages are kept
